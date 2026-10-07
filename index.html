@@ -111,6 +111,14 @@
       box-shadow: 0 0 10px rgba(244, 197, 66, 0.7);
       border: 2px solid #070709;
     }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 0.4; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    .pulse-ring {
+      animation: pulse-ring 2.5s infinite ease-in-out;
+    }
   </style>
 </head>
 <body class="font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
@@ -152,13 +160,13 @@
       <!-- Header CTAs + Language Switcher -->
       <div class="flex items-center gap-3">
         <!-- Language Switcher Toggle (RU / EN) -->
-        <button id="lang-toggle-btn" class="px-2.5 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-xs font-bold border border-amber-500/30 text-amber-300 transition-all flex items-center gap-1.5 shadow-sm" title="Switch Language (RU / EN)">
+        <button id="lang-toggle-btn" class="px-2.5 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-xs font-bold border border-amber-500/30 text-amber-300 transition-all flex items-center gap-1.5 shadow-sm cursor-pointer" title="Switch Language (RU / EN)">
           <i data-lucide="globe" class="w-3.5 h-3.5 text-amber-400"></i>
           <span id="current-lang-text">RU | EN</span>
         </button>
 
         <!-- Direct Contact Artem Button -->
-        <button onclick="openContactModal()" class="hidden sm:flex px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-dark-950 text-xs uppercase tracking-wider font-extrabold shadow-lg shadow-amber-500/20 transition-all transform hover:-translate-y-0.5 items-center gap-2">
+        <button onclick="openContactModal()" class="hidden sm:flex px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-dark-950 text-xs uppercase tracking-wider font-extrabold shadow-lg shadow-amber-500/20 transition-all transform hover:-translate-y-0.5 items-center gap-2 cursor-pointer">
           <i data-lucide="message-circle" class="w-4 h-4 text-dark-950"></i>
           <span data-i18n="btn_contact_artem">Написать Артему</span>
         </button>
@@ -172,6 +180,9 @@
 
     <!-- Mobile Nav Dropdown -->
     <div id="mobile-menu" class="hidden xl:hidden bg-[#0d1024] border-b border-amber-500/20 px-6 pt-4 pb-6 space-y-3">
+      <div class="pb-2 text-[10px] text-amber-300/70 uppercase tracking-widest font-semibold border-b border-amber-500/10">
+        NEW PLACES, BIGGER OPPORTUNITIES, BRIGHTER YOU.
+      </div>
       <a href="#tours" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_tours">Путешествия</a>
       <a href="#paths" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_paths">Возможности</a>
       <a href="#about" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_about">Обо мне</a>
@@ -180,7 +191,7 @@
       <a href="#tiers" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_tiers">Членство</a>
       <a href="#faq" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_faq">FAQ</a>
       <div class="pt-4 flex flex-col gap-2.5">
-        <button onclick="openContactModal()" class="w-full text-center py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
+        <button onclick="openContactModal()" class="w-full text-center py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 cursor-pointer">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
           <span data-i18n="btn_contact_artem">Написать Артему</span>
         </button>
@@ -189,7 +200,7 @@
   </header>
 
   <!-- 2. HERO SCREEN (TRAVEL MORE. LIVE MORE.) -->
-  <section id="hero" class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+  <section id="hero" class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden scroll-mt-24">
     <!-- Ambient Gold Glow Backgrounds -->
     <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[160px] pointer-events-none"></div>
     <div class="absolute top-1/3 right-10 w-[500px] h-[500px] bg-yellow-500/8 rounded-full blur-[140px] pointer-events-none"></div>
@@ -261,7 +272,7 @@
                   <div class="text-lg font-black text-white" data-i18n="hero_card_stat2_val">Costco B2B</div>
                 </div>
                 <div class="h-8 w-px bg-amber-500/20"></div>
-                <button onclick="openContactModal()" class="p-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-dark-950 font-bold transition-all">
+                <button onclick="openContactModal()" class="p-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-dark-950 font-bold transition-all cursor-pointer">
                   <i data-lucide="send" class="w-4 h-4"></i>
                 </button>
               </div>
@@ -298,8 +309,8 @@
     </div>
   </section>
 
-  <!-- 3. WORLD TOURS (Популярные направления) -->
-  <section id="tours" class="py-20 bg-[#0d1024]/50 border-t border-amber-500/15 relative">
+  <!-- 3. WORLD TOURS (Популярные направления с точным расчетом процентов и дат) -->
+  <section id="tours" class="py-20 bg-[#0d1024]/50 border-t border-amber-500/15 relative scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -311,25 +322,25 @@
             Флагманские туры World Tours
           </h2>
           <p class="text-slate-400 mt-2 text-base" data-i18n="tours_subtitle">
-            Премиальные путешествия со скидкой до 70%
+            Премиальные путешествия со скидками до 70% (в среднем 65–70%)
           </p>
         </div>
-        <a href="#calculator" class="text-amber-400 hover:text-amber-300 font-bold text-sm flex items-center gap-2 transition-colors">
+        <button onclick="openDestinationsModal()" class="text-amber-400 hover:text-amber-300 font-bold text-sm flex items-center gap-2 transition-colors cursor-pointer group">
           <span data-i18n="tours_all_link">Смотреть все направления</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
+          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+        </button>
       </div>
 
-      <!-- 4 Tour Cards Grid -->
+      <!-- 4 Tour Cards Grid with Exact Percentages and Sample Dates -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Tour 1: Maldives -->
+        <!-- Tour 1: Maldives (1869 -> 599 = -68%) -->
         <div class="group relative rounded-3xl overflow-hidden luxury-card border border-amber-500/25 luxury-card-hover">
           <div class="relative h-64 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="Мальдивы" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-black/30"></div>
-            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-amber-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg" data-i18n="discount_badge">
-              Скидка 70%
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-amber-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg">
+              <span data-i18n="tour1_badge">Скидка 68%</span>
             </div>
           </div>
           <div class="p-5 space-y-3">
@@ -337,26 +348,28 @@
               <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors" data-i18n="tour1_name">Мальдивы</h3>
               <p class="text-xs text-amber-300/80 font-medium" data-i18n="tour1_desc">Райские острова</p>
             </div>
-            <p class="text-xs text-slate-400 line-clamp-1" data-i18n="tour1_details">7 ночей • Вилла на воде • Все включено</p>
+            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="tour1_details">
+              7 ночей • Вилла на воде • All Inclusive • Пример на 15–22 Ноября 2026 (Booking: $1,869)
+            </p>
             <div class="pt-2 flex items-center justify-between border-t border-amber-500/15">
               <div>
                 <span class="text-xs text-slate-500 line-through mr-1.5">$1,869</span>
-                <span class="text-2xl font-black text-gradient-gold">$599</span>
+                <span class="text-2xl font-black text-gradient-gold font-mono">$599</span>
               </div>
-              <button onclick="openContactModal()" class="w-10 h-10 rounded-xl bg-amber-500/15 hover:bg-amber-500 text-amber-400 hover:text-dark-950 flex items-center justify-center transition-all border border-amber-500/30">
+              <button onclick="openContactModal()" class="w-10 h-10 rounded-xl bg-amber-500/15 hover:bg-amber-500 text-amber-400 hover:text-dark-950 flex items-center justify-center transition-all border border-amber-500/30 cursor-pointer">
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Tour 2: Dubai -->
+        <!-- Tour 2: Dubai (1799 -> 549 = -70%) -->
         <div class="group relative rounded-3xl overflow-hidden luxury-card border border-amber-500/25 luxury-card-hover">
           <div class="relative h-64 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Дубай" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-black/30"></div>
-            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-amber-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg" data-i18n="discount_badge">
-              Скидка 70%
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-amber-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg">
+              <span data-i18n="tour2_badge">Скидка 70%</span>
             </div>
           </div>
           <div class="p-5 space-y-3">
@@ -364,26 +377,28 @@
               <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors" data-i18n="tour2_name">Дубай</h3>
               <p class="text-xs text-amber-300/80 font-medium" data-i18n="tour2_desc">Современная роскошь</p>
             </div>
-            <p class="text-xs text-slate-400 line-clamp-1" data-i18n="tour2_details">6 ночей • 5★ Downtown • Премиум сервис</p>
+            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="tour2_details">
+              6 ночей • 5★ Downtown • Deluxe Suite • Пример на 10–16 Декабря 2026 (Отель: $1,799)
+            </p>
             <div class="pt-2 flex items-center justify-between border-t border-amber-500/15">
               <div>
                 <span class="text-xs text-slate-500 line-through mr-1.5">$1,799</span>
-                <span class="text-2xl font-black text-gradient-gold">$549</span>
+                <span class="text-2xl font-black text-gradient-gold font-mono">$549</span>
               </div>
-              <button onclick="openContactModal()" class="w-10 h-10 rounded-xl bg-amber-500/15 hover:bg-amber-500 text-amber-400 hover:text-dark-950 flex items-center justify-center transition-all border border-amber-500/30">
+              <button onclick="openContactModal()" class="w-10 h-10 rounded-xl bg-amber-500/15 hover:bg-amber-500 text-amber-400 hover:text-dark-950 flex items-center justify-center transition-all border border-amber-500/30 cursor-pointer">
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Tour 3: Paris -->
+        <!-- Tour 3: Paris (1499 -> 449 = -70%) -->
         <div class="group relative rounded-3xl overflow-hidden luxury-card border border-amber-500/25 luxury-card-hover">
           <div class="relative h-64 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="Париж" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-black/30"></div>
-            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-amber-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg" data-i18n="discount_badge">
-              Скидка 70%
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-amber-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg">
+              <span data-i18n="tour3_badge">Скидка 70%</span>
             </div>
           </div>
           <div class="p-5 space-y-3">
@@ -391,26 +406,28 @@
               <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors" data-i18n="tour3_name">Париж</h3>
               <p class="text-xs text-amber-300/80 font-medium" data-i18n="tour3_desc">Культура и романтика</p>
             </div>
-            <p class="text-xs text-slate-400 line-clamp-1" data-i18n="tour3_details">5 ночей • 5★ у Елисейских полей • Экскурсии</p>
+            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="tour3_details">
+              5 ночей • 5★ Champs-Élysées • Superior King • Пример на 05–10 Октября 2026
+            </p>
             <div class="pt-2 flex items-center justify-between border-t border-amber-500/15">
               <div>
                 <span class="text-xs text-slate-500 line-through mr-1.5">$1,499</span>
-                <span class="text-2xl font-black text-gradient-gold">$449</span>
+                <span class="text-2xl font-black text-gradient-gold font-mono">$449</span>
               </div>
-              <button onclick="openContactModal()" class="w-10 h-10 rounded-xl bg-amber-500/15 hover:bg-amber-500 text-amber-400 hover:text-dark-950 flex items-center justify-center transition-all border border-amber-500/30">
+              <button onclick="openContactModal()" class="w-10 h-10 rounded-xl bg-amber-500/15 hover:bg-amber-500 text-amber-400 hover:text-dark-950 flex items-center justify-center transition-all border border-amber-500/30 cursor-pointer">
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Tour 4: Bali -->
+        <!-- Tour 4: Bali (1699 -> 599 = -65%) -->
         <div class="group relative rounded-3xl overflow-hidden luxury-card border border-amber-500/25 luxury-card-hover">
           <div class="relative h-64 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Бали" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-black/30"></div>
-            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-amber-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg" data-i18n="discount_badge">
-              Скидка 70%
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-amber-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg">
+              <span data-i18n="tour4_badge">Скидка 65%</span>
             </div>
           </div>
           <div class="p-5 space-y-3">
@@ -418,13 +435,15 @@
               <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors" data-i18n="tour4_name">Бали</h3>
               <p class="text-xs text-amber-300/80 font-medium" data-i18n="tour4_desc">Природа и гармония</p>
             </div>
-            <p class="text-xs text-slate-400 line-clamp-1" data-i18n="tour4_details">8 ночей • Приватная вилла • Бассейн в джунглях</p>
+            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="tour4_details">
+              8 ночей • Приватная вилла с бассейном в Убуде • Пример на 12–20 Сентября 2026 (Expedia: $1,699)
+            </p>
             <div class="pt-2 flex items-center justify-between border-t border-amber-500/15">
               <div>
                 <span class="text-xs text-slate-500 line-through mr-1.5">$1,699</span>
-                <span class="text-2xl font-black text-gradient-gold">$599</span>
+                <span class="text-2xl font-black text-gradient-gold font-mono">$599</span>
               </div>
-              <button onclick="openContactModal()" class="w-10 h-10 rounded-xl bg-amber-500/15 hover:bg-amber-500 text-amber-400 hover:text-dark-950 flex items-center justify-center transition-all border border-amber-500/30">
+              <button onclick="openContactModal()" class="w-10 h-10 rounded-xl bg-amber-500/15 hover:bg-amber-500 text-amber-400 hover:text-dark-950 flex items-center justify-center transition-all border border-amber-500/30 cursor-pointer">
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
             </div>
@@ -433,16 +452,16 @@
 
       </div>
 
-      <!-- Verified Pricing Compliance Note -->
-      <p class="text-center text-xs text-slate-500 mt-8" data-i18n="tours_disclaimer">
-        Все цены подтверждены реальными клубными предложениями на одинаковые даты и условия проживания.
+      <!-- Specific sample explanation instead of blanket assertion -->
+      <p class="text-center text-xs text-slate-400 max-w-4xl mx-auto mt-8 leading-relaxed" data-i18n="tours_disclaimer">
+        * Примеры расчётов основаны на подтверждённых предложениях клубной платформы на фиксированные даты 2026 года в сравнении с розничными агрегаторами на идентичные условия проживания. Итоговая стоимость зависит от дат, сезона и наличия свободных мест.
       </p>
 
     </div>
   </section>
 
   <!-- 4. DUAL AUDIENCE PATHS (Я ХОЧУ ПУТЕШЕСТВОВАТЬ / Я ХОЧУ БИЗНЕС-ВОЗМОЖНОСТЬ) -->
-  <section id="paths" class="py-20 relative">
+  <section id="paths" class="py-20 relative scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -550,31 +569,52 @@
     </div>
   </section>
 
-  <!-- 5. VIDEO & ABOUT ARTEM (Привет! Я Артем) -->
-  <section id="about" class="py-20 bg-[#0d1024]/40 border-t border-amber-500/15 relative">
+  <!-- 5. VIDEO & ABOUT ARTEM (Собственная элегантная обложка 9:16 без красного YouTube плеера) -->
+  <section id="about" class="py-20 bg-[#0d1024]/40 border-t border-amber-500/15 relative scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left: YouTube Short Video Frame -->
+        <!-- Left: Custom Video Player (9:16 with elegant poster & gold play button) -->
         <div class="lg:col-span-6 flex justify-center">
-          <div class="relative w-full max-w-sm rounded-3xl overflow-hidden luxury-card border-2 border-amber-500/40 shadow-2xl glow-gold bg-black">
-            <!-- YouTube Shorts Embed -->
-            <div class="relative aspect-[9/16] w-full">
-              <iframe 
-                src="https://www.youtube.com/embed/CJUqSTQX3uc?rel=0&modestbranding=1" 
-                title="Видео от Артема — Закрытый клуб путешественников" 
-                class="absolute inset-0 w-full h-full rounded-2xl"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
-              </iframe>
+          <div class="relative w-full max-w-[340px] sm:max-w-sm rounded-3xl overflow-hidden luxury-card border-2 border-amber-500/40 shadow-2xl glow-gold bg-black aspect-[9/16]">
+            
+            <!-- Custom Cover Container -->
+            <div id="video-cover-container" class="absolute inset-0 z-10 cursor-pointer group" onclick="playArtemVideo()">
+              <img src="artem_video_cover.jpg" alt="Артем о закрытом travel-клубе" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              
+              <!-- Subtle dark luxury gradient -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/40"></div>
+
+              <!-- Top Pill Overlay -->
+              <div class="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-amber-500/40 text-amber-300 text-xs font-bold flex items-center gap-2 shadow-md">
+                <i data-lucide="play" class="w-3.5 h-3.5 text-amber-400 fill-amber-400"></i>
+                <span data-i18n="video_time_badge">Смотреть 2 мин</span>
+              </div>
+
+              <!-- Center Gold Play Button with Pulse Ripple -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="relative flex items-center justify-center">
+                  <!-- Pulsing gold rings -->
+                  <div class="absolute w-24 h-24 rounded-full bg-amber-400/20 pulse-ring"></div>
+                  <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-amber-500 via-yellow-400 to-amber-300 p-1 shadow-2xl shadow-amber-500/50 group-hover:scale-110 transition-transform">
+                    <div class="w-full h-full rounded-full bg-[#070709] flex items-center justify-center pl-1">
+                      <i data-lucide="play" class="w-8 h-8 text-amber-400 fill-amber-400"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Description on Poster -->
+              <div class="absolute bottom-5 left-5 right-5 text-center">
+                <div class="text-sm font-bold text-white drop-shadow-md">Разбор закрытого travel-клуба</div>
+                <div class="text-[11px] text-amber-300 font-medium">Нажмите, чтобы включить видео</div>
+              </div>
             </div>
 
-            <!-- Top Pill Overlay -->
-            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-amber-500/40 text-amber-300 text-xs font-bold flex items-center gap-2 pointer-events-none">
-              <i data-lucide="play" class="w-3 h-3 text-amber-400 fill-amber-400"></i>
-              <span data-i18n="video_time_badge">Смотреть 2 мин</span>
-            </div>
+            <!-- YouTube Video Player Container (Activated on click) -->
+            <div id="video-iframe-slot" class="w-full h-full"></div>
+
           </div>
         </div>
 
@@ -628,11 +668,15 @@
             </div>
           </div>
 
-          <div class="pt-4">
-            <button onclick="openContactModal()" class="px-8 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-dark-950 font-black text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-lg shadow-amber-500/20">
+          <div class="pt-4 flex flex-wrap items-center gap-4">
+            <button onclick="playArtemVideo()" class="px-8 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-dark-950 font-black text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-lg shadow-amber-500/20 cursor-pointer">
               <span data-i18n="video_watch_btn">Посмотреть видео</span>
               <i data-lucide="play" class="w-4 h-4 fill-dark-950"></i>
             </button>
+            <a href="https://youtube.com/shorts/CJUqSTQX3uc" target="_blank" class="px-5 py-3.5 rounded-2xl bg-dark-800 hover:bg-dark-700 text-slate-300 text-xs font-semibold border border-amber-500/25 flex items-center gap-2 transition-all">
+              <i data-lucide="external-link" class="w-4 h-4 text-amber-400"></i>
+              <span>Открыть в YouTube</span>
+            </a>
           </div>
 
         </div>
@@ -642,8 +686,8 @@
     </div>
   </section>
 
-  <!-- 6. INTERACTIVE 1-YEAR SAVINGS CALCULATOR -->
-  <section id="calculator" class="py-20 relative">
+  <!-- 6. INTERACTIVE 1-YEAR SAVINGS CALCULATOR (С честным вычетом стоимости подписки за год) -->
+  <section id="calculator" class="py-20 relative scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
@@ -654,7 +698,7 @@
           Рассчитайте вашу личную выгоду за 1 год
         </h2>
         <p class="text-slate-400 text-base" data-i18n="calc_subtitle">
-          Узнайте, сколько можно сэкономить на путешествиях и как быстро окупается членство клуба.
+          Узнайте, сколько можно сэкономить на отелях с учётом клубного членства и начисленных баллов.
         </p>
       </div>
 
@@ -662,7 +706,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
         
         <!-- Controls (Left) -->
-        <div class="lg:col-span-7 p-6 sm:p-8 rounded-3xl luxury-card border border-amber-500/30 space-y-8">
+        <div class="lg:col-span-7 p-6 sm:p-8 rounded-3xl luxury-card border border-amber-500/30 space-y-7">
           
           <!-- Slider 1: Trips -->
           <div class="space-y-3">
@@ -703,45 +747,84 @@
             </div>
           </div>
 
-          <!-- Checkbox -->
+          <!-- Tariff Selector in Calculator -->
+          <div class="space-y-2 pt-2 border-t border-amber-500/15">
+            <label class="text-xs font-bold uppercase tracking-wider text-amber-300">
+              Тариф членства для расчёта:
+            </label>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="p-3 rounded-xl border border-amber-500/30 bg-dark-800/80 flex items-center gap-2.5 cursor-pointer hover:border-amber-400 transition-colors">
+                <input type="radio" name="calc-tier" value="platinum" checked class="text-amber-500 focus:ring-amber-500 accent-amber-500">
+                <div>
+                  <div class="text-xs font-bold text-white">Platinum VIP</div>
+                  <div class="text-[11px] text-amber-300/80">$135/мес • 270 pts</div>
+                </div>
+              </label>
+              <label class="p-3 rounded-xl border border-amber-500/20 bg-dark-800/80 flex items-center gap-2.5 cursor-pointer hover:border-amber-400 transition-colors">
+                <input type="radio" name="calc-tier" value="titanium" class="text-amber-500 focus:ring-amber-500 accent-amber-500">
+                <div>
+                  <div class="text-xs font-bold text-white">Titanium</div>
+                  <div class="text-[11px] text-slate-400">$79.95/мес • 160 pts</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Checkbox for Fee Deduction -->
           <label class="flex items-start gap-3 cursor-pointer pt-2 border-t border-amber-500/15">
-            <input type="checkbox" id="compare-checkbox" checked class="w-5 h-5 rounded border-amber-500/40 text-amber-500 focus:ring-amber-500 bg-dark-900 mt-0.5">
-            <span class="text-xs text-slate-300 leading-tight" data-i18n="calc_checkbox_label">
-              Показывать сравнение с обычными ценами (отели, рестораны, аренда авто, экскурсии)
+            <input type="checkbox" id="deduct-fee-checkbox" checked class="w-5 h-5 rounded border-amber-500/40 text-amber-500 focus:ring-amber-500 bg-dark-900 mt-0.5">
+            <span class="text-xs text-slate-300 leading-tight">
+              Вычесть годовую стоимость клубной подписки из итоговой экономии (честный финансовый расчёт)
             </span>
           </label>
 
         </div>
 
         <!-- Output Card (Right) -->
-        <div class="lg:col-span-5 p-6 sm:p-8 rounded-3xl luxury-card border-2 border-amber-500/40 glow-gold space-y-6 text-center lg:text-left">
+        <div class="lg:col-span-5 p-6 sm:p-8 rounded-3xl luxury-card border-2 border-amber-500/40 glow-gold space-y-5 text-center lg:text-left">
           
           <div class="text-xs font-black tracking-widest text-amber-400 uppercase" data-i18n="calc_result_header">
             ВАШ ПОТЕНЦИАЛ ЗА 1 ГОД
           </div>
 
-          <div class="space-y-3 border-b border-amber-500/20 pb-5">
-            <div class="flex justify-between items-center text-sm">
-              <span class="text-slate-400" data-i18n="calc_retail_label">Обычная стоимость:</span>
+          <!-- Itemized Financial Breakdown -->
+          <div class="space-y-2.5 border-b border-amber-500/20 pb-4 text-xs sm:text-sm">
+            <div class="flex justify-between items-center">
+              <span class="text-slate-400">Стоимость в розницу:</span>
               <span id="retail-cost" class="font-mono font-bold text-white text-base">$4,500</span>
             </div>
-            <div class="flex justify-between items-center text-sm">
-              <span class="text-slate-400" data-i18n="calc_club_label">Стоимость с клубом:</span>
+            <div class="flex justify-between items-center">
+              <span class="text-slate-400">Отели по оптовым ценам:</span>
               <span id="club-cost" class="font-mono font-bold text-emerald-400 text-base">$1,800</span>
             </div>
+            <div id="fee-row" class="flex justify-between items-center text-rose-300/90">
+              <span>Годовая подписка:</span>
+              <span id="membership-fee" class="font-mono font-bold text-sm">-$1,620</span>
+            </div>
+            <div class="flex justify-between items-center text-amber-300 pt-1 border-t border-amber-500/10">
+              <span class="flex items-center gap-1">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
+                Накоплено Travel Points:
+              </span>
+              <span id="points-earned" class="font-mono font-bold text-sm">+3,240 pts</span>
+            </div>
           </div>
 
+          <!-- Total Result -->
           <div class="space-y-1">
-            <div class="text-xs text-amber-300 font-bold uppercase tracking-wider" data-i18n="calc_savings_label">
-              Ваша экономия:
+            <div class="text-xs text-amber-300 font-bold uppercase tracking-wider">
+              Чистая денежная выгода:
             </div>
             <div id="savings-cost" class="text-4xl sm:text-5xl font-black text-gradient-gold font-mono">
-              $2,700
+              +$1,080
+            </div>
+            <div class="text-[11px] text-slate-400 pt-1">
+              + баллы Travel Points на балансе для следующих туров!
             </div>
           </div>
 
-          <button onclick="openContactModal()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-            <span data-i18n="calc_btn_cta">Получить полный расчёт и детали</span>
+          <button onclick="openContactModal()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer">
+            <span data-i18n="calc_btn_cta">Получить полный расчёт и консультацию</span>
             <i data-lucide="arrow-right" class="w-4 h-4 text-dark-950"></i>
           </button>
 
@@ -751,14 +834,14 @@
 
       <!-- Mandatory Legal Compliance Note -->
       <p class="text-center text-xs text-slate-500 max-w-3xl mx-auto mt-8 leading-relaxed" data-i18n="calc_legal_disclaimer">
-        * Расчет является ориентировочной оценкой на основе средних клубных тарифов и зависит от сезона, направления и выбранных дат. Не является публичной офертой или гарантией дохода/фиксированной суммы экономии.
+        * Расчет является ориентировочной иллюстративной оценкой на основе средних клубных тарифов. Клуб не гарантирует фиксированную сумму экономии или дохода. Результат зависит от выбранных направлений, дат, сезона и категории номеров.
       </p>
 
     </div>
   </section>
 
-  <!-- 7. CLUB ECONOMICS & STABILITY (Как это работает) -->
-  <section id="economics" class="py-20 bg-[#0d1024]/50 border-t border-amber-500/15 relative">
+  <!-- 7. CLUB ECONOMICS & STABILITY (Обоснованная бизнес-модель) -->
+  <section id="economics" class="py-20 bg-[#0d1024]/50 border-t border-amber-500/15 relative scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
@@ -769,11 +852,11 @@
           Почему закрытый клуб устойчив и продолжает расти
         </h2>
         <p class="text-slate-400 text-base" data-i18n="stab_subtitle">
-          Строгий математический баланс и ограниченное количество участников создают стабильную и долгосрочную систему.
+          Прозрачная клубная модель по принципу оптового B2B-выкупа без посредников и рекламных наценок.
         </p>
       </div>
 
-      <!-- 3 Pillars Grid -->
+      <!-- 3 Pillars Grid with Validated Explanations -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         <!-- Pillar 1: Payout rule -->
@@ -781,9 +864,9 @@
           <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl font-black font-mono">
             %
           </div>
-          <h3 class="text-xl font-bold text-white" data-i18n="stab_card1_title">Правило выплат</h3>
+          <h3 class="text-xl font-bold text-white" data-i18n="stab_card1_title">Прямой выкуп номеров</h3>
           <p class="text-slate-300 text-sm leading-relaxed" data-i18n="stab_card1_desc">
-            Большая часть дохода компании идет на оплату путешествий участников клуба и прямые оптовые контракты с глобальными сетями.
+            Клуб работает напрямую с отельными сетями и оптовыми консолидаторами, закупая блоки номеров по оптовой себестоимости.
           </p>
         </div>
 
@@ -792,20 +875,20 @@
           <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl font-black font-mono">
             ∞
           </div>
-          <h3 class="text-xl font-bold text-white" data-i18n="stab_card2_title">Естественная стабильность</h3>
+          <h3 class="text-xl font-bold text-white" data-i18n="stab_card2_title">Модель без рекламных наценок</h3>
           <p class="text-slate-300 text-sm leading-relaxed" data-i18n="stab_card2_desc">
-            Чем больше людей путешествует, тем сильнее и устойчивее система за счет масштаба и оптовых объемов.
+            В отличие от публичных агрегаторов, клуб не тратит миллионы на контекстную рекламу и ТВ, направляя средства в скидки и баллы участникам.
           </p>
         </div>
 
-        <!-- Pillar 3: Limited spots -->
+        <!-- Pillar 3: Quality Community -->
         <div class="p-8 rounded-3xl luxury-card border border-amber-500/25 space-y-5 text-center luxury-card-hover">
           <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl font-black">
             <i data-lucide="users" class="w-7 h-7 text-amber-400"></i>
           </div>
-          <h3 class="text-xl font-bold text-white" data-i18n="stab_card3_title">Ограниченное количество мест</h3>
+          <h3 class="text-xl font-bold text-white" data-i18n="stab_card3_title">Органический рост команды</h3>
           <p class="text-slate-300 text-sm leading-relaxed" data-i18n="stab_card3_desc">
-            В клубе есть лимиты по участникам, что сохраняет высокую ценность предложений и обеспечивает персональное качество.
+            Клуб расширяется исключительно по личным рекомендациям довольных путешественников и партнёров, обеспечивая персональную поддержку.
           </p>
         </div>
 
@@ -917,8 +1000,8 @@
     </div>
   </section>
 
-  <!-- 9. MEMBERSHIP TIERS (Уровни членства) -->
-  <section id="tiers" class="py-20 bg-[#0d1024]/50 border-t border-amber-500/15 relative">
+  <!-- 9. MEMBERSHIP TIERS (Уровни членства с точным начислением баллов) -->
+  <section id="tiers" class="py-20 bg-[#0d1024]/50 border-t border-amber-500/15 relative scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
@@ -929,7 +1012,7 @@
           Выберите свой уровень
         </h2>
         <p class="text-slate-400 text-base" data-i18n="tiers_subtitle">
-          Каждый уровень дает доступ к эксклюзивным преимуществам.
+          Каждый уровень дает доступ к эксклюзивным преимуществам и удвоению баллов Travel Points.
         </p>
       </div>
 
@@ -947,14 +1030,14 @@
               <h3 class="text-2xl font-bold text-white" data-i18n="tier_silver_name">Silver</h3>
             </div>
             <p class="text-sm text-slate-300" data-i18n="tier_silver_desc">
-              Доступ к базовым предложениям и Travel Points.
+              Доступ к базовой отельной платформе и накоплению баллов.
             </p>
             <div class="pt-4 border-t border-amber-500/15">
               <div class="text-2xl font-black text-white font-mono" data-i18n="tier_silver_price">$69.95 / активация</div>
               <div class="text-xs text-slate-400 mt-1" data-i18n="tier_silver_sub">$69.95 в месяц • 140 Travel Points / мес</div>
             </div>
           </div>
-          <button onclick="openContactModal()" class="w-full py-3.5 rounded-2xl bg-dark-800 hover:bg-dark-700 text-white font-bold text-xs uppercase tracking-wider border border-amber-500/25 transition-all flex items-center justify-center gap-2">
+          <button onclick="openContactModal()" class="w-full py-3.5 rounded-2xl bg-dark-800 hover:bg-dark-700 text-white font-bold text-xs uppercase tracking-wider border border-amber-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer">
             <span data-i18n="tier_btn">Подробнее</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -971,14 +1054,14 @@
               <h3 class="text-2xl font-bold text-white" data-i18n="tier_titanium_name">Titanium</h3>
             </div>
             <p class="text-sm text-slate-300" data-i18n="tier_titanium_desc">
-              Больше направлений и бонусов для путешествий и бизнеса.
+              Больше направлений, туры World Tours и бонусы для путешествий и бизнеса.
             </p>
             <div class="pt-4 border-t border-amber-500/15">
               <div class="text-2xl font-black text-white font-mono" data-i18n="tier_titanium_price">$149.95 / активация</div>
               <div class="text-xs text-slate-400 mt-1" data-i18n="tier_titanium_sub">$79.95 в месяц • 160 Travel Points / мес</div>
             </div>
           </div>
-          <button onclick="openContactModal()" class="w-full py-3.5 rounded-2xl bg-dark-800 hover:bg-dark-700 text-amber-300 font-bold text-xs uppercase tracking-wider border border-amber-500/40 transition-all flex items-center justify-center gap-2">
+          <button onclick="openContactModal()" class="w-full py-3.5 rounded-2xl bg-dark-800 hover:bg-dark-700 text-amber-300 font-bold text-xs uppercase tracking-wider border border-amber-500/40 transition-all flex items-center justify-center gap-2 cursor-pointer">
             <span data-i18n="tier_btn">Подробнее</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -998,14 +1081,14 @@
               <h3 class="text-2xl font-serif font-black text-white" data-i18n="tier_plat_name">Platinum VIP</h3>
             </div>
             <p class="text-sm text-slate-200" data-i18n="tier_plat_desc">
-              Расширенный доступ, лучшие отели, повышенные баллы и приоритетная поддержка.
+              Расширенный доступ ко всем World Tours, максимальная скидка, удвоенные баллы и VIP-поддержка.
             </p>
             <div class="pt-4 border-t border-amber-500/20">
               <div class="text-3xl font-black text-gradient-gold font-mono" data-i18n="tier_plat_price">$269.95 / активация</div>
               <div class="text-xs text-amber-200 mt-1" data-i18n="tier_plat_sub">$135 в месяц • 270 Travel Points / мес (удвоение!)</div>
             </div>
           </div>
-          <button onclick="openContactModal()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-amber-500/25 transition-all flex items-center justify-center gap-2">
+          <button onclick="openContactModal()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-amber-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer">
             <span data-i18n="tier_btn">Подробнее</span>
             <i data-lucide="arrow-right" class="w-4 h-4 text-dark-950"></i>
           </button>
@@ -1016,8 +1099,8 @@
     </div>
   </section>
 
-  <!-- 10. FREQUENT QUESTIONS (FAQ Accordion) -->
-  <section id="faq" class="py-20 relative">
+  <!-- 10. FREQUENT QUESTIONS (FAQ Accordion без гарантий окупаемости) -->
+  <section id="faq" class="py-20 relative scroll-mt-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center mb-14 space-y-3">
@@ -1034,7 +1117,7 @@
         
         <!-- FAQ Item 1 -->
         <div class="rounded-2xl luxury-card border border-amber-500/20 overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors cursor-pointer">
             <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q1">Что такое travel-клуб?</span>
             <i data-lucide="plus" class="faq-icon w-5 h-5 text-amber-400 transition-transform duration-300"></i>
           </button>
@@ -1047,7 +1130,7 @@
 
         <!-- FAQ Item 2 -->
         <div class="rounded-2xl luxury-card border border-amber-500/20 overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors cursor-pointer">
             <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q2">Нужно ли привлекать людей?</span>
             <i data-lucide="plus" class="faq-icon w-5 h-5 text-amber-400 transition-transform duration-300"></i>
           </button>
@@ -1058,22 +1141,22 @@
           </div>
         </div>
 
-        <!-- FAQ Item 3 -->
+        <!-- FAQ Item 3 (Updated: No false guarantee, clear explanation) -->
         <div class="rounded-2xl luxury-card border border-amber-500/20 overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors">
-            <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q3">Сколько стоит членство?</span>
+          <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors cursor-pointer">
+            <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q3">Сколько стоит членство и как оно окупается?</span>
             <i data-lucide="plus" class="faq-icon w-5 h-5 text-amber-400 transition-transform duration-300"></i>
           </button>
           <div class="faq-content hidden px-6 pb-5 text-slate-300 text-sm leading-relaxed border-t border-amber-500/10 pt-4">
             <p data-i18n="faq_a3">
-              Входной взнос зависит от тарифа (Silver $69.95, Titanium $149.95, Platinum $269.95). Каждый взнос превращается в удвоенные баллы Travel Points, которые сразу идут на бронирование отелей. Экономия уже с первой-второй поездки полностью перекрывает затраты.
+              Стоимость зависит от тарифа (Silver $69.95, Titanium $149.95, Platinum $269.95). Все взносы превращаются в баллы Travel Points (1$ = 2 pts) для оплаты отелей. Срок окупаемости индивидуален: чем чаще вы путешествуете и чем выше категория отелей, тем существеннее выгода. Фиксированной гарантии окупаемости нет, так как результат зависит от выбранных дат и регулярности поездок.
             </p>
           </div>
         </div>
 
         <!-- FAQ Item 4 -->
         <div class="rounded-2xl luxury-card border border-amber-500/20 overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors cursor-pointer">
             <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q4">Могу ли я отменить?</span>
             <i data-lucide="plus" class="faq-icon w-5 h-5 text-amber-400 transition-transform duration-300"></i>
           </button>
@@ -1086,7 +1169,7 @@
 
         <!-- FAQ Item 5 -->
         <div class="rounded-2xl luxury-card border border-amber-500/20 overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors cursor-pointer">
             <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q5">Где посмотреть все направления?</span>
             <i data-lucide="plus" class="faq-icon w-5 h-5 text-amber-400 transition-transform duration-300"></i>
           </button>
@@ -1099,7 +1182,7 @@
 
         <!-- FAQ Item 6 -->
         <div class="rounded-2xl luxury-card border border-amber-500/20 overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors cursor-pointer">
             <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q6">Законна ли деятельность компании?</span>
             <i data-lucide="plus" class="faq-icon w-5 h-5 text-amber-400 transition-transform duration-300"></i>
           </button>
@@ -1136,13 +1219,13 @@
             <i data-lucide="send" class="w-4 h-4 text-dark-950"></i>
             <span data-i18n="footer_btn_artem">Написать Артему (Telegram)</span>
           </a>
-          <button onclick="openContactModal()" class="px-8 py-4 rounded-2xl luxury-card hover:bg-dark-800 text-white font-bold text-xs uppercase tracking-wider border border-amber-500/35 transition-all flex items-center gap-2">
+          <button onclick="openContactModal()" class="px-8 py-4 rounded-2xl luxury-card hover:bg-dark-800 text-white font-bold text-xs uppercase tracking-wider border border-amber-500/35 transition-all flex items-center gap-2 cursor-pointer">
             <i data-lucide="message-circle" class="w-4 h-4 text-amber-400"></i>
             <span>Контакты и ID</span>
           </button>
         </div>
 
-        <!-- Social Icons Row -->
+        <!-- Social Icons Row (SVG) -->
         <div class="flex justify-center items-center gap-4 pt-4">
           <a href="https://t.me/artem_travorium" target="_blank" class="w-12 h-12 rounded-xl luxury-card border border-amber-500/30 hover:border-amber-400 flex items-center justify-center text-amber-400 hover:text-white transition-all transform hover:scale-105 shadow-md" title="Telegram">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/></svg>
@@ -1153,7 +1236,7 @@
           <a href="https://youtube.com/shorts/CJUqSTQX3uc" target="_blank" class="w-12 h-12 rounded-xl luxury-card border border-amber-500/30 hover:border-amber-400 flex items-center justify-center text-amber-400 hover:text-white transition-all transform hover:scale-105 shadow-md" title="YouTube">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           </a>
-          <button onclick="openContactModal()" class="w-12 h-12 rounded-xl luxury-card border border-amber-500/30 hover:border-amber-400 flex items-center justify-center text-amber-400 hover:text-white transition-all transform hover:scale-105 shadow-md" title="Партнер ID / Связаться">
+          <button onclick="openContactModal()" class="w-12 h-12 rounded-xl luxury-card border border-amber-500/30 hover:border-amber-400 flex items-center justify-center text-amber-400 hover:text-white transition-all transform hover:scale-105 shadow-md cursor-pointer" title="Партнер ID / Связаться">
             <i data-lucide="key" class="w-5 h-5"></i>
           </button>
         </div>
@@ -1162,7 +1245,7 @@
       <!-- Legal Compliance Disclaimer -->
       <div class="text-center text-xs text-slate-500 max-w-4xl mx-auto space-y-4 pt-6 border-t border-amber-500/10">
         <p class="leading-relaxed" data-i18n="footer_disclaimer">
-          Отказ от ответственности: Закрытый клуб путешественников предоставляет доступ к оптовым тарифам и бонусной программе. Любые расчеты экономии носят исключительно ориентировочный характер. Клуб не дает гарантий фиксированного дохода или безопасности инвестиций. Доход партнеров зависит исключительно от личных усилий, навыков и объема работы.
+          Отказ от ответственности: Закрытый клуб путешественников предоставляет доступ к оптовым тарифам и бонусной программе. Любые расчеты экономии носят исключительно ориентировочный характер. Клуб не дает гарантий фиксированного дохода или окупаемости. Доход партнеров зависит исключительно от личных усилий, навыков и объема работы.
         </p>
         <p class="text-slate-600 font-mono text-[11px]" data-i18n="footer_rights">
           © 2026 Закрытый Travel-Клуб. Все права защищены.
@@ -1172,11 +1255,97 @@
     </div>
   </footer>
 
-  <!-- CONTACT MODAL -->
-  <div id="contact-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="relative w-full max-w-md p-6 sm:p-8 rounded-3xl luxury-card border-2 border-amber-500/50 glow-gold space-y-6 animate-scale-in bg-[#0d1024]">
+  <!-- DESTINATIONS EXPLORER MODAL (Смотреть все направления) -->
+  <div id="destinations-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="relative w-full max-w-2xl p-6 sm:p-8 rounded-3xl luxury-card border-2 border-amber-500/50 glow-gold space-y-6 max-h-[90vh] overflow-y-auto bg-[#0d1024]">
       
-      <button onclick="closeContactModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-white focus:outline-none">
+      <button onclick="closeDestinationsModal()" class="absolute top-5 right-5 p-2 text-slate-400 hover:text-white focus:outline-none cursor-pointer">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full gold-badge text-[10px] font-bold uppercase tracking-wider mb-2">
+          КАТАЛОГ WORLD TOURS
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-serif font-black text-white">Все направления клуба</h3>
+        <p class="text-xs text-slate-300 mt-1">
+          В закрытой клубной базе доступно свыше 1 000 000 отелей, резортов и эксклюзивных туров World Tours со скидками до 70%.
+        </p>
+      </div>
+
+      <!-- Categories Pills -->
+      <div class="flex flex-wrap gap-2 pt-1">
+        <span class="px-3 py-1 rounded-lg bg-amber-500 text-dark-950 font-bold text-xs">Все туры (World Tours)</span>
+        <span class="px-3 py-1 rounded-lg bg-dark-800 text-slate-300 font-medium text-xs">Пляжи и острова</span>
+        <span class="px-3 py-1 rounded-lg bg-dark-800 text-slate-300 font-medium text-xs">Европа</span>
+        <span class="px-3 py-1 rounded-lg bg-dark-800 text-slate-300 font-medium text-xs">Азия и Восток</span>
+      </div>
+
+      <!-- Sample List -->
+      <div class="space-y-3 pt-2">
+        <div class="p-3.5 rounded-2xl bg-dark-800/80 border border-amber-500/20 flex items-center justify-between">
+          <div>
+            <div class="font-bold text-white text-sm">Канкун, Мексика • 5★ All Inclusive</div>
+            <div class="text-xs text-slate-400">7 ночей • Карибское побережье</div>
+          </div>
+          <div class="text-right">
+            <span class="text-xs line-through text-slate-500 mr-1">$1,650</span>
+            <span class="text-amber-400 font-bold font-mono">$520</span>
+          </div>
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-dark-800/80 border border-amber-500/20 flex items-center justify-between">
+          <div>
+            <div class="font-bold text-white text-sm">Занзибар, Танзания • Премиум резорт</div>
+            <div class="text-xs text-slate-400">8 ночей • Первая линия океана</div>
+          </div>
+          <div class="text-right">
+            <span class="text-xs line-through text-slate-500 mr-1">$1,890</span>
+            <span class="text-amber-400 font-bold font-mono">$610</span>
+          </div>
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-dark-800/80 border border-amber-500/20 flex items-center justify-between">
+          <div>
+            <div class="font-bold text-white text-sm">Рим и Флоренция • Исторический бутик-отель</div>
+            <div class="text-xs text-slate-400">6 ночей • Авторские экскурсии</div>
+          </div>
+          <div class="text-right">
+            <span class="text-xs line-through text-slate-500 mr-1">$1,420</span>
+            <span class="text-amber-400 font-bold font-mono">$480</span>
+          </div>
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-dark-800/80 border border-amber-500/20 flex items-center justify-between">
+          <div>
+            <div class="font-bold text-white text-sm">Пхукет, Таиланд • Приватная вилла 5★</div>
+            <div class="text-xs text-slate-400">10 ночей • Вид на Андаманское море</div>
+          </div>
+          <div class="text-right">
+            <span class="text-xs line-through text-slate-500 mr-1">$1,580</span>
+            <span class="text-amber-400 font-bold font-mono">$490</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Prompt -->
+      <div class="pt-4 border-t border-amber-500/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-xs text-slate-300 text-center sm:text-left">
+          Хотите проверить конкретный отель на ваши даты?
+        </div>
+        <button onclick="closeDestinationsModal(); openContactModal();" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-dark-950 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer">
+          Запросить расчёт отеля
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONTACT MODAL (С честной формулировкой о времени ответа) -->
+  <div id="contact-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="relative w-full max-w-md p-6 sm:p-8 rounded-3xl luxury-card border-2 border-amber-500/50 glow-gold space-y-6 bg-[#0d1024]">
+      
+      <button onclick="closeContactModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-white focus:outline-none cursor-pointer">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
@@ -1202,20 +1371,20 @@
         </a>
 
         <!-- Copy Partner ID Button -->
-        <button onclick="copyPartnerID()" id="copy-id-btn" class="w-full py-3 px-4 rounded-2xl bg-dark-800 hover:bg-dark-700 text-amber-300 font-bold text-xs uppercase tracking-wider border border-amber-500/30 flex items-center justify-center gap-2 transition-all">
+        <button onclick="copyPartnerID()" id="copy-id-btn" class="w-full py-3 px-4 rounded-2xl bg-dark-800 hover:bg-dark-700 text-amber-300 font-bold text-xs uppercase tracking-wider border border-amber-500/30 flex items-center justify-center gap-2 transition-all cursor-pointer">
           <i data-lucide="copy" class="w-4 h-4"></i>
           <span id="copy-id-text">Скопировать Partner ID: 8440547</span>
         </button>
       </div>
 
-      <p class="text-[11px] text-center text-slate-400">
-        Отвечу лично в течение 10–15 минут.
+      <p class="text-[11px] text-center text-slate-400" data-i18n="contact_response_time">
+        Отвечу лично в ближайшее время (обычно в течение нескольких часов с учетом часовых поясов).
       </p>
 
     </div>
   </div>
 
-  <!-- JAVASCRIPT: Translations, Calculator, Accordion, Modal -->
+  <!-- JAVASCRIPT: Translations, Interactive Video, Calculator with Fee Accounting, Modals -->
   <script>
     // 1. Multi-language Dictionary (RU / EN)
     const i18nData = {
@@ -1247,22 +1416,25 @@
         badge_model: "Надежная бизнес-модель",
         tours_tag: "ПОПУЛЯРНЫЕ НАПРАВЛЕНИЯ",
         tours_title: "Флагманские туры World Tours",
-        tours_subtitle: "Премиальные путешествия со скидкой до 70%",
+        tours_subtitle: "Премиальные путешествия со скидками до 70% (в среднем 65–70%)",
         tours_all_link: "Смотреть все направления",
-        discount_badge: "Скидка 70%",
+        tour1_badge: "Скидка 68%",
         tour1_name: "Мальдивы",
         tour1_desc: "Райские острова",
-        tour1_details: "7 ночей • Вилла на воде • Все включено",
+        tour1_details: "7 ночей • Вилла на воде • All Inclusive • Пример на 15–22 Ноября 2026 (Booking: $1,869)",
+        tour2_badge: "Скидка 70%",
         tour2_name: "Дубай",
         tour2_desc: "Современная роскошь",
-        tour2_details: "6 ночей • 5★ Downtown • Премиум сервис",
+        tour2_details: "6 ночей • 5★ Downtown • Deluxe Suite • Пример на 10–16 Декабря 2026 (Отель: $1,799)",
+        tour3_badge: "Скидка 70%",
         tour3_name: "Париж",
         tour3_desc: "Культура и романтика",
-        tour3_details: "5 ночей • 5★ у Елисейских полей • Экскурсии",
+        tour3_details: "5 ночей • 5★ Champs-Élysées • Superior King • Пример на 05–10 Октября 2026",
+        tour4_badge: "Скидка 65%",
         tour4_name: "Бали",
         tour4_desc: "Природа и гармония",
-        tour4_details: "8 ночей • Приватная вилла • Бассейн в джунглях",
-        tours_disclaimer: "Все цены подтверждены реальными клубными предложениями на одинаковые даты и условия проживания.",
+        tour4_details: "8 ночей • Приватная вилла с бассейном в Убуде • Пример на 12–20 Сентября 2026 (Expedia: $1,699)",
+        tours_disclaimer: "* Примеры расчётов основаны на подтверждённых предложениях клубной платформы на фиксированные даты 2026 года в сравнении с розничными агрегаторами на идентичные условия проживания. Итоговая стоимость зависит от дат, сезона и наличия свободных мест.",
         path_travel_tag: "НАПРАВЛЕНИЕ 1",
         path_travel_title: "Я ХОЧУ<br>ПУТЕШЕСТВОВАТЬ",
         path_travel_f1: "Отели 5★",
@@ -1296,25 +1468,21 @@
         video_watch_btn: "Посмотреть видео",
         calc_tag: "ПОСЧИТАЙТЕ СВОЮ ВЫГОДУ",
         calc_title: "Рассчитайте вашу личную выгоду за 1 год",
-        calc_subtitle: "Узнайте, сколько можно сэкономить на путешествиях и как быстро окупается членство клуба.",
+        calc_subtitle: "Узнайте, сколько можно сэкономить на отелях с учётом клубного членства и начисленных баллов.",
         calc_slider1_label: "Сколько путешествий в год?",
         calc_slider2_label: "Средняя стоимость поездки (обычно, без клуба)",
-        calc_checkbox_label: "Показывать сравнение с обычными ценами (отели, рестораны, аренда авто, экскурсии)",
         calc_result_header: "ВАШ ПОТЕНЦИАЛ ЗА 1 ГОД",
-        calc_retail_label: "Обычная стоимость:",
-        calc_club_label: "Стоимость с клубом:",
-        calc_savings_label: "Ваша экономия:",
-        calc_btn_cta: "Получить полный расчёт и детали",
-        calc_legal_disclaimer: "* Расчет является ориентировочной оценкой на основе средних клубных тарифов и зависит от сезона, направления и выбранных дат. Не является публичной офертой или гарантией дохода/фиксированной суммы экономии.",
+        calc_btn_cta: "Получить полный расчёт и консультацию",
+        calc_legal_disclaimer: "* Расчет является ориентировочной иллюстративной оценкой на основе средних клубных тарифов. Клуб не гарантирует фиксированную сумму экономии или дохода. Результат зависит от выбранных направлений, дат, сезона и категории номеров.",
         stab_tag: "КАК ЭТО РАБОТАЕТ",
         stab_title: "Почему закрытый клуб устойчив и продолжает расти",
-        stab_subtitle: "Строгий математический баланс и ограниченное количество участников создают стабильную и долгосрочную систему.",
-        stab_card1_title: "Правило выплат",
-        stab_card1_desc: "Большая часть дохода компании идет на оплату путешествий участников клуба и прямые оптовые контракты с глобальными сетями.",
-        stab_card2_title: "Естественная стабильность",
-        stab_card2_desc: "Чем больше людей путешествует, тем сильнее и устойчивее система за счет масштаба и оптовых объемов.",
-        stab_card3_title: "Ограниченное количество мест",
-        stab_card3_desc: "В клубе есть лимиты по участникам, что сохраняет высокую ценность предложений и обеспечивает персональное качество.",
+        stab_subtitle: "Прозрачная клубная модель по принципу оптового B2B-выкупа без посредников и рекламных наценок.",
+        stab_card1_title: "Прямой выкуп номеров",
+        stab_card1_desc: "Клуб работает напрямую с отельными сетями и оптовыми консолидаторами, закупая блоки номеров по оптовой себестоимости.",
+        stab_card2_title: "Модель без рекламных наценок",
+        stab_card2_desc: "В отличие от публичных агрегаторов, клуб не тратит миллионы на контекстную рекламу и ТВ, направляя средства в скидки и баллы участникам.",
+        stab_card3_title: "Органический рост команды",
+        stab_card3_desc: "Клуб расширяется исключительно по личным рекомендациям довольных путешественников и партнёров, обеспечивая персональную поддержку.",
         team_tag: "КОГО Я ИЩУ В СВОЮ ЛИЧНУЮ КОМАНДУ",
         team_yes_title: "Вам точно ко мне, если:",
         team_yes_1: "Вы любите путешествовать, изучать мир",
@@ -1333,22 +1501,22 @@
         artem_quote_author: "Артем",
         tiers_tag: "УРОВНИ ЧЛЕНСТВА",
         tiers_title: "Выберите свой уровень",
-        tiers_subtitle: "Каждый уровень дает доступ к эксклюзивным преимуществам.",
+        tiers_subtitle: "Каждый уровень дает доступ к эксклюзивным преимуществам и удвоению баллов Travel Points.",
         tier_silver_tag: "Стартовый уровень",
         tier_silver_name: "Silver",
-        tier_silver_desc: "Доступ к базовым предложениям и Travel Points.",
+        tier_silver_desc: "Доступ к базовой отельной платформе и накоплению баллов.",
         tier_silver_price: "$69.95 / активация",
         tier_silver_sub: "$69.95 в месяц • 140 Travel Points / мес",
         tier_btn: "Подробнее",
         tier_titanium_tag: "Популярный выбор",
         tier_titanium_name: "Titanium",
-        tier_titanium_desc: "Больше направлений и бонусов для путешествий и бизнеса.",
+        tier_titanium_desc: "Больше направлений, туры World Tours и бонусы для путешествий и бизнеса.",
         tier_titanium_price: "$149.95 / активация",
         tier_titanium_sub: "$79.95 в месяц • 160 Travel Points / мес",
         tier_plat_badge: "VIP ВЫБОР",
         tier_plat_tag: "Максимальные преимущества",
         tier_plat_name: "Platinum VIP",
-        tier_plat_desc: "Расширенный доступ, лучшие отели, повышенные баллы и приоритетная поддержка.",
+        tier_plat_desc: "Расширенный доступ ко всем World Tours, максимальная скидка, удвоенные баллы и VIP-поддержка.",
         tier_plat_price: "$269.95 / активация",
         tier_plat_sub: "$135 в месяц • 270 Travel Points / мес (удвоение!)",
         faq_tag: "ЧАСТЫЕ ВОПРОСЫ",
@@ -1357,18 +1525,19 @@
         faq_a1: "Это клубная система доступа к оптовым базам отелей и курортов по всему миру. По аналогии с Costco или Amazon Prime, члены клуба получают доступ к оптовой себестоимости номеров без многократных наценок розничных агрегаторов.",
         faq_q2: "Нужно ли привлекать людей?",
         faq_a2: "Нет, абсолютно! Если ваша цель — просто выгодно путешествовать с семьей со скидками до 70%, вы пользуетесь платформой и накапливаете Travel Points. Партнерская программа и бизнес — это отдельная добровольная возможность.",
-        faq_q3: "Сколько стоит членство?",
-        faq_a3: "Входной взнос зависит от тарифа (Silver $69.95, Titanium $149.95, Platinum $269.95). Каждый взнос превращается в удвоенные баллы Travel Points, которые сразу идут на бронирование отелей. Экономия уже с первой-второй поездки полностью перекрывает затраты.",
+        faq_q3: "Сколько стоит членство и как оно окупается?",
+        faq_a3: "Стоимость зависит от тарифа (Silver $69.95, Titanium $149.95, Platinum $269.95). Все взносы превращаются в баллы Travel Points (1$ = 2 pts) для оплаты отелей. Срок окупаемости индивидуален: чем чаще вы путешествуете и чем выше категория отелей, тем существеннее выгода. Фиксированной гарантии окупаемости нет, так как результат зависит от выбранных дат и регулярности поездок.",
         faq_q4: "Могу ли я отменить?",
         faq_a4: "Да, членство можно отменить или приостановить в любой момент в личном кабинете без каких-либо штрафов или скрытых комиссий.",
         faq_q5: "Где посмотреть все направления?",
         faq_a5: "После входа в закрытую платформу вам открыт глобальный поиск по более чем 1 000 000 отелей, резортов, круизов и туров World Tours по всему миру.",
         faq_q6: "Законна ли деятельность компании?",
         faq_a6: "Компания зарегистрирована в США, соблюдает все международные стандарты защиты туристов и потребителей, а платежи проводятся через официальный международный банковский эквайринг.",
+        contact_response_time: "Отвечу лично в ближайшее время (обычно в течение нескольких часов с учетом часовых поясов).",
         footer_cta_title: "Ваше следующее путешествие может начаться уже сегодня.",
         footer_cta_sub: "Напишите мне, и я с радостью отвечу на все вопросы и помогу подобрать подходящий формат участия.",
         footer_btn_artem: "Написать Артему (Telegram)",
-        footer_disclaimer: "Отказ от ответственности: Закрытый клуб путешественников предоставляет доступ к оптовым тарифам и бонусной программе. Любые расчеты экономии носят исключительно ориентировочный характер. Клуб не дает гарантий фиксированного дохода или безопасности инвестиций. Доход партнеров зависит исключительно от личных усилий, навыков и объема работы.",
+        footer_disclaimer: "Отказ от ответственности: Закрытый клуб путешественников предоставляет доступ к оптовым тарифам и бонусной программе. Любые расчеты экономии носят исключительно ориентировочный характер. Клуб не дает гарантий фиксированного дохода или окупаемости. Доход партнеров зависит исключительно от личных усилий, навыков и объема работы.",
         footer_rights: "© 2026 Закрытый Travel-Клуб. Все права защищены."
       },
       en: {
@@ -1399,22 +1568,25 @@
         badge_model: "Sustainable business model",
         tours_tag: "POPULAR DESTINATIONS",
         tours_title: "Flagship World Tours",
-        tours_subtitle: "Premium getaways with up to 70% savings",
+        tours_subtitle: "Premium getaways with up to 70% savings (average 65–70%)",
         tours_all_link: "View all destinations",
-        discount_badge: "70% Off",
+        tour1_badge: "68% Off",
         tour1_name: "Maldives",
         tour1_desc: "Paradise Islands",
-        tour1_details: "7 Nights • Overwater Villa • All Inclusive",
+        tour1_details: "7 Nights • Overwater Villa • All Inclusive • Sample Nov 15–22, 2026 (Booking: $1,869)",
+        tour2_badge: "70% Off",
         tour2_name: "Dubai",
         tour2_desc: "Modern Luxury",
-        tour2_details: "6 Nights • 5★ Downtown • Premium Service",
+        tour2_details: "6 Nights • 5★ Downtown • Deluxe Suite • Sample Dec 10–16, 2026 (Hotel: $1,799)",
+        tour3_badge: "70% Off",
         tour3_name: "Paris",
         tour3_desc: "Culture & Romance",
-        tour3_details: "5 Nights • 5★ Champs-Élysées • Excursions",
+        tour3_details: "5 Nights • 5★ Champs-Élysées • Superior King • Sample Oct 05–10, 2026",
+        tour4_badge: "65% Off",
         tour4_name: "Bali",
         tour4_desc: "Nature & Harmony",
-        tour4_details: "8 Nights • Private Jungle Villa • Pool",
-        tours_disclaimer: "All prices are verified based on confirmed club member bookings on identical dates and terms.",
+        tour4_details: "8 Nights • Private Jungle Pool Villa • Sample Sep 12–20, 2026 (Expedia: $1,699)",
+        tours_disclaimer: "* Calculated examples are based on confirmed club platform offers on fixed 2026 dates compared to retail aggregators under identical booking conditions. Final prices depend on dates, season, and room availability.",
         path_travel_tag: "PATH 1",
         path_travel_title: "I WANT TO<br>TRAVEL",
         path_travel_f1: "5★ Luxury Hotels",
@@ -1448,25 +1620,21 @@
         video_watch_btn: "Watch Video",
         calc_tag: "CALCULATE YOUR SAVINGS",
         calc_title: "Estimate your personal 1-year benefit",
-        calc_subtitle: "See how much you can save on vacation and how fast membership pays for itself.",
+        calc_subtitle: "See how much you can save on vacation accounting for annual membership fees and accumulated travel points.",
         calc_slider1_label: "How many trips per year?",
         calc_slider2_label: "Average trip budget (regular, non-club)",
-        calc_checkbox_label: "Show comparison with retail rates (hotels, resorts, rentals, excursions)",
         calc_result_header: "YOUR 1-YEAR POTENTIAL",
-        calc_retail_label: "Regular retail cost:",
-        calc_club_label: "Club member cost:",
-        calc_savings_label: "Your net savings:",
-        calc_btn_cta: "Get Full Breakdown & Details",
-        calc_legal_disclaimer: "* Calculations are an estimate based on average club pricing and depend on season, destination, and selected dates. This is not a guarantee of specific savings or earnings.",
+        calc_btn_cta: "Get Full Breakdown & Consultation",
+        calc_legal_disclaimer: "* Calculations are an illustrative estimate based on average club pricing. The club does not guarantee a fixed amount of savings or income. Results depend on selected destinations, travel frequency, season, and room tier.",
         stab_tag: "HOW IT WORKS",
         stab_title: "Why the private club is sustainable and growing",
-        stab_subtitle: "Strict mathematical cash flow balance and limited member spots create a resilient, long-term system.",
-        stab_card1_title: "Payout Rule",
-        stab_card1_desc: "The majority of corporate revenue directly funds member travel and wholesale contracts with global hospitality networks.",
-        stab_card2_title: "Natural Stability",
-        stab_card2_desc: "As more members travel, wholesale purchasing power expands, making the entire ecosystem stronger.",
-        stab_card3_title: "Limited Membership Slots",
-        stab_card3_desc: "The club maintains controlled member capacity to preserve premium deal exclusivity and top-tier support.",
+        stab_subtitle: "Transparent wholesale B2B room procurement model without retailer markups or marketing overhead.",
+        stab_card1_title: "Direct Wholesale Inventory",
+        stab_card1_desc: "The club partners directly with hospitality chains and wholesale bed banks, booking room blocks at genuine cost basis.",
+        stab_card2_title: "Zero Advertising Markups",
+        stab_card2_desc: "Unlike public OTA aggregators, the club avoids multimillion-dollar TV and ad budgets, converting savings directly into member discounts.",
+        stab_card3_title: "Organic Team Growth",
+        stab_card3_desc: "The club expands exclusively via personal word-of-mouth recommendations, ensuring dedicated mentorship and concierge support.",
         team_tag: "WHO I AM LOOKING FOR IN MY TEAM",
         team_yes_title: "We are a great fit if:",
         team_yes_1: "You love traveling and exploring the world",
@@ -1485,10 +1653,10 @@
         artem_quote_author: "Artem",
         tiers_tag: "MEMBERSHIP TIERS",
         tiers_title: "Choose Your Level",
-        tiers_subtitle: "Each tier unlocks exclusive private club privileges.",
+        tiers_subtitle: "Each tier unlocks exclusive private club privileges and 2x Travel Points accumulation.",
         tier_silver_tag: "Starter Level",
         tier_silver_name: "Silver",
-        tier_silver_desc: "Access to baseline deals and Travel Points.",
+        tier_silver_desc: "Access to baseline hotel deals and points accumulation.",
         tier_silver_price: "$69.95 / activation",
         tier_silver_sub: "$69.95/month • 140 Travel Points / mo",
         tier_btn: "Learn More",
@@ -1509,14 +1677,15 @@
         faq_a1: "It is a member-owned platform accessing direct wholesale hotel inventory worldwide, modeled like Costco or Amazon Prime. Members access true wholesale rates without retailer markups.",
         faq_q2: "Do I have to recruit or invite people?",
         faq_a2: "Not at all! If your goal is simply luxurious family vacations at up to 70% off, you use the portal and accumulate Travel Points. The business referral program is 100% voluntary.",
-        faq_q3: "How much does it cost?",
-        faq_a3: "Activation depends on tier (Silver $69.95, Titanium $149.95, Platinum $269.95). Every membership dollar converts into 2x Travel Points used towards booking trips. In 1-2 trips, the savings exceed the fees.",
+        faq_q3: "How much does it cost and how does it pay off?",
+        faq_a3: "Cost depends on chosen tier (Silver $69.95, Titanium $149.95, Platinum $269.95). Monthly contributions convert into 2x Travel Points (1$ = 2 pts) for booking stays. Payoff time is individualized: the more frequently you travel, the greater the aggregate wholesale savings. There is no fixed guarantee of payoff as results depend on chosen dates and travel volume.",
         faq_q4: "Can I cancel?",
         faq_a4: "Yes, you can pause or cancel your subscription at any time directly in your account dashboard without penalties or hidden fees.",
         faq_q5: "Where can I view all destinations?",
         faq_a5: "Upon joining, you gain immediate access to over 1,000,000 hotels, resorts, cruises, and World Tours worldwide.",
         faq_q6: "Is the company legally established?",
         faq_a6: "Yes, the company is registered in the United States, fully compliant with global travel and consumer regulations, and processed through international bank acquiring.",
+        contact_response_time: "I will respond personally as soon as possible (typically within a few hours considering time zones).",
         footer_cta_title: "Your next journey can begin today.",
         footer_cta_sub: "Message me and I will gladly answer your questions and help you choose the best membership tier.",
         footer_btn_artem: "Contact Artem (Telegram)",
@@ -1557,15 +1726,35 @@
       setLanguage(currentLang === 'ru' ? 'en' : 'ru');
     });
 
-    // 2. Interactive Calculator Logic
+    // 2. Custom Video Player (Seamlessly loads YouTube player on click)
+    let videoPlaying = false;
+    function playArtemVideo() {
+      const cover = document.getElementById('video-cover-container');
+      const slot = document.getElementById('video-iframe-slot');
+      if (videoPlaying) return;
+      videoPlaying = true;
+      cover.style.display = 'none';
+      slot.innerHTML = `<iframe 
+        src="https://www.youtube.com/embed/CJUqSTQX3uc?autoplay=1&rel=0&modestbranding=1" 
+        title="Видео от Артема — Закрытый клуб путешественников" 
+        class="w-full h-full rounded-2xl"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>`;
+    }
+
+    // 3. Interactive Calculator Logic with Fee Deduction & Tier Breakdown
     const tripsRange = document.getElementById('trips-range');
     const budgetRange = document.getElementById('budget-range');
     const tripsDisplay = document.getElementById('trips-display');
     const budgetDisplay = document.getElementById('budget-display');
     const retailCost = document.getElementById('retail-cost');
     const clubCost = document.getElementById('club-cost');
+    const membershipFee = document.getElementById('membership-fee');
+    const feeRow = document.getElementById('fee-row');
+    const pointsEarned = document.getElementById('points-earned');
     const savingsCost = document.getElementById('savings-cost');
-    const compareCheckbox = document.getElementById('compare-checkbox');
+    const deductFeeCheckbox = document.getElementById('deduct-fee-checkbox');
 
     function updateCalculator() {
       const trips = parseInt(tripsRange.value, 10);
@@ -1581,26 +1770,55 @@
 
       budgetDisplay.textContent = '$' + budget.toLocaleString();
 
-      if (compareCheckbox.checked) {
-        const totalRetail = trips * budget;
-        const totalClub = Math.round(totalRetail * 0.40);
-        const savings = totalRetail - totalClub;
+      // Selected Tier
+      const selectedTier = document.querySelector('input[name="calc-tier"]:checked')?.value || 'platinum';
+      let annualFee = 0;
+      let annualPoints = 0;
 
-        retailCost.textContent = '$' + totalRetail.toLocaleString();
-        clubCost.textContent = '$' + totalClub.toLocaleString();
-        savingsCost.textContent = '$' + savings.toLocaleString();
+      if (selectedTier === 'platinum') {
+        annualFee = 135 * 12; // $1,620
+        annualPoints = 270 * 12; // 3,240 pts
+        membershipFee.textContent = '-$' + annualFee.toLocaleString();
+        pointsEarned.textContent = '+' + annualPoints.toLocaleString() + ' pts';
       } else {
-        retailCost.textContent = '—';
-        clubCost.textContent = '—';
-        savingsCost.textContent = '—';
+        annualFee = Math.round(79.95 * 12); // $959
+        annualPoints = 160 * 12; // 1,920 pts
+        membershipFee.textContent = '-$' + annualFee.toLocaleString();
+        pointsEarned.textContent = '+' + annualPoints.toLocaleString() + ' pts';
+      }
+
+      const totalRetail = trips * budget;
+      const totalClub = Math.round(totalRetail * 0.40); // 60% gross savings on stays
+      const grossSavings = totalRetail - totalClub;
+
+      let netCashSavings = grossSavings;
+      if (deductFeeCheckbox.checked) {
+        feeRow.style.display = 'flex';
+        netCashSavings = grossSavings - annualFee;
+      } else {
+        feeRow.style.display = 'none';
+      }
+
+      retailCost.textContent = '$' + totalRetail.toLocaleString();
+      clubCost.textContent = '$' + totalClub.toLocaleString();
+
+      if (netCashSavings >= 0) {
+        savingsCost.textContent = '+$' + netCashSavings.toLocaleString();
+        savingsCost.className = 'text-4xl sm:text-5xl font-black text-gradient-gold font-mono';
+      } else {
+        savingsCost.textContent = '-$' + Math.abs(netCashSavings).toLocaleString();
+        savingsCost.className = 'text-4xl sm:text-5xl font-black text-rose-400 font-mono';
       }
     }
 
     tripsRange.addEventListener('input', updateCalculator);
     budgetRange.addEventListener('input', updateCalculator);
-    compareCheckbox.addEventListener('change', updateCalculator);
+    deductFeeCheckbox.addEventListener('change', updateCalculator);
+    document.querySelectorAll('input[name="calc-tier"]').forEach(r => {
+      r.addEventListener('change', updateCalculator);
+    });
 
-    // 3. FAQ Accordion Logic
+    // 4. FAQ Accordion Logic
     document.querySelectorAll('.faq-trigger').forEach(trigger => {
       trigger.addEventListener('click', () => {
         const content = trigger.nextElementSibling;
@@ -1620,18 +1838,31 @@
       });
     });
 
-    // 4. Contact Modal Logic
-    const modal = document.getElementById('contact-modal');
+    // 5. Contact Modal Logic
+    const contactModal = document.getElementById('contact-modal');
     function openContactModal() {
-      modal.classList.remove('hidden');
+      contactModal.classList.remove('hidden');
     }
     function closeContactModal() {
-      modal.classList.add('hidden');
+      contactModal.classList.add('hidden');
     }
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeContactModal();
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) closeContactModal();
     });
 
+    // 6. Destinations Explorer Modal
+    const destModal = document.getElementById('destinations-modal');
+    function openDestinationsModal() {
+      destModal.classList.remove('hidden');
+    }
+    function closeDestinationsModal() {
+      destModal.classList.add('hidden');
+    }
+    destModal.addEventListener('click', (e) => {
+      if (e.target === destModal) closeDestinationsModal();
+    });
+
+    // 7. Copy Partner ID
     function copyPartnerID() {
       navigator.clipboard.writeText('8440547');
       const textSpan = document.getElementById('copy-id-text');
@@ -1642,7 +1873,7 @@
       }, 2500);
     }
 
-    // 5. Mobile Menu Toggle
+    // 8. Mobile Menu Toggle
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     mobileBtn.addEventListener('click', () => {
