@@ -1658,6 +1658,7 @@
     const deductFeeCheckbox = document.getElementById('deduct-fee-checkbox');
 
     function updateCalculator() {
+      const fmt = (num) => num.toLocaleString('en-US');
       const trips = parseInt(tripsRange.value);
       const budget = parseInt(budgetRange.value);
 
@@ -1665,7 +1666,7 @@
         ? `${trips} ${trips === 1 ? 'поездка' : (trips < 5 ? 'поездки' : 'поездок')}`
         : `${trips} ${trips === 1 ? 'trip' : 'trips'}`;
 
-      budgetDisplay.textContent = '$' + budget.toLocaleString();
+      budgetDisplay.textContent = '$' + fmt(budget);
 
       const selectedTier = document.querySelector('input[name="calc-tier"]:checked')?.value || 'platinum';
       let annualFee, annualPoints, discountRate, discountPercentText;
@@ -1692,14 +1693,14 @@
           : `Club Hotel Rates (~${discountPercentText} off):`;
       }
 
-      retailCost.textContent = '$' + totalRetail.toLocaleString();
-      clubCost.textContent = '$' + totalClub.toLocaleString();
+      retailCost.textContent = '$' + fmt(totalRetail);
+      clubCost.textContent = '$' + fmt(totalClub);
       if (hotelSavings) {
-        hotelSavings.textContent = '+$' + directHotelSavings.toLocaleString();
+        hotelSavings.textContent = '+$' + fmt(directHotelSavings);
       }
 
-      membershipFee.textContent = '-$' + annualFee.toLocaleString();
-      pointsEarned.textContent = `+${annualPoints.toLocaleString()} pts ($${annualPoints.toLocaleString()})`;
+      membershipFee.textContent = '-$' + fmt(annualFee);
+      pointsEarned.textContent = `+${fmt(annualPoints)} pts ($${fmt(annualPoints)})`;
 
       let netCashSavings = directHotelSavings;
       let totalNetBenefit = 0;
@@ -1712,11 +1713,11 @@
         if (calcBreakdownSub) {
           calcBreakdownSub.textContent = currentLang === 'ru'
             ? (netCashSavings >= 0 
-                ? `Чистая экономия $${netCashSavings.toLocaleString()} + $${annualPoints.toLocaleString()} баллами на туры` 
-                : `Взнос -$${Math.abs(netCashSavings).toLocaleString()} окупается $${annualPoints.toLocaleString()} баллами`)
+                ? `Чистая экономия $${fmt(netCashSavings)} + $${fmt(annualPoints)} баллами на туры` 
+                : `Взнос -$${fmt(Math.abs(netCashSavings))} окупается $${fmt(annualPoints)} баллами`)
             : (netCashSavings >= 0 
-                ? `Net cash savings $${netCashSavings.toLocaleString()} + $${annualPoints.toLocaleString()} in points` 
-                : `Fee -$${Math.abs(netCashSavings).toLocaleString()} offset by $${annualPoints.toLocaleString()} in points`);
+                ? `Net cash savings $${fmt(netCashSavings)} + $${fmt(annualPoints)} in points` 
+                : `Fee -$${fmt(Math.abs(netCashSavings))} offset by $${fmt(annualPoints)} in points`);
         }
       } else {
         feeRow.style.display = 'none';
@@ -1724,16 +1725,16 @@
 
         if (calcBreakdownSub) {
           calcBreakdownSub.textContent = currentLang === 'ru'
-            ? `Экономия $${directHotelSavings.toLocaleString()} на отелях + $${annualPoints.toLocaleString()} баллами на туры`
-            : `Savings $${directHotelSavings.toLocaleString()} on hotels + $${annualPoints.toLocaleString()} in points`;
+            ? `Экономия $${fmt(directHotelSavings)} на отелях + $${fmt(annualPoints)} баллами на туры`
+            : `Savings $${fmt(directHotelSavings)} on hotels + $${fmt(annualPoints)} in points`;
         }
       }
 
       if (totalNetBenefit >= 0) {
-        savingsCost.textContent = '+$' + totalNetBenefit.toLocaleString();
+        savingsCost.textContent = '+$' + fmt(totalNetBenefit);
         savingsCost.className = 'text-4xl sm:text-5xl font-black text-gradient-gold font-mono';
       } else {
-        savingsCost.textContent = '-$' + Math.abs(totalNetBenefit).toLocaleString();
+        savingsCost.textContent = '-$' + fmt(Math.abs(totalNetBenefit));
         savingsCost.className = 'text-4xl sm:text-5xl font-black text-rose-400 font-mono';
       }
     }
