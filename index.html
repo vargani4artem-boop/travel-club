@@ -759,33 +759,40 @@
           <!-- Itemized Financial Breakdown -->
           <div class="space-y-2.5 border-b border-amber-500/20 pb-4 text-xs sm:text-sm">
             <div class="flex justify-between items-center">
-              <span class="text-slate-400">Стоимость в розницу:</span>
+              <span class="text-slate-400" data-i18n="calc_retail_label">Стоимость в розницу:</span>
               <span id="retail-cost" class="font-mono font-bold text-white text-base">$4,500</span>
             </div>
             <div class="flex justify-between items-center">
-              <span class="text-slate-400">Отели по оптовым ценам:</span>
-              <span id="club-cost" class="font-mono font-bold text-emerald-400 text-base">$1,800</span>
+              <span class="text-slate-400" id="club-cost-label" data-i18n="calc_club_label">Отели по клубу (~65% скидка):</span>
+              <span id="club-cost" class="font-mono font-bold text-emerald-400 text-base">$1,575</span>
+            </div>
+            <div class="flex justify-between items-center text-emerald-300">
+              <span data-i18n="calc_savings_label">Экономия на отелях:</span>
+              <span id="hotel-savings" class="font-mono font-bold text-sm text-emerald-400">+$2,925</span>
             </div>
             <div id="fee-row" class="flex justify-between items-center text-rose-300/90">
-              <span>Годовая подписка:</span>
+              <span data-i18n="calc_fee_label">Годовой членский взнос:</span>
               <span id="membership-fee" class="font-mono font-bold text-sm">-$1,620</span>
             </div>
-            <div class="flex justify-between items-center text-amber-300 pt-1 border-t border-amber-500/10">
-              <span class="flex items-center gap-1">
+            <div class="flex justify-between items-center text-amber-300 pt-1.5 border-t border-amber-500/10">
+              <span class="flex items-center gap-1.5">
                 <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
-                Накоплено Travel Points:
+                <span data-i18n="calc_points_label">Бонусные Travel Points (2x):</span>
               </span>
-              <span id="points-earned" class="font-mono font-bold text-sm">+3,240 pts</span>
+              <span id="points-earned" class="font-mono font-bold text-sm text-amber-300">+3,240 pts ($3,240)</span>
             </div>
           </div>
 
           <!-- Total Result -->
-          <div class="space-y-1">
-            <div class="text-xs text-amber-300 font-bold uppercase tracking-wider">
-              Чистая денежная выгода:
+          <div class="space-y-1.5">
+            <div class="text-xs text-amber-300 font-bold uppercase tracking-wider" id="calc-net-label" data-i18n="calc_net_label">
+              Итоговая выгода с баллами:
             </div>
             <div id="savings-cost" class="text-4xl sm:text-5xl font-black text-gradient-gold font-mono">
-              +$1,080
+              +$4,545
+            </div>
+            <div id="calc-breakdown-sub" class="text-[11px] sm:text-xs text-slate-300 font-medium">
+              Чистая экономия $1,305 + $3,240 баллами на туры
             </div>
           </div>
 
@@ -1432,6 +1439,12 @@
         calc_slider1_label: "Сколько путешествий в год?",
         calc_slider2_label: "Средняя стоимость поездки (обычно, без клуба)",
         calc_result_header: "ВАШ ПОТЕНЦИАЛ ЗА 1 ГОД",
+        calc_retail_label: "Стоимость в розницу:",
+        calc_club_label: "Отели по оптовым ценам:",
+        calc_savings_label: "Экономия на отелях:",
+        calc_fee_label: "Годовой членский взнос:",
+        calc_points_label: "Бонусные Travel Points (2x):",
+        calc_net_label: "Итоговая выгода с баллами:",
         calc_btn_start: "Начать экономить",
         calc_legal_disclaimer: "* Расчет является ориентировочной иллюстративной оценкой на основе средних клубных тарифов. Клуб не гарантирует фиксированную сумму экономии или дохода. Результат зависит от выбранных направлений, дат, сезона и категории номеров.",
         stab_tag: "КАК ЭТО РАБОТАЕТ",
@@ -1533,6 +1546,12 @@
         calc_slider1_label: "How many trips per year?",
         calc_slider2_label: "Average trip spend (retail, without club)",
         calc_result_header: "YOUR 1-YEAR FINANCIAL POTENTIAL",
+        calc_retail_label: "Standard Retail Price:",
+        calc_club_label: "Club Hotel Rates:",
+        calc_savings_label: "Direct Hotel Savings:",
+        calc_fee_label: "Annual Membership Fee:",
+        calc_points_label: "Bonus Travel Points (2x):",
+        calc_net_label: "Total Benefit with Points:",
         calc_btn_start: "Start Saving Now",
         calc_legal_disclaimer: "* The calculator provides an illustrative estimate based on average club pricing. The club does not guarantee fixed savings or earnings. Exact outcomes depend on selected destinations, booking dates, seasonality, and room types.",
         stab_tag: "HOW IT WORKS",
@@ -1629,10 +1648,13 @@
     const budgetDisplay = document.getElementById('budget-display');
     const retailCost = document.getElementById('retail-cost');
     const clubCost = document.getElementById('club-cost');
+    const clubCostLabel = document.getElementById('club-cost-label');
+    const hotelSavings = document.getElementById('hotel-savings');
     const membershipFee = document.getElementById('membership-fee');
     const feeRow = document.getElementById('fee-row');
     const pointsEarned = document.getElementById('points-earned');
     const savingsCost = document.getElementById('savings-cost');
+    const calcBreakdownSub = document.getElementById('calc-breakdown-sub');
     const deductFeeCheckbox = document.getElementById('deduct-fee-checkbox');
 
     function updateCalculator() {
@@ -1646,40 +1668,72 @@
       budgetDisplay.textContent = '$' + budget.toLocaleString();
 
       const selectedTier = document.querySelector('input[name="calc-tier"]:checked')?.value || 'platinum';
-      let annualFee = 1620;
-      let annualPoints = 3240;
+      let annualFee, annualPoints, discountRate, discountPercentText;
 
       if (selectedTier === 'platinum') {
         annualFee = 135 * 12; // $1,620
-        annualPoints = 270 * 12; // 3,240 pts
+        annualPoints = 270 * 12; // 3,240 pts ($3,240 travel purchasing value)
+        discountRate = 0.65; // ~65% average VIP discount
+        discountPercentText = '65%';
       } else {
         annualFee = Math.round(79.95 * 12); // $959
-        annualPoints = 160 * 12; // 1,920 pts
+        annualPoints = 160 * 12; // 1,920 pts ($1,920 travel purchasing value)
+        discountRate = 0.50; // ~50% average Titanium discount
+        discountPercentText = '50%';
       }
 
-      membershipFee.textContent = '-$' + annualFee.toLocaleString();
-      pointsEarned.textContent = '+' + annualPoints.toLocaleString() + ' pts';
-
       const totalRetail = trips * budget;
-      const totalClub = Math.round(totalRetail * 0.40); // 60% gross savings on stays
-      const grossSavings = totalRetail - totalClub;
+      const totalClub = Math.round(totalRetail * (1 - discountRate));
+      const directHotelSavings = totalRetail - totalClub;
 
-      let netCashSavings = grossSavings;
-      if (deductFeeCheckbox.checked) {
-        feeRow.style.display = 'flex';
-        netCashSavings = grossSavings - annualFee;
-      } else {
-        feeRow.style.display = 'none';
+      if (clubCostLabel) {
+        clubCostLabel.textContent = currentLang === 'ru'
+          ? `Отели по клубу (~${discountPercentText} скидка):`
+          : `Club Hotel Rates (~${discountPercentText} off):`;
       }
 
       retailCost.textContent = '$' + totalRetail.toLocaleString();
       clubCost.textContent = '$' + totalClub.toLocaleString();
+      if (hotelSavings) {
+        hotelSavings.textContent = '+$' + directHotelSavings.toLocaleString();
+      }
 
-      if (netCashSavings >= 0) {
-        savingsCost.textContent = '+$' + netCashSavings.toLocaleString();
+      membershipFee.textContent = '-$' + annualFee.toLocaleString();
+      pointsEarned.textContent = `+${annualPoints.toLocaleString()} pts ($${annualPoints.toLocaleString()})`;
+
+      let netCashSavings = directHotelSavings;
+      let totalNetBenefit = 0;
+
+      if (deductFeeCheckbox.checked) {
+        feeRow.style.display = 'flex';
+        netCashSavings = directHotelSavings - annualFee;
+        totalNetBenefit = directHotelSavings + annualPoints - annualFee;
+
+        if (calcBreakdownSub) {
+          calcBreakdownSub.textContent = currentLang === 'ru'
+            ? (netCashSavings >= 0 
+                ? `Чистая экономия $${netCashSavings.toLocaleString()} + $${annualPoints.toLocaleString()} баллами на туры` 
+                : `Взнос -$${Math.abs(netCashSavings).toLocaleString()} окупается $${annualPoints.toLocaleString()} баллами`)
+            : (netCashSavings >= 0 
+                ? `Net cash savings $${netCashSavings.toLocaleString()} + $${annualPoints.toLocaleString()} in points` 
+                : `Fee -$${Math.abs(netCashSavings).toLocaleString()} offset by $${annualPoints.toLocaleString()} in points`);
+        }
+      } else {
+        feeRow.style.display = 'none';
+        totalNetBenefit = directHotelSavings + annualPoints;
+
+        if (calcBreakdownSub) {
+          calcBreakdownSub.textContent = currentLang === 'ru'
+            ? `Экономия $${directHotelSavings.toLocaleString()} на отелях + $${annualPoints.toLocaleString()} баллами на туры`
+            : `Savings $${directHotelSavings.toLocaleString()} on hotels + $${annualPoints.toLocaleString()} in points`;
+        }
+      }
+
+      if (totalNetBenefit >= 0) {
+        savingsCost.textContent = '+$' + totalNetBenefit.toLocaleString();
         savingsCost.className = 'text-4xl sm:text-5xl font-black text-gradient-gold font-mono';
       } else {
-        savingsCost.textContent = '-$' + Math.abs(netCashSavings).toLocaleString();
+        savingsCost.textContent = '-$' + Math.abs(totalNetBenefit).toLocaleString();
         savingsCost.className = 'text-4xl sm:text-5xl font-black text-rose-400 font-mono';
       }
     }
