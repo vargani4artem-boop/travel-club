@@ -889,6 +889,18 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/20 to-transparent"></div>
               </div>
 
+              <!-- Slide 6: Life & Moments (Photos 1) -->
+              <div class="gallery-slide absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 z-0 pointer-events-none" data-slide="5">
+                <img src="artem_gallery_6.webp" alt="Жизнь и впечатления" loading="lazy" decoding="async" width="800" height="1000" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/20 to-transparent"></div>
+              </div>
+
+              <!-- Slide 7: Lifestyle (Photos 2) -->
+              <div class="gallery-slide absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 z-0 pointer-events-none" data-slide="6">
+                <img src="artem_gallery_7.webp" alt="Стиль жизни и путешествия" loading="lazy" decoding="async" width="800" height="1000" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/20 to-transparent"></div>
+              </div>
+
               <!-- Navigation Arrows -->
               <button type="button" onclick="artemGalleryPrev()" aria-label="Предыдущее фото" class="gallery-nav-btn absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/65 hover:bg-amber-500 text-white hover:text-dark-950 border border-amber-500/30 hover:border-amber-400 flex items-center justify-center backdrop-blur-md transition-all shadow-lg cursor-pointer">
                 <i data-lucide="chevron-left" class="w-5 h-5"></i>
@@ -909,7 +921,7 @@
                 </div>
                 <!-- Slide counter badge -->
                 <div class="pointer-events-auto px-2.5 py-1 rounded-full bg-black/75 border border-amber-500/40 text-[11px] font-mono font-bold text-amber-400 backdrop-blur-md">
-                  <span id="artem-slide-current">1</span> / <span>5</span>
+                  <span id="artem-slide-current">1</span> / <span>7</span>
                 </div>
               </div>
 
@@ -922,6 +934,8 @@
               <button type="button" onclick="artemGalleryGoTo(2)" aria-label="Слайд 3: Работа механиком" class="gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer"></button>
               <button type="button" onclick="artemGalleryGoTo(3)" aria-label="Слайд 4: Wise Kids" class="gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer"></button>
               <button type="button" onclick="artemGalleryGoTo(4)" aria-label="Слайд 5: Правда о наркотиках" class="gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer"></button>
+              <button type="button" onclick="artemGalleryGoTo(5)" aria-label="Слайд 6: Жизнь и впечатления" class="gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer"></button>
+              <button type="button" onclick="artemGalleryGoTo(6)" aria-label="Слайд 7: Стиль жизни" class="gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer"></button>
             </div>
 
           </div>
@@ -2140,7 +2154,7 @@
     // ARTEM 5-SLIDE PHOTO GALLERY (P0-5 ТЗ)
     // ==========================================
     let currentArtemSlide = 0;
-    const totalArtemSlides = 5;
+    const totalArtemSlides = 7;
 
     const galleryCaptions = {
       ru: [
@@ -2148,14 +2162,18 @@
         { cat: "Предпринимательство и технологии", title: "16+ лет в бизнесе и AI-автоматизации", desc: "«Развитие веб-проектов, интернет-маркетинга и внедрение прикладных AI-решений для компаний»." },
         { cat: "Работа механиком", title: "Физический труд и ответственность", desc: "«Реальный опыт работы руками, который помогает ценить труд и отвечать за результат»." },
         { cat: "Wise Kids", title: "Поддержка и образование детей", desc: "«Участие в проекте дополнительного образования и наставничества для детей»." },
-        { cat: "«Правда о наркотиках»", title: "Просветительский социальный проект", desc: "«Волонтёрская деятельность и просвещение молодёжи ради здорового будущего»." }
+        { cat: "«Правда о наркотиках»", title: "Просветительский социальный проект", desc: "«Волонтёрская деятельность и просвещение молодёжи ради здорового будущего»." },
+        { cat: "Жизнь и впечатления", title: "Новые горизонты и встречи", desc: "«Каждая поездка и новые знакомства дают свежую энергию и идеи для развития»." },
+        { cat: "Стиль жизни", title: "Баланс, свобода и цели", desc: "«Свобода передвижения и возможность строить бизнес там, где тебе комфортно»." }
       ],
       en: [
         { cat: "Travel", title: "Exploring New Countries & Cultures", desc: "“Travel for me is an opportunity to better understand the world, people, and myself.”" },
         { cat: "Entrepreneurship & Tech", title: "16+ Years in Business & AI", desc: "“Building web platforms, digital marketing, and modern AI automation systems for businesses.”" },
         { cat: "Hands-on Mechanic", title: "Craftsmanship & Responsibility", desc: "“Real physical labor that keeps me grounded and accountable for results.”" },
         { cat: "Wise Kids", title: "Empowering Children via Education", desc: "“Supporting youth educational initiatives and mentorship for children.”" },
-        { cat: "“Truth About Drugs”", title: "Drug Prevention & Outreach", desc: "“Volunteer work and empowering youth with factual drug education.”" }
+        { cat: "“Truth About Drugs”", title: "Drug Prevention & Outreach", desc: "“Volunteer work and empowering youth with factual drug education.”" },
+        { cat: "Life & Experiences", title: "New Horizons & Encounters", desc: "“Every journey and meaningful connection fuels fresh inspiration and growth.”" },
+        { cat: "Lifestyle", title: "Balance, Freedom & Purpose", desc: "“Freedom to travel and develop a fulfilling business wherever you are.”" }
       ]
     };
 
