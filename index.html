@@ -837,7 +837,7 @@
 
           <!-- Image Right on desktop -->
           <div class="h-60 sm:h-64 md:h-auto md:w-5/12 relative overflow-hidden shrink-0 order-1 md:order-2">
-            <img src="path_business_online.webp" alt="Онлайн-бизнес и партнёрская команда" loading="lazy" decoding="async" width="600" height="400" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+            <img src="path_business_online.webp" onerror="this.onerror=null;this.src='path_business_online.jpg'" alt="Онлайн-бизнес и партнёрская команда" loading="lazy" decoding="async" width="600" height="400" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:hidden"></div>
             <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-amber-300 font-bold text-[10px] uppercase tracking-wider">
               <span data-i18n="badge_path2">НАПРАВЛЕНИЕ 2</span>
@@ -978,13 +978,32 @@
                 <a href="https://www.instagram.com/artem_varganych/" target="_blank" rel="noopener noreferrer" 
                    class="w-9 h-9 rounded-xl overflow-hidden shadow-lg shadow-pink-500/25 hover:scale-110 hover:shadow-pink-500/40 transition-all cursor-pointer flex items-center justify-center shrink-0" 
                    aria-label="Instagram @artem_varganych" title="Instagram: @artem_varganych">
-                  <img src="icon_instagram.svg" alt="Instagram" class="w-full h-full object-cover">
+                  <svg viewBox="0 0 24 24" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="ig-grad-name" cx="20%" cy="100%" r="120%">
+                        <stop offset="0%" stop-color="#fdf497"/>
+                        <stop offset="10%" stop-color="#fdf497"/>
+                        <stop offset="45%" stop-color="#fd5949"/>
+                        <stop offset="65%" stop-color="#d6249f"/>
+                        <stop offset="90%" stop-color="#285aeb"/>
+                      </radialGradient>
+                    </defs>
+                    <rect width="24" height="24" rx="5.5" fill="url(#ig-grad-name)"/>
+                    <rect x="5.2" y="5.2" width="13.6" height="13.6" rx="3.8" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+                    <circle cx="12" cy="12" r="3.3" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+                    <circle cx="15.8" cy="8.2" r="0.95" fill="#ffffff"/>
+                  </svg>
                 </a>
                 <!-- LinkedIn Badge Icon (Official App Icon) -->
                 <a href="https://www.linkedin.com/in/artem-varganich/" target="_blank" rel="noopener noreferrer" 
                    class="w-9 h-9 rounded-xl overflow-hidden shadow-lg shadow-blue-500/25 hover:scale-110 hover:shadow-blue-500/40 transition-all cursor-pointer flex items-center justify-center shrink-0" 
                    aria-label="LinkedIn Artem Varganich" title="LinkedIn: Artem Varganich">
-                  <img src="icon_linkedin.svg" alt="LinkedIn" class="w-full h-full object-cover">
+                  <svg viewBox="0 0 24 24" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="4.5" fill="#0A66C2"/>
+                    <circle cx="6.5" cy="6.2" r="1.3" fill="#ffffff"/>
+                    <rect x="5.2" y="9.2" width="2.6" height="9.6" rx="0.5" fill="#ffffff"/>
+                    <path fill="#ffffff" d="M10.2 9.2h2.5v1.3h.1c.5-.9 1.6-1.5 2.8-1.5 2.7 0 3.4 1.7 3.4 4.3v5.9h-2.6v-5.2c0-1.2 0-2.3-1.5-2.3s-1.7 1.1-1.7 2.3v5.2h-2.5V9.2z"/>
+                  </svg>
                 </a>
                 <!-- Telegram Badge Icon -->
                 <a href="https://t.me/Artem_travel" target="_blank" rel="noopener noreferrer" 
@@ -1036,7 +1055,21 @@
                  class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-amber-500/20 hover:from-pink-500/35 hover:via-purple-500/35 hover:to-amber-500/35 border border-pink-500/40 hover:border-pink-400 text-white transition-all transform hover:-translate-y-0.5 shadow-md shadow-pink-500/10 group cursor-pointer" 
                  aria-label="Instagram Artem Varganych" title="Instagram: @artem_varganych">
                 <div class="w-6 h-6 rounded-md overflow-hidden shrink-0 shadow-sm group-hover:scale-110 transition-transform flex items-center justify-center">
-                  <img src="icon_instagram.svg" alt="Instagram" class="w-full h-full object-cover">
+                  <svg viewBox="0 0 24 24" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <radialGradient id="ig-grad-btn" cx="20%" cy="100%" r="120%">
+                        <stop offset="0%" stop-color="#fdf497"/>
+                        <stop offset="10%" stop-color="#fdf497"/>
+                        <stop offset="45%" stop-color="#fd5949"/>
+                        <stop offset="65%" stop-color="#d6249f"/>
+                        <stop offset="90%" stop-color="#285aeb"/>
+                      </radialGradient>
+                    </defs>
+                    <rect width="24" height="24" rx="5.5" fill="url(#ig-grad-btn)"/>
+                    <rect x="5.2" y="5.2" width="13.6" height="13.6" rx="3.8" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+                    <circle cx="12" cy="12" r="3.3" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+                    <circle cx="15.8" cy="8.2" r="0.95" fill="#ffffff"/>
+                  </svg>
                 </div>
                 <span class="text-xs font-bold text-slate-100 group-hover:text-pink-200 transition-colors">Instagram</span>
                 <i data-lucide="external-link" class="w-3 h-3 text-pink-400/70 group-hover:text-pink-300"></i>
@@ -1047,7 +1080,12 @@
                  class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-[#0a66c2]/20 hover:bg-[#0a66c2]/35 border border-[#0a66c2]/50 hover:border-blue-400 text-white transition-all transform hover:-translate-y-0.5 shadow-md shadow-blue-500/10 group cursor-pointer" 
                  aria-label="LinkedIn Artem Varganich" title="LinkedIn: Artem Varganich">
                 <div class="w-6 h-6 rounded-md overflow-hidden shrink-0 shadow-sm group-hover:scale-110 transition-transform flex items-center justify-center">
-                  <img src="icon_linkedin.svg" alt="LinkedIn" class="w-full h-full object-cover">
+                  <svg viewBox="0 0 24 24" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="4.5" fill="#0A66C2"/>
+                    <circle cx="6.5" cy="6.2" r="1.3" fill="#ffffff"/>
+                    <rect x="5.2" y="9.2" width="2.6" height="9.6" rx="0.5" fill="#ffffff"/>
+                    <path fill="#ffffff" d="M10.2 9.2h2.5v1.3h.1c.5-.9 1.6-1.5 2.8-1.5 2.7 0 3.4 1.7 3.4 4.3v5.9h-2.6v-5.2c0-1.2 0-2.3-1.5-2.3s-1.7 1.1-1.7 2.3v5.2h-2.5V9.2z"/>
+                  </svg>
                 </div>
                 <span class="text-xs font-bold text-slate-100 group-hover:text-blue-200 transition-colors">LinkedIn</span>
                 <i data-lucide="external-link" class="w-3 h-3 text-blue-400/70 group-hover:text-blue-300"></i>
@@ -1606,11 +1644,30 @@
           </a>
           <!-- Instagram Link (Official App Icon) -->
           <a href="https://www.instagram.com/artem_varganych/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-2xl overflow-hidden p-2 bg-gradient-to-tr from-pink-500/20 to-purple-500/20 hover:from-pink-500/35 hover:to-purple-500/35 text-white flex items-center justify-center transition-all border border-pink-500/40 hover:scale-110 shadow-lg shadow-pink-500/20 cursor-pointer" aria-label="Instagram" title="Instagram: @artem_varganych">
-            <img src="icon_instagram.svg" alt="Instagram" class="w-full h-full object-contain">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="ig-grad-foot" cx="20%" cy="100%" r="120%">
+                  <stop offset="0%" stop-color="#fdf497"/>
+                  <stop offset="10%" stop-color="#fdf497"/>
+                  <stop offset="45%" stop-color="#fd5949"/>
+                  <stop offset="65%" stop-color="#d6249f"/>
+                  <stop offset="90%" stop-color="#285aeb"/>
+                </radialGradient>
+              </defs>
+              <rect width="24" height="24" rx="5.5" fill="url(#ig-grad-foot)"/>
+              <rect x="5.2" y="5.2" width="13.6" height="13.6" rx="3.8" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+              <circle cx="12" cy="12" r="3.3" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+              <circle cx="15.8" cy="8.2" r="0.95" fill="#ffffff"/>
+            </svg>
           </a>
           <!-- LinkedIn Link (Official App Icon) -->
           <a href="https://www.linkedin.com/in/artem-varganich/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-2xl overflow-hidden p-2 bg-blue-600/20 hover:bg-blue-600/35 text-white flex items-center justify-center transition-all border border-blue-500/40 hover:scale-110 shadow-lg shadow-blue-500/20 cursor-pointer" aria-label="LinkedIn" title="LinkedIn: Artem Varganich">
-            <img src="icon_linkedin.svg" alt="LinkedIn" class="w-full h-full object-contain">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+              <rect width="24" height="24" rx="4.5" fill="#0A66C2"/>
+              <circle cx="6.5" cy="6.2" r="1.3" fill="#ffffff"/>
+              <rect x="5.2" y="9.2" width="2.6" height="9.6" rx="0.5" fill="#ffffff"/>
+              <path fill="#ffffff" d="M10.2 9.2h2.5v1.3h.1c.5-.9 1.6-1.5 2.8-1.5 2.7 0 3.4 1.7 3.4 4.3v5.9h-2.6v-5.2c0-1.2 0-2.3-1.5-2.3s-1.7 1.1-1.7 2.3v5.2h-2.5V9.2z"/>
+            </svg>
           </a>
           <!-- Phone Call -->
           <a href="tel:+37060377042" class="w-11 h-11 rounded-2xl bg-amber-500/15 hover:bg-amber-500 text-amber-400 hover:text-dark-950 flex items-center justify-center transition-all border border-amber-500/30" aria-label="Позвонить">
@@ -1763,7 +1820,21 @@
         <a href="https://www.instagram.com/artem_varganych/" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-purple-600/90 to-pink-600/90 hover:from-purple-500 hover:to-pink-500 text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
           <span class="flex items-center gap-3">
             <div class="w-6 h-6 rounded-md overflow-hidden shrink-0 group-hover:scale-110 transition-transform flex items-center justify-center">
-              <img src="icon_instagram.svg" alt="Instagram" class="w-full h-full object-cover">
+              <svg viewBox="0 0 24 24" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="ig-grad-mod" cx="20%" cy="100%" r="120%">
+                    <stop offset="0%" stop-color="#fdf497"/>
+                    <stop offset="10%" stop-color="#fdf497"/>
+                    <stop offset="45%" stop-color="#fd5949"/>
+                    <stop offset="65%" stop-color="#d6249f"/>
+                    <stop offset="90%" stop-color="#285aeb"/>
+                  </radialGradient>
+                </defs>
+                <rect width="24" height="24" rx="5.5" fill="url(#ig-grad-mod)"/>
+                <rect x="5.2" y="5.2" width="13.6" height="13.6" rx="3.8" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+                <circle cx="12" cy="12" r="3.3" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+                <circle cx="15.8" cy="8.2" r="0.95" fill="#ffffff"/>
+              </svg>
             </div>
             <span>Instagram (@artem_varganych)</span>
           </span>
@@ -1774,7 +1845,12 @@
         <a href="https://www.linkedin.com/in/artem-varganich/" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-5 rounded-2xl bg-[#0A66C2] hover:bg-[#095196] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
           <span class="flex items-center gap-3">
             <div class="w-6 h-6 rounded-md overflow-hidden shrink-0 group-hover:scale-110 transition-transform flex items-center justify-center">
-              <img src="icon_linkedin.svg" alt="LinkedIn" class="w-full h-full object-cover">
+              <svg viewBox="0 0 24 24" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" rx="4.5" fill="#0A66C2"/>
+                <circle cx="6.5" cy="6.2" r="1.3" fill="#ffffff"/>
+                <rect x="5.2" y="9.2" width="2.6" height="9.6" rx="0.5" fill="#ffffff"/>
+                <path fill="#ffffff" d="M10.2 9.2h2.5v1.3h.1c.5-.9 1.6-1.5 2.8-1.5 2.7 0 3.4 1.7 3.4 4.3v5.9h-2.6v-5.2c0-1.2 0-2.3-1.5-2.3s-1.7 1.1-1.7 2.3v5.2h-2.5V9.2z"/>
+              </svg>
             </div>
             <span>LinkedIn (Artem Varganych)</span>
           </span>
