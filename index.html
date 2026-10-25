@@ -943,108 +943,66 @@
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         
-        <!-- Left: Photo Gallery (40-45% width: lg:col-span-5) -->
+                <!-- Left: Photo Gallery (40-45% width: lg:col-span-5) -->
         <div class="lg:col-span-5 space-y-4">
           <div id="artem-gallery" tabindex="0" role="region" aria-label="Фотогалерея Артёма" class="relative rounded-3xl overflow-hidden luxury-card border-2 border-amber-500/30 shadow-2xl glow-gold group focus:outline-none focus:ring-2 focus:ring-amber-400 select-none">
             
+            <!-- Top Progress Bar (Auto-advancing progress indicator) -->
+            <div class="absolute top-0 left-0 right-0 z-30 h-1 bg-black/50 overflow-hidden">
+              <div id="artem-gallery-progress" class="h-full bg-gradient-to-r from-amber-500 via-amber-300 to-amber-400 w-0" style="transition: width 100ms linear;"></div>
+            </div>
+
             <!-- Fixed aspect ratio & height photo container (Never shifts layout) -->
-            <div class="relative w-full h-[430px] sm:h-[490px] overflow-hidden bg-black/40">
+            <div class="relative w-full h-[440px] sm:h-[500px] overflow-hidden bg-black/60">
               
-              <!-- Slide 1: Team White Party (1st place in queue) -->
-              <div class="gallery-slide absolute inset-0 transition-opacity duration-300 ease-in-out opacity-100 z-10" data-slide="0">
-                <img src="artem_gallery_team_whiteparty.webp" onerror="this.onerror=null;this.src='artem_gallery_team_whiteparty.jpg'" alt="Международная команда" loading="eager" decoding="async" width="800" height="1000" class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/20 to-transparent"></div>
+              <!-- 2-Layer Virtual Slideshow Engine (Buttery smooth crossfade, ultra lightweight DOM) -->
+              <!-- Layer A -->
+              <div id="artem-gallery-layer-a" class="absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10">
+                <img id="artem-gallery-img-a" src="artem_gallery_team_whiteparty.webp" onerror="this.onerror=null;this.src='artem_gallery_team_whiteparty.jpg'" alt="Артём Варганич — Команда и путешествия" loading="eager" decoding="async" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/85 via-transparent to-black/30 pointer-events-none"></div>
               </div>
 
-              <!-- Slide 2: Team Club Event -->
-              <div class="gallery-slide absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 z-0 pointer-events-none" data-slide="1">
-                <img src="artem_gallery_team_event.webp" onerror="this.onerror=null;this.src='artem_gallery_team_event.jpg'" alt="События клуба и встречи" loading="lazy" decoding="async" width="800" height="1000" class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/20 to-transparent"></div>
-              </div>
-
-              <!-- Slide 3: Travel -->
-              <div class="gallery-slide absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 z-0 pointer-events-none" data-slide="2">
-                <img src="artem_gallery_1.webp" alt="Путешествия" loading="lazy" decoding="async" width="800" height="1000" class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/20 to-transparent"></div>
-              </div>
-
-              <!-- Slide 4: Tech & Entrepreneurship -->
-              <div class="gallery-slide absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 z-0 pointer-events-none" data-slide="3">
-                <img src="artem_gallery_2.webp" alt="Предпринимательство и технологии" loading="lazy" decoding="async" width="800" height="1000" class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/20 to-transparent"></div>
-              </div>
-
-              <!-- Slide 5: Mechanic -->
-              <div class="gallery-slide absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 z-0 pointer-events-none" data-slide="4">
-                <img src="artem_gallery_3.webp" alt="Работа механиком" loading="lazy" decoding="async" width="800" height="1000" class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/20 to-transparent"></div>
-              </div>
-
-              <!-- Slide 6: Truth About Drugs -->
-              <div class="gallery-slide absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 z-0 pointer-events-none" data-slide="5">
-                <img src="artem_gallery_5.webp" alt="Правда о наркотиках" loading="lazy" decoding="async" width="800" height="1000" class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/20 to-transparent"></div>
-              </div>
-
-              <!-- Slide 7: Life & Moments -->
-              <div class="gallery-slide absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 z-0 pointer-events-none" data-slide="6">
-                <img src="artem_gallery_6.webp" alt="Жизнь и впечатления" loading="lazy" decoding="async" width="800" height="1000" class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/20 to-transparent"></div>
-              </div>
-
-              <!-- Slide 8: Lifestyle -->
-              <div class="gallery-slide absolute inset-0 transition-opacity duration-300 ease-in-out opacity-0 z-0 pointer-events-none" data-slide="7">
-                <img src="artem_gallery_7.webp" alt="Стиль жизни и путешествия" loading="lazy" decoding="async" width="800" height="1000" class="w-full h-full object-cover object-center">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-[#070709]/20 to-transparent"></div>
+              <!-- Layer B -->
+              <div id="artem-gallery-layer-b" class="absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0">
+                <img id="artem-gallery-img-b" src="" alt="Артём Варганич — Команда и путешествия" loading="lazy" decoding="async" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/85 via-transparent to-black/30 pointer-events-none"></div>
               </div>
 
               <!-- Navigation Arrows -->
-              <button type="button" onclick="artemGalleryPrev()" aria-label="Предыдущее фото" class="gallery-nav-btn absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/65 hover:bg-amber-500 text-white hover:text-dark-950 border border-amber-500/30 hover:border-amber-400 flex items-center justify-center backdrop-blur-md transition-all shadow-lg cursor-pointer">
-                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+              <button type="button" onclick="artemGalleryPrev()" aria-label="Предыдущее фото" class="gallery-nav-btn absolute left-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/70 hover:bg-amber-500 text-white hover:text-dark-950 border border-amber-500/40 hover:border-amber-400 flex items-center justify-center backdrop-blur-md transition-all shadow-xl cursor-pointer">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
               </button>
-              <button type="button" onclick="artemGalleryNext()" aria-label="Следующее фото" class="gallery-nav-btn absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/65 hover:bg-amber-500 text-white hover:text-dark-950 border border-amber-500/30 hover:border-amber-400 flex items-center justify-center backdrop-blur-md transition-all shadow-lg cursor-pointer">
-                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              <button type="button" onclick="artemGalleryNext()" aria-label="Следующее фото" class="gallery-nav-btn absolute right-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/70 hover:bg-amber-500 text-white hover:text-dark-950 border border-amber-500/40 hover:border-amber-400 flex items-center justify-center backdrop-blur-md transition-all shadow-xl cursor-pointer">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
               </button>
 
-              <!-- Floating Bottom Info on Image -->
-              <div class="absolute bottom-3 left-4 right-4 z-20 flex items-end justify-between gap-2 pointer-events-none">
-                <div class="space-y-0.5">
-                  <div class="text-[11px] font-bold text-amber-300 uppercase tracking-wider drop-shadow" id="artem-slide-category" data-i18n="artem_slide_1_cat">
-                    Команда
-                  </div>
-                  <div class="text-sm font-semibold text-white drop-shadow" id="artem-slide-title" data-i18n="artem_slide_1_title">
-                    Наша международная команда
-                  </div>
+              <!-- Floating Bottom Overlay Controls -->
+              <div class="absolute bottom-3.5 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
+                <!-- Slide Counter Badge -->
+                <div class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-black/80 border border-amber-500/40 text-xs font-mono font-bold text-amber-300 backdrop-blur-md flex items-center gap-2 shadow-lg">
+                  <i data-lucide="camera" class="w-3.5 h-3.5 text-amber-400"></i>
+                  <span><span id="artem-slide-current">1</span> / <span id="artem-slide-total">108</span></span>
                 </div>
-                <!-- Slide counter badge -->
-                <div class="pointer-events-auto px-2.5 py-1 rounded-full bg-black/75 border border-amber-500/40 text-[11px] font-mono font-bold text-amber-400 backdrop-blur-md">
-                  <span id="artem-slide-current">1</span> / <span>8</span>
-                </div>
+
+                <!-- Autoplay / Pause Toggle Button -->
+                <button type="button" id="artem-gallery-play-btn" onclick="artemGalleryTogglePlay()" aria-label="Пауза / Возобновить автопоказ" title="Пауза / Автовоспроизведение" class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-black/80 hover:bg-amber-500/25 border border-amber-500/40 text-amber-300 hover:text-amber-200 text-xs backdrop-blur-md flex items-center gap-1.5 transition-all shadow-lg cursor-pointer">
+                  <span id="artem-gallery-play-icon"><i data-lucide="pause" class="w-3.5 h-3.5 text-amber-400"></i></span>
+                  <span id="artem-gallery-play-text" class="text-[11px] font-medium hidden sm:inline">Авто</span>
+                </button>
               </div>
 
             </div>
 
-            <!-- Indicators / Dots Bar (8 slides) -->
-            <div class="p-2.5 bg-[#0c0c12] border-t border-amber-500/20 flex items-center justify-center gap-2">
-              <button type="button" onclick="artemGalleryGoTo(0)" aria-label="Слайд 1: Наша команда" class="gallery-dot w-7 h-2 rounded-full bg-amber-400 transition-all cursor-pointer"></button>
-              <button type="button" onclick="artemGalleryGoTo(1)" aria-label="Слайд 2: События клуба" class="gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer"></button>
-              <button type="button" onclick="artemGalleryGoTo(2)" aria-label="Слайд 3: Путешествия" class="gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer"></button>
-              <button type="button" onclick="artemGalleryGoTo(3)" aria-label="Слайд 4: Предпринимательство и технологии" class="gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer"></button>
-              <button type="button" onclick="artemGalleryGoTo(4)" aria-label="Слайд 5: Работа механиком" class="gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer"></button>
-              <button type="button" onclick="artemGalleryGoTo(5)" aria-label="Слайд 6: Правда о наркотиках" class="gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer"></button>
-              <button type="button" onclick="artemGalleryGoTo(6)" aria-label="Слайд 7: Жизнь и впечатления" class="gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer"></button>
-              <button type="button" onclick="artemGalleryGoTo(7)" aria-label="Слайд 8: Стиль жизни" class="gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer"></button>
+            <!-- Minimalist Bottom Status Strip -->
+            <div class="px-4 py-2.5 bg-[#0c0c12] border-t border-amber-500/20 flex items-center justify-between text-[11px] text-slate-400">
+              <span class="flex items-center gap-2 text-slate-300 font-medium">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                <span data-i18n="artem_gallery_tagline">Команда, путешествия и жизнь в движении</span>
+              </span>
+              <span class="text-slate-500 font-mono text-[10px]" data-i18n="artem_gallery_timer_info">Автопоказ 3.5с</span>
             </div>
 
           </div>
-
-          <!-- Caption below gallery with smooth update -->
-          <div id="artem-gallery-caption" class="px-4 py-3 rounded-2xl luxury-card border border-amber-500/20 text-xs text-slate-300 text-center leading-snug min-h-[50px] flex items-center justify-center transition-opacity duration-200">
-            <span id="artem-gallery-caption-text" data-i18n="artem_slide_1_desc">
-              «Мы строим бизнес вместе: путешествуем, делимся опытом и празднуем командные результаты».
-            </span>
-          </div>
-
         </div>
 
         <!-- Right: Artem Bio & Links (55-60% width: lg:col-span-7) -->
@@ -2369,84 +2327,176 @@
     let currentLang = 'ru';
 
     
+        // ==========================================
+    // ARTEM 108-PHOTO SLIDESHOW & AUTO-ADVANCE ENGINE
     // ==========================================
-    // ARTEM 5-SLIDE PHOTO GALLERY (P0-5 ТЗ)
-    // ==========================================
+    const artemPhotos = [
+      'artem_gallery_team_whiteparty.webp',
+      'artem_gallery_team_event.webp',
+      'artem_photos/p_001.webp',
+      'artem_photos/p_002.webp',
+      'artem_photos/p_003.webp',
+      'artem_photos/p_004.webp',
+      'artem_photos/p_005.webp',
+      'artem_photos/p_006.webp',
+      'artem_photos/p_007.webp',
+      'artem_photos/p_008.webp',
+      'artem_photos/p_009.webp',
+      'artem_photos/p_010.webp',
+      'artem_photos/p_011.webp',
+      'artem_photos/p_012.webp',
+      'artem_photos/p_013.webp',
+      'artem_photos/p_014.webp',
+      'artem_photos/p_015.webp',
+      'artem_photos/p_016.webp',
+      'artem_photos/p_017.webp',
+      'artem_photos/p_018.webp',
+      'artem_photos/p_019.webp',
+      'artem_photos/p_020.webp',
+      'artem_photos/p_021.webp',
+      'artem_photos/p_022.webp',
+      'artem_photos/p_023.webp',
+      'artem_photos/p_024.webp',
+      'artem_photos/p_025.webp',
+      'artem_photos/p_026.webp',
+      'artem_photos/p_027.webp',
+      'artem_photos/p_028.webp',
+      'artem_photos/p_029.webp',
+      'artem_photos/p_030.webp',
+      'artem_photos/p_031.webp',
+      'artem_photos/p_032.webp',
+      'artem_photos/p_033.webp',
+      'artem_photos/p_034.webp',
+      'artem_photos/p_035.webp',
+      'artem_photos/p_036.webp',
+      'artem_photos/p_037.webp',
+      'artem_photos/p_038.webp',
+      'artem_photos/p_039.webp',
+      'artem_photos/p_040.webp',
+      'artem_photos/p_041.webp',
+      'artem_photos/p_042.webp',
+      'artem_photos/p_043.webp',
+      'artem_photos/p_044.webp',
+      'artem_photos/p_045.webp',
+      'artem_photos/p_046.webp',
+      'artem_photos/p_047.webp',
+      'artem_photos/p_048.webp',
+      'artem_photos/p_049.webp',
+      'artem_photos/p_050.webp',
+      'artem_photos/p_051.webp',
+      'artem_photos/p_052.webp',
+      'artem_photos/p_053.webp',
+      'artem_photos/p_054.webp',
+      'artem_photos/p_055.webp',
+      'artem_photos/p_056.webp',
+      'artem_photos/p_057.webp',
+      'artem_photos/p_058.webp',
+      'artem_photos/p_059.webp',
+      'artem_photos/p_060.webp',
+      'artem_photos/p_061.webp',
+      'artem_photos/p_062.webp',
+      'artem_photos/p_063.webp',
+      'artem_photos/p_064.webp',
+      'artem_photos/p_065.webp',
+      'artem_photos/p_066.webp',
+      'artem_photos/p_067.webp',
+      'artem_photos/p_068.webp',
+      'artem_photos/p_069.webp',
+      'artem_photos/p_070.webp',
+      'artem_photos/p_071.webp',
+      'artem_photos/p_072.webp',
+      'artem_photos/p_073.webp',
+      'artem_photos/p_074.webp',
+      'artem_photos/p_075.webp',
+      'artem_photos/p_076.webp',
+      'artem_photos/p_077.webp',
+      'artem_photos/p_078.webp',
+      'artem_photos/p_079.webp',
+      'artem_photos/p_080.webp',
+      'artem_photos/p_081.webp',
+      'artem_photos/p_082.webp',
+      'artem_photos/p_083.webp',
+      'artem_photos/p_084.webp',
+      'artem_photos/p_085.webp',
+      'artem_photos/p_086.webp',
+      'artem_photos/p_087.webp',
+      'artem_photos/p_088.webp',
+      'artem_photos/p_089.webp',
+      'artem_photos/p_090.webp',
+      'artem_photos/p_091.webp',
+      'artem_photos/p_092.webp',
+      'artem_photos/p_093.webp',
+      'artem_photos/p_094.webp',
+      'artem_photos/p_095.webp',
+      'artem_photos/p_096.webp',
+      'artem_photos/p_097.webp',
+      'artem_photos/p_098.webp',
+      'artem_photos/p_099.webp',
+      'artem_photos/p_100.webp',
+      'artem_photos/p_101.webp',
+      'artem_photos/p_102.webp',
+      'artem_photos/p_103.webp',
+      'artem_photos/p_104.webp',
+      'artem_photos/p_105.webp',
+      'artem_photos/p_106.webp'
+    ];
+
     let currentArtemSlide = 0;
-    const totalArtemSlides = 8;
+    const totalArtemSlides = artemPhotos.length;
+    let artemActiveLayer = 'a';
+    let artemAutoplayPaused = false;
+    let artemHovered = false;
+    const ARTEM_SLIDE_DURATION = 3500; // 3.5 seconds
+    let artemElapsed = 0;
+    let artemTimerInterval = null;
 
-    const galleryCaptions = {
-      ru: [
-        { cat: "Команда", title: "Наша международная команда", desc: "«Мы строим бизнес вместе: путешествуем, делимся опытом и празднуем командные результаты»." },
-        { cat: "События клуба", title: "Живые встречи и события клуба", desc: "«Личное общение, совместные путешествия и атмосфера взаимной поддержки в команде»." },
-        { cat: "Путешествия", title: "Открытие новых стран и культур", desc: "«Путешествия для меня — это возможность лучше понимать мир, людей и самого себя»." },
-        { cat: "Предпринимательство и технологии", title: "16+ лет в бизнесе и AI-автоматизации", desc: "«Развитие веб-проектов, интернет-маркетинга и внедрение прикладных AI-решений для компаний»." },
-        { cat: "Работа механиком", title: "Физический труд и ответственность", desc: "«Реальный опыт работы руками, который помогает ценить труд и отвечать за результат»." },
-        { cat: "«Правда о наркотиках»", title: "Просветительский социальный проект", desc: "«Волонтёрская деятельность и просвещение молодёжи ради здорового будущего»." },
-        { cat: "Жизнь и впечатления", title: "Новые горизонты и встречи", desc: "«Каждая поездка и новые знакомства дают свежую энергию и идеи для развития»." },
-        { cat: "Стиль жизни", title: "Баланс, свобода и цели", desc: "«Свобода передвижения и возможность строить бизнес там, где тебе комфортно»." }
-      ],
-      en: [
-        { cat: "Our Team", title: "International Partner Community", desc: "“We build together: traveling the world, sharing experience, and celebrating team victories.”" },
-        { cat: "Club Events", title: "Live Meetings & Club Summits", desc: "“In-person connections, shared journeys, and an atmosphere of genuine mutual support.”" },
-        { cat: "Travel", title: "Exploring New Countries & Cultures", desc: "“Travel for me is an opportunity to better understand the world, people, and myself.”" },
-        { cat: "Entrepreneurship & Tech", title: "16+ Years in Business & AI", desc: "“Building web platforms, digital marketing, and modern AI automation systems for businesses.”" },
-        { cat: "Hands-on Mechanic", title: "Craftsmanship & Responsibility", desc: "“Real physical labor that keeps me grounded and accountable for results.”" },
-        { cat: "“Truth About Drugs”", title: "Drug Prevention & Outreach", desc: "“Volunteer work and empowering youth with factual drug education.”" },
-        { cat: "Life & Experiences", title: "New Horizons & Encounters", desc: "“Every journey and meaningful connection fuels fresh inspiration and growth.”" },
-        { cat: "Lifestyle", title: "Balance, Freedom & Purpose", desc: "“Freedom to travel and develop a fulfilling business wherever you are.”" }
-      ]
-    };
-
-    function updateArtemGalleryUI() {
-      const slides = document.querySelectorAll('.gallery-slide');
-      slides.forEach((slide, idx) => {
-        if (idx === currentArtemSlide) {
-          slide.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
-          slide.classList.add('opacity-100', 'pointer-events-auto', 'z-10');
-        } else {
-          slide.classList.remove('opacity-100', 'pointer-events-auto', 'z-10');
-          slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
-        }
-      });
-
-      // Update dots
-      const dots = document.querySelectorAll('.gallery-dot');
-      dots.forEach((dot, idx) => {
-        if (idx === currentArtemSlide) {
-          dot.className = "gallery-dot w-7 h-2 rounded-full bg-amber-400 transition-all cursor-pointer";
-        } else {
-          dot.className = "gallery-dot w-2 h-2 rounded-full bg-slate-600 hover:bg-amber-400/60 transition-all cursor-pointer";
-        }
-      });
-
-      // Update slide counter
-      const counter = document.getElementById('artem-slide-current');
-      if (counter) counter.textContent = currentArtemSlide + 1;
-
-      // Update captions with smooth fade
-      const lang = (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'ru';
-      const list = galleryCaptions[lang] || galleryCaptions['ru'];
-      const capData = list[currentArtemSlide] || list[0];
-
-      const catElem = document.getElementById('artem-slide-category');
-      const titleElem = document.getElementById('artem-slide-title');
-      const descElem = document.getElementById('artem-gallery-caption-text');
-
-      if (catElem) catElem.textContent = capData.cat;
-      if (titleElem) titleElem.textContent = capData.title;
-      if (descElem) {
-        descElem.parentElement.classList.add('opacity-70');
-        descElem.textContent = capData.desc;
-        setTimeout(() => {
-          if (descElem && descElem.parentElement) descElem.parentElement.classList.remove('opacity-70');
-        }, 150);
+    function artemGalleryPreloadNext() {
+      for (let i = 1; i <= 3; i++) {
+        const preIdx = (currentArtemSlide + i) % totalArtemSlides;
+        const img = new Image();
+        img.src = artemPhotos[preIdx];
       }
     }
 
     function artemGalleryGoTo(idx) {
-      currentArtemSlide = (idx + totalArtemSlides) % totalArtemSlides;
-      updateArtemGalleryUI();
+      artemElapsed = 0;
+      const progress = document.getElementById('artem-gallery-progress');
+      if (progress) progress.style.width = '0%';
+
+      const targetIdx = (idx + totalArtemSlides) % totalArtemSlides;
+      if (targetIdx === currentArtemSlide && document.getElementById('artem-gallery-img-a').src) return;
+
+      currentArtemSlide = targetIdx;
+
+      const nextLayerId = artemActiveLayer === 'a' ? 'b' : 'a';
+      const activeLayerId = artemActiveLayer;
+
+      const nextLayerElem = document.getElementById('artem-gallery-layer-' + nextLayerId);
+      const activeLayerElem = document.getElementById('artem-gallery-layer-' + activeLayerId);
+      const nextImg = document.getElementById('artem-gallery-img-' + nextLayerId);
+
+      if (!nextLayerElem || !activeLayerElem || !nextImg) return;
+
+      const finishTransition = () => {
+        nextLayerElem.classList.remove('opacity-0', 'z-0');
+        nextLayerElem.classList.add('opacity-100', 'z-10');
+        activeLayerElem.classList.remove('opacity-100', 'z-10');
+        activeLayerElem.classList.add('opacity-0', 'z-0');
+        artemActiveLayer = nextLayerId;
+      };
+
+      nextImg.onload = finishTransition;
+      nextImg.src = artemPhotos[currentArtemSlide];
+      if (nextImg.complete) {
+        finishTransition();
+      }
+
+      // Update counter
+      const curElem = document.getElementById('artem-slide-current');
+      if (curElem) curElem.textContent = currentArtemSlide + 1;
+
+      // Preload next upcoming
+      artemGalleryPreloadNext();
     }
 
     function artemGalleryNext() {
@@ -2457,19 +2507,75 @@
       artemGalleryGoTo(currentArtemSlide - 1);
     }
 
+    function artemGalleryTogglePlay() {
+      artemAutoplayPaused = !artemAutoplayPaused;
+      const iconSpan = document.getElementById('artem-gallery-play-icon');
+      const textSpan = document.getElementById('artem-gallery-play-text');
+      const isEn = typeof currentLang !== 'undefined' && currentLang === 'en';
+
+      if (artemAutoplayPaused) {
+        if (iconSpan) iconSpan.innerHTML = '<i data-lucide="play" class="w-3.5 h-3.5 text-amber-400"></i>';
+        if (textSpan) textSpan.textContent = isEn ? 'Play' : 'Пауза';
+      } else {
+        if (iconSpan) iconSpan.innerHTML = '<i data-lucide="pause" class="w-3.5 h-3.5 text-amber-400"></i>';
+        if (textSpan) textSpan.textContent = isEn ? 'Auto' : 'Авто';
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function updateArtemGalleryUI() {
+      const totalElem = document.getElementById('artem-slide-total');
+      if (totalElem) totalElem.textContent = totalArtemSlides;
+      const curElem = document.getElementById('artem-slide-current');
+      if (curElem) curElem.textContent = currentArtemSlide + 1;
+    }
+
     function initArtemGallery() {
       const gallery = document.getElementById('artem-gallery');
       if (!gallery) return;
 
+      const progress = document.getElementById('artem-gallery-progress');
+
+      // Preload early images
+      artemGalleryPreloadNext();
+
+      // Autoplay ticker
+      if (artemTimerInterval) clearInterval(artemTimerInterval);
+      artemTimerInterval = setInterval(() => {
+        if (artemAutoplayPaused || artemHovered) return;
+
+        artemElapsed += 100;
+        if (progress) {
+          const pct = Math.min(100, (artemElapsed / ARTEM_SLIDE_DURATION) * 100);
+          progress.style.width = pct + '%';
+        }
+
+        if (artemElapsed >= ARTEM_SLIDE_DURATION) {
+          artemElapsed = 0;
+          if (progress) progress.style.width = '0%';
+          artemGalleryNext();
+        }
+      }, 100);
+
+      // Pause on hover
+      gallery.addEventListener('mouseenter', () => {
+        artemHovered = true;
+      });
+      gallery.addEventListener('mouseleave', () => {
+        artemHovered = false;
+      });
+
+      // Touch swipe gestures
       let touchStartX = 0;
       let touchStartY = 0;
-
       gallery.addEventListener('touchstart', (e) => {
+        artemHovered = true;
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
       }, { passive: true });
 
       gallery.addEventListener('touchend', (e) => {
+        setTimeout(() => { artemHovered = false; }, 1200);
         const deltaX = e.changedTouches[0].clientX - touchStartX;
         const deltaY = e.changedTouches[0].clientY - touchStartY;
         if (Math.abs(deltaX) > 35 && Math.abs(deltaX) > Math.abs(deltaY)) {
