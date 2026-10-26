@@ -110,7 +110,13 @@
   </script>
   
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Lucide Icons (Local primary, unpkg fallback) -->
+  <script src="lucide.min.js"></script>
+  <script>
+    if (typeof lucide === 'undefined') {
+      document.write('<script src="https://unpkg.com/lucide@latest"><\/script>');
+    }
+  </script>
 
   <style>
     html {
@@ -313,7 +319,7 @@
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
             <a href="#welcome-video" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-xl shadow-amber-500/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer">
               <i data-lucide="play-circle" class="w-4 h-4 text-dark-950"></i>
-              <span data-i18n="hero_btn_story">Посмотреть мою историю</span>
+              <span data-i18n="hero_btn_story">Посмотреть 1:24 видео</span>
               <i data-lucide="arrow-down" class="w-4 h-4 text-dark-950"></i>
             </a>
             <button onclick="openContactModal('general')" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-dark-800 hover:bg-dark-700 text-slate-200 hover:text-white border border-amber-500/30 text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer">
@@ -429,10 +435,12 @@
 
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="relative flex items-center justify-center">
-                  <div class="absolute w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-amber-400/20 pulse-ring"></div>
-                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-amber-500 via-yellow-400 to-amber-300 p-1 shadow-2xl shadow-amber-500/50 group-hover:scale-110 transition-transform">
-                    <div class="w-full h-full rounded-full bg-[#070709] flex items-center justify-center pl-0.5">
-                      <i data-lucide="play" class="w-6 h-6 text-amber-400 fill-amber-400"></i>
+                  <div class="absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-amber-400/25 pulse-ring"></div>
+                  <div class="w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-gradient-to-tr from-amber-400 via-amber-500 to-yellow-400 p-1 shadow-2xl shadow-amber-500/70 group-hover:scale-110 transition-all duration-300 flex items-center justify-center border-2 border-amber-300">
+                    <div class="w-full h-full rounded-full bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center pl-1 shadow-inner">
+                      <svg class="w-7 h-7 sm:w-8 sm:h-8 text-dark-950 fill-dark-950" viewBox="0 0 24 24">
+                        <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -559,7 +567,7 @@
                   <i data-lucide="external-link" class="w-3 h-3 opacity-70"></i>
                 </a>
                 <a href="https://www.drugfreeworld.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 hover:text-amber-200 text-xs font-semibold transition-all shadow-sm">
-                  <i data-lucide="shield-alert" class="w-4 h-4 text-amber-400 shrink-0"></i>
+                  <img src="drugfree_icon.webp" alt="Правда о наркотиках" class="w-4 h-4 rounded object-contain shrink-0">
                   <span data-i18n="link_drugfree">Правда о наркотиках</span>
                   <i data-lucide="external-link" class="w-3 h-3 opacity-70"></i>
                 </a>
@@ -1933,7 +1941,7 @@
         hero_p2: "У меня есть свой бизнес в Украине и в Канаде. Сегодня я живу в Калгари, развиваю проекты, не боюсь реальной работы своими руками и всегда открыт к новым сильным направлениям и знакомствам.",
         hero_p3: "Недавно я познакомился с интересным сообществом людей, которое открыло для меня новые возможности.",
         hero_p4: "Хочу поделиться с тобой тем, что меня заинтересовало.",
-        hero_btn_story: "Посмотреть мою историю",
+        hero_btn_story: "Посмотреть 1:24 видео",
         hero_btn_contact: "Написать мне",
         value1_title: "Личная история",
         value1_sub: "Без прикрас и иллюзий",
@@ -2086,7 +2094,7 @@
         trip_board_room: "Все включено (All-Inclusive) • Номер Полулюкс (Junior Suite)",
         proof_modal_badge: "Реальный пример поездки Артёма",
         proof_modal_title: "Grand Palladium Select Bávaro 5★ — Пунта-Кана",
-        proof_modal_details: "Даты: <strong class="text-amber-300">16–20 декабря</strong> (4 ночи, 2 взрослых) • Питание: <strong class="text-amber-300">Все включено (All-Inclusive)</strong> • Номер: <strong class="text-amber-300">Junior Suite (Полулюкс)</strong>",
+        proof_modal_details: 'Даты: <strong class="text-amber-300">16–20 декабря</strong> (4 ночи, 2 взрослых) • Питание: <strong class="text-amber-300">Все включено (All-Inclusive)</strong> • Номер: <strong class="text-amber-300">Junior Suite (Полулюкс)</strong>',
         proof_metric_booking_label: "Booking.com (публично)",
         proof_metric_booking_base: "базовая цена: $2,532 USD",
         proof_metric_club_label: "Тариф через клуб",
@@ -2153,7 +2161,7 @@
         hero_p2: "I run my own business in Ukraine and in Canada. Today I live in Calgary, build new ventures, value honest hands-on work, and am always open to new promising directions and meaningful connections.",
         hero_p3: "Recently, I connected with an inspiring community that opened brand new doors for me.",
         hero_p4: "I would love to share what caught my attention with you.",
-        hero_btn_story: "Watch My Story",
+        hero_btn_story: "Watch Video (1:24)",
         hero_btn_contact: "Contact Me",
         value1_title: "Authentic Story",
         value1_sub: "Real life with zero fluff",
@@ -2307,7 +2315,7 @@
         trip_board_room: "All-Inclusive • Junior Suite (Garden View)",
         proof_modal_badge: "Artem's Verified Trip Example",
         proof_modal_title: "Grand Palladium Select Bávaro 5★ — Punta Cana",
-        proof_modal_details: "Dates: <strong class="text-amber-300">December 16–20</strong> (4 nights, 2 adults) • Board: <strong class="text-amber-300">All-Inclusive</strong> • Room: <strong class="text-amber-300">Junior Suite</strong>",
+        proof_modal_details: 'Dates: <strong class="text-amber-300">December 16–20</strong> (4 nights, 2 adults) • Board: <strong class="text-amber-300">All-Inclusive</strong> • Room: <strong class="text-amber-300">Junior Suite</strong>',
         proof_metric_booking_label: "Booking.com (Public Rate)",
         proof_metric_booking_base: "base price: $2,532 USD",
         proof_metric_club_label: "Club Member Rate",
@@ -2647,8 +2655,8 @@
       } else if (context === 'business') {
         if (currentLang === 'en') {
           titleText = 'Interested in travel business';
-          subText = 'Choose a messenger, call me, or leave your phone — let's discuss business and partnership opportunities.';
-          waMsg = 'Hi Artem! I'm interested in the travel business opportunity.';
+          subText = "Choose a messenger, call me, or leave your phone — let's discuss business and partnership opportunities.";
+          waMsg = "Hi Artem! I'm interested in the travel business opportunity.";
         } else {
           titleText = 'Интересует бизнес в сфере путешествий';
           subText = 'Выбери мессенджер, позвони или оставь свой номер — обсудим возможности и партнёрство.';
@@ -2658,7 +2666,7 @@
         if (currentLang === 'en') {
           titleText = 'Contact Me';
           subText = 'Ask any question directly to me — via messenger or leave your number:';
-          waMsg = 'Hi Artem! Checked your BetterWay site, let's talk.';
+          waMsg = "Hi Artem! Checked your BetterWay site, let's talk.";
         } else {
           titleText = 'Напиши мне';
           subText = 'Задай любой вопрос лично мне — в мессенджере или оставь свой номер:';
