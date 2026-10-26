@@ -1657,7 +1657,7 @@
 
         <div class="relative rounded-2xl overflow-hidden border border-amber-500/30 bg-black/60 shadow-inner">
           <div id="proof-img-club" class="block">
-            <img id="proof-img-club-element" src="proof_club_bavaro.png" alt="Скриншот клубного тарифа $549" class="w-full h-auto max-h-[550px] object-contain mx-auto" loading="lazy">
+            <img id="proof-img-club-element" src="proof_club_bavaro.png?v=2" alt="Скриншот клубного тарифа $549" class="w-full h-auto max-h-[550px] object-contain mx-auto" loading="lazy">
             <div class="p-2.5 text-center text-xs text-slate-400 bg-black/80 border-t border-white/10" data-i18n="proof_caption_club">
               Личный кабинет клуба: Grand Palladium Select Bavaro • 16-20 декабря • $549 USD All-Inclusive
             </div>
@@ -2388,11 +2388,11 @@
       // Update proof images
       const bookingImg = document.getElementById('proof-img-booking-element');
       if (bookingImg) {
-        bookingImg.src = lang === 'en' ? 'proof_booking_bavaro_en.png' : 'proof_booking_bavaro.png';
+        bookingImg.src = lang === 'en' ? 'proof_booking_bavaro_en.png?v=2' : 'proof_booking_bavaro.png?v=2';
       }
       const clubImg = document.getElementById('proof-img-club-element');
       if (clubImg) {
-        clubImg.src = lang === 'en' ? 'proof_club_bavaro_en.png' : 'proof_club_bavaro.png';
+        clubImg.src = lang === 'en' ? 'proof_club_bavaro_en.png?v=2' : 'proof_club_bavaro.png?v=2';
       }
 
       // Update WhatsApp text in compare-modal
