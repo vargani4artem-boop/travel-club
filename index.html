@@ -427,7 +427,7 @@
           <div class="relative w-full max-w-[240px] sm:max-w-[260px] rounded-2xl overflow-hidden luxury-card border-2 border-amber-500/40 shadow-2xl glow-gold bg-black aspect-[9/16]">
             
             <div id="video-cover-container" class="absolute inset-0 z-10 cursor-pointer group" onclick="playArtemVideo()">
-              <img src="artem_video_cover.jpg" alt="Видео от Артёма" loading="eager" fetchpriority="high" decoding="async" width="680" height="1200" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <img id="video-cover-img" src="artem_video_cover.jpg" alt="Видео от Артёма" loading="eager" fetchpriority="high" decoding="async" width="680" height="1200" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
               <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/40"></div>
 
               <div class="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-amber-500/40 text-amber-300 text-xs font-bold flex items-center gap-2 shadow-md">
@@ -2169,7 +2169,7 @@
         hero_p2: "I run my own business in Ukraine and in Canada. Today I live in Calgary, build new ventures, value honest hands-on work, and am always open to new promising directions and meaningful connections.",
         hero_p3: "Recently, I connected with an inspiring community that opened brand new doors for me.",
         hero_p4: "I would love to share what caught my attention with you.",
-        hero_btn_story: "Watch Video (1:26)",
+        hero_btn_story: "Watch Video (1:43)",
         hero_btn_contact: "Contact Me",
         value1_title: "Authentic Story",
         value1_sub: "Real life with zero fluff",
@@ -2179,13 +2179,13 @@
         value3_sub: "Personal experience & 5★ stays",
         value4_title: "Fresh Horizons",
         value4_sub: "Open conversation on equal terms",
-        video_badge: "VIDEO INTRO • 1 MIN 26 SEC",
+        video_badge: "VIDEO INTRO • 1 MIN 43 SEC",
         video_title: "Who I Am and Why I Want to Share This with You",
         video_desc: "In this short video, I talk a little about myself, my projects, and how I discovered these exciting opportunities.",
         video_note: "Tap the video to watch, and explore my full journey and projects below.",
         btn_read_story: "Continue Reading",
-        video_duration: "1 min 26 sec",
-        video_poster_title: "Watch Video (1:26)",
+        video_duration: "1 min 43 sec",
+        video_poster_title: "Watch Video (1:43)",
         video_poster_sub: "Tap to play",
         story_tag: "MY JOURNEY • 4 YEARS OF TRANSFORMATION",
         story_title: "My Story: From Ukraine to Canada",
@@ -2403,6 +2403,22 @@
       const clubImg = document.getElementById('proof-img-club-element');
       if (clubImg) {
         clubImg.src = lang === 'en' ? 'proof_club_bavaro_en.png?v=2' : 'proof_club_bavaro.png?v=2';
+      }
+
+      // Update video cover and player if active
+      const videoCoverImg = document.getElementById('video-cover-img');
+      if (videoCoverImg) {
+        videoCoverImg.src = lang === 'en' ? 'artem_video_cover_en.jpg' : 'artem_video_cover.jpg';
+      }
+      const slotVideo = document.querySelector('#video-iframe-slot video');
+      if (slotVideo) {
+        const newSrc = lang === 'en' ? 'artem_story_en.mp4' : 'artem_story.mp4';
+        const source = slotVideo.querySelector('source');
+        if (source && source.getAttribute('src') !== newSrc) {
+          source.setAttribute('src', newSrc);
+          slotVideo.load();
+          slotVideo.play().catch(() => {});
+        }
       }
 
       // Update WhatsApp text in compare-modal
@@ -2959,10 +2975,12 @@
       const slot = document.getElementById('video-iframe-slot');
       if (cover) cover.style.display = 'none';
       if (slot) {
+        const isEn = (currentLang === 'en');
+        const videoSrc = isEn ? 'artem_story_en.mp4' : 'artem_story.mp4';
         slot.innerHTML = `
           <video controls autoplay playsinline class="w-full h-full object-cover">
-            <source src="artem_story.mp4" type="video/mp4">
-            Ваш браузер не поддерживает встроенное видео.
+            <source src="${videoSrc}" type="video/mp4">
+            ${isEn ? 'Your browser does not support embedded video.' : 'Ваш браузер не поддерживает встроенное видео.'}
           </video>
         `;
       }
