@@ -680,7 +680,7 @@
               <i data-lucide="chevron-right" class="w-5 h-5"></i>
             </button>
             <span class="px-4 py-2 rounded-full bg-dark-800 border border-amber-500/30 text-amber-300 font-mono text-xs font-bold">
-              <span id="life-slide-current">1</span> / <span id="life-slide-total">7</span>
+              <span id="life-slide-current">1</span> / <span id="life-slide-total">9</span>
             </span>
             <button onclick="toggleLifeSliderAutoplay()" id="life-play-btn" class="px-3.5 py-2 rounded-full bg-dark-800 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs flex items-center gap-1.5 cursor-pointer">
               <i data-lucide="pause" class="w-3.5 h-3.5 text-amber-400" id="life-play-icon"></i>
@@ -816,12 +816,12 @@
               <div class="space-y-1.5">
                 <div class="flex items-baseline justify-between gap-2">
                   <h3 class="text-xl sm:text-2xl font-bold text-white">Grand Palladium Select Bávaro 5★</h3>
-                  <span class="text-xs text-amber-400 font-bold uppercase tracking-wider whitespace-nowrap">Пунта-Кана</span>
+                  <span class="text-xs text-amber-400 font-bold uppercase tracking-wider whitespace-nowrap" data-i18n="trip_city_badge">Пунта-Кана</span>
                 </div>
-                <p class="text-xs text-slate-300">
+                <p class="text-xs text-slate-300" data-i18n="trip_country_dates">
                   Доминиканская Республика • 16–20 декабря • 4 ночи • 2 взрослых
                 </p>
-                <p class="text-xs font-semibold text-amber-300">
+                <p class="text-xs font-semibold text-amber-300" data-i18n="trip_board_room">
                   Все включено (All-Inclusive) • Номер Полулюкс (Junior Suite)
                 </p>
               </div>
@@ -857,6 +857,77 @@
 
       </div>
 
+    </div>
+  </section>
+
+  <!-- 7.5. ПЕРСОНАЛЬНОЕ СРАВНЕНИЕ ЦЕН (НОВЫЙ БЛОК) -->
+  <section id="compare-trip" class="py-14 sm:py-20 bg-gradient-to-b from-[#070709] via-[#0d1024]/60 to-[#070709] border-t border-amber-500/20 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="rounded-3xl luxury-card border-2 border-amber-500/35 glow-gold p-6 sm:p-10 text-center space-y-6 bg-gradient-to-b from-white/[0.04] to-black/70">
+        
+        <!-- Eyebrow Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="scale" class="w-4 h-4 text-amber-400"></i>
+          <span data-i18n="compare_badge">Персональное сравнение</span>
+        </div>
+
+        <!-- Title -->
+        <h3 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-black text-white leading-tight" data-i18n="compare_title">
+          А сколько стоит твоё путешествие?
+        </h3>
+
+        <!-- Text Block -->
+        <div class="max-w-2xl mx-auto space-y-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p class="font-semibold text-amber-200" data-i18n="compare_lead">
+            Уже выбрал отель или планируешь отпуск?
+          </p>
+          <p data-i18n="compare_p1">
+            Пришли мне предложение, которое ты нашёл, и я лично посмотрю, сколько аналогичный вариант стоит через наш travel-клуб.
+          </p>
+          <p data-i18n="compare_p2">
+            Я сравню даты, отель, тип номера, питание и итоговую стоимость.
+          </p>
+          <p class="text-amber-300 font-semibold pt-1" data-i18n="compare_highlight">
+            Возможно, вместе мы найдём более интересное предложение!
+          </p>
+        </div>
+
+        <!-- Benefits List -->
+        <div class="max-w-md mx-auto pt-2 pb-1">
+          <ul class="space-y-2.5 text-left text-xs sm:text-sm text-slate-200">
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/40">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span data-i18n="compare_benefit_1">Бесплатно и без обязательств.</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/40">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span data-i18n="compare_benefit_2">Я проверю именно твой вариант путешествия.</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/40">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+              </div>
+              <span data-i18n="compare_benefit_3">Решение всегда остаётся за тобой.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Main Button: Сравнить стоимость моей поездки -->
+        <div class="pt-2">
+          <button type="button" id="btn-compare-trip" onclick="openCompareModal()" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-dark-950 font-bold text-sm sm:text-base uppercase tracking-wider shadow-xl shadow-amber-500/20 hover:brightness-110 active:scale-95 transition-all inline-flex items-center justify-center gap-3 cursor-pointer">
+            <i data-lucide="sparkles" class="w-5 h-5 text-dark-950"></i>
+            <span data-i18n="compare_cta_btn">Сравнить стоимость моей поездки</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-dark-950"></i>
+          </button>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -917,11 +988,11 @@
             </p>
           </div>
           
-          <a href="#contact-form-section" class="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all transform hover:-translate-y-0.5">
+          <button type="button" onclick="openContactModal('travel')" class="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all transform hover:-translate-y-0.5">
             <i data-lucide="message-square" class="w-4 h-4 fill-dark-950"></i>
             <span data-i18n="btn_want_travel">Хочу узнать о путешествиях</span>
-            <i data-lucide="arrow-down" class="w-4 h-4"></i>
-          </a>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
         </div>
 
         <!-- Direction 2: Business -->
@@ -938,11 +1009,11 @@
             </p>
           </div>
           
-          <a href="#contact-form-section" class="w-full py-4 rounded-2xl bg-dark-800 hover:bg-dark-700 text-white border border-amber-500/40 font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all transform hover:-translate-y-0.5">
+          <button type="button" onclick="openContactModal('business')" class="w-full py-4 rounded-2xl bg-dark-800 hover:bg-dark-700 text-white border border-amber-500/40 font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all transform hover:-translate-y-0.5">
             <i data-lucide="message-square" class="w-4 h-4 text-amber-400"></i>
             <span data-i18n="btn_want_biz">Хочу узнать о бизнесе</span>
-            <i data-lucide="arrow-down" class="w-4 h-4 text-amber-400"></i>
-          </a>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+          </button>
         </div>
 
       </div>
@@ -1513,18 +1584,16 @@
     </div>
   </footer>
 
-  <!-- FLOATING MOBILE QUICK-ACTION DOCK (ПОЗВОНИТЬ И НАПИСАТЬ) -->
-  <div id="mobile-floating-dock" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 p-1.5 rounded-full bg-[#0a0c1a]/95 backdrop-blur-xl border border-amber-500/40 shadow-2xl shadow-black/90 md:hidden select-none">
-    <!-- Call Button -->
-    <a href="tel:+14039250568" aria-label="Позвонить Артёму" class="flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-dark-950 font-black text-xs shadow-md active:scale-95 transition-all">
-      <i data-lucide="phone-call" class="w-4 h-4 text-dark-950"></i>
-      <span data-i18n="floating_call_btn">Позвонить</span>
-    </a>
-    <!-- Write Button -->
-    <button onclick="openContactModal()" aria-label="Написать Артёму" class="flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs shadow-md active:scale-95 transition-all cursor-pointer">
-      <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
-      <span data-i18n="floating_write_btn">Написать</span>
+  <!-- FLOATING MOBILE QUICK-ACTION BUTTONS (RIGHT-ALIGNED, CIRCULAR) -->
+  <div id="mobile-floating-dock" class="fixed bottom-6 right-4 z-40 flex flex-col gap-3 items-center md:hidden select-none">
+    <!-- Top circle: Message (Написать) -->
+    <button type="button" onclick="openContactModal('general')" aria-label="Написать Артёму" class="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white shadow-2xl shadow-black/80 flex items-center justify-center active:scale-90 transition-transform cursor-pointer border border-white/20">
+      <i data-lucide="message-circle" class="w-7 h-7"></i>
     </button>
+    <!-- Bottom circle: Call (Позвонить) -->
+    <a href="tel:+14039250568" aria-label="Позвонить Артёму" class="w-14 h-14 rounded-full bg-gradient-to-tr from-amber-500 via-yellow-400 to-amber-300 text-dark-950 shadow-2xl shadow-amber-500/30 flex items-center justify-center active:scale-90 transition-transform cursor-pointer border border-amber-300/40">
+      <i data-lucide="phone-call" class="w-6 h-6 text-dark-950"></i>
+    </a>
   </div>
 
   <!-- PROOF MODAL: PUNTA CANA PRICE COMPARISON -->
@@ -1538,12 +1607,12 @@
       <div class="space-y-2 pr-8">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-bold uppercase tracking-wider">
           <i data-lucide="shield-check" class="w-4 h-4 text-amber-400"></i>
-          <span>Реальный пример поездки Артёма</span>
+          <span data-i18n="proof_modal_badge">Реальный пример поездки Артёма</span>
         </div>
-        <h3 class="text-xl sm:text-2xl font-serif font-black text-white">
+        <h3 class="text-xl sm:text-2xl font-serif font-black text-white" data-i18n="proof_modal_title">
           Grand Palladium Select Bávaro 5★ — Пунта-Кана
         </h3>
-        <p class="text-xs sm:text-sm text-slate-300">
+        <p class="text-xs sm:text-sm text-slate-300" data-i18n="proof_modal_details">
           Даты: <strong class="text-amber-300">16–20 декабря</strong> (4 ночи, 2 взрослых) • Питание: <strong class="text-amber-300">Все включено (All-Inclusive)</strong> • Номер: <strong class="text-amber-300">Junior Suite (Полулюкс)</strong>
         </p>
       </div>
@@ -1551,43 +1620,43 @@
       <!-- Metrics -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
         <div class="p-3 rounded-2xl bg-white/[0.04] border border-white/10">
-          <div class="text-[11px] text-slate-400 uppercase font-semibold">Booking.com (публично)</div>
+          <div class="text-[11px] text-slate-400 uppercase font-semibold" data-i18n="proof_metric_booking_label">Booking.com (публично)</div>
           <div class="text-2xl font-mono font-bold text-white mt-1">$1,646 USD</div>
-          <div class="text-[10px] text-slate-500 mt-0.5 line-through">базовая цена: $2,532 USD</div>
+          <div class="text-[10px] text-slate-500 mt-0.5 line-through" data-i18n="proof_metric_booking_base">базовая цена: $2,532 USD</div>
         </div>
         <div class="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/30">
-          <div class="text-[11px] text-amber-300 uppercase font-semibold">Тариф через клуб</div>
+          <div class="text-[11px] text-amber-300 uppercase font-semibold" data-i18n="proof_metric_club_label">Тариф через клуб</div>
           <div class="text-2xl font-mono font-black text-amber-400 mt-1">$549 USD</div>
-          <div class="text-[10px] text-amber-400 font-semibold mt-0.5">закрытый клубный тариф</div>
+          <div class="text-[10px] text-amber-400 font-semibold mt-0.5" data-i18n="proof_metric_club_sub">закрытый клубный тариф</div>
         </div>
         <div class="p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30">
-          <div class="text-[11px] text-emerald-300 uppercase font-semibold">Разница в цене</div>
+          <div class="text-[11px] text-emerald-300 uppercase font-semibold" data-i18n="proof_metric_diff_label">Разница в цене</div>
           <div class="text-2xl font-mono font-black text-emerald-400 mt-1">-$1,097 USD</div>
-          <div class="text-[10px] text-emerald-400 font-semibold mt-0.5">экономия 67% (или $1,983 от базовой)</div>
+          <div class="text-[10px] text-emerald-400 font-semibold mt-0.5" data-i18n="proof_metric_diff_sub">экономия 67% (или $1,983 от базовой)</div>
         </div>
       </div>
 
       <!-- Screenshots Switcher -->
       <div class="space-y-3">
         <div class="flex items-center justify-center gap-2 border-b border-white/10 pb-3">
-          <button id="proof-tab-club" onclick="switchProofTab('club')" class="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-amber-500 text-dark-950 cursor-pointer shadow-md">
+          <button id="proof-tab-club" onclick="switchProofTab('club')" class="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-amber-500 text-dark-950 cursor-pointer shadow-md" data-i18n="proof_tab_club_btn">
             Тариф через клуб ($549 USD)
           </button>
-          <button id="proof-tab-booking" onclick="switchProofTab('booking')" class="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-white/10 text-slate-300 hover:text-white cursor-pointer">
+          <button id="proof-tab-booking" onclick="switchProofTab('booking')" class="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-white/10 text-slate-300 hover:text-white cursor-pointer" data-i18n="proof_tab_booking_btn">
             Публичный тариф Booking ($1,646 USD)
           </button>
         </div>
 
         <div class="relative rounded-2xl overflow-hidden border border-amber-500/30 bg-black/60 shadow-inner">
           <div id="proof-img-club" class="block">
-            <img src="proof_club_bavaro.png" alt="Скриншот клубного тарифа $549" class="w-full h-auto max-h-[550px] object-contain mx-auto" loading="lazy">
-            <div class="p-2.5 text-center text-xs text-slate-400 bg-black/80 border-t border-white/10">
+            <img id="proof-img-club-element" src="proof_club_bavaro.png" alt="Скриншот клубного тарифа $549" class="w-full h-auto max-h-[550px] object-contain mx-auto" loading="lazy">
+            <div class="p-2.5 text-center text-xs text-slate-400 bg-black/80 border-t border-white/10" data-i18n="proof_caption_club">
               Личный кабинет клуба: Grand Palladium Select Bavaro • 16-20 декабря • $549 USD All-Inclusive
             </div>
           </div>
           <div id="proof-img-booking" class="hidden">
-            <img src="proof_booking_bavaro.png" alt="Скриншот Booking.com $1,646" class="w-full h-auto max-h-[550px] object-contain mx-auto" loading="lazy">
-            <div class="p-2.5 text-center text-xs text-slate-400 bg-black/80 border-t border-white/10">
+            <img id="proof-img-booking-element" src="proof_booking_bavaro.png" alt="Скриншот Booking.com $1,646" class="w-full h-auto max-h-[550px] object-contain mx-auto" loading="lazy">
+            <div class="p-2.5 text-center text-xs text-slate-400 bg-black/80 border-t border-white/10" data-i18n="proof_caption_booking">
               Booking.com: Grand Palladium Select Bávaro • 16-20 декабря • 4 ночи • 2 взрослых • US$ 1,646
             </div>
           </div>
@@ -1595,10 +1664,10 @@
       </div>
 
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-white/10">
-        <p class="text-xs text-slate-400 text-center sm:text-left">
+        <p class="text-xs text-slate-400 text-center sm:text-left" data-i18n="proof_footer_note">
           Артём лично едет в этот отель. Ты можешь самостоятельно проверить эти даты на Booking.com.
         </p>
-        <button onclick="closeProofModal(); openContactModal('travel');" class="w-full sm:w-auto px-6 py-2.5 rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 text-dark-950 font-bold text-xs uppercase tracking-wider shadow-lg hover:brightness-110 cursor-pointer">
+        <button onclick="closeProofModal(); openContactModal('travel');" class="w-full sm:w-auto px-6 py-2.5 rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 text-dark-950 font-bold text-xs uppercase tracking-wider shadow-lg hover:brightness-110 cursor-pointer" data-i18n="proof_footer_cta">
           Хочу узнать подробнее
         </button>
       </div>
@@ -1607,55 +1676,73 @@
   </div>
 
   <!-- CONTEXTUAL CONTACT MODAL -->
-  <div id="contact-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Связаться с Артёмом">
-    <div class="relative w-full max-w-md p-6 sm:p-8 rounded-3xl luxury-card border-2 border-amber-500/40 glow-gold space-y-6 bg-[#0d1024]">
+  <div id="contact-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Связаться с Артёмом">
+    <div class="relative w-full max-w-md p-6 sm:p-7 rounded-3xl luxury-card border-2 border-amber-500/40 glow-gold space-y-5 bg-[#0d1024] max-h-[92vh] overflow-y-auto">
       
       <button onclick="closeContactModal()" class="absolute top-5 right-5 p-2 text-slate-400 hover:text-white focus:outline-none cursor-pointer" aria-label="Закрыть">
         <i data-lucide="x" class="w-6 h-6"></i>
       </button>
 
-      <div class="text-center space-y-2">
+      <div class="text-center space-y-2 pr-6 sm:pr-0">
         <div class="w-14 h-14 mx-auto rounded-full bg-gradient-to-tr from-amber-400 to-yellow-500 p-0.5 shadow-lg">
           <img src="artem_avatar.jpg" alt="Артём Варганич" loading="lazy" decoding="async" width="56" height="56" class="w-full h-full rounded-full object-cover">
         </div>
-        <h3 id="modal-context-title" class="text-2xl font-serif font-black text-white" data-i18n="modal_title">Напиши мне</h3>
+        <h3 id="modal-context-title" class="text-xl sm:text-2xl font-serif font-black text-white" data-i18n="modal_title">Напиши мне</h3>
         <p id="modal-context-subtitle" class="text-xs text-slate-300" data-i18n="modal_subtitle">
           Задай любой вопрос о клубе, путешествиях или партнёрстве лично мне.
         </p>
       </div>
 
-      <div class="space-y-3">
+      <div class="space-y-2.5">
         <!-- WhatsApp -->
-        <a id="modal-wa-link" href="https://wa.me/14039250568?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%9F%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D0%BB%20%D1%82%D0%B2%D0%BE%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%20BetterWay%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BE%D0%B1%D1%89%D0%B0%D1%82%D1%8C%D1%81%D1%8F." target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-5 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md">
+        <a id="modal-wa-link" href="https://wa.me/14039250568" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
           <span class="flex items-center gap-3">
             <i data-lucide="message-circle" class="w-5 h-5"></i>
             <span>WhatsApp</span>
           </span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"></i>
         </a>
 
         <!-- Telegram -->
-        <a id="modal-tg-link" href="https://t.me/Varganich_Artem" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-5 rounded-2xl bg-[#229ED9] hover:bg-[#1f8ec3] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md">
+        <a id="modal-tg-link" href="https://t.me/Varganich_Artem" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-[#229ED9] hover:bg-[#1f8ec3] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
           <span class="flex items-center gap-3">
             <i data-lucide="send" class="w-5 h-5"></i>
             <span>Telegram</span>
           </span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"></i>
         </a>
 
         <!-- Direct Phone Call ('Позвонить') -->
-        <a href="tel:+14039250568" class="w-full py-3.5 px-5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-dark-950 font-bold text-sm flex items-center justify-between transition-all shadow-md">
+        <a href="tel:+14039250568" class="w-full py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-dark-950 font-bold text-sm flex items-center justify-between transition-all shadow-md group">
           <span class="flex items-center gap-3">
             <i data-lucide="phone-call" class="w-5 h-5 text-dark-950"></i>
             <span data-i18n="modal_call_btn">Позвонить</span>
           </span>
-          <i data-lucide="arrow-right" class="w-4 h-4 text-dark-950"></i>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-dark-950 group-hover:translate-x-0.5 transition-transform"></i>
         </a>
 
-        <!-- Separate Contact Phone Display in Modal -->
-        <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
+        <!-- Divider: Или оставь свой номер -->
+        <div class="relative py-1 flex items-center justify-center">
+          <div class="border-t border-white/10 w-full"></div>
+          <span class="bg-[#0d1024] px-3 text-[11px] text-slate-400 uppercase tracking-wider font-semibold whitespace-nowrap" data-i18n="modal_or_form">или оставь свой номер:</span>
+          <div class="border-t border-white/10 w-full"></div>
+        </div>
+
+        <!-- Embedded Fast Lead Form -->
+        <form id="modal-lead-form" onsubmit="handleModalLeadSubmit(event)" class="space-y-2.5">
+          <input type="text" id="modal-lead-honey" class="hidden" tabindex="-1" autocomplete="off">
+          <input type="text" id="modal-lead-name" required placeholder="Твоё имя" data-i18n-placeholder="form_name_ph" class="w-full px-4 py-2.5 rounded-xl bg-white/[0.06] border border-amber-500/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 transition-colors">
+          <input type="tel" id="modal-lead-phone" required placeholder="Телефон / WhatsApp" data-i18n-placeholder="form_phone_ph" class="w-full px-4 py-2.5 rounded-xl bg-white/[0.06] border border-amber-500/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 transition-colors">
+          <button type="submit" id="modal-lead-submit-btn" class="w-full py-3 px-5 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 text-dark-950 font-bold text-xs uppercase tracking-wider shadow-lg hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <i data-lucide="send" class="w-4 h-4 text-dark-950"></i>
+            <span data-i18n="btn_submit">Связаться со мной</span>
+          </button>
+        </form>
+
+        <!-- Phone & Copy -->
+        <div class="pt-2 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
           <div>
-            <span class="text-slate-400" data-i18n="modal_phone_label">Телефон для связи:</span>
+            <span class="text-slate-400" data-i18n="modal_phone_label">Телефон:</span>
             <a href="tel:+14039250568" class="font-mono text-amber-300 hover:underline ml-1 font-bold">+1 (403) 925-0568</a>
           </div>
           <button type="button" onclick="copyPhoneToClipboard('+14039250568')" class="text-[11px] text-slate-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer">
@@ -1663,6 +1750,84 @@
             <span data-i18n="copy_btn">Копировать</span>
           </button>
         </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL: ВЫБОР СПОСОБА СВЯЗИ ДЛЯ СРАВНЕНИЯ ПУТЕШЕСТВИЯ (ТЗ) -->
+  <div id="compare-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="compare-modal-title">
+    <div class="relative w-full max-w-md p-6 sm:p-8 rounded-3xl luxury-card border-2 border-amber-500/40 glow-gold space-y-6 bg-[#0d1024]">
+      
+      <!-- Close button -->
+      <button onclick="closeCompareModal()" class="absolute top-5 right-5 p-2 text-slate-400 hover:text-white focus:outline-none cursor-pointer" aria-label="Закрыть">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Header -->
+      <div class="text-center space-y-2 pr-6 sm:pr-0">
+        <div class="w-14 h-14 mx-auto rounded-full bg-gradient-to-tr from-amber-400 to-yellow-500 p-0.5 shadow-lg flex items-center justify-center">
+          <div class="w-full h-full rounded-full bg-[#070709] flex items-center justify-center text-amber-400">
+            <i data-lucide="scale" class="w-7 h-7"></i>
+          </div>
+        </div>
+        <h3 id="compare-modal-title" class="text-2xl font-serif font-black text-white" data-i18n="compare_modal_title">
+          Как тебе удобнее связаться со мной?
+        </h3>
+        <p class="text-xs text-slate-300" data-i18n="compare_modal_subtitle">
+          Выбери удобный способ связи со мной:
+        </p>
+      </div>
+
+      <!-- 4 Contact Options from ТЗ -->
+      <div class="space-y-3">
+        <!-- 1. WhatsApp -->
+        <a id="compare-modal-wa-link" href="https://wa.me/380963340093?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B8%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BC%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%BF%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B8%D1%8F.%20%D0%9C%D0%BE%D0%B6%D0%B5%D1%88%D1%8C%20%D0%BF%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C%20%D0%BC%D0%BE%D0%B9%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%3F" target="_blank" rel="noopener noreferrer" onclick="trackEvent('travel_comparison_whatsapp');" class="w-full py-3.5 px-5 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
+          <div class="flex items-center gap-3 text-left">
+            <i data-lucide="message-circle" class="w-5 h-5 shrink-0"></i>
+            <div>
+              <div class="leading-tight">WhatsApp</div>
+              <div class="text-[11px] font-normal opacity-90" data-i18n="compare_wa_sub">Написать мне (+380 96 334 0093)</div>
+            </div>
+          </div>
+          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform shrink-0"></i>
+        </a>
+
+        <!-- 2. Telegram -->
+        <a id="compare-modal-tg-link" href="https://t.me/Varganich_Artem" target="_blank" rel="noopener noreferrer" onclick="trackEvent('travel_comparison_telegram');" class="w-full py-3.5 px-5 rounded-2xl bg-[#229ED9] hover:bg-[#1f8ec3] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
+          <div class="flex items-center gap-3 text-left">
+            <i data-lucide="send" class="w-5 h-5 shrink-0"></i>
+            <div>
+              <div class="leading-tight">Telegram</div>
+              <div class="text-[11px] font-normal opacity-90" data-i18n="compare_tg_sub">Написать в личный чат (@Varganich_Artem)</div>
+            </div>
+          </div>
+          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform shrink-0"></i>
+        </a>
+
+        <!-- 3. Телефон: Позвонить мне -->
+        <a href="tel:+14039250568" onclick="trackEvent('travel_comparison_call');" class="w-full py-3.5 px-5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-dark-950 font-bold text-sm flex items-center justify-between transition-all shadow-md group">
+          <div class="flex items-center gap-3 text-left">
+            <i data-lucide="phone-call" class="w-5 h-5 text-dark-950 shrink-0"></i>
+            <div>
+              <div class="leading-tight text-dark-950" data-i18n="compare_call_title">Позвонить мне</div>
+              <div class="text-[11px] font-normal text-dark-950/80 font-mono">+1 (403) 925-0568</div>
+            </div>
+          </div>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-dark-950 group-hover:translate-x-0.5 transition-transform shrink-0"></i>
+        </a>
+
+        <!-- 4. Обратный звонок: Оставить свой номер -->
+        <button type="button" onclick="handleCompareCallback();" class="w-full py-3.5 px-5 rounded-2xl bg-white/[0.08] hover:bg-white/[0.14] border border-amber-500/30 text-white font-bold text-sm flex items-center justify-between transition-all shadow-md cursor-pointer group">
+          <div class="flex items-center gap-3 text-left">
+            <i data-lucide="phone-incoming" class="w-5 h-5 text-amber-400 shrink-0"></i>
+            <div>
+              <div class="leading-tight text-white" data-i18n="compare_callback_title">Оставить свой номер</div>
+              <div class="text-[11px] font-normal text-slate-300" data-i18n="compare_callback_sub">Перейти к форме обратной связи</div>
+            </div>
+          </div>
+          <i data-lucide="arrow-down" class="w-4 h-4 text-amber-400 group-hover:translate-y-0.5 transition-transform shrink-0"></i>
+        </button>
       </div>
 
     </div>
@@ -1915,7 +2080,45 @@
         modal_success_btn: "Отлично",
         form_sending: "Отправка...",
         floating_call_btn: "Позвонить",
-        floating_write_btn: "Написать"
+        floating_write_btn: "Написать",
+        trip_city_badge: "Пунта-Кана",
+        trip_country_dates: "Доминиканская Республика • 16–20 декабря • 4 ночи • 2 взрослых",
+        trip_board_room: "Все включено (All-Inclusive) • Номер Полулюкс (Junior Suite)",
+        proof_modal_badge: "Реальный пример поездки Артёма",
+        proof_modal_title: "Grand Palladium Select Bávaro 5★ — Пунта-Кана",
+        proof_modal_details: "Даты: <strong class="text-amber-300">16–20 декабря</strong> (4 ночи, 2 взрослых) • Питание: <strong class="text-amber-300">Все включено (All-Inclusive)</strong> • Номер: <strong class="text-amber-300">Junior Suite (Полулюкс)</strong>",
+        proof_metric_booking_label: "Booking.com (публично)",
+        proof_metric_booking_base: "базовая цена: $2,532 USD",
+        proof_metric_club_label: "Тариф через клуб",
+        proof_metric_club_sub: "закрытый клубный тариф",
+        proof_metric_diff_label: "Разница в цене",
+        proof_metric_diff_sub: "экономия 67% (или $1,983 от базовой)",
+        proof_tab_club_btn: "Тариф через клуб ($549 USD)",
+        proof_tab_booking_btn: "Публичный тариф Booking ($1,646 USD)",
+        proof_caption_club: "Личный кабинет клуба: Grand Palladium Select Bavaro • 16-20 декабря • $549 USD All-Inclusive",
+        proof_caption_booking: "Booking.com: Grand Palladium Select Bávaro • 16-20 декабря • 4 ночи • 2 взрослых • US$ 1,646",
+        proof_footer_note: "Артём лично едет в этот отель. Ты можешь самостоятельно проверить эти даты на Booking.com.",
+        proof_footer_cta: "Хочу узнать подробнее",
+        compare_badge: "Персональное сравнение",
+        compare_title: "А сколько стоит твоё путешествие?",
+        compare_lead: "Уже выбрал отель или планируешь отпуск?",
+        compare_p1: "Пришли мне предложение, которое ты нашёл, и я лично посмотрю, сколько аналогичный вариант стоит через наш travel-клуб.",
+        compare_p2: "Я сравню даты, отель, тип номера, питание и итоговую стоимость.",
+        compare_highlight: "Возможно, вместе мы найдём более интересное предложение!",
+        compare_benefit_1: "Бесплатно и без обязательств.",
+        compare_benefit_2: "Я проверю именно твой вариант путешествия.",
+        compare_benefit_3: "Решение всегда остаётся за тобой.",
+        compare_cta_btn: "Сравнить стоимость моей поездки",
+        compare_modal_title: "Как тебе удобнее связаться со мной?",
+        compare_modal_subtitle: "Выбери удобный способ связи со мной:",
+        compare_wa_sub: "Написать мне (+380 96 334 0093)",
+        compare_tg_sub: "Написать в личный чат (@Varganich_Artem)",
+        compare_call_title: "Позвонить мне",
+        compare_callback_title: "Оставить свой номер",
+        compare_callback_sub: "Перейти к форме обратной связи",
+        modal_or_form: "или оставь свой номер:",
+        form_name_ph: "Твоё имя",
+        form_phone_ph: "Телефон / WhatsApp"
       },
       en: {
         nav_story: "About Me",
@@ -2098,14 +2301,57 @@
         modal_success_btn: "Great",
         form_sending: "Sending...",
         floating_call_btn: "Call",
-        floating_write_btn: "Message"
+        floating_write_btn: "Message",
+        trip_city_badge: "Punta Cana",
+        trip_country_dates: "Dominican Republic • December 16–20 • 4 nights • 2 adults",
+        trip_board_room: "All-Inclusive • Junior Suite (Garden View)",
+        proof_modal_badge: "Artem's Verified Trip Example",
+        proof_modal_title: "Grand Palladium Select Bávaro 5★ — Punta Cana",
+        proof_modal_details: "Dates: <strong class="text-amber-300">December 16–20</strong> (4 nights, 2 adults) • Board: <strong class="text-amber-300">All-Inclusive</strong> • Room: <strong class="text-amber-300">Junior Suite</strong>",
+        proof_metric_booking_label: "Booking.com (Public Rate)",
+        proof_metric_booking_base: "base price: $2,532 USD",
+        proof_metric_club_label: "Club Member Rate",
+        proof_metric_club_sub: "private member-only rate",
+        proof_metric_diff_label: "Total Savings",
+        proof_metric_diff_sub: "67% savings (or $1,983 off base rate)",
+        proof_tab_club_btn: "Club Member Rate ($549 USD)",
+        proof_tab_booking_btn: "Public Booking Rate ($1,646 USD)",
+        proof_caption_club: "Club Portal: Grand Palladium Select Bavaro • Dec 16-20 • $549 USD All-Inclusive",
+        proof_caption_booking: "Booking.com: Grand Palladium Select Bávaro • Dec 16-20 • 4 nights • 2 adults • US$ 1,646",
+        proof_footer_note: "Artem is personally going to this resort. You can independently check these dates on Booking.com.",
+        proof_footer_cta: "I want to learn more",
+        compare_badge: "Personal Price Comparison",
+        compare_title: "How much does your trip cost?",
+        compare_lead: "Already chosen a hotel or planning a vacation?",
+        compare_p1: "Send me the offer you found, and I will personally check how much an equivalent option costs through our travel club.",
+        compare_p2: "I'll compare dates, hotel, room type, board, and total cost.",
+        compare_highlight: "Perhaps together we'll find an even better deal!",
+        compare_benefit_1: "Free and no obligations.",
+        compare_benefit_2: "I will check your specific travel option.",
+        compare_benefit_3: "The decision is always yours.",
+        compare_cta_btn: "Compare the price of my trip",
+        compare_modal_title: "How would you prefer to contact me?",
+        compare_modal_subtitle: "Choose your preferred contact option:",
+        compare_wa_sub: "Send message (+380 96 334 0093)",
+        compare_tg_sub: "Send message (@Varganich_Artem)",
+        compare_call_title: "Call me directly",
+        compare_callback_title: "Leave my phone number",
+        compare_callback_sub: "Go to contact form below",
+        modal_or_form: "or leave your phone number:",
+        form_name_ph: "Your name",
+        form_phone_ph: "Phone / WhatsApp"
       }
     };
 
+    const STORAGE_KEY = 'betterway_selected_lang';
     let currentLang = 'ru';
 
     function setLanguage(lang) {
       currentLang = lang;
+      try {
+        localStorage.setItem(STORAGE_KEY, lang);
+      } catch (e) {}
+
       const dict = translations[lang] || translations.ru;
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
@@ -2117,11 +2363,39 @@
           }
         }
       });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key]) {
+          el.setAttribute('placeholder', dict[key]);
+        }
+      });
+
       const langBtn = document.getElementById('current-lang-text');
       if (langBtn) {
         langBtn.textContent = lang === 'ru' ? 'RU | EN' : 'EN | RU';
       }
       document.documentElement.lang = lang;
+
+      // Update proof images
+      const bookingImg = document.getElementById('proof-img-booking-element');
+      if (bookingImg) {
+        bookingImg.src = lang === 'en' ? 'proof_booking_bavaro_en.png' : 'proof_booking_bavaro.png';
+      }
+      const clubImg = document.getElementById('proof-img-club-element');
+      if (clubImg) {
+        clubImg.src = lang === 'en' ? 'proof_club_bavaro_en.png' : 'proof_club_bavaro.png';
+      }
+
+      // Update WhatsApp text in compare-modal
+      const compareWa = document.getElementById('compare-modal-wa-link');
+      if (compareWa) {
+        const compareMsg = lang === 'en'
+          ? 'Hi Artem! I want to compare the cost of my trip. Could you check my option?'
+          : 'Привет, Артём! Хочу сравнить стоимость моего путешествия. Можешь посмотреть мой вариант?';
+        compareWa.href = `https://wa.me/380963340093?text=${encodeURIComponent(compareMsg)}`;
+      }
+
       updateWorkSlider();
       updateLifeSlider();
     }
@@ -2200,38 +2474,48 @@
     const lifePhotos = [
       {
         src: 'life_real_1_team.webp',
-        desc_ru: 'Команда и партнёры клуба • Живые встречи сообщества',
-        desc_en: 'Club team and partners • Live community events'
+        desc_ru: 'Международное сообщество предпринимателей и путешественников',
+        desc_en: 'International community of entrepreneurs and travelers'
       },
       {
-        src: 'life_real_2_paris.webp',
-        desc_ru: 'Париж, Франция • Путешествия по миру и яркие эмоции',
-        desc_en: 'Paris, France • Global travels and bright impressions'
+        src: 'life_real_2_whiteparty.webp',
+        desc_ru: 'White Party команды у частных самолётов — свобода и стиль жизни',
+        desc_en: 'Team White Party by private planes — freedom and lifestyle'
       },
       {
-        src: 'life_real_3_flight.webp',
-        desc_ru: 'Перелёты и поездки • Свобода открывать новые страны',
-        desc_en: 'Flights and journeys • Freedom to explore new countries'
+        src: 'life_real_3_group.webp',
+        desc_ru: 'Команда единомышленников: вместе учимся, растём и путешествуем',
+        desc_en: 'A like-minded team: learning, growing, and traveling together'
       },
       {
-        src: 'life_real_4_lake.webp',
-        desc_ru: 'Озёра и горы Италии • Отдых в живописных уголках планеты',
-        desc_en: 'Lakes and mountains of Italy • Picturesque getaways'
+        src: 'life_real_4_paris.webp',
+        desc_ru: 'Париж, Франция • Когда мечты о путешествиях становятся реальностью',
+        desc_en: 'Paris, France • When travel dreams become reality'
       },
       {
-        src: 'life_real_5_waterfall.webp',
-        desc_ru: 'Активный отдых и природа • Заряд энергии на водопадах',
-        desc_en: 'Active outdoors and nature • Energy at waterfalls'
+        src: 'life_real_5_flight.webp',
+        desc_ru: 'Следующий рейс к новым впечатлениям • Мобильность без границ',
+        desc_en: 'Next flight to new experiences • Boundless mobility'
       },
       {
-        src: 'life_real_6_cruise.webp',
-        desc_ru: 'Морские прогулки и океан • Незабываемые моменты путешествий',
-        desc_en: 'Ocean cruises and boat trips • Unforgettable moments'
+        src: 'life_real_6_lake.webp',
+        desc_ru: 'Живописные озёра и горы северной Италии • Природа, заряжающая энергией',
+        desc_en: 'Scenic lakes and mountains of northern Italy • Recharging energy'
       },
       {
-        src: 'life_real_7_calgary.webp',
-        desc_ru: 'Калгари, Канада • Ночные огни и уют большого города',
-        desc_en: 'Calgary, Canada • Night lights and city skyline'
+        src: 'life_real_7_waterfall.webp',
+        desc_ru: 'Мощь природы и водопады • Моменты, которые остаются в памяти навсегда',
+        desc_en: 'The power of nature and waterfalls • Unforgettable moments'
+      },
+      {
+        src: 'life_real_8_cruise.webp',
+        desc_ru: 'Морские круизы • Открывать новые страны, просыпаясь в открытом море',
+        desc_en: 'Sea cruises • Discovering new countries waking up to open water'
+      },
+      {
+        src: 'life_real_9_calgary.webp',
+        desc_ru: 'Калгари, Канада • Мой новый дом и старт больших возможностей',
+        desc_en: 'Calgary, Canada • My new home and launchpad for great opportunities'
       }
     ];
     let lifeIndex = 0;
@@ -2336,21 +2620,190 @@
     // 6. CONTACT MODAL & LEAD SUBMISSION ENGINE
     // ==========================================
     const contactModal = document.getElementById('contact-modal');
-    function openContactModal(context) {
+    let currentLeadContext = 'general';
+
+    function openContactModal(context = 'general') {
+      currentLeadContext = context;
       if (!contactModal) return;
+
+      const titleEl = document.getElementById('modal-context-title');
+      const subEl = document.getElementById('modal-context-subtitle');
+      const waLink = document.getElementById('modal-wa-link');
+
+      let titleText = 'Напиши мне';
+      let subText = 'Задай любой вопрос о клубе, путешествиях или партнёрстве лично мне.';
+      let waMsg = 'Привет, Артём! Посмотрел твой сайт BetterWay, хочу пообщаться.';
+
+      if (context === 'travel') {
+        if (currentLang === 'en') {
+          titleText = 'I want to learn about travel';
+          subText = 'Choose a messenger, call me, or leave your phone — I will gladly tell you all the details.';
+          waMsg = 'Hi Artem! I want to learn more about the travel club.';
+        } else {
+          titleText = 'Хочу узнать о путешествиях';
+          subText = 'Выбери мессенджер, позвони или оставь свой номер — я с радостью всё расскажу.';
+          waMsg = 'Привет, Артём! Хочу узнать о путешествиях в клубе.';
+        }
+      } else if (context === 'business') {
+        if (currentLang === 'en') {
+          titleText = 'Interested in travel business';
+          subText = 'Choose a messenger, call me, or leave your phone — let's discuss business and partnership opportunities.';
+          waMsg = 'Hi Artem! I'm interested in the travel business opportunity.';
+        } else {
+          titleText = 'Интересует бизнес в сфере путешествий';
+          subText = 'Выбери мессенджер, позвони или оставь свой номер — обсудим возможности и партнёрство.';
+          waMsg = 'Привет, Артём! Интересует бизнес в сфере путешествий.';
+        }
+      } else {
+        if (currentLang === 'en') {
+          titleText = 'Contact Me';
+          subText = 'Ask any question directly to me — via messenger or leave your number:';
+          waMsg = 'Hi Artem! Checked your BetterWay site, let's talk.';
+        } else {
+          titleText = 'Напиши мне';
+          subText = 'Задай любой вопрос лично мне — в мессенджере или оставь свой номер:';
+          waMsg = 'Привет, Артём! Посмотрел твой сайт BetterWay, хочу пообщаться.';
+        }
+      }
+
+      if (titleEl) titleEl.textContent = titleText;
+      if (subEl) subEl.textContent = subText;
+      if (waLink) {
+        waLink.href = `https://wa.me/14039250568?text=${encodeURIComponent(waMsg)}`;
+      }
+
       contactModal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
       if (typeof lucide !== 'undefined') lucide.createIcons();
     }
+
     function closeContactModal() {
       if (!contactModal) return;
       contactModal.classList.add('hidden');
       document.body.style.overflow = '';
     }
+
     if (contactModal) {
       contactModal.addEventListener('click', (e) => {
         if (e.target === contactModal) closeContactModal();
       });
+    }
+
+    // ==========================================
+    // COMPARE MODAL & ANALYTICS ENGINE (ТЗ)
+    // ==========================================
+    const compareModal = document.getElementById('compare-modal');
+    let lastFocusedCompareTrigger = null;
+
+    function trackEvent(eventName, params = {}) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: eventName,
+        timestamp: new Date().toISOString(),
+        ...params
+      });
+      console.log('[Analytics Event]', eventName, params);
+    }
+
+    function openCompareModal() {
+      if (!compareModal) return;
+      lastFocusedCompareTrigger = document.activeElement;
+      trackEvent('travel_comparison_open');
+      compareModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function closeCompareModal() {
+      if (!compareModal) return;
+      compareModal.classList.add('hidden');
+      document.body.style.overflow = '';
+      if (lastFocusedCompareTrigger && typeof lastFocusedCompareTrigger.focus === 'function') {
+        lastFocusedCompareTrigger.focus();
+        lastFocusedCompareTrigger = null;
+      }
+    }
+
+    if (compareModal) {
+      compareModal.addEventListener('click', (e) => {
+        if (e.target === compareModal) closeCompareModal();
+      });
+    }
+
+    function handleCompareCallback() {
+      trackEvent('travel_comparison_callback');
+      closeCompareModal();
+      const formSection = document.getElementById('contact-form-section');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          const nameInput = document.getElementById('lead-name');
+          if (nameInput) nameInput.focus();
+        }, 700);
+      }
+    }
+
+    async function handleModalLeadSubmit(e) {
+      e.preventDefault();
+      
+      const honey = document.getElementById('modal-lead-honey').value;
+      if (honey) return;
+
+      const name = document.getElementById('modal-lead-name').value.trim();
+      const phone = document.getElementById('modal-lead-phone').value.trim();
+      if (!name || !phone) return;
+
+      const submitBtn = document.getElementById('modal-lead-submit-btn');
+      submitBtn.disabled = true;
+      const originalBtnHtml = submitBtn.innerHTML;
+      const sendingText = currentLang === 'en' ? 'Sending...' : 'Отправка...';
+      submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin text-dark-950"></i><span>${sendingText}</span>`;
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+
+      function escapeHtml(str) {
+        return str.replace(/[&<>"']/g, function(m) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+        });
+      }
+
+      const safeName = escapeHtml(name);
+      const safePhone = escapeHtml(phone);
+      const timeStr = new Date().toLocaleString('ru-RU', { timeZone: 'America/Edmonton' });
+
+      let topic = 'Общий вопрос';
+      if (currentLeadContext === 'travel') topic = 'Путешествия в клубе';
+      else if (currentLeadContext === 'business') topic = 'Бизнес в сфере путешествий';
+
+      const text = `🔔 <b>Новая заявка с BetterWay!</b>
+
+📌 <b>Тема:</b> ${topic}
+👤 <b>Имя:</b> ${safeName}
+📞 <b>Телефон:</b> <code>${safePhone}</code>
+🕒 <b>Время:</b> ${timeStr}
+🌐 <b>Источник:</b> Окно связи BetterWay`;
+
+      try {
+        await fetch('https://api.telegram.org/bot8865140984:AAGqzyBjytwB8ytuaQLtsmm0fRHWshSgsmk/sendMessage', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: 408397367,
+            text: text,
+            parse_mode: 'HTML'
+          })
+        });
+      } catch (err) {
+        console.error('Telegram notification error:', err);
+      }
+
+      document.getElementById('modal-lead-form').reset();
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHtml;
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+
+      closeContactModal();
+      showToast(currentLang === 'ru' ? 'Ваше сообщение отправлено' : 'Your message has been sent');
+      openSuccessModal();
     }
 
     const successModal = document.getElementById('success-modal');
@@ -2539,12 +2992,21 @@
       if (e.key === 'Escape') {
         closeProofModal();
         closeContactModal();
+        closeCompareModal();
         closeSuccessModal();
       }
     });
 
-    // Initialize icons on load
+    // Initialize icons and saved language on load
     document.addEventListener('DOMContentLoaded', () => {
+      let initialLang = 'ru';
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === 'ru' || saved === 'en') {
+          initialLang = saved;
+        }
+      } catch (e) {}
+      setLanguage(initialLang);
       if (typeof lucide !== 'undefined') lucide.createIcons();
       updateWorkSlider();
       updateLifeSlider();
