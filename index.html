@@ -555,7 +555,7 @@
             </div>
             <div class="space-y-1.5 flex-1">
               <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2" data-i18n="story_ch4_title">
-                Технологические проекты и общественная польза
+                Социальные проекты
               </h3>
               <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="story_ch4_desc">
                 Моя жизнь не ограничивается одной лишь работой. Я развиваю полезные проекты и участвую в важных социальных инициативах: Wise Kids и «Правда о наркотиках».
@@ -1592,14 +1592,16 @@
     </div>
   </footer>
 
-  <!-- FLOATING MOBILE QUICK-ACTION BUTTONS (RIGHT-ALIGNED, CIRCULAR) -->
-  <div id="mobile-floating-dock" class="fixed bottom-6 right-4 z-40 flex flex-col gap-3 items-center md:hidden select-none">
+  <!-- FLOATING MOBILE QUICK-ACTION BUTTONS (RIGHT-ALIGNED, LUXURY BRAND STYLE) -->
+  <div id="mobile-floating-dock" class="fixed bottom-6 right-4 z-40 flex flex-col gap-3 items-end md:hidden select-none">
     <!-- Top circle: Message (Написать) -->
-    <button type="button" onclick="openContactModal('general')" aria-label="Написать Артёму" class="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white shadow-2xl shadow-black/80 flex items-center justify-center active:scale-90 transition-transform cursor-pointer border border-white/20">
-      <i data-lucide="message-circle" class="w-7 h-7"></i>
+    <button type="button" onclick="openContactModal('general')" aria-label="Написать Артёму" class="relative group flex items-center justify-center w-14 h-14 rounded-full bg-[#0a0c16]/95 hover:bg-[#141728] text-amber-400 border-2 border-amber-400/90 shadow-2xl shadow-black/90 active:scale-90 transition-all cursor-pointer backdrop-blur-md">
+      <span class="absolute right-16 px-2.5 py-1 rounded-lg bg-dark-950/95 border border-amber-500/40 text-amber-300 text-[11px] font-bold whitespace-nowrap shadow-xl tracking-wide pointer-events-none" data-i18n="floating_write_btn">Написать</span>
+      <i data-lucide="square-pen" class="w-6 h-6 text-amber-400"></i>
     </button>
     <!-- Bottom circle: Call (Позвонить) -->
-    <a href="tel:+14039250568" aria-label="Позвонить Артёму" class="w-14 h-14 rounded-full bg-gradient-to-tr from-amber-500 via-yellow-400 to-amber-300 text-dark-950 shadow-2xl shadow-amber-500/30 flex items-center justify-center active:scale-90 transition-transform cursor-pointer border border-amber-300/40">
+    <a href="tel:+14039250568" aria-label="Позвонить Артёму" class="relative group flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-amber-500 via-yellow-400 to-amber-300 text-dark-950 shadow-2xl shadow-amber-500/30 flex items-center justify-center active:scale-90 transition-all cursor-pointer border border-amber-300/40">
+      <span class="absolute right-16 px-2.5 py-1 rounded-lg bg-dark-950/95 border border-amber-500/40 text-amber-300 text-[11px] font-bold whitespace-nowrap shadow-xl tracking-wide pointer-events-none" data-i18n="floating_call_btn">Позвонить</span>
       <i data-lucide="phone-call" class="w-6 h-6 text-dark-950"></i>
     </a>
   </div>
@@ -1968,7 +1970,7 @@
         story_ch2_desc: "Переезд в Калгари (Альберта) стал важным этапом развития. Я начал развивать собственное направление и открывать новые горизонты.",
         story_ch3_title: "Честный физический труд механиком",
         story_ch3_desc: "Я знаю цену труду на всех уровнях. В Канаде я также работаю механиком: обслуживание коммерческой техники и флота. Практический труд держит в тонусе и формирует честное отношение к делу.",
-        story_ch4_title: "Проекты, ИИ и социальная польза",
+        story_ch4_title: "Социальные проекты",
         story_ch4_desc: "Моя жизнь не ограничивается одной лишь работой. Я развиваю полезные проекты и участвую в важных социальных инициативах: Wise Kids и «Правда о наркотиках».",
         story_ch5_title: "Новый круг общения и BetterWay",
         story_ch5_desc: "Знакомство с международным сообществом предпринимателей и путешественников открыло мне новый масштаб. Теперь я делюсь этим с людьми, готовыми расти вместе со мной.",
@@ -2188,7 +2190,7 @@
         story_ch2_desc: "Moving to Calgary (Alberta) became a major milestone of growth. I started developing my own ventures and opening new horizons.",
         story_ch3_title: "Honest Hands-On Work & Mechanic Craft",
         story_ch3_desc: "I understand the true value of labor at every level. In Canada, I also work as a mechanic: servicing heavy equipment and fleet vehicles. Real physical work keeps me grounded and sharp.",
-        story_ch4_title: "Tech Ventures & Social Impact",
+        story_ch4_title: "Social Projects",
         story_ch4_desc: "Life is more than just daily work. I develop tech initiatives and contribute to meaningful social causes: Wise Kids and Truth About Drugs.",
         link_drugfree: "Truth About Drugs",
         story_ch5_title: "Community & The BetterWay Vision",
