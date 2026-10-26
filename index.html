@@ -209,10 +209,10 @@
         <!-- Right Action Buttons -->
         <div class="flex items-center gap-2 sm:gap-3 shrink-0">
           
-          <!-- Call Button: Simple direct call action -->
-          <a href="tel:+14039250568" class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full bg-dark-800 hover:bg-dark-700 text-amber-300 border border-amber-500/30 text-xs font-bold transition-all shadow-md" title="Позвонить: +1 (403) 925-0568">
-            <i data-lucide="phone-call" class="w-3.5 h-3.5 text-amber-400"></i>
-            <span data-i18n="header_call_btn">Позвонить</span>
+          <!-- Contact Phone on Desktop -->
+          <a href="tel:+14039250568" onclick="handleDesktopCall(event)" class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full bg-dark-800/90 hover:bg-dark-700 text-amber-300 hover:text-white border border-amber-500/30 text-xs font-mono font-bold transition-all shadow-md cursor-pointer" title="Позвонить или скопировать: +1 (403) 925-0568">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span>+1 (403) 925-0568</span>
           </a>
 
           <!-- Contact CTA Button -->
@@ -249,9 +249,9 @@
       <a href="#projects" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_projects">Проекты</a>
       <a href="#faq" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_faq">FAQ</a>
       <div class="pt-3 flex flex-col gap-2">
-        <a href="tel:+14039250568" class="w-full py-2.5 rounded-xl bg-dark-800 text-amber-300 border border-amber-500/30 font-bold text-xs flex items-center justify-center gap-2">
-          <i data-lucide="phone-call" class="w-4 h-4 text-amber-400"></i>
-          <span data-i18n="header_call_btn">Позвонить</span>
+        <a href="tel:+14039250568" class="w-full py-2.5 rounded-xl bg-dark-800 text-amber-300 border border-amber-500/30 font-bold font-mono text-xs flex items-center justify-center gap-2">
+          <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i>
+          <span>+1 (403) 925-0568</span>
         </a>
         <button onclick="openContactModal('general')" class="w-full py-3 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 cursor-pointer">
           <i data-lucide="message-circle" class="w-4 h-4 fill-dark-950"></i>
@@ -2844,6 +2844,13 @@
       setTimeout(() => {
         toast.classList.add('translate-y-10', 'opacity-0');
       }, 2500);
+    }
+
+    function handleDesktopCall(e) {
+      if (window.innerWidth >= 640 && !('ontouchstart' in window)) {
+        if (e && e.preventDefault) e.preventDefault();
+        copyPhoneToClipboard('+1 403 925 0568');
+      }
     }
 
     function copyPhoneToClipboard(text) {
