@@ -1453,7 +1453,7 @@
   </section>
 
   <!-- 15. ФУТЕР -->
-  <footer class="py-10 sm:py-14 bg-[#040406] border-t border-amber-500/20 text-slate-400 text-xs">
+  <footer class="pt-10 pb-24 sm:py-14 bg-[#040406] border-t border-amber-500/20 text-slate-400 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       
       <div class="flex flex-col md:flex-row justify-between items-center gap-8">
@@ -1512,6 +1512,20 @@
 
     </div>
   </footer>
+
+  <!-- FLOATING MOBILE QUICK-ACTION DOCK (ПОЗВОНИТЬ И НАПИСАТЬ) -->
+  <div id="mobile-floating-dock" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 p-1.5 rounded-full bg-[#0a0c1a]/95 backdrop-blur-xl border border-amber-500/40 shadow-2xl shadow-black/90 md:hidden select-none">
+    <!-- Call Button -->
+    <a href="tel:+14039250568" aria-label="Позвонить Артёму" class="flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-dark-950 font-black text-xs shadow-md active:scale-95 transition-all">
+      <i data-lucide="phone-call" class="w-4 h-4 text-dark-950"></i>
+      <span data-i18n="floating_call_btn">Позвонить</span>
+    </a>
+    <!-- Write Button -->
+    <button onclick="openContactModal()" aria-label="Написать Артёму" class="flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs shadow-md active:scale-95 transition-all cursor-pointer">
+      <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
+      <span data-i18n="floating_write_btn">Написать</span>
+    </button>
+  </div>
 
   <!-- PROOF MODAL: PUNTA CANA PRICE COMPARISON -->
   <div id="proof-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4" role="dialog" aria-modal="true" aria-label="Подтверждение цен">
@@ -1899,7 +1913,9 @@
         modal_success_title: "Ваше сообщение отправлено!",
         modal_success_desc: "Спасибо, я получил твои данные, я свяжусь с тобой в ближайшее время.",
         modal_success_btn: "Отлично",
-        form_sending: "Отправка..."
+        form_sending: "Отправка...",
+        floating_call_btn: "Позвонить",
+        floating_write_btn: "Написать"
       },
       en: {
         nav_story: "About Me",
@@ -2080,7 +2096,9 @@
         modal_success_title: "Your message has been sent!",
         modal_success_desc: "Thank you, I received your details and will get in touch with you shortly.",
         modal_success_btn: "Great",
-        form_sending: "Sending..."
+        form_sending: "Sending...",
+        floating_call_btn: "Call",
+        floating_write_btn: "Message"
       }
     };
 
@@ -2092,7 +2110,11 @@
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key]) {
-          el.textContent = dict[key];
+          if (dict[key].includes('<')) {
+            el.innerHTML = dict[key];
+          } else {
+            el.textContent = dict[key];
+          }
         }
       });
       const langBtn = document.getElementById('current-lang-text');
