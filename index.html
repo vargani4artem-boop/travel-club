@@ -113,6 +113,14 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
+    html {
+      font-size: 16px;
+    }
+    @media (min-width: 640px) {
+      html {
+        font-size: 17px;
+      }
+    }
     body {
       background-color: #070709;
       color: #f1f5f9;
@@ -261,8 +269,13 @@
       <img src="hero_travel_bg_mobile.webp" alt="Артём Варганич — BetterWay" fetchpriority="high" loading="eager" decoding="async" width="720" height="820" class="w-full h-full object-cover object-[center_15%]">
       <div class="absolute inset-0 bg-gradient-to-t from-[#070709] via-[#070709]/30 to-transparent"></div>
       <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#070709]/70 to-transparent"></div>
-      <div class="absolute bottom-3 right-4 font-script text-amber-300 text-lg sm:text-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] text-right leading-tight">
-        Ticket to your<br>better life.
+      <div class="absolute bottom-3 right-4 sm:bottom-5 sm:right-6 font-script text-right leading-tight z-10">
+        <div class="text-2xl sm:text-3xl text-amber-300 font-bold drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]">
+          Ticket to your<br>better life.
+        </div>
+        <div class="text-base sm:text-xl text-slate-200 font-normal mt-1 drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]" data-i18n="hero_script_sub">
+          Новые возможности<br>начинаются со знакомства.
+        </div>
       </div>
     </div>
 
@@ -282,7 +295,7 @@
             <span data-i18n="hero_greeting">Привет, </span><span class="text-gradient-gold" data-i18n="hero_name">я Артём! 👋</span>
           </h1>
 
-          <div class="space-y-3.5 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base text-slate-200 font-normal leading-relaxed">
+          <div class="space-y-3.5 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg text-slate-200 font-normal leading-relaxed">
             <p data-i18n="hero_p1">
               Я из Украины. За последние четыре года многое изменилось в моей жизни.
             </p>
@@ -315,7 +328,7 @@
         <div class="hidden lg:block lg:col-span-5 text-right relative">
           <div class="inline-block font-script text-3xl xl:text-4xl text-amber-200 font-bold tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] leading-snug pr-4">
             Ticket to your<br>better life.<br>
-            <span class="text-xl xl:text-2xl text-slate-300 font-normal">Новые возможности<br>начинаются со знакомства.</span>
+            <span class="text-xl xl:text-2xl text-slate-300 font-normal" data-i18n="hero_script_sub">Новые возможности<br>начинаются со знакомства.</span>
           </div>
         </div>
 
@@ -325,37 +338,37 @@
     <!-- Bottom Strip: BetterWay Values -->
     <div class="w-full border-t border-amber-500/20 bg-black/80 backdrop-blur-md py-4 sm:py-5">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 items-center text-xs">
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 items-center">
           
-          <div class="flex items-center gap-2.5">
-            <i data-lucide="user-check" class="w-5 h-5 text-amber-400 shrink-0"></i>
+          <div class="flex items-center gap-3">
+            <i data-lucide="user-check" class="w-6 h-6 text-amber-400 shrink-0"></i>
             <div>
-              <div class="font-bold text-white" data-i18n="value1_title">Личная история</div>
-              <div class="text-[10px] text-slate-400" data-i18n="value1_sub">Без прикрас и иллюзий</div>
+              <div class="font-bold text-white text-sm sm:text-base" data-i18n="value1_title">Личная история</div>
+              <div class="text-xs sm:text-sm text-slate-300" data-i18n="value1_sub">Без прикрас и иллюзий</div>
             </div>
           </div>
 
-          <div class="flex items-center gap-2.5">
-            <i data-lucide="wrench" class="w-5 h-5 text-amber-400 shrink-0"></i>
+          <div class="flex items-center gap-3">
+            <i data-lucide="wrench" class="w-6 h-6 text-amber-400 shrink-0"></i>
             <div>
-              <div class="font-bold text-white" data-i18n="value2_title">Честный труд</div>
-              <div class="text-[10px] text-slate-400" data-i18n="value2_sub">Работа руками и развитие</div>
+              <div class="font-bold text-white text-sm sm:text-base" data-i18n="value2_title">Честный труд</div>
+              <div class="text-xs sm:text-sm text-slate-300" data-i18n="value2_sub">Работа руками и развитие</div>
             </div>
           </div>
 
-          <div class="flex items-center gap-2.5">
-            <i data-lucide="palmtree" class="w-5 h-5 text-amber-400 shrink-0"></i>
+          <div class="flex items-center gap-3">
+            <i data-lucide="palmtree" class="w-6 h-6 text-amber-400 shrink-0"></i>
             <div>
-              <div class="font-bold text-white" data-i18n="value3_title">Яркие путешествия</div>
-              <div class="text-[10px] text-slate-400" data-i18n="value3_sub">Личный опыт и отели 5★</div>
+              <div class="font-bold text-white text-sm sm:text-base" data-i18n="value3_title">Яркие путешествия</div>
+              <div class="text-xs sm:text-sm text-slate-300" data-i18n="value3_sub">Личный опыт и отели 5★</div>
             </div>
           </div>
 
-          <div class="col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-1 flex items-center justify-center md:justify-start gap-2.5 pt-2 md:pt-0 border-t border-amber-500/10 md:border-t-0">
-            <i data-lucide="sparkles" class="w-5 h-5 text-amber-400 shrink-0"></i>
+          <div class="col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-1 flex items-center justify-center md:justify-start gap-3 pt-2 md:pt-0 border-t border-amber-500/10 md:border-t-0">
+            <i data-lucide="sparkles" class="w-6 h-6 text-amber-400 shrink-0"></i>
             <div>
-              <div class="font-bold text-white" data-i18n="value4_title">Новые возможности</div>
-              <div class="text-[10px] text-slate-400" data-i18n="value4_sub">Открытый диалог на равных</div>
+              <div class="font-bold text-white text-sm sm:text-base" data-i18n="value4_title">Новые возможности</div>
+              <div class="text-xs sm:text-sm text-slate-300" data-i18n="value4_sub">Открытый диалог на равных</div>
             </div>
           </div>
 
@@ -365,7 +378,7 @@
 
   </section>
 
-<section id="welcome-video" class="py-12 sm:py-16 bg-[#070709] border-b border-amber-500/15 relative overflow-hidden scroll-mt-20">
+<section id="welcome-video" class="pt-8 sm:pt-12 pb-4 sm:pb-6 bg-[#070709] border-b border-amber-500/15 relative overflow-hidden scroll-mt-20">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -383,7 +396,7 @@
             Кто я и почему хочу поделиться этим с тобой
           </h2>
 
-          <div class="space-y-3.5 text-slate-200 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
+          <div class="space-y-3.5 text-slate-200 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
             <p data-i18n="video_desc">
               В этом коротком видео я рассказываю немного о себе, своих проектах и о том, как познакомился с новыми возможностями.
             </p>
@@ -440,8 +453,8 @@
     </div>
   </section>
 
-<section id="story" class="pt-24 sm:pt-32 pb-16 sm:pb-24 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-28 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+<section id="story" class="pt-6 sm:pt-8 pb-12 sm:pb-16 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto space-y-3">
@@ -452,7 +465,7 @@
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white" data-i18n="story_title">
           Моя история: от Украины до Канады
         </h2>
-        <p class="text-amber-200/90 text-sm sm:text-base font-sans font-normal max-w-2xl mx-auto leading-relaxed" data-i18n="story_quote">
+        <p class="text-amber-200/95 text-base sm:text-lg font-sans font-normal max-w-2xl mx-auto leading-relaxed" data-i18n="story_quote">
           «У меня есть свой бизнес в Украине и в Канаде. За последние четыре года я научился совмещать предпринимательство с честным практическим трудом, развивать новые проекты и быть открытым к сильным людям и масштабным возможностям».
         </p>
       </div>
@@ -472,7 +485,7 @@
               <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2" data-i18n="story_ch1_title">
                 Жизнь и предпринимательский опыт в Украине
               </h3>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="story_ch1_desc">
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="story_ch1_desc">
                 У меня есть свой действующий бизнес в Украине. Предпринимательский опыт привил мне системное мышление, умение нести ответственность за людей, процессы и реальный результат.
               </p>
             </div>
@@ -487,7 +500,7 @@
               <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2" data-i18n="story_ch2_title">
                 Собственный бизнес в Канаде
               </h3>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="story_ch2_desc">
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="story_ch2_desc">
                 Переезд в Калгари (Альберта) стал важным этапом развития. Я не просто адаптировался в новой стране, а построил свой бизнес здесь, в Канаде, открывая новые горизонты.
               </p>
             </div>
@@ -502,7 +515,7 @@
               <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2" data-i18n="story_ch3_title">
                 Честный труд и работа руками
               </h3>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="story_ch3_desc">
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="story_ch3_desc">
                 Я знаю цену труду на всех уровнях. В Канаде я также работаю механиком: обслуживание коммерческой техники и флота. Практический труд держит в тонусе и формирует честное отношение к делу.
               </p>
             </div>
@@ -517,7 +530,7 @@
               <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2" data-i18n="story_ch4_title">
                 Технологические проекты и общественная польза
               </h3>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="story_ch4_desc">
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="story_ch4_desc">
                 Моя жизнь не ограничивается одной лишь работой. Я развиваю IT-проекты (Canadian Website, AI Solutions) и участвую в важных инициативах: Wise Kids и «Правда о наркотиках».
               </p>
             </div>
@@ -578,12 +591,12 @@
           
           <div class="p-6 rounded-3xl bg-[#0e111a] border border-amber-500/20 space-y-3">
             <i data-lucide="wrench" class="w-8 h-8 text-amber-400"></i>
-            <p class="text-base sm:text-lg font-sans font-normal text-slate-100 leading-relaxed" data-i18n="work_quote">
+            <p class="text-lg sm:text-xl font-sans font-normal text-slate-100 leading-relaxed" data-i18n="work_quote">
               «У меня есть свой бизнес в Украине и в Канаде, и при этом значительную часть моего времени занимает реальная работа руками. Я знаю цену физическому труду, ответственности и дисциплине. Для меня важно не стоять на месте — развиваться, путешествовать, знакомиться с людьми и создавать полезное».
             </p>
           </div>
 
-          <div class="space-y-3 text-slate-300 text-sm leading-relaxed">
+          <div class="space-y-3 text-slate-200 text-base sm:text-lg leading-relaxed">
             <p data-i18n="work_desc_1">
               Ремонт грузовых колёс, работа с инструментом, обслуживание тяжелой техники и физические задачи на площадке. 
             </p>
@@ -646,7 +659,7 @@
             Для меня жизнь — это больше, чем работа
           </h2>
 
-          <p class="text-slate-300 text-sm sm:text-base font-sans font-normal leading-relaxed" data-i18n="life_quote">
+          <p class="text-slate-200 text-base sm:text-lg font-sans font-normal leading-relaxed" data-i18n="life_quote">
             «Мне всегда были интересны путешествия, предпринимательство и люди, у которых можно чему-то научиться. Я люблю открывать новые места, участвовать в интересных проектах и знакомиться с теми, кто стремится развиваться. Поэтому, даже когда жизнь сильно менялась, я продолжал искать новые возможности».
           </p>
 
@@ -656,8 +669,8 @@
                 <i data-lucide="users-2" class="w-5 h-5"></i>
               </div>
               <div>
-                <div class="font-bold text-white text-sm" data-i18n="life_f1_title">Сильное окружение и команда</div>
-                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed" data-i18n="life_f1_desc">Встречи сообщества, международные форумы и поддержка людей, которые вдохновляют расти.</div>
+                <div class="font-bold text-white text-base sm:text-lg" data-i18n="life_f1_title">Сильное окружение и команда</div>
+                <div class="text-slate-300 text-sm sm:text-base mt-1 leading-relaxed" data-i18n="life_f1_desc">Встречи сообщества, международные форумы и поддержка людей, которые вдохновляют расти.</div>
               </div>
             </div>
 
@@ -666,8 +679,8 @@
                 <i data-lucide="palmtree" class="w-5 h-5"></i>
               </div>
               <div>
-                <div class="font-bold text-white text-sm" data-i18n="life_f2_title">Путешествия и впечатления</div>
-                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed" data-i18n="life_f2_desc">Амальфитанское побережье Италии, европейские города, курорты 5★ и канадские Скалистые горы.</div>
+                <div class="font-bold text-white text-base sm:text-lg" data-i18n="life_f2_title">Путешествия и впечатления</div>
+                <div class="text-slate-300 text-sm sm:text-base mt-1 leading-relaxed" data-i18n="life_f2_desc">Амальфитанское побережье Италии, европейские города, курорты 5★ и канадские Скалистые горы.</div>
               </div>
             </div>
 
@@ -676,8 +689,8 @@
                 <i data-lucide="sparkles" class="w-5 h-5"></i>
               </div>
               <div>
-                <div class="font-bold text-white text-sm" data-i18n="life_f3_title">Новые горизонты развития</div>
-                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed" data-i18n="life_f3_desc">Возможность сочетать активную жизнь, онлайн-бизнес и постоянное расширение кругозора.</div>
+                <div class="font-bold text-white text-base sm:text-lg" data-i18n="life_f3_title">Новые горизонты развития</div>
+                <div class="text-slate-300 text-sm sm:text-base mt-1 leading-relaxed" data-i18n="life_f3_desc">Возможность сочетать активную жизнь, онлайн-бизнес и постоянное расширение кругозора.</div>
               </div>
             </div>
           </div>
@@ -747,7 +760,7 @@
         Почему я решил попробовать что-то новое?
       </h2>
 
-      <div class="p-6 sm:p-10 rounded-3xl luxury-card border-2 border-amber-500/25 bg-gradient-to-b from-white/[0.04] to-black/60 shadow-2xl space-y-5 text-left text-slate-200 text-sm sm:text-base leading-relaxed">
+      <div class="p-6 sm:p-10 rounded-3xl luxury-card border-2 border-amber-500/25 bg-gradient-to-b from-white/[0.04] to-black/60 shadow-2xl space-y-5 text-left text-slate-200 text-base sm:text-lg leading-relaxed">
         <p data-i18n="why_new_p1">
           Я всегда считал, что новые возможности часто приходят через людей.
         </p>
@@ -788,7 +801,7 @@
             </div>
           </div>
 
-          <div class="space-y-3.5 text-slate-200 text-sm sm:text-base leading-relaxed">
+          <div class="space-y-3.5 text-slate-200 text-base sm:text-lg leading-relaxed">
             <p data-i18n="trip_p1">
               Когда я начал разбираться в предложениях клуба, мне стало интересно сравнить стоимость конкретного отдыха.
             </p>
@@ -883,7 +896,7 @@
         Почему я решил рассказать тебе об этом?
       </h2>
 
-      <div class="p-6 sm:p-10 rounded-3xl luxury-card border-2 border-amber-500/25 bg-gradient-to-b from-white/[0.04] to-black/60 shadow-2xl space-y-5 text-left text-slate-200 text-sm sm:text-base leading-relaxed">
+      <div class="p-6 sm:p-10 rounded-3xl luxury-card border-2 border-amber-500/25 bg-gradient-to-b from-white/[0.04] to-black/60 shadow-2xl space-y-5 text-left text-slate-200 text-base sm:text-lg leading-relaxed">
         <p data-i18n="why_share_p1">
           Мне нравится делиться интересными идеями, полезными находками и знакомить людей с новыми возможностями.
         </p>
@@ -923,7 +936,7 @@
             <h3 class="text-2xl font-serif font-black text-white" data-i18n="dir_travel_title">
               Любишь путешествовать?
             </h3>
-            <p class="text-slate-300 text-sm leading-relaxed" data-i18n="dir_travel_desc">
+            <p class="text-slate-200 text-base sm:text-lg leading-relaxed" data-i18n="dir_travel_desc">
               Если тебе нравится открывать новые страны, отдыхать и находить интересные предложения на отели и путешествия, возможно, тебе будет интересно узнать, как работает этот клуб.
             </p>
           </div>
@@ -944,7 +957,7 @@
             <h3 class="text-2xl font-serif font-black text-white" data-i18n="dir_biz_title">
               Интересен бизнес в сфере путешествий?
             </h3>
-            <p class="text-slate-300 text-sm leading-relaxed" data-i18n="dir_biz_desc">
+            <p class="text-slate-200 text-base sm:text-lg leading-relaxed" data-i18n="dir_biz_desc">
               Здесь есть не только возможности для путешествий, но и партнёрское направление, в котором можно развивать собственный бизнес и строить команду.
             </p>
           </div>
@@ -983,7 +996,7 @@
             01
           </div>
           <h3 class="text-lg font-bold text-white" data-i18n="step1_title">Знакомство с возможностями</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="step1_desc">
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="step1_desc">
             Ты знакомишься с клубной моделью, концепцией оптовых цен и реальными примерами бронирований.
           </p>
         </div>
@@ -993,7 +1006,7 @@
             02
           </div>
           <h3 class="text-lg font-bold text-white" data-i18n="step2_title">Условия членства</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="step2_desc">
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="step2_desc">
             Узнаёшь форматы клубного участия, правила накопления баллов лояльности и возможности партнёрства.
           </p>
         </div>
@@ -1003,7 +1016,7 @@
             03
           </div>
           <h3 class="text-lg font-bold text-white" data-i18n="step3_title">Демонстрация платформы</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="step3_desc">
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="step3_desc">
             Я лично показываю платформу изнутри: поиск направлений, отелей, сравнение цен и оформление брони.
           </p>
         </div>
@@ -1013,7 +1026,7 @@
             04
           </div>
           <h3 class="text-lg font-bold text-white" data-i18n="step4_title">Твоё решение</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="step4_desc">
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="step4_desc">
             Ты самостоятельно принимаешь осознанное решение, подходит ли этот клуб тебе и твоей семье.
           </p>
         </div>
@@ -1034,7 +1047,7 @@
         Как устроено участие?
       </h2>
 
-      <div class="p-6 sm:p-8 rounded-3xl luxury-card border border-amber-500/30 space-y-5 text-slate-200 text-sm sm:text-base leading-relaxed">
+      <div class="p-6 sm:p-8 rounded-3xl luxury-card border border-amber-500/30 space-y-5 text-slate-200 text-base sm:text-lg leading-relaxed">
         <p data-i18n="membership_text">
           Участие в travel-клубе платное. Существуют разные варианты членства с ежемесячными и вступительными взносами. Я расскажу тебе об условиях и покажу, как всё устроено, во время нашего общения.
         </p>
@@ -1268,7 +1281,7 @@
             </div>
             <span data-i18n="filter_yes_title">Тебе точно ко мне, если:</span>
           </div>
-          <ul class="space-y-4 text-sm text-slate-200">
+          <ul class="space-y-4 text-base sm:text-lg text-slate-100 leading-relaxed">
             <li class="flex items-start gap-3">
               <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 mt-1 shrink-0"></i>
               <span data-i18n="filter_yes_1">Ты любишь путешествовать и хочешь делать это чаще и выгоднее</span>
@@ -1292,7 +1305,7 @@
         <div class="lg:col-span-4 p-8 rounded-3xl luxury-card border-2 border-amber-500/40 glow-gold flex flex-col justify-between space-y-6 relative overflow-hidden">
           <div class="space-y-4 relative z-10">
             <i data-lucide="quote" class="w-8 h-8 text-amber-400"></i>
-            <p class="text-base sm:text-lg font-sans font-normal text-slate-100 leading-relaxed" data-i18n="filter_quote_text">
+            <p class="text-lg sm:text-xl font-sans font-normal text-slate-100 leading-relaxed" data-i18n="filter_quote_text">
               «Я строю команду осознанных людей, которые хотят не просто путешествовать, а расти, развивать свои навыки и повышать уровень жизни вместе со мной».
             </p>
           </div>
@@ -1313,7 +1326,7 @@
             </div>
             <span data-i18n="filter_no_title">Нам не по пути, если:</span>
           </div>
-          <ul class="space-y-4 text-sm text-slate-200">
+          <ul class="space-y-4 text-base sm:text-lg text-slate-100 leading-relaxed">
             <li class="flex items-start gap-3">
               <i data-lucide="x-circle" class="w-4 h-4 text-rose-400 mt-1 shrink-0"></i>
               <span data-i18n="filter_no_1">Ты ищешь «кнопку бабло» и не хочешь прилагать никаких усилий</span>
@@ -1355,10 +1368,10 @@
         <!-- FAQ 1 -->
         <div class="rounded-2xl luxury-card border border-amber-500/20 overflow-hidden">
           <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors cursor-pointer" aria-expanded="false">
-            <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q1">Что представляет собой travel-клуб?</span>
+            <span class="font-bold text-white text-lg sm:text-xl" data-i18n="faq_q1">Что представляет собой travel-клуб?</span>
             <i data-lucide="plus" class="faq-icon w-5 h-5 text-amber-400 transition-transform duration-300"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-5 text-slate-300 text-sm leading-relaxed border-t border-amber-500/10 pt-4">
+          <div class="faq-content hidden px-6 pb-5 text-slate-200 text-base sm:text-lg leading-relaxed border-t border-amber-500/10 pt-4">
             <p data-i18n="faq_a1">
               Это международный сервис закрытого членства, открывающий доступ к платформе с отелями 4–5★, курортами All Inclusive, круизами и клубными турами по специальным ценам.
             </p>
@@ -1368,10 +1381,10 @@
         <!-- FAQ 2 -->
         <div class="rounded-2xl luxury-card border border-amber-500/20 overflow-hidden">
           <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors cursor-pointer" aria-expanded="false">
-            <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q2">Платное ли это участие?</span>
+            <span class="font-bold text-white text-lg sm:text-xl" data-i18n="faq_q2">Платное ли это участие?</span>
             <i data-lucide="plus" class="faq-icon w-5 h-5 text-amber-400 transition-transform duration-300"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-5 text-slate-300 text-sm leading-relaxed border-t border-amber-500/10 pt-4">
+          <div class="faq-content hidden px-6 pb-5 text-slate-200 text-base sm:text-lg leading-relaxed border-t border-amber-500/10 pt-4">
             <p data-i18n="faq_a2">
               Да, участие основано на клубной подписке. При этом каждый взнос конвертируется в баллы программы лояльности, которые ты можешь использовать для снижения стоимости своих поездок.
             </p>
@@ -1381,10 +1394,10 @@
         <!-- FAQ 3 -->
         <div class="rounded-2xl luxury-card border border-amber-500/20 overflow-hidden">
           <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors cursor-pointer" aria-expanded="false">
-            <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q3">Можно ли посмотреть платформу перед вступлением?</span>
+            <span class="font-bold text-white text-lg sm:text-xl" data-i18n="faq_q3">Можно ли посмотреть платформу перед вступлением?</span>
             <i data-lucide="plus" class="faq-icon w-5 h-5 text-amber-400 transition-transform duration-300"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-5 text-slate-300 text-sm leading-relaxed border-t border-amber-500/10 pt-4">
+          <div class="faq-content hidden px-6 pb-5 text-slate-200 text-base sm:text-lg leading-relaxed border-t border-amber-500/10 pt-4">
             <p data-i18n="faq_a3">
               Да, конечно! Во время личного звонка или видеодемонстрации я с удовольствием покажу тебе платформу, отели, систему поиска и сравнение цен в реальном времени.
             </p>
@@ -1394,10 +1407,10 @@
         <!-- FAQ 4 -->
         <div class="rounded-2xl luxury-card border border-amber-500/20 overflow-hidden">
           <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors cursor-pointer" aria-expanded="false">
-            <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q4">Гарантируется ли экономия на каждой поездке?</span>
+            <span class="font-bold text-white text-lg sm:text-xl" data-i18n="faq_q4">Гарантируется ли экономия на каждой поездке?</span>
             <i data-lucide="plus" class="faq-icon w-5 h-5 text-amber-400 transition-transform duration-300"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-5 text-slate-300 text-sm leading-relaxed border-t border-amber-500/10 pt-4">
+          <div class="faq-content hidden px-6 pb-5 text-slate-200 text-base sm:text-lg leading-relaxed border-t border-amber-500/10 pt-4">
             <p data-i18n="faq_a4">
               Размер выгоды зависит от направления, дат, типа номера и сезонности. На клубных турах и курортах экономия может быть очень существенной, но фиксированных одинаковых скидок для каждого отеля не существует.
             </p>
@@ -1407,10 +1420,10 @@
         <!-- FAQ 5 -->
         <div class="rounded-2xl luxury-card border border-amber-500/20 overflow-hidden">
           <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors cursor-pointer" aria-expanded="false">
-            <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q5">Есть ли гарантии заработка в партнёрском направлении?</span>
+            <span class="font-bold text-white text-lg sm:text-xl" data-i18n="faq_q5">Есть ли гарантии заработка в партнёрском направлении?</span>
             <i data-lucide="plus" class="faq-icon w-5 h-5 text-amber-400 transition-transform duration-300"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-5 text-slate-300 text-sm leading-relaxed border-t border-amber-500/10 pt-4">
+          <div class="faq-content hidden px-6 pb-5 text-slate-200 text-base sm:text-lg leading-relaxed border-t border-amber-500/10 pt-4">
             <p data-i18n="faq_a5">
               Нет, никаких гарантий дохода нет и быть не может. Партнёрство — это реальный бизнес, где финансовый результат зависит исключительно от твоих усилий, настойчивости и работы с людьми.
             </p>
@@ -1420,10 +1433,10 @@
         <!-- FAQ 6 -->
         <div class="rounded-2xl luxury-card border border-amber-500/20 overflow-hidden">
           <button class="faq-trigger w-full px-6 py-5 text-left flex justify-between items-center gap-4 hover:bg-dark-800/50 transition-colors cursor-pointer" aria-expanded="false">
-            <span class="font-bold text-white text-base sm:text-lg" data-i18n="faq_q6">Как работает отмена членства?</span>
+            <span class="font-bold text-white text-lg sm:text-xl" data-i18n="faq_q6">Как работает отмена членства?</span>
             <i data-lucide="plus" class="faq-icon w-5 h-5 text-amber-400 transition-transform duration-300"></i>
           </button>
-          <div class="faq-content hidden px-6 pb-5 text-slate-300 text-sm leading-relaxed border-t border-amber-500/10 pt-4">
+          <div class="faq-content hidden px-6 pb-5 text-slate-200 text-base sm:text-lg leading-relaxed border-t border-amber-500/10 pt-4">
             <p data-i18n="faq_a6">
               Вы можете отменить членство через личный кабинет.
             </p>
@@ -1445,7 +1458,7 @@
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white" data-i18n="contact_title">
           Давай пообщаемся! 👋
         </h2>
-        <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto" data-i18n="contact_subtitle">
+        <p class="text-slate-200 text-base sm:text-lg max-w-xl mx-auto" data-i18n="contact_subtitle">
           Оставь своё имя и контактный телефон, и я с тобой свяжусь.
         </p>
       </div>
@@ -1856,6 +1869,7 @@
         header_call_btn: "Позвонить",
         btn_contact_artem: "Напиши мне",
         hero_badge: "BETTERWAY • TICKET TO YOUR BETTER LIFE",
+        hero_script_sub: "Новые возможности<br>начинаются со знакомства.",
         hero_greeting: "Привет, ",
         hero_name: "я Артём! 👋",
         hero_p1: "Я из Украины. За последние четыре года многое изменилось в моей жизни.",
@@ -2028,6 +2042,7 @@
         header_call_btn: "Call",
         btn_contact_artem: "Contact Me",
         hero_badge: "BETTERWAY • TICKET TO YOUR BETTER LIFE",
+        hero_script_sub: "New opportunities<br>begin with a connection.",
         hero_greeting: "Hello, ",
         hero_name: "I am Artem! 👋",
         hero_p1: "I am originally from Ukraine. Over the last four years, a great deal has changed in my life.",
