@@ -680,7 +680,7 @@
               <i data-lucide="chevron-right" class="w-5 h-5"></i>
             </button>
             <span class="px-4 py-2 rounded-full bg-dark-800 border border-amber-500/30 text-amber-300 font-mono text-xs font-bold">
-              <span id="life-slide-current">1</span> / <span id="life-slide-total">4</span>
+              <span id="life-slide-current">1</span> / <span id="life-slide-total">7</span>
             </span>
             <button onclick="toggleLifeSliderAutoplay()" id="life-play-btn" class="px-3.5 py-2 rounded-full bg-dark-800 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs flex items-center gap-1.5 cursor-pointer">
               <i data-lucide="pause" class="w-3.5 h-3.5 text-amber-400" id="life-play-icon"></i>
@@ -695,7 +695,7 @@
           <div class="relative rounded-3xl overflow-hidden luxury-card border-2 border-amber-500/30 shadow-2xl glow-gold select-none">
             
             <div class="relative w-full h-[400px] sm:h-[480px] lg:h-[540px] xl:h-[580px] overflow-hidden bg-black/80">
-              <img id="life-slider-img" src="artem_team_whiteparty_clean.webp" alt="Команда клуба" class="w-full h-full object-cover object-center transition-all duration-700">
+              <img id="life-slider-img" src="life_real_1_team.webp" alt="Артём с командой клуба" class="w-full h-full object-cover object-center transition-all duration-700">
               <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/95 via-transparent to-black/30 pointer-events-none"></div>
 
               <!-- Nav Arrows Overlay -->
@@ -710,7 +710,7 @@
               <div class="absolute bottom-5 left-5 right-5 z-20">
                 <div class="px-4 py-2.5 rounded-2xl bg-black/85 border border-amber-500/40 text-amber-300 font-semibold text-xs sm:text-sm backdrop-blur-md shadow-xl flex items-center gap-2.5">
                   <i data-lucide="camera" class="w-4 h-4 text-amber-400 shrink-0"></i>
-                  <span id="life-slide-desc">Встречи команды • White Party у самолётов</span>
+                  <span id="life-slide-desc">Команда и партнёры клуба • Живые встречи сообщества</span>
                 </div>
               </div>
 
@@ -2173,28 +2173,43 @@
     }
 
     // ==========================================
-    // 4. LIFE & TEAM GALLERY ENGINE (TEAM PHOTOS ONLY)
+    // 4. LIFE & TRAVEL GALLERY ENGINE (REAL PHOTOS)
     // ==========================================
     const lifePhotos = [
       {
-        src: 'artem_team_whiteparty_clean.webp',
-        desc_ru: 'Встречи команды • White Party у самолётов',
-        desc_en: 'Team meetings • White Party by aircraft'
+        src: 'life_real_1_team.webp',
+        desc_ru: 'Команда и партнёры клуба • Живые встречи сообщества',
+        desc_en: 'Club team and partners • Live community events'
       },
       {
-        src: 'life_whiteparty_pair.webp',
-        desc_ru: 'Атмосфера White Party и единомышленники',
-        desc_en: 'White Party atmosphere and like-minded partners'
+        src: 'life_real_2_paris.webp',
+        desc_ru: 'Париж, Франция • Путешествия по миру и яркие эмоции',
+        desc_en: 'Paris, France • Global travels and bright impressions'
       },
       {
-        src: 'life_conference_forum.webp',
-        desc_ru: 'Международные форумы сообщества и партнёры',
-        desc_en: 'International community forums and partners'
+        src: 'life_real_3_flight.webp',
+        desc_ru: 'Перелёты и поездки • Свобода открывать новые страны',
+        desc_en: 'Flights and journeys • Freedom to explore new countries'
       },
       {
-        src: 'artem_team_convention.webp',
-        desc_ru: 'Партнёры клуба и совместные события',
-        desc_en: 'Club partners and joint live events'
+        src: 'life_real_4_lake.webp',
+        desc_ru: 'Озёра и горы Италии • Отдых в живописных уголках планеты',
+        desc_en: 'Lakes and mountains of Italy • Picturesque getaways'
+      },
+      {
+        src: 'life_real_5_waterfall.webp',
+        desc_ru: 'Активный отдых и природа • Заряд энергии на водопадах',
+        desc_en: 'Active outdoors and nature • Energy at waterfalls'
+      },
+      {
+        src: 'life_real_6_cruise.webp',
+        desc_ru: 'Морские прогулки и океан • Незабываемые моменты путешествий',
+        desc_en: 'Ocean cruises and boat trips • Unforgettable moments'
+      },
+      {
+        src: 'life_real_7_calgary.webp',
+        desc_ru: 'Калгари, Канада • Ночные огни и уют большого города',
+        desc_en: 'Calgary, Canada • Night lights and city skyline'
       }
     ];
     let lifeIndex = 0;
