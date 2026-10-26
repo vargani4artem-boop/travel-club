@@ -298,7 +298,7 @@
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
             <a href="#welcome-video" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-xl shadow-amber-500/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer">
               <i data-lucide="play-circle" class="w-4 h-4 text-dark-950"></i>
-              <span data-i18n="hero_btn_story">Посмотреть мою историю</span>
+              <span data-i18n="hero_btn_story">Посмотреть ознакомительное видео</span>
               <i data-lucide="arrow-down" class="w-4 h-4 text-dark-950"></i>
             </a>
             <button onclick="openContactModal('general')" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-dark-800 hover:bg-dark-700 text-slate-200 hover:text-white border border-amber-500/30 text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer">
@@ -440,44 +440,138 @@
   </section>
 
   <!-- 3. МОЯ ИСТОРИЯ: ОТ УКРАИНЫ ДО КАНАДЫ -->
-  <section id="story" class="py-12 sm:py-16 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+  <section id="story" class="pt-24 sm:pt-32 pb-16 sm:pb-24 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       
-      <div class="text-center space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider" data-i18n="story_tag">
-          МОЙ ПУТЬ
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider">
+          <i data-lucide="compass" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span data-i18n="story_tag">МОЙ ПУТЬ • 4 ГОДА ТРАНСФОРМАЦИИ</span>
         </div>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white" data-i18n="story_title">
           Моя история: от Украины до Канады
         </h2>
+        <p class="text-amber-200/90 text-sm sm:text-base font-serif italic max-w-2xl mx-auto leading-relaxed" data-i18n="story_quote">
+          «За последние четыре года в моей жизни произошло больше перемен, чем за предыдущее десятилетие. Я прошёл путь от собственного бизнеса в Украине до работы руками в Канаде, создания новых проектов и открытия международного сообщества».
+        </p>
       </div>
 
-      <!-- Narrative Card -->
-      <div class="p-6 sm:p-10 rounded-3xl luxury-card border border-amber-500/25 space-y-5 text-slate-200 text-sm sm:text-base leading-relaxed">
-        <p data-i18n="story_p1">
-          За последние четыре года в моей жизни многое изменилось.
-        </p>
-        <p data-i18n="story_p2">
-          В Украине у меня был собственный бизнес.
-        </p>
-        <p data-i18n="story_p3">
-          Сегодня я живу в Канаде, работаю механиком, занимаюсь ремонтом колёс и техники.
-        </p>
-        <p data-i18n="story_p4">
-          Моя работа требует физических усилий, ответственности и практических навыков.
-        </p>
-        <p data-i18n="story_p5">
-          Но моя жизнь не ограничивается только работой.
-        </p>
-        <p data-i18n="story_p6">
-          Я продолжаю развивать собственные проекты, участвовать в социальных инициативах и знакомиться с интересными людьми.
-        </p>
-        <p data-i18n="story_p7">
-          Для меня важно продолжать развиваться и находить направления, в которых я могу приносить пользу.
-        </p>
-        <p class="text-amber-300 font-semibold pt-2 border-t border-amber-500/20" data-i18n="story_p8">
-          Именно поэтому меня заинтересовало новое сообщество людей, объединённых путешествиями и предпринимательством.
-        </p>
+      <!-- Desktop 2-Column Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+        
+        <!-- Left: Milestone Chapters Narrative -->
+        <div class="lg:col-span-7 flex flex-col justify-between space-y-4">
+          
+          <!-- Step 1: Ukraine & Business -->
+          <div class="p-5 sm:p-6 rounded-2xl luxury-card border border-amber-500/20 hover:border-amber-400/50 transition-all flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 font-bold font-mono text-base">
+              01
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2" data-i18n="story_ch1_title">
+                Собственный бизнес в Украине
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="story_ch1_desc">
+                В Украине я руководил собственным делом. Этот опыт привил мне предпринимательское мышление, умение нести ответственность за людей, процессы и финансовый результат.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2: Move to Canada -->
+          <div class="p-5 sm:p-6 rounded-2xl luxury-card border border-amber-500/20 hover:border-amber-400/50 transition-all flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 font-bold font-mono text-base">
+              02
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2" data-i18n="story_ch2_title">
+                Переезд в Канаду и новый старт с нуля
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="story_ch2_desc">
+                Жизнь в новой стране — это фундаментальная проверка характера. Я поселился в Калгари (Альберта) и не побоялся начать всё сначала, опираясь на свои руки, энергию и труд.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3: Real Work & Mechanics -->
+          <div class="p-5 sm:p-6 rounded-2xl luxury-card border border-amber-500/20 hover:border-amber-400/50 transition-all flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 font-bold font-mono text-base">
+              03
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2" data-i18n="story_ch3_title">
+                Честный физический труд механиком
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="story_ch3_desc">
+                Сегодня я работаю механиком: ремонт грузовых колёс, обслуживание техники и флота. Физическая работа в любую погоду держит в тонусе и формирует честное отношение к делу.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4: Projects & Initiatives -->
+          <div class="p-5 sm:p-6 rounded-2xl luxury-card border border-amber-500/20 hover:border-amber-400/50 transition-all flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 font-bold font-mono text-base">
+              04
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2" data-i18n="story_ch4_title">
+                Проекты, ИИ и социальная польза
+              </h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="story_ch4_desc">
+                Моя жизнь не ограничивается одной лишь работой. Я развиваю IT-проекты (Canadian Website, AI Solutions) и участвую в важных инициативах: Wise Kids и «Правда о наркотиках».
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 5: BetterWay & Community -->
+          <div class="p-5 sm:p-6 rounded-2xl luxury-card border-2 border-amber-500/40 bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/5 flex items-start gap-4 shadow-lg">
+            <div class="w-12 h-12 rounded-xl bg-amber-500 text-dark-950 flex items-center justify-center shrink-0 font-black font-mono text-base shadow-md">
+              05
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-base sm:text-lg font-bold text-amber-300 flex items-center gap-2" data-i18n="story_ch5_title">
+                Новый круг общения и BetterWay
+              </h3>
+              <p class="text-slate-200 text-xs sm:text-sm leading-relaxed font-medium" data-i18n="story_ch5_desc">
+                Знакомство с международным сообществом предпринимателей и путешественников открыло мне новый масштаб. Теперь я делюсь этим с людьми, готовыми расти вместе со мной.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Authentic Visual Composition -->
+        <div class="lg:col-span-5 flex flex-col justify-between space-y-5">
+          
+          <div class="relative rounded-3xl overflow-hidden luxury-card border-2 border-amber-500/30 shadow-2xl glow-gold group">
+            <img src="artem_portrait.jpg" alt="Артём Варганич" class="w-full h-[400px] sm:h-[460px] lg:h-[500px] object-cover object-[center_80%] group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-black/30 pointer-events-none"></div>
+            
+            <!-- Top Location Badge -->
+            <div class="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-amber-500/40 text-amber-300 text-xs font-bold flex items-center gap-2 shadow-lg">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-400"></i>
+              <span>Калгари, Канада • 4 года</span>
+            </div>
+
+            <!-- Inset Picture (Canmore Rockies) -->
+            <div class="absolute bottom-4 right-4 w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-2 border-amber-400 shadow-2xl hidden sm:block">
+              <img src="life_canmore_mountains.webp" alt="Артём в Скалистых горах" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Bottom Floating Caption -->
+            <div class="absolute bottom-4 left-4 right-4 sm:right-44 p-3.5 rounded-2xl bg-black/85 backdrop-blur-md border border-white/10 text-xs space-y-1">
+              <div class="font-bold text-white">Артём Варганич</div>
+              <div class="text-[11px] text-amber-300/90 font-mono">Ticket to your better life</div>
+            </div>
+          </div>
+
+          <!-- Bottom Quote Box -->
+          <div class="p-5 rounded-2xl bg-white/[0.03] border border-amber-500/20 text-xs sm:text-sm text-slate-300 italic leading-relaxed font-serif">
+            «Главный вывод этих четырёх лет: никогда не останавливаться, честно трудиться и всегда быть открытым к сильным людям рядом».
+          </div>
+
+        </div>
+
       </div>
 
     </div>
@@ -521,7 +615,7 @@
             
             <!-- Work Image Container -->
             <div class="relative w-full h-[380px] sm:h-[460px] overflow-hidden bg-black/60">
-              <img id="work-slider-img" src="artem_gallery_3_mechanic.webp" alt="Артём за работой механиком в Канаде" class="w-full h-full object-cover object-center transition-all duration-500">
+              <img id="work-slider-img" src="work_1_cabin.webp" alt="Артём в кабине спецтехники в Канаде" class="w-full h-full object-cover object-center transition-all duration-500">
               <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/85 via-transparent to-black/20 pointer-events-none"></div>
 
               <!-- Navigation Arrows -->
@@ -536,10 +630,10 @@
               <div class="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between text-xs text-amber-300 font-mono">
                 <span class="px-3 py-1 rounded-full bg-black/80 border border-amber-500/30 backdrop-blur-md flex items-center gap-1.5">
                   <i data-lucide="hammer" class="w-3.5 h-3.5 text-amber-400"></i>
-                  <span id="work-slider-caption">Ремонт техники и колёс • Канада</span>
+                  <span id="work-slider-caption">В кабине спецтехники • Канада</span>
                 </span>
                 <span class="px-3 py-1 rounded-full bg-black/80 border border-amber-500/30 backdrop-blur-md">
-                  <span id="work-slide-current">1</span> / <span id="work-slide-total">4</span>
+                  <span id="work-slide-current">1</span> / <span id="work-slide-total">8</span>
                 </span>
               </div>
             </div>
@@ -553,54 +647,104 @@
   </section>
 
   <!-- 5. ГАЛЕРЕЯ «МОЯ ЖИЗНЬ, КОМАНДА И ПУТЕШЕСТВИЯ» -->
-  <section id="life-gallery" class="py-12 sm:py-16 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+  <section id="life-gallery" class="py-16 sm:py-24 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider" data-i18n="life_tag">
-          ЛЮДИ И СОБЫТИЯ
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white" data-i18n="life_title">
-          Моя жизнь — это люди, путешествия и новые возможности
-        </h2>
-        <p class="text-slate-300 text-sm sm:text-base italic max-w-2xl mx-auto font-serif" data-i18n="life_quote">
-          «Мне нравится знакомиться с людьми, создавать проекты, путешествовать и участвовать в том, что приносит пользу другим».
-        </p>
-      </div>
-
-      <!-- Life Gallery Showcase (Slider & Carousel) -->
-      <div class="relative rounded-3xl overflow-hidden luxury-card border-2 border-amber-500/30 shadow-2xl glow-gold select-none max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        <div class="relative w-full h-[420px] sm:h-[520px] overflow-hidden bg-black/70">
-          <img id="life-slider-img" src="artem_gallery_1_travel.webp" alt="Артём в путешествиях и с командой" class="w-full h-full object-cover object-center transition-all duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/90 via-transparent to-black/30 pointer-events-none"></div>
+        <!-- Left Column: Context, Highlights & Slider Controls -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider" data-i18n="life_tag">
+            <i data-lucide="users" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span>ЛЮДИ, КОМАНДА И ПУТЕШЕСТВИЯ</span>
+          </div>
 
-          <!-- Nav Arrows -->
-          <button onclick="lifeSliderPrev()" aria-label="Предыдущее фото" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/70 hover:bg-amber-500 text-white hover:text-dark-950 border border-amber-500/40 flex items-center justify-center backdrop-blur-md transition-all cursor-pointer">
-            <i data-lucide="chevron-left" class="w-6 h-6"></i>
-          </button>
-          <button onclick="lifeSliderNext()" aria-label="Следующее фото" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/70 hover:bg-amber-500 text-white hover:text-dark-950 border border-amber-500/40 flex items-center justify-center backdrop-blur-md transition-all cursor-pointer">
-            <i data-lucide="chevron-right" class="w-6 h-6"></i>
-          </button>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white leading-tight" data-i18n="life_title">
+            Моя жизнь — это люди, путешествия и новые возможности
+          </h2>
 
-          <!-- Bottom Meta Controls -->
-          <div class="absolute bottom-5 left-5 right-5 z-20 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-            <div class="px-4 py-2 rounded-2xl bg-black/80 border border-amber-500/30 text-amber-300 font-semibold backdrop-blur-md shadow-lg flex items-center gap-2">
-              <i data-lucide="image" class="w-4 h-4 text-amber-400 shrink-0"></i>
-              <span id="life-slide-desc">Артём в путешествиях • Амальфитанское побережье</span>
+          <p class="text-slate-300 text-sm sm:text-base italic font-serif leading-relaxed" data-i18n="life_quote">
+            «Мне нравится знакомиться с людьми, создавать проекты, путешествовать и участвовать в том, что приносит пользу другим».
+          </p>
+
+          <div class="space-y-3.5 pt-1">
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-amber-500/20 flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-400 shrink-0">
+                <i data-lucide="users-2" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="font-bold text-white text-sm" data-i18n="life_f1_title">Сильное окружение и команда</div>
+                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed" data-i18n="life_f1_desc">Встречи сообщества, международные форумы и поддержка людей, которые вдохновляют расти.</div>
+              </div>
             </div>
 
-            <div class="flex items-center gap-2">
-              <span class="px-3.5 py-1.5 rounded-full bg-black/80 border border-amber-500/30 font-mono text-amber-300 text-xs backdrop-blur-md">
-                <span id="life-slide-current">1</span> / <span id="life-slide-total">7</span>
-              </span>
-              <button onclick="toggleLifeSliderAutoplay()" id="life-play-btn" class="px-3.5 py-1.5 rounded-full bg-black/80 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs flex items-center gap-1.5 backdrop-blur-md cursor-pointer">
-                <i data-lucide="pause" class="w-3 h-3 text-amber-400" id="life-play-icon"></i>
-                <span id="life-play-text">Авто</span>
-              </button>
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-amber-500/20 flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-400 shrink-0">
+                <i data-lucide="palmtree" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="font-bold text-white text-sm" data-i18n="life_f2_title">Путешествия и впечатления</div>
+                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed" data-i18n="life_f2_desc">Амальфитанское побережье Италии, европейские города, курорты 5★ и канадские Скалистые горы.</div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-amber-500/20 flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-400 shrink-0">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="font-bold text-white text-sm" data-i18n="life_f3_title">Новые горизонты развития</div>
+                <div class="text-slate-400 text-xs mt-0.5 leading-relaxed" data-i18n="life_f3_desc">Возможность сочетать активную жизнь, онлайн-бизнес и постоянное расширение кругозора.</div>
+              </div>
             </div>
           </div>
 
+          <!-- Controls for Slider -->
+          <div class="flex items-center gap-3 pt-2">
+            <button onclick="lifeSliderPrev()" aria-label="Предыдущее фото" class="w-11 h-11 rounded-full bg-dark-800 hover:bg-amber-500 text-white hover:text-dark-950 border border-amber-500/40 flex items-center justify-center transition-all cursor-pointer shadow-md">
+              <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <button onclick="lifeSliderNext()" aria-label="Следующее фото" class="w-11 h-11 rounded-full bg-dark-800 hover:bg-amber-500 text-white hover:text-dark-950 border border-amber-500/40 flex items-center justify-center transition-all cursor-pointer shadow-md">
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+            <span class="px-4 py-2 rounded-full bg-dark-800 border border-amber-500/30 text-amber-300 font-mono text-xs font-bold">
+              <span id="life-slide-current">1</span> / <span id="life-slide-total">8</span>
+            </span>
+            <button onclick="toggleLifeSliderAutoplay()" id="life-play-btn" class="px-3.5 py-2 rounded-full bg-dark-800 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs flex items-center gap-1.5 cursor-pointer">
+              <i data-lucide="pause" class="w-3.5 h-3.5 text-amber-400" id="life-play-icon"></i>
+              <span id="life-play-text">Авто</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Stretched Slideshow on Desktop -->
+        <div class="lg:col-span-7">
+          <div class="relative rounded-3xl overflow-hidden luxury-card border-2 border-amber-500/30 shadow-2xl glow-gold select-none">
+            
+            <div class="relative w-full h-[400px] sm:h-[480px] lg:h-[540px] xl:h-[580px] overflow-hidden bg-black/80">
+              <img id="life-slider-img" src="artem_team_whiteparty_clean.webp" alt="Команда и путешествия Артёма" class="w-full h-full object-cover object-center transition-all duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#070709]/95 via-transparent to-black/30 pointer-events-none"></div>
+
+              <!-- Nav Arrows Overlay -->
+              <button onclick="lifeSliderPrev()" aria-label="Предыдущее фото" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/70 hover:bg-amber-500 text-white hover:text-dark-950 border border-amber-500/40 flex items-center justify-center backdrop-blur-md transition-all cursor-pointer">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+              </button>
+              <button onclick="lifeSliderNext()" aria-label="Следующее фото" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/70 hover:bg-amber-500 text-white hover:text-dark-950 border border-amber-500/40 flex items-center justify-center backdrop-blur-md transition-all cursor-pointer">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+              </button>
+
+              <!-- Bottom Description Banner -->
+              <div class="absolute bottom-5 left-5 right-5 z-20">
+                <div class="px-4 py-2.5 rounded-2xl bg-black/85 border border-amber-500/40 text-amber-300 font-semibold text-xs sm:text-sm backdrop-blur-md shadow-xl flex items-center gap-2.5">
+                  <i data-lucide="camera" class="w-4 h-4 text-amber-400 shrink-0"></i>
+                  <span id="life-slide-desc">Встречи команды • White Party у самолётов</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
         </div>
 
       </div>
@@ -1659,7 +1803,7 @@
         hero_p2: "Раньше у меня был собственный бизнес. Сегодня я живу в Канаде, работаю механиком, развиваю свои проекты и продолжаю искать возможности быть максимально полезным людям.",
         hero_p3: "Недавно я познакомился с интересным сообществом людей, которое открыло для меня новые возможности.",
         hero_p4: "Хочу поделиться с тобой тем, что меня заинтересовало.",
-        hero_btn_story: "Посмотреть мою историю",
+        hero_btn_story: "Посмотреть ознакомительное видео",
         hero_btn_contact: "Написать мне",
         value1_title: "Личная история",
         value1_sub: "Без прикрас и иллюзий",
@@ -1677,16 +1821,25 @@
         video_duration: "1 мин 26 сек",
         video_poster_title: "Смотреть видео (1:26)",
         video_poster_sub: "Нажмите для воспроизведения",
-        story_tag: "МОЙ ПУТЬ",
+        story_tag: "МОЙ ПУТЬ • 4 ГОДА ТРАНСФОРМАЦИИ",
         story_title: "Моя история: от Украины до Канады",
-        story_p1: "За последние четыре года в моей жизни многое изменилось.",
-        story_p2: "В Украине у меня был собственный бизнес.",
-        story_p3: "Сегодня я живу в Канаде, работаю механиком, занимаюсь ремонтом колёс и техники.",
-        story_p4: "Моя работа требует физических усилий, ответственности и практических навыков.",
-        story_p5: "Но моя жизнь не ограничивается только работой.",
-        story_p6: "Я продолжаю развивать собственные проекты, участвовать в социальных инициативах и знакомиться с интересными людьми.",
-        story_p7: "Для меня важно продолжать развиваться и находить направления, в которых я могу приносить пользу.",
-        story_p8: "Именно поэтому меня заинтересовало новое сообщество людей, объединённых путешествиями и предпринимательством.",
+        story_quote: "«За последние четыре года в моей жизни произошло больше перемен, чем за предыдущее десятилетие. Я прошёл путь от собственного бизнеса в Украине до работы руками в Канаде, создания новых проектов и открытия международного сообщества».",
+        story_ch1_title: "Собственный бизнес в Украине",
+        story_ch1_desc: "В Украине я руководил собственным делом. Этот опыт привил мне предпринимательское мышление, умение нести ответственность за людей, процессы и финансовый результат.",
+        story_ch2_title: "Переезд в Канаду и новый старт с нуля",
+        story_ch2_desc: "Жизнь в новой стране — это фундаментальная проверка характера. Я поселился в Калгари (Альберта) и не побоялся начать всё сначала, опираясь на свои руки, энергию и труд.",
+        story_ch3_title: "Честный физический труд механиком",
+        story_ch3_desc: "Сегодня я работаю механиком: ремонт грузовых колёс, обслуживание техники и флота. Физическая работа в любую погоду держит в тонусе и формирует честное отношение к делу.",
+        story_ch4_title: "Проекты, ИИ и социальная польза",
+        story_ch4_desc: "Моя жизнь не ограничивается одной лишь работой. Я развиваю IT-проекты (Canadian Website, AI Solutions) и участвую в важных инициативах: Wise Kids и «Правда о наркотиках».",
+        story_ch5_title: "Новый круг общения и BetterWay",
+        story_ch5_desc: "Знакомство с международным сообществом предпринимателей и путешественников открыло мне новый масштаб. Теперь я делюсь этим с людьми, готовыми расти вместе со мной.",
+        life_f1_title: "Сильное окружение и команда",
+        life_f1_desc: "Встречи сообщества, международные форумы и поддержка людей, которые вдохновляют расти.",
+        life_f2_title: "Путешествия и впечатления",
+        life_f2_desc: "Амальфитанское побережье Италии, европейские города, курорты 5★ и канадские Скалистые горы.",
+        life_f3_title: "Новые горизонты развития",
+        life_f3_desc: "Возможность сочетать активную жизнь, онлайн-бизнес и постоянное расширение кругозора.",
         work_tag: "РЕАЛЬНЫЙ ТРУД",
         work_title: "Моя работа в Канаде",
         work_quote: "«Это часть моей жизни сегодня. Я работаю руками, развиваюсь профессионально и одновременно продолжаю строить собственные проекты».",
@@ -1806,7 +1959,7 @@
         hero_p2: "I used to run my own business. Today I live in Canada, work as a mechanic, develop my own ventures, and keep seeking ways to bring real value to people.",
         hero_p3: "Recently, I connected with an inspiring community that opened brand new doors for me.",
         hero_p4: "I would love to share what caught my attention with you.",
-        hero_btn_story: "Watch My Story",
+        hero_btn_story: "Watch Intro Video",
         hero_btn_contact: "Contact Me",
         value1_title: "Authentic Story",
         value1_sub: "Real life with zero fluff",
@@ -1824,16 +1977,25 @@
         video_duration: "1 min 26 sec",
         video_poster_title: "Watch Video (1:26)",
         video_poster_sub: "Tap to play",
-        story_tag: "MY JOURNEY",
+        story_tag: "MY JOURNEY • 4 YEARS OF TRANSFORMATION",
         story_title: "My Story: From Ukraine to Canada",
-        story_p1: "Over the last four years, much has changed in my life.",
-        story_p2: "Back in Ukraine, I had my own business.",
-        story_p3: "Today I live in Canada, working as a mechanic repairing tires and heavy machinery.",
-        story_p4: "My work demands physical strength, accountability, and practical skills.",
-        story_p5: "Yet my life goes far beyond just my day job.",
-        story_p6: "I continue building my own projects, contributing to social initiatives, and connecting with inspiring people.",
-        story_p7: "It is essential for me to keep evolving and finding avenues where I can be truly helpful.",
-        story_p8: "That is exactly why I became fascinated by a new community united by travel and entrepreneurship.",
+        story_quote: "“Over the last four years, more has changed in my life than in the previous decade. I walked the path from running my own business in Ukraine to working with my hands in Canada, building new ventures, and joining an international community.”",
+        story_ch1_title: "Entrepreneurship in Ukraine",
+        story_ch1_desc: "In Ukraine, I ran my own business. That experience instilled an entrepreneurial mindset, personal accountability, and problem-solving skills.",
+        story_ch2_title: "Moving to Canada & Starting Fresh",
+        story_ch2_desc: "Starting fresh in a new country tests your character. I settled in Calgary, Alberta, unafraid to build from the ground up through hard work.",
+        story_ch3_title: "Honest Physical Work as a Mechanic",
+        story_ch3_desc: "Today I work as a heavy-duty mechanic: tire servicing, vehicle fleets, and machinery maintenance in all Canadian seasons.",
+        story_ch4_title: "Tech Ventures, AI & Social Impact",
+        story_ch4_desc: "Life is more than just daily work. I develop tech initiatives (Canadian Website, AI Solutions) and support community causes (Wise Kids, Drug-Free World).",
+        story_ch5_title: "Community & The BetterWay Vision",
+        story_ch5_desc: "Discovering an international community of entrepreneurs and travelers opened a broader perspective, uniting travel, business, and mentorship.",
+        life_f1_title: "Inspiring Team & Network",
+        life_f1_desc: "Community meetups, international forums, and genuine peer encouragement.",
+        life_f2_title: "Meaningful World Travel",
+        life_f2_desc: "Amalfi Coast in Italy, historic European streets, 5★ resorts, and the Canadian Rockies.",
+        life_f3_title: "New Horizons & Growth",
+        life_f3_desc: "Balancing active living, digital entrepreneurship, and continuous learning.",
         work_tag: "GENUINE LABOR",
         work_title: "My Work in Canada",
         work_quote: "“This is part of my life today. I work with my hands, develop professionally, and simultaneously keep building my own ventures.”",
@@ -1966,10 +2128,14 @@
     // 3. WORK SLIDER ENGINE (CANADIAN MECHANIC)
     // ==========================================
     const workPhotos = [
-      { src: 'artem_gallery_3_mechanic.webp', caption: 'Ремонт техники и колёс • Канада' },
-      { src: 'artem_photos/p_001.webp', caption: 'Рабочие будни в мастерской' },
-      { src: 'artem_photos/p_002.webp', caption: 'Обслуживание техники и площадки' },
-      { src: 'artem_photos/p_003.webp', caption: 'Практический опыт и инструменты' }
+      { src: 'work_1_cabin.webp', caption: 'Работа на тяжелой технике на площадке' },
+      { src: 'work_2_delivery.webp', caption: 'Логистика и доставка посылок' },
+      { src: 'work_3_locker.webp', caption: 'Подготовка к смене в раздевалке' },
+      { src: 'work_4_bazooka.webp', caption: 'Ударная посадка шин • Bazooka 10' },
+      { src: 'work_5_truck.webp', caption: 'Мобильный шиномонтаж у сервисного трака' },
+      { src: 'work_6_engine.webp', caption: 'Диагностика и ремонт двигателей грузовиков' },
+      { src: 'work_7_crew.webp', caption: 'Работа в экипаже с напарником' },
+      { src: 'work_8_frost.webp', caption: 'Канадская зима: работа на морозе с полуприцепами' }
     ];
     let workIndex = 0;
 
@@ -2003,13 +2169,15 @@
     // 4. LIFE & TEAM GALLERY ENGINE
     // ==========================================
     const lifePhotos = [
-      { src: 'artem_gallery_1_travel.webp', desc: 'Артём в путешествиях • Амальфитанское побережье' },
-      { src: 'artem_gallery_team_whiteparty.webp', desc: 'Встречи сообщества • White Party' },
-      { src: 'artem_gallery_team_event.webp', desc: 'Международные ивенты и нетворкинг' },
-      { src: 'artem_gallery_2_tech.webp', desc: 'Разработка IT-проектов и AI-решений' },
-      { src: 'artem_gallery_4_wisekids_branded.webp', desc: 'Образовательные инициативы Wise Kids' },
-      { src: 'artem_gallery_5_drugfree.webp', desc: 'Волонтёрство • Правда о наркотиках' },
-      { src: 'artem_summer.jpg', desc: 'Друзья, активный отдых и жизнь в движении' }
+      { src: 'artem_team_whiteparty_clean.webp', desc: 'Встречи команды • White Party у самолётов' },
+      { src: 'life_whiteparty_pair.webp', desc: 'Атмосфера White Party и единомышленники' },
+      { src: 'life_conference_forum.webp', desc: 'Международные форумы сообщества и партнёры' },
+      { src: 'path_business_team.webp', desc: 'Командная работа и онлайн-бизнес в сфере путешествий' },
+      { src: 'life_amalfi_beach.webp', desc: 'Путешествия • Пляж Амальфитанского побережья, Италия' },
+      { src: 'life_canmore_mountains.webp', desc: 'Канада • Горы Three Sisters, Канмор (Альберта)' },
+      { src: 'life_italy_promenade.webp', desc: 'Италия • Набережная с пальмами и курортный отдых' },
+      { src: 'life_rockies_lake.webp', desc: 'Канадские Скалистые горы • Бирюзовое озеро' },
+      { src: 'life_europe_castle.webp', desc: 'Европейские поездки • Архитектура и новые города' }
     ];
     let lifeIndex = 0;
     let lifeAutoplay = true;
