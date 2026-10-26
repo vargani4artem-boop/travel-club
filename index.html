@@ -183,11 +183,12 @@
       <div class="flex items-center gap-4 lg:gap-8">
         
         <!-- Desktop Nav: Clean 5 items, plenty of spacing, Punta-Cana removed -->
-        <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-slate-200">
+        <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium text-slate-200">
           <a href="#story" class="hover:text-amber-400 transition-colors" data-i18n="nav_story">Обо мне</a>
           <a href="#work" class="hover:text-amber-400 transition-colors" data-i18n="nav_work">Работа</a>
-          <a href="#projects" class="hover:text-amber-400 transition-colors" data-i18n="nav_projects">Проекты</a>
+          <a href="#trip" class="hover:text-amber-400 transition-colors" data-i18n="nav_travel">Путешествия</a>
           <a href="#directions" class="hover:text-amber-400 transition-colors" data-i18n="nav_directions">Возможности</a>
+          <a href="#projects" class="hover:text-amber-400 transition-colors" data-i18n="nav_projects">Проекты</a>
           <a href="#faq" class="hover:text-amber-400 transition-colors" data-i18n="nav_faq">FAQ</a>
         </nav>
 
@@ -229,8 +230,9 @@
       </div>
       <a href="#story" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_story">Обо мне</a>
       <a href="#work" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_work">Работа</a>
-      <a href="#projects" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_projects">Проекты</a>
+      <a href="#trip" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_travel">Путешествия</a>
       <a href="#directions" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_directions">Возможности</a>
+      <a href="#projects" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_projects">Проекты</a>
       <a href="#faq" class="block py-2 text-slate-200 hover:text-amber-400 font-medium" data-i18n="nav_faq">FAQ</a>
       <div class="pt-3 flex flex-col gap-2">
         <a href="tel:+14039250568" class="w-full py-2.5 rounded-xl bg-dark-800 text-amber-300 border border-amber-500/30 font-bold text-xs flex items-center justify-center gap-2">
@@ -298,7 +300,7 @@
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
             <a href="#welcome-video" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-xl shadow-amber-500/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer">
               <i data-lucide="play-circle" class="w-4 h-4 text-dark-950"></i>
-              <span data-i18n="hero_btn_story">Посмотреть ознакомительное видео</span>
+              <span data-i18n="hero_btn_story">Посмотреть мою историю</span>
               <i data-lucide="arrow-down" class="w-4 h-4 text-dark-950"></i>
             </a>
             <button onclick="openContactModal('general')" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-dark-800 hover:bg-dark-700 text-slate-200 hover:text-white border border-amber-500/30 text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer">
@@ -363,8 +365,7 @@
 
   </section>
 
-  <!-- 2. ВИДЕО-ЗНАКОМСТВО (1 МИН 26 СЕК) -->
-  <section id="welcome-video" class="py-12 sm:py-16 bg-[#070709] border-b border-amber-500/15 relative overflow-hidden scroll-mt-20">
+<section id="welcome-video" class="py-12 sm:py-16 bg-[#070709] border-b border-amber-500/15 relative overflow-hidden scroll-mt-20">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -439,8 +440,7 @@
     </div>
   </section>
 
-  <!-- 3. МОЯ ИСТОРИЯ: ОТ УКРАИНЫ ДО КАНАДЫ -->
-  <section id="story" class="pt-24 sm:pt-32 pb-16 sm:pb-24 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-28 overflow-hidden">
+<section id="story" class="pt-24 sm:pt-32 pb-16 sm:pb-24 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-28 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       
       <!-- Section Header -->
@@ -470,7 +470,7 @@
             </div>
             <div class="space-y-1">
               <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2" data-i18n="story_ch1_title">
-                Собственный бизнес в Украине
+                Жизнь и предпринимательский опыт в Украине
               </h3>
               <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="story_ch1_desc">
                 В Украине я руководил собственным делом. Этот опыт привил мне предпринимательское мышление, умение нести ответственность за людей, процессы и финансовый результат.
@@ -500,7 +500,7 @@
             </div>
             <div class="space-y-1">
               <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2" data-i18n="story_ch3_title">
-                Честный физический труд механиком
+                Работа механиком и физический труд
               </h3>
               <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="story_ch3_desc">
                 Сегодня я работаю механиком: ремонт грузовых колёс, обслуживание техники и флота. Физическая работа в любую погоду держит в тонусе и формирует честное отношение к делу.
@@ -515,7 +515,7 @@
             </div>
             <div class="space-y-1">
               <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2" data-i18n="story_ch4_title">
-                Проекты, ИИ и социальная польза
+                Продолжение предпринимательской и общественной деятельности
               </h3>
               <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="story_ch4_desc">
                 Моя жизнь не ограничивается одной лишь работой. Я развиваю IT-проекты (Canadian Website, AI Solutions) и участвую в важных инициативах: Wise Kids и «Правда о наркотиках».
@@ -523,19 +523,6 @@
             </div>
           </div>
 
-          <!-- Step 5: BetterWay & Community -->
-          <div class="p-5 sm:p-6 rounded-2xl luxury-card border-2 border-amber-500/40 bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/5 flex items-start gap-4 shadow-lg">
-            <div class="w-12 h-12 rounded-xl bg-amber-500 text-dark-950 flex items-center justify-center shrink-0 font-black font-mono text-base shadow-md">
-              05
-            </div>
-            <div class="space-y-1">
-              <h3 class="text-base sm:text-lg font-bold text-amber-300 flex items-center gap-2" data-i18n="story_ch5_title">
-                Новый круг общения и BetterWay
-              </h3>
-              <p class="text-slate-200 text-xs sm:text-sm leading-relaxed font-medium" data-i18n="story_ch5_desc">
-                Знакомство с международным сообществом предпринимателей и путешественников открыло мне новый масштаб. Теперь я делюсь этим с людьми, готовыми расти вместе со мной.
-              </p>
-            </div>
           </div>
 
         </div>
@@ -577,8 +564,7 @@
     </div>
   </section>
 
-  <!-- 4. СЛАЙД-ШОУ «МОЯ РАБОТА В КАНАДЕ» -->
-  <section id="work" class="py-12 sm:py-16 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-20">
+<section id="work" class="py-12 sm:py-16 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -589,13 +575,13 @@
             РЕАЛЬНЫЙ ТРУД
           </div>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white" data-i18n="work_title">
-            Моя работа в Канаде
+            Моя работа и реальная жизнь
           </h2>
           
           <div class="p-6 rounded-3xl bg-[#0e111a] border border-amber-500/20 space-y-3">
             <i data-lucide="wrench" class="w-8 h-8 text-amber-400"></i>
             <p class="text-base sm:text-lg italic font-serif text-slate-100 leading-relaxed" data-i18n="work_quote">
-              «Это часть моей жизни сегодня. Я работаю руками, развиваюсь профессионально и одновременно продолжаю строить собственные проекты».
+              «Сегодня значительную часть моего времени занимает работа. Я знаю, что такое физический труд, ответственность и длинные рабочие дни. И при этом мне по-прежнему важно развиваться, путешествовать, знакомиться с людьми и создавать что-то своё».
             </p>
           </div>
 
@@ -646,8 +632,7 @@
     </div>
   </section>
 
-  <!-- 5. ГАЛЕРЕЯ «МОЯ ЖИЗНЬ, КОМАНДА И ПУТЕШЕСТВИЯ» -->
-  <section id="life-gallery" class="py-16 sm:py-24 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-28 overflow-hidden">
+<section id="life-gallery" class="py-16 sm:py-24 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-28 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -660,11 +645,11 @@
           </div>
 
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white leading-tight" data-i18n="life_title">
-            Моя жизнь — это люди, путешествия и новые возможности
+            Для меня жизнь — это больше, чем работа
           </h2>
 
           <p class="text-slate-300 text-sm sm:text-base italic font-serif leading-relaxed" data-i18n="life_quote">
-            «Мне нравится знакомиться с людьми, создавать проекты, путешествовать и участвовать в том, что приносит пользу другим».
+            «Мне всегда были интересны путешествия, предпринимательство и люди, у которых можно чему-то научиться. Я люблю открывать новые места, участвовать в интересных проектах и знакомиться с теми, кто стремится развиваться. Поэтому, даже когда жизнь сильно менялась, я продолжал искать новые возможности».
           </p>
 
           <div class="space-y-3.5 pt-1">
@@ -752,8 +737,319 @@
     </div>
   </section>
 
-  <!-- 6. МОИ ПРОЕКТЫ И ИНИЦИАТИВЫ -->
-  <section id="projects" class="py-12 sm:py-16 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-20">
+  <!-- 6. ПОЧЕМУ Я РЕШИЛ ПОПРОБОВАТЬ ЧТО-ТО НОВОЕ? -->
+  <section id="why-new" class="py-16 sm:py-24 bg-[#0d1024]/70 border-t border-amber-500/15 relative scroll-mt-28 overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider">
+        <i data-lucide="compass" class="w-3.5 h-3.5 text-amber-400"></i>
+        <span data-i18n="why_new_tag">НОВЫЙ ВЗГЛЯД • ШАГ ВПЕРЁД</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white leading-tight" data-i18n="why_new_title">
+        Почему я решил попробовать что-то новое?
+      </h2>
+
+      <div class="p-6 sm:p-10 rounded-3xl luxury-card border-2 border-amber-500/25 bg-gradient-to-b from-white/[0.04] to-black/60 shadow-2xl space-y-5 text-left text-slate-200 text-sm sm:text-base leading-relaxed">
+        <p data-i18n="why_new_p1">
+          Я всегда считал, что новые возможности часто приходят через людей.
+        </p>
+        <p data-i18n="why_new_p2">
+          Недавно я познакомился с сообществом, которое объединяет путешествия, общение и предпринимательство.
+        </p>
+        <p data-i18n="why_new_p3">
+          Меня заинтересовала сама идея. Но я не хотел просто слушать красивые рассказы о возможностях.
+        </p>
+        <p data-i18n="why_new_p4">
+          Мне было важно разобраться, как это работает на практике.
+        </p>
+        <p class="text-amber-300 font-bold sm:text-lg pt-3 border-t border-amber-500/20" data-i18n="why_new_p5">
+          И я решил начать с того, что мне действительно нравится, — с путешествий.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section id="trip" class="py-12 sm:py-16 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Left Column: Story & Comparison Details -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider">
+            <i data-lucide="plane" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span data-i18n="trip_tag">ЛИЧНЫЙ ОПЫТ • БРОНИРОВАНИЕ</span>
+          </div>
+          
+          <div class="space-y-2">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white leading-tight" data-i18n="trip_title">
+              Я решил проверить всё на собственном опыте
+            </h2>
+            <div class="text-xl sm:text-2xl font-serif font-bold text-amber-300" data-i18n="trip_sub">
+              И купил поездку в Пунта-Кану
+            </div>
+          </div>
+
+          <div class="space-y-3.5 text-slate-200 text-sm sm:text-base leading-relaxed">
+            <p data-i18n="trip_p1">
+              Когда я начал разбираться в предложениях клуба, мне стало интересно сравнить стоимость конкретного отдыха.
+            </p>
+            <p data-i18n="trip_p2">
+              Я выбрал Grand Palladium Select Bávaro 5★ в Доминиканской Республике, сравнил предложения и приобрёл поездку.
+            </p>
+            <p data-i18n="trip_p3">
+              Скоро я сам отправлюсь туда.
+            </p>
+            <p class="text-amber-300 font-semibold" data-i18n="trip_p4">
+              Скоро я сам отправлюсь в эту поездку!
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-[#0e111a] border border-amber-500/20 text-xs text-slate-400 leading-relaxed" data-i18n="trip_disclaimer">
+            * Цены относятся к конкретному предложению на указанные даты. Стоимость зависит от доступности, условий бронирования и членства. Аналогичная экономия в будущем не гарантируется.
+          </div>
+        </div>
+
+        <!-- Right Column: Real Trip Proof Card -->
+        <div class="lg:col-span-6">
+          <div class="tour-card group relative rounded-3xl overflow-hidden bg-[#0d1024] border-2 border-amber-500/40 shadow-2xl glow-gold text-white flex flex-col justify-between select-none">
+            
+            <div class="relative h-60 sm:h-72 overflow-hidden">
+              <img src="punta_cana_bavaro.jpg" alt="Grand Palladium Select Bávaro 5★" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0d1024] via-transparent to-black/30"></div>
+              
+              <div class="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-amber-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg flex items-center gap-1.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-dark-950"></i>
+                <span data-i18n="trip_badge">Купленная поездка Артёма</span>
+              </div>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-6 flex-1 flex flex-col justify-between">
+              
+              <div class="space-y-1.5">
+                <div class="flex items-baseline justify-between gap-2">
+                  <h3 class="text-xl sm:text-2xl font-bold text-white">Grand Palladium Select Bávaro 5★</h3>
+                  <span class="text-xs text-amber-400 font-bold uppercase tracking-wider whitespace-nowrap">Пунта-Кана</span>
+                </div>
+                <p class="text-xs text-slate-300">
+                  Доминиканская Республика • 16–20 декабря • 4 ночи • 2 взрослых
+                </p>
+                <p class="text-xs font-semibold text-amber-300">
+                  Все включено (All-Inclusive) • Номер Полулюкс (Junior Suite)
+                </p>
+              </div>
+
+              <!-- Price Comparison Table -->
+              <div class="p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-amber-500/20 space-y-3">
+                <div class="flex items-center justify-between text-sm text-slate-400">
+                  <span data-i18n="trip_public_label">Публичная цена (Booking.com):</span>
+                  <span class="font-mono font-bold text-slate-300 line-through">$1,646 USD</span>
+                </div>
+                <div class="flex items-baseline justify-between gap-2">
+                  <span class="text-xs font-bold text-amber-300 uppercase tracking-wider" data-i18n="trip_club_label">Тариф через клуб:</span>
+                  <span class="text-3xl font-black text-amber-400 font-mono leading-none">$549 USD</span>
+                </div>
+                <div class="flex items-center justify-between text-xs pt-1 border-t border-white/10">
+                  <span class="text-slate-300" data-i18n="trip_saving_label">Разница в стоимости:</span>
+                  <span class="font-bold text-emerald-400 font-mono bg-emerald-500/15 px-2.5 py-1 rounded border border-emerald-500/30">
+                    -$1,097 USD (–67%)
+                  </span>
+                </div>
+              </div>
+
+              <!-- Proof Modal Button -->
+              <button onclick="openProofModal()" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 text-xs sm:text-sm font-black uppercase tracking-wider transition-all border border-amber-500/40 flex items-center justify-center gap-2 cursor-pointer shadow-xl shadow-amber-500/20">
+                <i data-lucide="file-check-2" class="w-4 h-4"></i>
+                <span data-i18n="btn_view_proof">Посмотреть сравнение цен (скриншоты)</span>
+              </button>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. ПОЧЕМУ Я РЕШИЛ РАССКАЗАТЬ ТЕБЕ ОБ ЭТОМ? -->
+  <section id="why-share" class="py-16 sm:py-24 bg-[#0d1024]/70 border-t border-amber-500/15 relative scroll-mt-28 overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider">
+        <i data-lucide="message-square" class="w-3.5 h-3.5 text-amber-400"></i>
+        <span data-i18n="why_share_tag">ОТКРЫТЫЙ ДИАЛОГ • БЕЗ НАВЯЗЫВАНИЯ</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white leading-tight" data-i18n="why_share_title">
+        Почему я решил рассказать тебе об этом?
+      </h2>
+
+      <div class="p-6 sm:p-10 rounded-3xl luxury-card border-2 border-amber-500/25 bg-gradient-to-b from-white/[0.04] to-black/60 shadow-2xl space-y-5 text-left text-slate-200 text-sm sm:text-base leading-relaxed">
+        <p data-i18n="why_share_p1">
+          Мне нравится делиться интересными идеями, полезными находками и знакомить людей с новыми возможностями.
+        </p>
+        <p data-i18n="why_share_p2">
+          Я не знаю, насколько это направление будет интересно именно тебе.
+        </p>
+        <p data-i18n="why_share_p3">
+          Возможно, тебя привлекают путешествия. Возможно, тебе интересно предпринимательство или знакомство с новыми людьми.
+        </p>
+        <p class="text-amber-300 font-bold sm:text-lg pt-3 border-t border-amber-500/20" data-i18n="why_share_p4">
+          Поэтому я предлагаю просто пообщаться. Я расскажу, что узнал сам, покажу, как всё устроено, а дальше ты решишь, интересно ли это тебе.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section id="directions" class="py-12 sm:py-16 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider" data-i18n="directions_tag">
+          ВЫБОР ЗА ТОБОЙ
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white" data-i18n="directions_title">
+          А что из этого интересно тебе?
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        
+        <!-- Direction 1: Travel -->
+        <div class="p-8 rounded-3xl luxury-card border border-amber-500/30 space-y-6 flex flex-col justify-between hover:border-amber-400/70 transition-all duration-300">
+          <div class="space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
+              <i data-lucide="palmtree" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-black text-white" data-i18n="dir_travel_title">
+              Любишь путешествовать?
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed" data-i18n="dir_travel_desc">
+              Если тебе нравится открывать новые страны, отдыхать и находить интересные предложения на отели и путешествия, возможно, тебе будет интересно узнать, как работает этот клуб.
+            </p>
+          </div>
+          
+          <a href="https://wa.me/14039250568?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%9F%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D0%BB%20%D1%82%D0%B2%D0%BE%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5%20%D0%BE%20%D0%BF%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B8%D1%8F%D1%85." target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all">
+            <i data-lucide="message-circle" class="w-4 h-4 fill-dark-950"></i>
+            <span data-i18n="btn_want_travel">Хочу узнать о путешествиях</span>
+          </a>
+        </div>
+
+        <!-- Direction 2: Business -->
+        <div class="p-8 rounded-3xl luxury-card border border-amber-500/30 space-y-6 flex flex-col justify-between hover:border-amber-400/70 transition-all duration-300">
+          <div class="space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
+              <i data-lucide="trending-up" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-black text-white" data-i18n="dir_biz_title">
+              Интересен бизнес в сфере путешествий?
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed" data-i18n="dir_biz_desc">
+              Здесь есть не только возможности для путешествий, но и партнёрское направление, в котором можно развивать собственный бизнес и строить команду.
+            </p>
+          </div>
+          
+          <a href="https://wa.me/14039250568?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%9F%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D0%BB%20%D1%82%D0%B2%D0%BE%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82.%20%D0%9C%D0%BD%D0%B5%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D0%BE%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8F%D1%85%20%D0%B2%20%D1%81%D1%84%D0%B5%D1%80%D0%B5%20%D0%BF%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B8%D1%8F%D1%85." target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-dark-800 hover:bg-dark-700 text-white border border-amber-500/40 font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all">
+            <i data-lucide="message-circle" class="w-4 h-4 text-amber-400"></i>
+            <span data-i18n="btn_want_biz">Хочу узнать о бизнесе</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+<section id="how-it-works" class="py-12 sm:py-16 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider" data-i18n="how_tag">
+          ПРОСТОЕ УСТРОЙСТВО
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white" data-i18n="how_title">
+          Как работает travel-клуб
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base" data-i18n="how_subtitle">
+          Четыре понятных шага к новым путешествиям и возможностям
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-3xl luxury-card border border-amber-500/20 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 font-mono font-bold text-lg">
+            01
+          </div>
+          <h3 class="text-lg font-bold text-white" data-i18n="step1_title">Знакомство с возможностями</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="step1_desc">
+            Ты знакомишься с клубной моделью, концепцией оптовых цен и реальными примерами бронирований.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl luxury-card border border-amber-500/20 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 font-mono font-bold text-lg">
+            02
+          </div>
+          <h3 class="text-lg font-bold text-white" data-i18n="step2_title">Условия членства</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="step2_desc">
+            Узнаёшь форматы клубного участия, правила накопления баллов лояльности и возможности партнёрства.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl luxury-card border border-amber-500/20 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 font-mono font-bold text-lg">
+            03
+          </div>
+          <h3 class="text-lg font-bold text-white" data-i18n="step3_title">Демонстрация платформы</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="step3_desc">
+            Я лично показываю платформу изнутри: поиск направлений, отелей, сравнение цен и оформление брони.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl luxury-card border border-amber-500/20 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 font-mono font-bold text-lg">
+            04
+          </div>
+          <h3 class="text-lg font-bold text-white" data-i18n="step4_title">Твоё решение</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="step4_desc">
+            Ты самостоятельно принимаешь осознанное решение, подходит ли этот клуб тебе и твоей семье.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+<section id="membership" class="py-12 sm:py-16 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider" data-i18n="membership_tag">
+        УЧАСТИЕ В КЛУБЕ
+      </div>
+      
+      <h2 class="text-3xl sm:text-4xl font-serif font-black text-white" data-i18n="membership_title">
+        Как устроено участие?
+      </h2>
+
+      <div class="p-6 sm:p-8 rounded-3xl luxury-card border border-amber-500/30 space-y-5 text-slate-200 text-sm sm:text-base leading-relaxed">
+        <p data-i18n="membership_text">
+          Участие в travel-клубе платное. Существуют разные варианты членства с ежемесячными и вступительными взносами. Я расскажу тебе об условиях и покажу, как всё устроено, во время нашего общения.
+        </p>
+
+        <div class="pt-2">
+          <button onclick="openContactModal('membership')" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer">
+            <span data-i18n="btn_ask_terms">Задать вопрос Артёму</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<section id="projects" class="py-12 sm:py-16 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       
       <div class="text-center max-w-3xl mx-auto space-y-3">
@@ -856,8 +1152,7 @@
     </div>
   </section>
 
-  <!-- 7. СОЦИАЛЬНЫЕ СЕТИ -->
-  <section id="social" class="py-12 sm:py-16 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-20">
+<section id="social" class="py-12 sm:py-16 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 text-center">
       
       <div class="space-y-3">
@@ -948,257 +1243,7 @@
     </div>
   </section>
 
-  <!-- 8. РЕАЛЬНАЯ ПОЕЗДКА: ПУНТА-КАНА (ЕДИНСТВЕННЫЙ ПРИМЕР СРАВНЕНИЯ ЦЕН) -->
-  <section id="trip" class="py-12 sm:py-16 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        
-        <!-- Left Column: Story & Comparison Details -->
-        <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider" data-i18n="trip_tag">
-            РЕАЛЬНЫЙ КЕЙС
-          </div>
-          
-          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-serif font-black text-white leading-tight" data-i18n="trip_title">
-            Моя поездка в Пунта-Кану: почему меня удивила разница в цене
-          </h2>
-
-          <div class="space-y-3.5 text-slate-200 text-sm sm:text-base leading-relaxed">
-            <p data-i18n="trip_p1">
-              Я не просто изучал предложения travel-клуба — я уже приобрёл поездку в Доминиканскую Республику.
-            </p>
-            <p data-i18n="trip_p2">
-              Перед покупкой я сравнил стоимость отдыха в <strong class="text-white">Grand Palladium Select Bávaro 5★</strong> с публичным предложением.
-            </p>
-            <p data-i18n="trip_p3">
-              Разница оказалась настолько интересной, что я решил поделиться своим опытом.
-            </p>
-            <p class="text-amber-300 font-semibold" data-i18n="trip_p4">
-              Скоро я сам отправлюсь в эту поездку!
-            </p>
-          </div>
-
-          <div class="p-4 rounded-2xl bg-[#0e111a] border border-amber-500/20 text-xs text-slate-400 leading-relaxed" data-i18n="trip_disclaimer">
-            * Цены относятся к конкретному предложению на указанные даты. Стоимость зависит от доступности, условий бронирования и членства. Аналогичная экономия в будущем не гарантируется.
-          </div>
-        </div>
-
-        <!-- Right Column: Real Trip Proof Card -->
-        <div class="lg:col-span-6">
-          <div class="tour-card group relative rounded-3xl overflow-hidden bg-[#0d1024] border-2 border-amber-500/40 shadow-2xl glow-gold text-white flex flex-col justify-between select-none">
-            
-            <div class="relative h-60 sm:h-72 overflow-hidden">
-              <img src="punta_cana_bavaro.jpg" alt="Grand Palladium Select Bávaro 5★" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0d1024] via-transparent to-black/30"></div>
-              
-              <div class="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-amber-500 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg flex items-center gap-1.5">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-dark-950"></i>
-                <span data-i18n="trip_badge">Купленная поездка Артёма</span>
-              </div>
-            </div>
-
-            <div class="p-6 sm:p-8 space-y-6 flex-1 flex flex-col justify-between">
-              
-              <div class="space-y-1.5">
-                <div class="flex items-baseline justify-between gap-2">
-                  <h3 class="text-xl sm:text-2xl font-bold text-white">Grand Palladium Select Bávaro 5★</h3>
-                  <span class="text-xs text-amber-400 font-bold uppercase tracking-wider whitespace-nowrap">Пунта-Кана</span>
-                </div>
-                <p class="text-xs text-slate-300">
-                  Доминиканская Республика • 16–20 декабря • 4 ночи • 2 взрослых
-                </p>
-                <p class="text-xs font-semibold text-amber-300">
-                  Все включено (All-Inclusive) • Номер Полулюкс (Junior Suite)
-                </p>
-              </div>
-
-              <!-- Price Comparison Table -->
-              <div class="p-4 sm:p-5 rounded-2xl bg-white/[0.04] border border-amber-500/20 space-y-3">
-                <div class="flex items-center justify-between text-sm text-slate-400">
-                  <span data-i18n="trip_public_label">Публичная цена (Booking.com):</span>
-                  <span class="font-mono font-bold text-slate-300 line-through">$1,646 USD</span>
-                </div>
-                <div class="flex items-baseline justify-between gap-2">
-                  <span class="text-xs font-bold text-amber-300 uppercase tracking-wider" data-i18n="trip_club_label">Тариф через клуб:</span>
-                  <span class="text-3xl font-black text-amber-400 font-mono leading-none">$549 USD</span>
-                </div>
-                <div class="flex items-center justify-between text-xs pt-1 border-t border-white/10">
-                  <span class="text-slate-300" data-i18n="trip_saving_label">Разница в стоимости:</span>
-                  <span class="font-bold text-emerald-400 font-mono bg-emerald-500/15 px-2.5 py-1 rounded border border-emerald-500/30">
-                    -$1,097 USD (–67%)
-                  </span>
-                </div>
-              </div>
-
-              <!-- Proof Modal Button -->
-              <button onclick="openProofModal()" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 text-xs sm:text-sm font-black uppercase tracking-wider transition-all border border-amber-500/40 flex items-center justify-center gap-2 cursor-pointer shadow-xl shadow-amber-500/20">
-                <i data-lucide="file-check-2" class="w-4 h-4"></i>
-                <span data-i18n="btn_view_proof">Посмотреть сравнение цен (скриншоты)</span>
-              </button>
-
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 9. ДВА НАПРАВЛЕНИЯ: ПУТЕШЕСТВИЯ И БИЗНЕС -->
-  <section id="directions" class="py-12 sm:py-16 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-      
-      <div class="text-center max-w-2xl mx-auto space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider" data-i18n="directions_tag">
-          ВЫБОР ЗА ТОБОЙ
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white" data-i18n="directions_title">
-          А что из этого интересно тебе?
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-        
-        <!-- Direction 1: Travel -->
-        <div class="p-8 rounded-3xl luxury-card border border-amber-500/30 space-y-6 flex flex-col justify-between hover:border-amber-400/70 transition-all duration-300">
-          <div class="space-y-4">
-            <div class="w-14 h-14 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
-              <i data-lucide="palmtree" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-2xl font-serif font-black text-white" data-i18n="dir_travel_title">
-              Любишь путешествовать?
-            </h3>
-            <p class="text-slate-300 text-sm leading-relaxed" data-i18n="dir_travel_desc">
-              Если тебе нравится открывать новые страны, отдыхать и находить интересные предложения на отели и путешествия, возможно, тебе будет интересно узнать, как работает этот клуб.
-            </p>
-          </div>
-          
-          <a href="https://wa.me/14039250568?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%9F%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D0%BB%20%D1%82%D0%B2%D0%BE%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5%20%D0%BE%20%D0%BF%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B8%D1%8F%D1%85." target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all">
-            <i data-lucide="message-circle" class="w-4 h-4 fill-dark-950"></i>
-            <span data-i18n="btn_want_travel">Хочу узнать о путешествиях</span>
-          </a>
-        </div>
-
-        <!-- Direction 2: Business -->
-        <div class="p-8 rounded-3xl luxury-card border border-amber-500/30 space-y-6 flex flex-col justify-between hover:border-amber-400/70 transition-all duration-300">
-          <div class="space-y-4">
-            <div class="w-14 h-14 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
-              <i data-lucide="trending-up" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-2xl font-serif font-black text-white" data-i18n="dir_biz_title">
-              Интересен бизнес в сфере путешествий?
-            </h3>
-            <p class="text-slate-300 text-sm leading-relaxed" data-i18n="dir_biz_desc">
-              Здесь есть не только возможности для путешествий, но и партнёрское направление, в котором можно развивать собственный бизнес и строить команду.
-            </p>
-          </div>
-          
-          <a href="https://wa.me/14039250568?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%9F%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D0%BB%20%D1%82%D0%B2%D0%BE%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82.%20%D0%9C%D0%BD%D0%B5%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D0%BE%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8F%D1%85%20%D0%B2%20%D1%81%D1%84%D0%B5%D1%80%D0%B5%20%D0%BF%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B8%D1%8F%D1%85." target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-2xl bg-dark-800 hover:bg-dark-700 text-white border border-amber-500/40 font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all">
-            <i data-lucide="message-circle" class="w-4 h-4 text-amber-400"></i>
-            <span data-i18n="btn_want_biz">Хочу узнать о бизнесе</span>
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 10. КАК РАБОТАЕТ TRAVEL-КЛУБ -->
-  <section id="how-it-works" class="py-12 sm:py-16 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-      
-      <div class="text-center max-w-3xl mx-auto space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider" data-i18n="how_tag">
-          ПРОСТОЕ УСТРОЙСТВО
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white" data-i18n="how_title">
-          Как работает travel-клуб
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base" data-i18n="how_subtitle">
-          Четыре понятных шага к новым путешествиям и возможностям
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <div class="p-6 rounded-3xl luxury-card border border-amber-500/20 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 font-mono font-bold text-lg">
-            01
-          </div>
-          <h3 class="text-lg font-bold text-white" data-i18n="step1_title">Знакомство с возможностями</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="step1_desc">
-            Ты знакомишься с клубной моделью, концепцией оптовых цен и реальными примерами бронирований.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-3xl luxury-card border border-amber-500/20 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 font-mono font-bold text-lg">
-            02
-          </div>
-          <h3 class="text-lg font-bold text-white" data-i18n="step2_title">Условия членства</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="step2_desc">
-            Узнаёшь форматы клубного участия, правила накопления баллов лояльности и возможности партнёрства.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-3xl luxury-card border border-amber-500/20 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 font-mono font-bold text-lg">
-            03
-          </div>
-          <h3 class="text-lg font-bold text-white" data-i18n="step3_title">Демонстрация платформы</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="step3_desc">
-            Я лично показываю платформу изнутри: поиск направлений, отелей, сравнение цен и оформление брони.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-3xl luxury-card border border-amber-500/20 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 font-mono font-bold text-lg">
-            04
-          </div>
-          <h3 class="text-lg font-bold text-white" data-i18n="step4_title">Твоё решение</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed" data-i18n="step4_desc">
-            Ты самостоятельно принимаешь осознанное решение, подходит ли этот клуб тебе и твоей семье.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 11. ПЛАТНОЕ ЧЛЕНСТВО (КРАТКИЙ БЛОК) -->
-  <section id="membership" class="py-12 sm:py-16 bg-[#0d1024]/60 border-t border-amber-500/15 relative scroll-mt-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-      
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full gold-badge text-[11px] font-bold uppercase tracking-wider" data-i18n="membership_tag">
-        УЧАСТИЕ В КЛУБЕ
-      </div>
-      
-      <h2 class="text-3xl sm:text-4xl font-serif font-black text-white" data-i18n="membership_title">
-        Как устроено участие?
-      </h2>
-
-      <div class="p-6 sm:p-8 rounded-3xl luxury-card border border-amber-500/30 space-y-5 text-slate-200 text-sm sm:text-base leading-relaxed">
-        <p data-i18n="membership_text">
-          Участие в travel-клубе платное. Существуют разные варианты членства с ежемесячными и вступительными взносами. Я расскажу тебе об условиях и покажу, как всё устроено, во время нашего общения.
-        </p>
-
-        <div class="pt-2">
-          <button onclick="openContactModal('membership')" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer">
-            <span data-i18n="btn_ask_terms">Задать вопрос Артёму</span>
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 12. БЛОК «НАМ НЕ ПО ПУТИ» -->
-  <section id="filter" class="py-12 sm:py-16 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-20">
+<section id="filter" class="py-12 sm:py-16 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       
       <div class="text-center max-w-3xl mx-auto space-y-3">
@@ -1293,8 +1338,7 @@
     </div>
   </section>
 
-  <!-- 13. FAQ -->
-  <section id="faq" class="py-12 sm:py-16 bg-[#0d1024]/50 border-t border-amber-500/15 relative scroll-mt-20">
+<section id="faq" class="py-12 sm:py-16 bg-[#0d1024]/50 border-t border-amber-500/15 relative scroll-mt-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       
       <div class="text-center max-w-2xl mx-auto space-y-3">
@@ -1391,8 +1435,7 @@
     </div>
   </section>
 
-  <!-- 14. КОНТАКТЫ И ФОРМА ОБРАТНОЙ СВЯЗИ -->
-  <section id="contact-form-section" class="py-12 sm:py-16 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-20">
+<section id="contact-form-section" class="py-12 sm:py-16 bg-[#070709] border-t border-amber-500/15 relative scroll-mt-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       
       <div class="text-center space-y-3">
@@ -1794,6 +1837,22 @@
         nav_projects: "Проекты",
         nav_directions: "Возможности",
         nav_faq: "FAQ",
+        nav_travel: "Путешествия",
+        why_new_tag: "НОВЫЙ ВЗГЛЯД • ШАГ ВПЕРЁД",
+        why_new_title: "Почему я решил попробовать что-то новое?",
+        why_new_p1: "Я всегда считал, что новые возможности часто приходят через людей.",
+        why_new_p2: "Недавно я познакомился с сообществом, которое объединяет путешествия, общение и предпринимательство.",
+        why_new_p3: "Меня заинтересовала сама идея. Но я не хотел просто слушать красивые рассказы о возможностях.",
+        why_new_p4: "Мне было важно разобраться, как это работает на практике.",
+        why_new_p5: "И я решил начать с того, что мне действительно нравится, — с путешествий.",
+        why_share_tag: "ОТКРЫТЫЙ ДИАЛОГ • БЕЗ НАВЯЗЫВАНИЯ",
+        why_share_title: "Почему я решил рассказать тебе об этом?",
+        why_share_p1: "Мне нравится делиться интересными идеями, полезными находками и знакомить людей с новыми возможностями.",
+        why_share_p2: "Я не знаю, насколько это направление будет интересно именно тебе.",
+        why_share_p3: "Возможно, тебя привлекают путешествия. Возможно, тебе интересно предпринимательство или знакомство с новыми людьми.",
+        why_share_p4: "Поэтому я предлагаю просто пообщаться. Я расскажу, что узнал сам, покажу, как всё устроено, а дальше ты решишь, интересно ли это тебе.",
+        trip_sub: "И купил поездку в Пунта-Кану",
+
         header_call_btn: "Позвонить",
         btn_contact_artem: "Напиши мне",
         hero_badge: "BETTERWAY • TICKET TO YOUR BETTER LIFE",
@@ -1803,7 +1862,7 @@
         hero_p2: "Раньше у меня был собственный бизнес. Сегодня я живу в Канаде, работаю механиком, развиваю свои проекты и продолжаю искать возможности быть максимально полезным людям.",
         hero_p3: "Недавно я познакомился с интересным сообществом людей, которое открыло для меня новые возможности.",
         hero_p4: "Хочу поделиться с тобой тем, что меня заинтересовало.",
-        hero_btn_story: "Посмотреть ознакомительное видео",
+        hero_btn_story: "Посмотреть мою историю",
         hero_btn_contact: "Написать мне",
         value1_title: "Личная история",
         value1_sub: "Без прикрас и иллюзий",
@@ -1841,13 +1900,13 @@
         life_f3_title: "Новые горизонты развития",
         life_f3_desc: "Возможность сочетать активную жизнь, онлайн-бизнес и постоянное расширение кругозора.",
         work_tag: "РЕАЛЬНЫЙ ТРУД",
-        work_title: "Моя работа в Канаде",
-        work_quote: "«Это часть моей жизни сегодня. Я работаю руками, развиваюсь профессионально и одновременно продолжаю строить собственные проекты».",
+        work_title: "Моя работа и реальная жизнь",
+        work_quote: "«Сегодня значительную часть моего времени занимает работа. Я знаю, что такое физический труд, ответственность и длинные рабочие дни. И при этом мне по-прежнему важно развиваться, путешествовать, знакомиться с людьми и создавать что-то своё».",
         work_desc_1: "Ремонт грузовых колёс, работа с инструментом, обслуживание тяжелой техники и физические задачи на площадке.",
         work_desc_2: "Этот опыт учит дисциплине, честности перед собой и реальной практической ответственности за каждое действие.",
         life_tag: "ЛЮДИ И СОБЫТИЯ",
-        life_title: "Моя жизнь — это люди, путешествия и новые возможности",
-        life_quote: "«Мне нравится знакомиться с людьми, создавать проекты, путешествовать и участвовать в том, что приносит пользу другим».",
+        life_title: "Для меня жизнь — это больше, чем работа",
+        life_quote: "«Мне всегда были интересны путешествия, предпринимательство и люди, у которых можно чему-то научиться. Я люблю открывать новые места, участвовать в интересных проектах и знакомиться с теми, кто стремится развиваться. Поэтому, даже когда жизнь сильно менялась, я продолжал искать новые возможности».",
         projects_tag: "ДЕЛО И ПОЛЬЗА",
         projects_title: "Мои проекты и инициативы",
         projects_subtitle: "«Помимо основной работы, я продолжаю развивать собственные проекты и участвовать в инициативах, которые помогают людям. Для меня важно не просто заниматься бизнесом, а создавать что-то полезное».",
@@ -1861,10 +1920,10 @@
         social_title: "Давай оставаться на связи!",
         social_subtitle: "«В социальных сетях я делюсь путешествиями, своими проектами, работой и интересными событиями из жизни. Буду рад видеть тебя там!»",
         trip_tag: "РЕАЛЬНЫЙ КЕЙС",
-        trip_title: "Моя поездка в Пунта-Кану: почему меня удивила разница в цене",
-        trip_p1: "Я не просто изучал предложения travel-клуба — я уже приобрёл поездку в Доминиканскую Республику.",
+        trip_title: "Я решил проверить всё на собственном опыте",
+        trip_p1: "Когда я начал разбираться в предложениях клуба, мне стало интересно сравнить стоимость конкретного отдыха.",
         trip_p2: "Перед покупкой я сравнил стоимость отдыха в Grand Palladium Select Bávaro 5★ с публичным предложением.",
-        trip_p3: "Разница оказалась настолько интересной, что я решил поделиться своим опытом.",
+        trip_p3: "Скоро я сам отправлюсь туда.",
         trip_p4: "Скоро я сам отправлюсь в эту поездку!",
         trip_disclaimer: "* Цены относятся к конкретному предложению на указанные даты. Стоимость зависит от доступности, условий бронирования и членства. Аналогичная экономия в будущем не гарантируется.",
         trip_badge: "Купленная поездка Артёма",
@@ -1950,6 +2009,22 @@
         nav_projects: "Projects",
         nav_directions: "Opportunities",
         nav_faq: "FAQ",
+        nav_travel: "Travel",
+        why_new_tag: "NEW PERSPECTIVE • A STEP FORWARD",
+        why_new_title: "Why Did I Decide to Try Something New?",
+        why_new_p1: "I have always believed that new opportunities often arrive through people.",
+        why_new_p2: "Recently I connected with a community that brings together travel, people, and entrepreneurship.",
+        why_new_p3: "The concept caught my interest right away. But I didn't want to just listen to inspiring stories.",
+        why_new_p4: "It was important for me to understand firsthand how it actually works in practice.",
+        why_new_p5: "So I decided to start with what I truly love — with travel.",
+        why_share_tag: "OPEN DIALOGUE • NO STRINGS ATTACHED",
+        why_share_title: "Why Did I Decide to Tell You About This?",
+        why_share_p1: "I genuinely enjoy sharing exciting ideas, practical discoveries, and introducing people to new horizons.",
+        why_share_p2: "I don't know yet how closely this direction aligns with what you're looking for.",
+        why_share_p3: "Perhaps you're drawn to travel. Or maybe you're interested in entrepreneurship and building connections with like-minded people.",
+        why_share_p4: "That's why I simply invite you to connect. I'll share what I learned, show you how it works, and you can decide for yourself if it's right for you.",
+        trip_sub: "And Booked a Trip to Punta Cana",
+
         header_call_btn: "Call",
         btn_contact_artem: "Contact Me",
         hero_badge: "BETTERWAY • TICKET TO YOUR BETTER LIFE",
@@ -1959,7 +2034,7 @@
         hero_p2: "I used to run my own business. Today I live in Canada, work as a mechanic, develop my own ventures, and keep seeking ways to bring real value to people.",
         hero_p3: "Recently, I connected with an inspiring community that opened brand new doors for me.",
         hero_p4: "I would love to share what caught my attention with you.",
-        hero_btn_story: "Watch Intro Video",
+        hero_btn_story: "Watch My Story",
         hero_btn_contact: "Contact Me",
         value1_title: "Authentic Story",
         value1_sub: "Real life with zero fluff",
@@ -1997,7 +2072,7 @@
         life_f3_title: "New Horizons & Growth",
         life_f3_desc: "Balancing active living, digital entrepreneurship, and continuous learning.",
         work_tag: "GENUINE LABOR",
-        work_title: "My Work in Canada",
+        work_title: "My Work and Real Life",
         work_quote: "“This is part of my life today. I work with my hands, develop professionally, and simultaneously keep building my own ventures.”",
         work_desc_1: "Heavy-duty truck tire repair, tool work, equipment servicing, and physically demanding yard work.",
         work_desc_2: "This practical experience teaches discipline, self-honesty, and full accountability for every single task.",
@@ -2017,7 +2092,7 @@
         social_title: "Let's Stay in Touch!",
         social_subtitle: "“On social media, I share my travels, projects, daily work, and life events. I'd be glad to connect with you there!”",
         trip_tag: "REAL-WORLD CASE",
-        trip_title: "My Trip to Punta Cana: Why the Price Difference Stunned Me",
+        trip_title: "I Decided to Test Everything on My Own Experience",
         trip_p1: "I didn't merely research travel club perks — I actually booked my upcoming vacation to the Dominican Republic.",
         trip_p2: "Before booking, I compared the cost of staying at Grand Palladium Select Bávaro 5★ against public rates.",
         trip_p3: "The price difference was so significant that I decided to share my personal experience.",
