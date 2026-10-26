@@ -413,12 +413,7 @@
             </p>
           </div>
 
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
-            <a href="#why-new" class="w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer">
-              <span data-i18n="btn_read_story">Узнать продолжение</span>
-              <i data-lucide="arrow-down" class="w-4 h-4 text-dark-950"></i>
-            </a>
-          </div>
+          
 
         </div>
 
@@ -862,8 +857,18 @@
         </p>
       </div>
 
-      <!-- Desktop 2-Column Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+      
+        <!-- Toggle Button for Story Details -->
+        <div class="pt-3 flex justify-center">
+          <button id="story-toggle-btn" type="button" onclick="toggleStoryDetails()" class="px-6 py-3 rounded-full bg-dark-800/90 hover:bg-dark-700 text-amber-300 hover:text-white border border-amber-500/40 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-lg shadow-black/40 flex items-center gap-2.5 cursor-pointer group">
+            <span id="story-toggle-text" data-i18n="btn_story_expand">Развернуть детали</span>
+            <i id="story-toggle-icon" data-lucide="chevron-down" class="w-4 h-4 text-amber-400 group-hover:translate-y-0.5 transition-transform"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Desktop 2-Column Grid (Collapsible Details) -->
+      <div id="story-details-grid" class="hidden grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
         
         <!-- Left: Milestone Chapters Narrative -->
         <div class="lg:col-span-7 flex flex-col justify-between space-y-4">
@@ -1592,16 +1597,54 @@
     </div>
   </footer>
 
-  <!-- FLOATING MOBILE QUICK-ACTION BUTTONS (RIGHT-ALIGNED, CLEAN BRANDED CIRCLES) -->
-  <div id="mobile-floating-dock" class="fixed bottom-6 right-4 z-40 flex flex-col gap-3 items-center md:hidden select-none">
-    <!-- Top circle: Chat (Написать / Чат в нашем стиле) -->
-    <button type="button" onclick="openContactModal('general')" aria-label="Написать Артёму" class="w-14 h-14 rounded-full bg-gradient-to-tr from-amber-400 via-amber-500 to-yellow-400 text-dark-950 shadow-2xl shadow-amber-500/50 border-2 border-amber-200 flex items-center justify-center active:scale-90 transition-transform cursor-pointer">
-      <i data-lucide="message-square-text" class="w-7 h-7 text-dark-950"></i>
+  <!-- MOBILE FLOATING BACKDROP (CLOSES MENU WHEN CLICKED OUTSIDE) -->
+  <div id="fab-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-[2px] z-40 hidden transition-opacity duration-300 md:hidden" onclick="toggleFabMenu(false)"></div>
+
+  <!-- FLOATING MOBILE QUICK-ACTION EXPANDABLE FAB -->
+  <div id="mobile-floating-dock" class="fixed bottom-6 right-4 z-40 flex flex-col items-end md:hidden select-none">
+    
+    <!-- Expanded Menu Items (4 Contact Options) -->
+    <div id="fab-menu" class="hidden flex-col gap-3 items-end mb-3 transition-all duration-300">
+      
+      <!-- 1. Contact Form / Написать -->
+      <button type="button" onclick="handleFabAction('modal')" class="flex items-center gap-2.5 group cursor-pointer">
+        <span class="px-3 py-1.5 rounded-xl bg-dark-900/95 border border-amber-500/40 text-white text-xs font-bold shadow-xl shadow-black/60" data-i18n="floating_write_btn">Написать</span>
+        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-400 to-yellow-400 text-dark-950 shadow-xl border-2 border-amber-200 flex items-center justify-center active:scale-95 transition-transform">
+          <i data-lucide="edit-3" class="w-5 h-5 text-dark-950"></i>
+        </div>
+      </button>
+
+      <!-- 2. WhatsApp -->
+      <a href="https://wa.me/14039250568?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BE%D0%B1%D1%89%D0%B0%D1%82%D1%8C%D1%81%D1%8F." target="_blank" rel="noopener noreferrer" onclick="toggleFabMenu(false)" class="flex items-center gap-2.5 group cursor-pointer">
+        <span class="px-3 py-1.5 rounded-xl bg-dark-900/95 border border-[#25D366]/40 text-white text-xs font-bold shadow-xl shadow-black/60">WhatsApp</span>
+        <div class="w-12 h-12 rounded-full bg-[#25D366] text-white shadow-xl border-2 border-emerald-300 flex items-center justify-center active:scale-95 transition-transform">
+          <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+        </div>
+      </a>
+
+      <!-- 3. Telegram -->
+      <a href="https://t.me/Varganich_Artem" target="_blank" rel="noopener noreferrer" onclick="toggleFabMenu(false)" class="flex items-center gap-2.5 group cursor-pointer">
+        <span class="px-3 py-1.5 rounded-xl bg-dark-900/95 border border-[#229ED9]/40 text-white text-xs font-bold shadow-xl shadow-black/60">Telegram</span>
+        <div class="w-12 h-12 rounded-full bg-[#229ED9] text-white shadow-xl border-2 border-sky-300 flex items-center justify-center active:scale-95 transition-transform">
+          <i data-lucide="send" class="w-5 h-5 text-white"></i>
+        </div>
+      </a>
+
+      <!-- 4. Phone / Позвонить -->
+      <a href="tel:+14039250568" onclick="toggleFabMenu(false)" class="flex items-center gap-2.5 group cursor-pointer">
+        <span class="px-3 py-1.5 rounded-xl bg-dark-900/95 border border-amber-500/40 text-white text-xs font-bold shadow-xl shadow-black/60" data-i18n="floating_call_btn">Позвонить</span>
+        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 to-amber-600 text-dark-950 shadow-xl border-2 border-amber-300 flex items-center justify-center active:scale-95 transition-transform">
+          <i data-lucide="phone-call" class="w-5 h-5 text-dark-950"></i>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Main Trigger Button (Single Floating Icon) -->
+    <button type="button" id="fab-trigger-btn" onclick="toggleFabMenu()" aria-label="Связаться с Артёмом" class="w-14 h-14 rounded-full bg-gradient-to-tr from-amber-400 via-amber-500 to-yellow-400 text-dark-950 shadow-2xl shadow-amber-500/50 border-2 border-amber-200 flex items-center justify-center active:scale-90 transition-all duration-300 cursor-pointer">
+      <i id="fab-icon-chat" data-lucide="message-square-text" class="w-7 h-7 text-dark-950 transition-all"></i>
+      <i id="fab-icon-close" data-lucide="x" class="w-7 h-7 text-dark-950 hidden transition-all"></i>
     </button>
-    <!-- Bottom circle: Call (Позвонить) -->
-    <a href="tel:+14039250568" aria-label="Позвонить Артёму" class="w-14 h-14 rounded-full bg-gradient-to-tr from-amber-500 via-yellow-400 to-amber-300 text-dark-950 shadow-2xl shadow-amber-500/40 border-2 border-amber-300 flex items-center justify-center active:scale-90 transition-transform cursor-pointer">
-      <i data-lucide="phone-call" class="w-6 h-6 text-dark-950"></i>
-    </a>
   </div>
 
   <!-- PROOF MODAL: PUNTA CANA PRICE COMPARISON -->
@@ -1969,6 +2012,8 @@
         video_poster_sub: "Нажмите для воспроизведения",
         story_tag: "МОЙ ПУТЬ • 4 ГОДА ТРАНСФОРМАЦИИ",
         story_title: "Моя история: от Украины до Канады",
+        btn_story_expand: "Развернуть детали",
+        btn_story_collapse: "Свернуть детали",
         story_quote: "«У меня есть свой бизнес в Украине и в Канаде. За последние четыре года я научился совмещать предпринимательство с физическим трудом, параллельно развивать новые проекты и быть открытым к сильным людям и масштабным возможностям».",
         story_ch1_title: "Собственный бизнес в Украине",
         story_ch1_desc: "У меня есть свой действующий бизнес в Украине. Предпринимательский опыт привил мне системное мышление, умение нести ответственность за людей, процессы и реальный результат.",
@@ -2189,6 +2234,8 @@
         video_poster_sub: "Tap to play",
         story_tag: "MY JOURNEY • 4 YEARS OF TRANSFORMATION",
         story_title: "My Story: From Ukraine to Canada",
+        btn_story_expand: "Expand details",
+        btn_story_collapse: "Hide details",
         story_quote: "“I run my own business in Ukraine and in Canada. Over the past four years, I've learned to combine entrepreneurship with physical labor, simultaneously develop new ventures, and stay open to inspiring people and international opportunities.”",
         story_ch1_title: "Entrepreneurship in Ukraine",
         story_ch1_desc: "I own an active business in Ukraine. This entrepreneurial journey built my core mindset, discipline, and direct accountability for people, operations, and financial results.",
@@ -2655,6 +2702,75 @@
     // ==========================================
     const contactModal = document.getElementById('contact-modal');
     let currentLeadContext = 'general';
+
+    // ==========================================
+    // FAB EXPANDABLE MENU (MOBILE)
+    // ==========================================
+    function toggleFabMenu(forceState) {
+      const menu = document.getElementById('fab-menu');
+      const backdrop = document.getElementById('fab-backdrop');
+      const iconChat = document.getElementById('fab-icon-chat');
+      const iconClose = document.getElementById('fab-icon-close');
+      const btn = document.getElementById('fab-trigger-btn');
+      if (!menu) return;
+
+      const isOpen = !menu.classList.contains('hidden');
+      const shouldOpen = (typeof forceState === 'boolean') ? forceState : !isOpen;
+
+      if (shouldOpen) {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        if (backdrop) backdrop.classList.remove('hidden');
+        if (iconChat) iconChat.classList.add('hidden');
+        if (iconClose) iconClose.classList.remove('hidden');
+        if (btn) btn.classList.add('scale-105', 'ring-4', 'ring-amber-500/30');
+      } else {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        if (backdrop) backdrop.classList.add('hidden');
+        if (iconChat) iconChat.classList.remove('hidden');
+        if (iconClose) iconClose.classList.add('hidden');
+        if (btn) btn.classList.remove('scale-105', 'ring-4', 'ring-amber-500/30');
+      }
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function handleFabAction(action) {
+      toggleFabMenu(false);
+      if (action === 'modal') {
+        openContactModal('general');
+      }
+    }
+
+    // ==========================================
+    // STORY DETAILS COLLAPSE / EXPAND
+    // ==========================================
+    function toggleStoryDetails() {
+      const grid = document.getElementById('story-details-grid');
+      const textSpan = document.getElementById('story-toggle-text');
+      const icon = document.getElementById('story-toggle-icon');
+      if (!grid) return;
+
+      const isHidden = grid.classList.contains('hidden');
+      if (isHidden) {
+        grid.classList.remove('hidden');
+        grid.classList.add('grid');
+        textSpan.setAttribute('data-i18n', 'btn_story_collapse');
+        textSpan.textContent = currentLang === 'en' ? 'Hide details' : 'Свернуть детали';
+        if (icon) {
+          icon.setAttribute('data-lucide', 'chevron-up');
+        }
+      } else {
+        grid.classList.add('hidden');
+        grid.classList.remove('grid');
+        textSpan.setAttribute('data-i18n', 'btn_story_expand');
+        textSpan.textContent = currentLang === 'en' ? 'Expand details' : 'Развернуть детали';
+        if (icon) {
+          icon.setAttribute('data-lucide', 'chevron-down');
+        }
+      }
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
 
     function openContactModal(context = 'general') {
       currentLeadContext = context;
