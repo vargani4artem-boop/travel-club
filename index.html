@@ -608,47 +608,48 @@
         <!-- Right 4 Cards Grid -->
         <div class="lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5">
           
-          <!-- Card 1: Riviera Nayarit -->
-          <div onclick="openContactModal('travel')" class="tour-card group relative rounded-3xl overflow-hidden bg-[#070b19] border border-amber-500/25 shadow-xl text-white flex flex-col justify-between hover:-translate-y-1 hover:border-amber-400/60 transition-all duration-300 cursor-pointer select-none">
+          <!-- Card 1: Punta Cana (Grand Palladium Select Bavaro) - Real Trip Proof -->
+          <div onclick="openProofModal()" class="tour-card group relative rounded-3xl overflow-hidden bg-[#070b19] border-2 border-amber-500/40 shadow-xl text-white flex flex-col justify-between hover:-translate-y-1 hover:border-amber-400/80 transition-all duration-300 cursor-pointer select-none ring-1 ring-amber-400/20">
             <div class="relative h-44 overflow-hidden">
-              <img src="mexico_riviera.jpg" alt="Ривьера-Наярит" loading="lazy" decoding="async" width="400" height="220" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+              <img src="punta_cana_bavaro.jpg" alt="Grand Palladium Select Bávaro 5★" loading="lazy" decoding="async" width="400" height="220" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
               <div class="absolute inset-0 bg-gradient-to-t from-[#070b19] via-transparent to-black/30"></div>
-              <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-black/80 backdrop-blur-md text-amber-400 border border-amber-500/40 font-bold text-[10px] uppercase tracking-wider">
-                <span data-i18n="tour1_badge">Скидка 70%</span>
+              <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-amber-500 text-dark-950 font-black text-[10px] uppercase tracking-wider shadow-lg flex items-center gap-1">
+                <i data-lucide="check-circle-2" class="w-3 h-3 text-dark-950"></i>
+                <span data-i18n="tour1_badge">🔥 Личная поездка Артёма</span>
               </div>
             </div>
             <div class="p-4 space-y-2.5 flex-1 flex flex-col justify-between">
               <div class="space-y-1">
                 <div class="flex items-baseline justify-between gap-1">
-                  <h3 class="text-base font-bold text-white group-hover:text-amber-400 transition-colors" data-i18n="tour1_name">Ривьера-Наярит</h3>
-                  <span class="text-[10px] text-amber-400 font-bold uppercase tracking-wider whitespace-nowrap" data-i18n="tour1_country">Мексика</span>
+                  <h3 class="text-base font-bold text-white group-hover:text-amber-400 transition-colors" data-i18n="tour1_name">Пунта-Кана</h3>
+                  <span class="text-[10px] text-amber-400 font-bold uppercase tracking-wider whitespace-nowrap" data-i18n="tour1_country">Доминикана</span>
                 </div>
-                <p class="text-xs font-semibold text-slate-200 line-clamp-1" data-i18n="tour1_hotel">Fiesta Americana 5★</p>
-                <p class="text-[11px] text-slate-400 line-clamp-2 leading-snug" data-i18n="tour1_details">
-                  Все включено • 4 ночи • Пример предложения
+                <p class="text-xs font-semibold text-slate-200 line-clamp-1" data-i18n="tour1_hotel">Grand Palladium Select Bávaro 5★</p>
+                <p class="text-[11px] text-amber-300/90 font-medium line-clamp-2 leading-snug" data-i18n="tour1_details">
+                  Все включено • 16–20 дек (4 ночи) • Полулюкс
                 </p>
               </div>
 
               <div>
-                <div class="p-3 rounded-2xl bg-white/[0.04] space-y-2">
+                <div class="p-3 rounded-2xl bg-white/[0.04] space-y-2 border border-amber-500/20">
                   <div class="flex items-center justify-between text-xs text-slate-400">
                     <span class="whitespace-nowrap" data-i18n="tour_booking_label">Обычная цена:</span>
-                    <span class="line-through font-mono font-medium">$1,786</span>
+                    <span class="line-through font-mono font-medium">$1,646</span>
                   </div>
                   <div class="flex items-baseline justify-between gap-2">
                     <span class="text-[11px] font-bold text-amber-300 uppercase tracking-wider whitespace-nowrap" data-i18n="tour_club_label">Клубный тариф:</span>
-                    <span class="text-2xl font-black text-amber-400 font-mono leading-none">$529</span>
+                    <span class="text-2xl font-black text-amber-400 font-mono leading-none">$549</span>
                   </div>
                   <div class="flex items-center justify-between text-[11px]">
                     <span class="text-slate-400 whitespace-nowrap" data-i18n="tour_savings_label">Ваша экономия:</span>
                     <span class="font-bold text-emerald-400 font-mono whitespace-nowrap bg-emerald-500/15 px-2 py-0.5 rounded border border-emerald-500/30" data-i18n="tour1_saving">
-                      $1,257 (–70%)
+                      $1,097 (–67%)
                     </span>
                   </div>
                 </div>
-                <button onclick="openContactModal('travel')" class="w-full mt-2.5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-dark-950 text-xs font-black uppercase tracking-wider transition-all border border-amber-500/30 flex items-center justify-center gap-1.5 cursor-pointer shadow-md">
-                  <span data-i18n="tour_btn_book">Узнать подробности</span>
-                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                <button onclick="event.stopPropagation(); openProofModal();" class="w-full mt-2.5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 text-xs font-black uppercase tracking-wider transition-all border border-amber-500/40 flex items-center justify-center gap-1.5 cursor-pointer shadow-md">
+                  <i data-lucide="file-check-2" class="w-3.5 h-3.5"></i>
+                  <span data-i18n="tour1_btn_proof">Проверить скрины брони</span>
                 </button>
               </div>
             </div>
@@ -1876,6 +1877,88 @@
     </div>
   </div>
 
+  <!-- REAL TRIP PROOF MODAL (TRAVORIUM VS BOOKING) -->
+  <div id="proof-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4" role="dialog" aria-modal="true" aria-label="Подтверждение цен">
+    <div class="relative w-full max-w-4xl p-5 sm:p-7 rounded-3xl luxury-card border-2 border-amber-500/50 glow-gold space-y-5 max-h-[92vh] overflow-y-auto bg-[#0d1024]">
+      
+      <button onclick="closeProofModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-white focus:outline-none cursor-pointer z-10" aria-label="Закрыть">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Header -->
+      <div class="space-y-2 pr-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="shield-check" class="w-4 h-4 text-amber-400"></i>
+          <span>Реальный пример поездки Артёма</span>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-serif font-black text-white">
+          Grand Palladium Select Bávaro 5★ — Пунта-Кана
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-300">
+          Даты: <strong class="text-amber-300">16–20 декабря 2026</strong> (4 ночи, 2 взрослых) • Питание: <strong class="text-amber-300">Все включено (All-Inclusive)</strong> • Номер: <strong class="text-amber-300">Junior Suite (Полулюкс)</strong>
+        </p>
+      </div>
+
+      <!-- Metrics grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
+        <div class="p-3 rounded-2xl bg-white/[0.04] border border-white/10">
+          <div class="text-[11px] text-slate-400 uppercase font-semibold">Booking.com (публично)</div>
+          <div class="text-2xl font-mono font-bold text-white mt-1">$1,646</div>
+          <div class="text-[10px] text-slate-500 mt-0.5 line-through">базовая цена: $2,532</div>
+        </div>
+        <div class="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+          <div class="text-[11px] text-amber-300 uppercase font-semibold">Travorium World Tours</div>
+          <div class="text-2xl font-mono font-black text-amber-400 mt-1">$549</div>
+          <div class="text-[10px] text-amber-400 font-semibold mt-0.5">закрытый клубный тариф</div>
+        </div>
+        <div class="p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30">
+          <div class="text-[11px] text-emerald-300 uppercase font-semibold">Чистая экономия</div>
+          <div class="text-2xl font-mono font-black text-emerald-400 mt-1">-$1,097</div>
+          <div class="text-[10px] text-emerald-400 font-semibold mt-0.5">скидка 67% (или $1,983 от базовой)</div>
+        </div>
+      </div>
+
+      <!-- Tab Switcher for Proof Screenshots -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-center gap-2 border-b border-white/10 pb-3">
+          <button id="proof-tab-travorium" onclick="switchProofTab('travorium')" class="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-amber-500 text-dark-950 cursor-pointer shadow-md">
+            Скриншот Travorium ($549)
+          </button>
+          <button id="proof-tab-booking" onclick="switchProofTab('booking')" class="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-white/10 text-slate-300 hover:text-white cursor-pointer">
+            Скриншот Booking ($1,646)
+          </button>
+        </div>
+
+        <!-- Screenshot Container -->
+        <div class="relative rounded-2xl overflow-hidden border border-amber-500/30 bg-black/60 shadow-inner">
+          <div id="proof-img-travorium" class="block">
+            <img src="proof_travorium_bavaro.png" alt="Скриншот Travorium World Tours $549" class="w-full h-auto max-h-[550px] object-contain mx-auto" loading="lazy">
+            <div class="p-2.5 text-center text-xs text-slate-400 bg-black/80 border-t border-white/10">
+              Личный кабинет Travorium: World Tours • Grand Palladium Select Bavaro • 16-20 декабря • $549 All-Inclusive
+            </div>
+          </div>
+          <div id="proof-img-booking" class="hidden">
+            <img src="proof_booking_bavaro.png" alt="Скриншот Booking.com $1,646" class="w-full h-auto max-h-[550px] object-contain mx-auto" loading="lazy">
+            <div class="p-2.5 text-center text-xs text-slate-400 bg-black/80 border-t border-white/10">
+              Booking.com: Grand Palladium Select Bávaro • 16-20 декабря • 4 ночи • 2 взрослых • US$ 1,646 (скидка с US$ 2,532)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer CTA -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-white/10">
+        <p class="text-xs text-slate-400 text-center sm:text-left">
+          Артём лично едет в этот отель. Вы можете самостоятельно проверить эти же даты на Booking.com.
+        </p>
+        <button onclick="closeProofModal(); openContactModal('travel');" class="w-full sm:w-auto px-6 py-2.5 rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 text-dark-950 font-bold text-xs uppercase tracking-wider shadow-lg hover:brightness-110 cursor-pointer">
+          Хочу так же путешествовать
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <!-- CONTEXTUAL CONTACT MODAL (P1-11, P1-12) -->
   <div id="contact-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Связаться с Артёмом">
     <div class="relative w-full max-w-md p-6 sm:p-8 rounded-3xl luxury-card border-2 border-amber-500/40 glow-gold space-y-6 bg-[#0d1024]">
@@ -2036,12 +2119,13 @@
         tour_club_label: "Клубный тариф:",
         tour_savings_label: "Ваша экономия:",
         tour_btn_book: "Узнать подробности",
-        tour1_badge: "Скидка 70%",
-        tour1_name: "Ривьера-Наярит",
-        tour1_country: "Мексика",
-        tour1_hotel: "Fiesta Americana 5★",
-        tour1_details: "Все включено • 4 ночи • Пример предложения",
-        tour1_saving: "$1,257 (–70%)",
+        tour1_badge: "🔥 Личная поездка Артёма",
+        tour1_name: "Пунта-Кана",
+        tour1_country: "Доминикана",
+        tour1_hotel: "Grand Palladium Select Bávaro 5★",
+        tour1_details: "Все включено • 16–20 дек (4 ночи) • Полулюкс",
+        tour1_saving: "$1,097 (–67%)",
+        tour1_btn_proof: "Проверить скрины брони",
         tour2_badge: "Скидка 75%",
         tour2_name: "Рио-де-Жанейро",
         tour2_country: "Бразилия",
@@ -2228,12 +2312,13 @@
         tour_club_label: "Club Rate:",
         tour_savings_label: "Your Savings:",
         tour_btn_book: "Check Availability",
-        tour1_badge: "70% OFF",
-        tour1_name: "Riviera Nayarit",
-        tour1_country: "Mexico",
-        tour1_hotel: "Fiesta Americana 5★",
-        tour1_details: "All Inclusive • 4 nights • Offer Example",
-        tour1_saving: "$1,257 (–70%)",
+        tour1_badge: "🔥 Artem's Real Trip",
+        tour1_name: "Punta Cana",
+        tour1_country: "Dominican Republic",
+        tour1_hotel: "Grand Palladium Select Bávaro 5★",
+        tour1_details: "All Inclusive • Dec 16–20 (4 nights) • Junior Suite",
+        tour1_saving: "$1,097 (–67%)",
+        tour1_btn_proof: "Verify Booking Proof",
         tour2_badge: "75% OFF",
         tour2_name: "Rio de Janeiro",
         tour2_country: "Brazil",
@@ -2855,6 +2940,51 @@
     destModal.addEventListener('click', (e) => {
       if (e.target === destModal) closeDestinationsModal();
     });
+
+    const proofModal = document.getElementById('proof-modal');
+    function openProofModal() {
+      if (proofModal) {
+        proofModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        switchProofTab('travorium');
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+      }
+    }
+    function closeProofModal() {
+      if (proofModal) {
+        proofModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+    if (proofModal) {
+      proofModal.addEventListener('click', (e) => {
+        if (e.target === proofModal) closeProofModal();
+      });
+    }
+
+    function switchProofTab(tab) {
+      const btnTrav = document.getElementById('proof-tab-travorium');
+      const btnBook = document.getElementById('proof-tab-booking');
+      const imgTrav = document.getElementById('proof-img-travorium');
+      const imgBook = document.getElementById('proof-img-booking');
+      if (!btnTrav || !btnBook || !imgTrav || !imgBook) return;
+
+      if (tab === 'travorium') {
+        btnTrav.className = "px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-amber-500 text-dark-950 cursor-pointer shadow-md";
+        btnBook.className = "px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-white/10 text-slate-300 hover:text-white cursor-pointer";
+        imgTrav.classList.remove('hidden');
+        imgTrav.classList.add('block');
+        imgBook.classList.add('hidden');
+        imgBook.classList.remove('block');
+      } else {
+        btnBook.className = "px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-amber-500 text-dark-950 cursor-pointer shadow-md";
+        btnTrav.className = "px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-white/10 text-slate-300 hover:text-white cursor-pointer";
+        imgBook.classList.remove('hidden');
+        imgBook.classList.add('block');
+        imgTrav.classList.add('hidden');
+        imgTrav.classList.remove('block');
+      }
+    }
 
     // Keyboard Accessibility: Escape key closes active modals (P1-12)
     window.addEventListener('keydown', (e) => {
