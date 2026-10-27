@@ -1539,7 +1539,7 @@
         <p class="text-slate-500">
           <span data-i18n="footer_contact_label">Свяжись со мной напрямую:</span> <a href="tel:+14039250568" class="text-amber-400 hover:underline font-mono">+1 (403) 925-0568</a>
         </p>
-        <p class="text-slate-600 font-mono text-[11px]">
+        <p class="text-slate-600 font-mono text-[11px]" data-i18n="footer_copy">
           © 2026 BetterWay • Артём Варганич. Все права защищены.
         </p>
       </div>
@@ -2063,6 +2063,7 @@
         form_phone_label: "Контактный телефон",
         form_phone_placeholder: "+1 403 555 0123",
         form_submit_btn: "Связаться со мной",
+        btn_submit: "Связаться со мной",
         form_consent: "Отправляя форму, ты соглашаешься, что Артём свяжется с тобой по указанному номеру по поводу твоего запроса.",
         footer_desc: "Персональный сайт Артёма Варганича. Новые возможности начинаются со знакомства.",
         footer_contact_label: "Свяжись со мной напрямую:",
@@ -2119,7 +2120,8 @@
         compare_callback_sub: "Перейти к форме обратной связи",
         modal_or_form: "или оставь свой номер:",
         form_name_ph: "Твоё имя",
-        form_phone_ph: "Телефон / WhatsApp"
+        form_phone_ph: "Телефон / WhatsApp",
+        footer_copy: "© 2026 BetterWay • Артём Варганич. Все права защищены."
       },
       en: {
         nav_story: "About Me",
@@ -2272,10 +2274,11 @@
         contact_subtitle: "Leave your name and phone number, and I will reach out to you personally.",
         direct_contact_title: "Direct Channels:",
         form_name_label: "Your Name",
-        form_name_placeholder: "e.g. Alexander",
+        form_name_placeholder: "e.g. Alex",
         form_phone_label: "Phone Number",
         form_phone_placeholder: "+1 403 555 0123",
         form_submit_btn: "Reach Out to Me",
+        btn_submit: "Reach Out to Me",
         form_consent: "By submitting this form, you agree that Artem may contact you at the provided number regarding your inquiry.",
         footer_desc: "Artem Varganich's personal website. Fresh opportunities start with an introduction.",
         footer_contact_label: "Contact me directly:",
@@ -2334,7 +2337,8 @@
         compare_callback_sub: "Go to contact form below",
         modal_or_form: "or leave your phone number:",
         form_name_ph: "Your name",
-        form_phone_ph: "Phone / WhatsApp"
+        form_phone_ph: "Phone / WhatsApp",
+        footer_copy: "© 2026 BetterWay • Artem Varganich. All rights reserved."
       }
     };
 
@@ -2405,6 +2409,12 @@
           ? 'Hi Artem! I want to compare the cost of my trip. Could you check my option?'
           : 'Привет, Артём! Хочу сравнить стоимость моего путешествия. Можешь посмотреть мой вариант?';
         compareWa.href = `https://wa.me/380963340093?text=${encodeURIComponent(compareMsg)}`;
+      }
+
+      const lifeText = document.getElementById('life-play-text');
+      if (lifeText) {
+        const isEn = (lang === 'en');
+        lifeText.textContent = isEn ? (lifeAutoplay ? 'Auto' : 'Pause') : (lifeAutoplay ? 'Авто' : 'Пауза');
       }
 
       updateWorkSlider();
@@ -2571,7 +2581,10 @@
       lifeAutoplay = !lifeAutoplay;
       const text = document.getElementById('life-play-text');
       const icon = document.getElementById('life-play-icon');
-      if (text) text.textContent = lifeAutoplay ? 'Авто' : 'Пауза';
+      if (text) {
+        const isEn = (currentLang === 'en');
+        text.textContent = isEn ? (lifeAutoplay ? 'Auto' : 'Pause') : (lifeAutoplay ? 'Авто' : 'Пауза');
+      }
       if (icon) {
         icon.setAttribute('data-lucide', lifeAutoplay ? 'pause' : 'play');
         if (typeof lucide !== 'undefined') lucide.createIcons();
@@ -3086,8 +3099,8 @@
       }
     });
 
-    // Initialize icons and saved language on load
-    document.addEventListener('DOMContentLoaded', () => {
+    // Initialize icons and saved language on load immediately
+    function initBetterWayApp() {
       let initialLang = 'ru';
       try {
         const saved = localStorage.getItem(STORAGE_KEY);
@@ -3099,7 +3112,13 @@
       if (typeof lucide !== 'undefined') lucide.createIcons();
       updateWorkSlider();
       updateLifeSlider();
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initBetterWayApp);
+    } else {
+      initBetterWayApp();
+    }
   </script>
 
 </body>
