@@ -241,11 +241,15 @@
             <span class="text-black" data-i18n="btn_contact_artem">Написать мне</span>
           </button>
 
-          <!-- Language Switcher Pill -->
-          <button id="lang-toggle-btn" class="px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-full bg-dark-800/90 hover:bg-dark-700 text-[11px] sm:text-xs font-bold border border-amber-500/30 text-amber-300 transition-all flex items-center gap-1 shrink-0 whitespace-nowrap cursor-pointer" aria-label="Сменить язык">
-            <span id="current-lang-text" class="whitespace-nowrap">RU | EN</span>
-            <i data-lucide="globe" class="w-3 h-3 text-amber-400 shrink-0"></i>
-          </button>
+          <!-- 3-Way Language Switcher Pill -->
+          <div id="lang-switcher-container" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-dark-800/90 border border-amber-500/30 text-[11px] sm:text-xs font-bold shrink-0 whitespace-nowrap select-none shadow-md">
+            <i data-lucide="globe" class="w-3.5 h-3.5 text-amber-400 mr-0.5 shrink-0"></i>
+            <button type="button" onclick="setLanguage('en')" id="lang-btn-en" class="px-2 py-0.5 rounded-full transition-all cursor-pointer">EN</button>
+            <span class="text-slate-600 text-[10px]">·</span>
+            <button type="button" onclick="setLanguage('uk')" id="lang-btn-uk" class="px-2 py-0.5 rounded-full transition-all cursor-pointer">UA</button>
+            <span class="text-slate-600 text-[10px]">·</span>
+            <button type="button" onclick="setLanguage('ru')" id="lang-btn-ru" class="px-2 py-0.5 rounded-full transition-all cursor-pointer">RU</button>
+          </div>
 
           <!-- Mobile & Tablet Menu Toggle Button (☰) -->
           <button id="mobile-menu-btn" class="lg:hidden p-1.5 sm:p-2 text-amber-400 hover:text-amber-300 focus:outline-none shrink-0" aria-label="Открыть меню">
@@ -259,6 +263,16 @@
 
     <!-- Mobile Nav Dropdown -->
     <div id="mobile-menu" class="hidden lg:hidden bg-[#0d1024] border-b border-amber-500/20 px-6 pt-4 pb-6 space-y-2">
+      <div class="pb-3 mb-2 border-b border-white/10 flex items-center justify-between">
+        <span class="text-xs text-slate-400 font-medium">Мова / Language / Язык:</span>
+        <div class="inline-flex items-center gap-1 p-1 rounded-full bg-dark-800 border border-amber-500/30 text-xs font-bold">
+          <button type="button" onclick="setLanguage('en')" id="mobile-lang-btn-en" class="px-2.5 py-0.5 rounded-full">EN</button>
+          <span class="text-slate-600">·</span>
+          <button type="button" onclick="setLanguage('uk')" id="mobile-lang-btn-uk" class="px-2.5 py-0.5 rounded-full">UA</button>
+          <span class="text-slate-600">·</span>
+          <button type="button" onclick="setLanguage('ru')" id="mobile-lang-btn-ru" class="px-2.5 py-0.5 rounded-full">RU</button>
+        </div>
+      </div>
       <a href="#story" class="block py-2 text-slate-200 hover:text-amber-400 font-semibold" data-i18n="nav_story">About Me</a>
       <a href="#trip" class="block py-2 text-slate-200 hover:text-amber-400 font-semibold" data-i18n="nav_case">Case (-67%)</a>
       <a href="#directions" class="block py-2 text-slate-200 hover:text-amber-400 font-semibold" data-i18n="nav_directions">Opportunities</a>
@@ -487,13 +501,13 @@
 
           <div class="space-y-3.5 text-slate-200 text-base sm:text-lg leading-relaxed">
             <p data-i18n="trip_p1">
-              Когда я начал разбираться в предложениях клуба, мне стало интересно сравнить стоимость конкретного отдыха.
+              When I started exploring the club's offers, I got genuinely curious.
             </p>
             <p data-i18n="trip_p2">
-              Я выбрал Grand Palladium Select Bávaro 5★ в Доминиканской Республике, сравнил предложения и приобрёл поездку.
+              I chose Grand Palladium in the Dominican Republic, compared the rate with Booking, and ultimately booked the trip through the club.
             </p>
             <p data-i18n="trip_p3">
-              Разница в цене оказалась настолько ощутимой, что я решил открыто поделиться этим реальным опытом.
+              The price difference compared to Booking was so noticeable that I decided to openly share this real experience.
             </p>
             <p class="text-amber-300 font-semibold" data-i18n="trip_p4">
               Скоро я отправляюсь в эту поездку.
@@ -1431,7 +1445,7 @@
             </h3>
 
             <!-- WhatsApp (Name/Number hidden as requested: just 'WhatsApp') -->
-            <a href="https://wa.me/14039250568?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%9F%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D0%BB%20%D1%82%D0%B2%D0%BE%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%20BetterWay%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BE%D0%B1%D1%89%D0%B0%D1%82%D1%8C%D1%81%D1%8F." target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 flex items-center justify-between text-slate-200 hover:text-white transition-all group">
+            <a href="https://wa.me/14039250568?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%9F%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D0%BB%20%D1%82%D0%B2%D0%BE%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%20BetterWay%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BE%D0%B1%D1%89%D0%B0%D1%82%D1%8C%D1%81%D1%8F." class="p-4 rounded-2xl bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 flex items-center justify-between text-slate-200 hover:text-white transition-all group">
               <div class="flex items-center gap-3.5">
                 <div class="w-11 h-11 rounded-xl bg-[#25D366]/20 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform">
                   <i data-lucide="message-circle" class="w-5 h-5"></i>
@@ -1445,7 +1459,7 @@
             </a>
 
             <!-- Telegram (Username hidden as requested: just 'Telegram') -->
-            <a href="https://t.me/Varganich_Artem" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-[#229ED9]/10 hover:bg-[#229ED9]/20 border border-[#229ED9]/30 flex items-center justify-between text-slate-200 hover:text-white transition-all group">
+            <a href="https://t.me/Varganich_Artem" class="p-4 rounded-2xl bg-[#229ED9]/10 hover:bg-[#229ED9]/20 border border-[#229ED9]/30 flex items-center justify-between text-slate-200 hover:text-white transition-all group">
               <div class="flex items-center gap-3.5">
                 <div class="w-11 h-11 rounded-xl bg-[#229ED9]/20 flex items-center justify-center text-sky-400 group-hover:scale-105 transition-transform">
                   <i data-lucide="send" class="w-5 h-5"></i>
@@ -1517,6 +1531,16 @@
               </div>
             </div>
 
+            <div class="space-y-1.5">
+              <label for="lead-message" class="block text-xs font-bold text-slate-300 uppercase tracking-wider" data-i18n="form_message_label">
+                Your message
+              </label>
+              <div class="relative">
+                <textarea id="lead-message" rows="3" placeholder="Write your question or comment here..." data-i18n-placeholder="form_message_placeholder" class="w-full px-4 py-3 rounded-2xl bg-black/60 border border-amber-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm resize-none"></textarea>
+                <i data-lucide="message-square" class="absolute right-4 top-3.5 w-4 h-4 text-slate-500"></i>
+              </div>
+            </div>
+
             <!-- Honeypot Anti-Spam (Hidden) -->
             <input type="text" id="lead-website" class="hidden" tabindex="-1" autocomplete="off">
 
@@ -1555,11 +1579,11 @@
 
         <div class="flex flex-wrap items-center justify-center md:justify-end gap-2.5">
           <!-- WhatsApp -->
-          <a href="https://wa.me/14039250568" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366] text-[#25D366] hover:text-white flex items-center justify-center transition-all border border-[#25D366]/30 shadow-sm" aria-label="WhatsApp" title="WhatsApp">
+          <a href="https://wa.me/14039250568" class="w-10 h-10 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366] text-[#25D366] hover:text-white flex items-center justify-center transition-all border border-[#25D366]/30 shadow-sm" aria-label="WhatsApp" title="WhatsApp">
             <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           </a>
           <!-- Telegram -->
-          <a href="https://t.me/Varganich_Artem" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-[#229ED9]/15 hover:bg-[#229ED9] text-[#229ED9] hover:text-white flex items-center justify-center transition-all border border-[#229ED9]/30 shadow-sm" aria-label="Telegram" title="Telegram">
+          <a href="https://t.me/Varganich_Artem" class="w-10 h-10 rounded-xl bg-[#229ED9]/15 hover:bg-[#229ED9] text-[#229ED9] hover:text-white flex items-center justify-center transition-all border border-[#229ED9]/30 shadow-sm" aria-label="Telegram" title="Telegram">
             <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
           </a>
           <!-- Instagram -->
@@ -1632,7 +1656,7 @@
       </button>
 
       <!-- 2. WhatsApp -->
-      <a href="https://wa.me/14039250568?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BE%D0%B1%D1%89%D0%B0%D1%82%D1%8C%D1%81%D1%8F." target="_blank" rel="noopener noreferrer" onclick="toggleFabMenu(false)" class="flex items-center gap-2.5 group cursor-pointer">
+      <a href="https://wa.me/14039250568?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BE%D0%B1%D1%89%D0%B0%D1%82%D1%8C%D1%81%D1%8F." onclick="toggleFabMenu(false)" class="flex items-center gap-2.5 group cursor-pointer">
         <span class="px-3 py-1.5 rounded-xl bg-dark-900/95 border border-[#25D366]/40 text-white text-xs font-bold shadow-xl shadow-black/60">WhatsApp</span>
         <div class="w-12 h-12 rounded-full bg-[#25D366] text-white shadow-xl border-2 border-emerald-300 flex items-center justify-center active:scale-95 transition-transform">
           <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
@@ -1640,7 +1664,7 @@
       </a>
 
       <!-- 3. Telegram -->
-      <a href="https://t.me/Varganich_Artem" target="_blank" rel="noopener noreferrer" onclick="toggleFabMenu(false)" class="flex items-center gap-2.5 group cursor-pointer">
+      <a href="https://t.me/Varganich_Artem" onclick="toggleFabMenu(false)" class="flex items-center gap-2.5 group cursor-pointer">
         <span class="px-3 py-1.5 rounded-xl bg-dark-900/95 border border-[#229ED9]/40 text-white text-xs font-bold shadow-xl shadow-black/60">Telegram</span>
         <div class="w-12 h-12 rounded-full bg-[#229ED9] text-white shadow-xl border-2 border-sky-300 flex items-center justify-center active:scale-95 transition-transform">
           <i data-lucide="send" class="w-5 h-5 text-white"></i>
@@ -1771,7 +1795,7 @@
 
       <div class="space-y-2.5">
         <!-- WhatsApp -->
-        <a id="modal-wa-link" href="https://wa.me/14039250568" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
+        <a id="modal-wa-link" href="https://wa.me/14039250568" class="w-full py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
           <span class="flex items-center gap-3">
             <i data-lucide="message-circle" class="w-5 h-5"></i>
             <span>WhatsApp</span>
@@ -1780,7 +1804,7 @@
         </a>
 
         <!-- Telegram -->
-        <a id="modal-tg-link" href="https://t.me/Varganich_Artem" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-[#229ED9] hover:bg-[#1f8ec3] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
+        <a id="modal-tg-link" href="https://t.me/Varganich_Artem" class="w-full py-3 px-4 rounded-xl bg-[#229ED9] hover:bg-[#1f8ec3] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
           <span class="flex items-center gap-3">
             <i data-lucide="send" class="w-5 h-5"></i>
             <span>Telegram</span>
@@ -1814,6 +1838,7 @@
           <input type="text" id="modal-lead-honey" class="hidden" tabindex="-1" autocomplete="off">
           <input type="text" id="modal-lead-name" required placeholder="Твоё имя" data-i18n-placeholder="form_name_ph" class="w-full px-4 py-2.5 rounded-xl bg-white/[0.06] border border-amber-500/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 transition-colors">
           <input type="tel" id="modal-lead-phone" required placeholder="Телефон / WhatsApp" data-i18n-placeholder="form_phone_ph" class="w-full px-4 py-2.5 rounded-xl bg-white/[0.06] border border-amber-500/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 transition-colors">
+          <textarea id="modal-lead-message" rows="2" placeholder="Your message (question or comment)..." data-i18n-placeholder="modal_message_placeholder" class="w-full px-4 py-2.5 rounded-xl bg-white/[0.06] border border-amber-500/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 transition-colors resize-none"></textarea>
           <button type="submit" id="modal-lead-submit-btn" class="w-full py-3 px-5 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 text-dark-950 font-bold text-xs uppercase tracking-wider shadow-lg hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
             <i data-lucide="send" class="w-4 h-4 text-dark-950"></i>
             <span data-i18n="btn_submit">Связаться со мной</span>
@@ -1863,7 +1888,7 @@
       <!-- 4 Contact Options from ТЗ -->
       <div class="space-y-3">
         <!-- 1. WhatsApp -->
-        <a id="compare-modal-wa-link" href="https://wa.me/380963340093?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B8%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BC%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%BF%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B8%D1%8F.%20%D0%9C%D0%BE%D0%B6%D0%B5%D1%88%D1%8C%20%D0%BF%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C%20%D0%BC%D0%BE%D0%B9%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%3F" target="_blank" rel="noopener noreferrer" onclick="trackEvent('travel_comparison_whatsapp');" class="w-full py-3.5 px-5 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
+        <a id="compare-modal-wa-link" href="https://wa.me/380963340093?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%90%D1%80%D1%82%D1%91%D0%BC%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B8%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BC%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%BF%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B8%D1%8F.%20%D0%9C%D0%BE%D0%B6%D0%B5%D1%88%D1%8C%20%D0%BF%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C%20%D0%BC%D0%BE%D0%B9%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%3F" onclick="trackEvent('travel_comparison_whatsapp');" class="w-full py-3.5 px-5 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
           <div class="flex items-center gap-3 text-left">
             <i data-lucide="message-circle" class="w-5 h-5 shrink-0"></i>
             <div>
@@ -1875,7 +1900,7 @@
         </a>
 
         <!-- 2. Telegram -->
-        <a id="compare-modal-tg-link" href="https://t.me/Varganich_Artem" target="_blank" rel="noopener noreferrer" onclick="trackEvent('travel_comparison_telegram');" class="w-full py-3.5 px-5 rounded-2xl bg-[#229ED9] hover:bg-[#1f8ec3] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
+        <a id="compare-modal-tg-link" href="https://t.me/Varganich_Artem" onclick="trackEvent('travel_comparison_telegram');" class="w-full py-3.5 px-5 rounded-2xl bg-[#229ED9] hover:bg-[#1f8ec3] text-white font-bold text-sm flex items-center justify-between transition-all shadow-md group">
           <div class="flex items-center gap-3 text-left">
             <i data-lucide="send" class="w-5 h-5 shrink-0"></i>
             <div>
@@ -1935,16 +1960,16 @@
 
   <!-- JAVASCRIPT ARCHITECTURE -->
   
-  <!-- Fullscreen High-Res Zoom Overlay -->
-  <div id="proof-zoom-overlay" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl hidden flex flex-col items-center justify-center p-2 sm:p-4 select-none" onclick="toggleProofZoom()">
-    <button type="button" onclick="toggleProofZoom()" class="absolute top-4 right-4 p-2.5 text-slate-300 hover:text-white bg-dark-800/80 hover:bg-dark-700 rounded-full border border-amber-500/40 cursor-pointer z-10 transition-colors shadow-2xl" aria-label="Close Zoom">
-      <i data-lucide="x" class="w-6 h-6"></i>
+    <!-- Fullscreen High-Res Zoom Overlay -->
+  <div id="proof-zoom-overlay" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl hidden flex flex-col items-center justify-center p-2 sm:p-4 select-none" onclick="closeProofZoom(event)">
+    <button id="proof-zoom-close-btn" type="button" onclick="closeProofZoom(event)" class="absolute top-4 right-4 p-3 text-slate-300 hover:text-white bg-dark-800/90 hover:bg-dark-700 rounded-full border border-amber-500/50 cursor-pointer z-20 transition-all hover:scale-105 active:scale-95 shadow-2xl" aria-label="Close Zoom">
+      <i data-lucide="x" class="w-6 h-6 pointer-events-none"></i>
     </button>
     <div class="relative max-w-[95vw] max-h-[90vh] overflow-auto flex items-center justify-center" onclick="event.stopPropagation()">
       <img id="proof-zoom-img" src="proof_club_bavaro_en.png" alt="Enlarged Proof Screenshot" class="max-w-full max-h-[85vh] object-contain rounded-xl border border-amber-500/30 shadow-2xl">
     </div>
-    <div id="proof-zoom-caption" class="text-xs sm:text-sm text-slate-300 font-medium mt-3 bg-black/75 px-5 py-2 rounded-full border border-amber-500/30 text-center shadow-lg">
-      Grand Palladium Select Bávaro 5★ • Price Proof
+    <div id="proof-zoom-caption" class="text-xs sm:text-sm text-slate-300 font-medium mt-3 bg-black/75 px-5 py-2 rounded-full border border-amber-500/30 text-center shadow-lg" onclick="event.stopPropagation()">
+      Booking.com vs Club Proof
     </div>
   </div>
 
@@ -1988,6 +2013,9 @@
     // ==========================================
     const translations = {
       ru: {
+        modal_message_placeholder: "Твоё сообщение (вопрос, пожелание)...",
+        form_message_placeholder: "Напиши свой вопрос или комментарий...",
+        form_message_label: "Твоё сообщение",
         artem_role_share: "Партнёр туристического клуба",
         btn_ask_terms: "Задай мне вопрос",
         btn_contact_artem: "Написать мне",
@@ -2087,7 +2115,7 @@
         header_call_btn: "Позвонить",
         hero_badge: "BETTERWAY • TICKET TO YOUR BETTER LIFE",
         hero_btn_contact: "Написать мне",
-        hero_btn_story: "Посмотреть видео 1:26",
+        hero_btn_story: "Смотреть видео 1:26",
         hero_eyebrow: "Привет, я Артём Варганич 👋 | Калгари, Канада",
         hero_greeting: "Привет, ",
         hero_h1: "Привет! Меня зовут Артем Варганич. И у меня для тебя есть на самом деле классная информация.",
@@ -2149,7 +2177,7 @@
         proof_metric_diff_label: "Разница в цене",
         proof_metric_diff_sub: "экономия 67% (или $1,983 от базовой)",
         proof_modal_badge: "Реальный пример поездки Артёма",
-        proof_modal_details: 'Даты: <strong class="text-amber-300">16–20 декабря</strong> (4 ночи, 2 взрослых) • Питание: <strong class="text-amber-300">Все включено (All-Inclusive)</strong> • Номер: <strong class="text-amber-300">Junior Suite (Полулюкс)</strong>',
+        proof_modal_details: "Даты: <strong class=\"text-amber-300\">16–20 декабря</strong> (4 ночи, 2 взрослых) • Питание: <strong class=\"text-amber-300\">Все включено (All-Inclusive)</strong> • Номер: <strong class=\"text-amber-300\">Junior Suite (Полулюкс)</strong>",
         proof_modal_title: "Grand Palladium Select Bávaro 5★ — Пунта-Кана",
         proof_tab_booking_btn: "Публичный тариф Booking ($1,646 USD)",
         proof_tab_club_btn: "Тариф через клуб ($549 USD)",
@@ -2182,9 +2210,9 @@
         trip_club_label: "Тариф через клуб:",
         trip_country_dates: "Доминиканская Республика • 16–20 декабря • 4 ночи • 2 взрослых",
         trip_disclaimer: "* Цены относятся к конкретному предложению на указанные даты. Стоимость зависит от доступности, условий бронирования и членства.",
-        trip_p1: "Когда я начал разбираться в предложениях клуба, мне стало интересно сравнить стоимость конкретного отдыха.",
-        trip_p2: "Я выбрал Grand Palladium Select Bávaro 5★ в Доминиканской Республике, сравнил предложения и приобрёл поездку.",
-        trip_p3: "Разница в цене оказалась настолько ощутимой, что я решил открыто поделиться этим реальным опытом.",
+        trip_p1: "Когда я начал разбираться в предложениях клуба, мне стало интересно.",
+        trip_p2: "Я выбрал Grand Palladium в Доминиканской Республике, сравнил предложение с сайтом Booking и в итоге приобрел поездку через клуб.",
+        trip_p3: "Разница в цене оказалась настолько ощутимой с Букингом, что я решил открыто поделиться этим реальным опытом.",
         trip_p4: "Скоро я отправляюсь в эту поездку.",
         trip_public_label: "Публичная цена (Booking.com):",
         trip_saving_label: "Разница в стоимости:",
@@ -2219,6 +2247,9 @@
         work_title: "Моя работа и реальная жизнь",
       },
       en: {
+        modal_message_placeholder: "Your message (question or comment)...",
+        form_message_placeholder: "Write your question or comment here...",
+        form_message_label: "Your message",
         artem_role_share: "Travel Club Partner",
         btn_ask_terms: "Ask Me a Question",
         btn_contact_artem: "Contact Me",
@@ -2326,7 +2357,7 @@
         hero_p1: "I am originally from Ukraine. Over the last four years, a great deal has changed in my life.",
         hero_p2: "I run my own business in Ukraine and in Canada. Today I live in Calgary, build new ventures, value honest hands-on work, and am always open to new promising directions and meaningful connections.",
         hero_p3: "I connected with an inspiring community of people that opened brand new doors for me.",
-        hero_p4: "I would love to share what caught my attention with you.",
+        hero_p4: "I want to share what caught my attention.",
         hero_script_sub: "New opportunities<br>begin with an introduction.",
         hero_script_title: "Ticket to your<br>better life.",
         how_subtitle: "Three clear steps toward memorable trips and new horizons",
@@ -2380,7 +2411,7 @@
         proof_metric_diff_label: "Total Savings",
         proof_metric_diff_sub: "67% savings (or $1,983 off base rate)",
         proof_modal_badge: "Artem's Verified Trip Example",
-        proof_modal_details: 'Dates: <strong class="text-amber-300">December 16–20</strong> (4 nights, 2 adults) • Board: <strong class="text-amber-300">All-Inclusive</strong> • Room: <strong class="text-amber-300">Junior Suite</strong>',
+        proof_modal_details: "Dates: <strong class=\"text-amber-300\">December 16–20</strong> (4 nights, 2 adults) • Board: <strong class=\"text-amber-300\">All-Inclusive</strong> • Room: <strong class=\"text-amber-300\">Junior Suite</strong>",
         proof_modal_title: "Grand Palladium Select Bávaro 5★ — Punta Cana",
         proof_tab_booking_btn: "Public Booking Rate ($1,646 USD)",
         proof_tab_club_btn: "Club Member Rate ($549 USD)",
@@ -2413,9 +2444,9 @@
         trip_club_label: "Club Member Rate:",
         trip_country_dates: "Dominican Republic • December 16–20 • 4 nights • 2 adults",
         trip_disclaimer: "* Rates reflect a specific offer for the selected dates. Exact pricing depends on availability, booking rules, and membership status.",
-        trip_p1: "I didn't merely research travel club perks — I actually booked my upcoming vacation to the Dominican Republic.",
-        trip_p2: "Before booking, I compared the cost of staying at Grand Palladium Select Bávaro 5★ against public rates.",
-        trip_p3: "The price difference was so significant that I decided to share my personal experience.",
+        trip_p1: "When I started exploring the club's offers, I got genuinely curious.",
+        trip_p2: "I chose Grand Palladium in the Dominican Republic, compared the rate with Booking, and ultimately booked the trip through the club.",
+        trip_p3: "The price difference compared to Booking was so noticeable that I decided to openly share this real experience.",
         trip_p4: "I am heading on this trip very soon.",
         trip_public_label: "Public Rate (Booking.com):",
         trip_saving_label: "Price Difference:",
@@ -2448,6 +2479,314 @@
         work_slider_note: "Real workdays: heavy equipment servicing, hands-on labor, and practical experience in Canada.",
         work_tag: "GENUINE LABOR",
         work_title: "My Work and Real Life",
+      },
+      uk: {
+        modal_message_placeholder: "Твоє повідомлення (запитання, побажання)...",
+        form_message_placeholder: "Напиши своє запитання або коментар...",
+        form_message_label: "Твоє повідомлення",
+        artem_role_share: "Партнер туристичного клубу",
+        btn_ask_terms: "Поставити запитання",
+        btn_contact_artem: "Написати мені",
+        btn_learn_more: "Дізнатися більше",
+        btn_story_collapse: "Згорнути подробиці",
+        btn_story_expand: "Розгорнути подробиці",
+        btn_submit: "Зв'язатися зі мною",
+        btn_view_proof: "ПОДИВИТИСЯ ПІДТВЕРДЖЕННЯ ЦІН (СКРИНШОТИ)",
+        btn_want_biz: "Хочу дізнатися про бізнес",
+        btn_want_travel: "Хочу дізнатися про подорожі",
+        compare_badge: "Персональне порівняння",
+        compare_benefit_1: "Безкоштовно та без зобов'язань.",
+        compare_benefit_2: "Я перевірю саме твій варіант подорожі.",
+        compare_benefit_3: "Рішення завжди залишається за тобою.",
+        compare_btn_tg: "Дізнатися ціну в Telegram",
+        compare_btn_wa: "Дізнатися ціну у WhatsApp",
+        compare_call_desktop: "Прямий номер: +1 (403) 925-0568",
+        compare_call_title: "Зателефонувати мені",
+        compare_callback_sub: "Перейти до форми зворотного зв'язку",
+        compare_callback_title: "Залишити свій номер",
+        compare_cta_btn: "Порівняти вартість моєї поїздки",
+        compare_highlight: "Можливо, разом ми знайдемо значно вигіднішу пропозицію!",
+        compare_input_label: "Куди плануєш поїхати або назва готелю?",
+        compare_input_placeholder: "Наприклад: Туреччина, Rixos 5* у липні",
+        compare_lead: "Вже обрав готель чи плануєш відпустку?",
+        compare_modal_subtitle: "Обери зручний спосіб зв'язку зі мною:",
+        compare_modal_title: "Як тобі зручніше зв'язатися зі мною?",
+        compare_p1: "Надішли мені пропозицію, яку ти знайшов, і я особисто перевірю вартість цього готелю через наш закритий клуб.",
+        compare_p2: "Я порівняю дати, готель, тип номера, харчування та підсумкову вартість. Подивимося, чи є різниця в ціні для твого варіанту відпочинку.",
+        compare_tg_sub: "Написати в особистий чат (@Varganich_Artem)",
+        compare_title: "А скільки коштує твоя подорож?",
+        compare_wa_sub: "Написати мені (+380 96 334 0093)",
+        contact_call_btn: "Зателефонувати",
+        contact_call_sub: "Прямий телефонний дзвінок",
+        contact_phone_desktop_sub: "Прямий номер та WhatsApp: натисніть для копіювання",
+        contact_phone_label: "Контактний телефон:",
+        contact_subtitle: "Залиш своє ім'я та контактний телефон, і я зв'яжуся з тобою.",
+        contact_tag: "ПОЧАТОК ДІАЛОГУ",
+        contact_tg_sub: "Написати в Telegram",
+        contact_title: "Давай поспілкуємося! 👋",
+        contact_wa_sub: "Написати у WhatsApp",
+        copy_btn: "Копіювати",
+        copy_success: "Номер скопійовано!",
+        dir_biz_desc: "Тут є не лише можливості для подорожей, а й партнерство: створення власної справи онлайн, новий міжнародний круг однодумців та навчання сучасному підприємництву.",
+        dir_biz_title: "Цікавить бізнес у сфері подорожей?",
+        dir_travel_desc: "Якщо тобі подобається відкривати нові країни, відпочивати та знаходити вигідні ціни на перевірені 4★ та 5★ готелі, наш клуб створений саме для цього.",
+        dir_travel_title: "Любиш подорожувати?",
+        direct_contact_title: "Прямий зв'язок:",
+        directions_tag: "ВИБІР ЗА ТОБОЮ",
+        directions_title: "А що з цього цікаво тобі?",
+        faq_a1: "Це міжнародний сервіс закритого членства, що відкриває доступ до прямих оптових тарифів на готелі, курорти та круїзи по всьому світу без публічних роздрібних націнок.",
+        faq_a2: "Так, участь базується на клубній передплаті. При цьому кожен внесок на 100% конвертується в бонусні тревел-бали, якими ви оплачуєте свої майбутні поїздки.",
+        faq_a3: "Так, звичайно! Під час особистого дзвінка чи відеодемонстрації я відкриваю систему в прямому ефірі, вводжу ваші дати й готель та показую реальне порівняння цін.",
+        faq_a4: "Розмір вигоди залежить від напрямку, дат, типу номера та сезону. В середньому клубна різниця становить від 20% до 60% порівняно з відкритими агрегаторами.",
+        faq_a5: "Ні, жодних гарантій доходу немає й бути не може. Партнерство — це реальний онлайн-бізнес, результат якого залежить виключно від ваших зусиль, активності та залученості.",
+        faq_a6: "Ви можете скасувати членство будь-якої миті через свій особистий кабінет без штрафів чи прихованих платежів.",
+        faq_a_wholesale: "Великі публічні сайти (Booking, Expedia) пов'язані договорами паритету цін і витрачають мільярди на рекламу. Закритий клуб не продає послуги відкритому ринку й передає гуртові ціни безпосередньо своїм членам.",
+        faq_q1: "Що являє собою travel-клуб?",
+        faq_q2: "Чи платне членство в клубі?",
+        faq_q3: "Чи можна перевірити конкретний готель перед вступом?",
+        faq_q4: "Яка середня економія на готелях?",
+        faq_q5: "Чи є гарантії заробітку в партнерській програмі?",
+        faq_q6: "Як можна вийти з клубу або скасувати передплату?",
+        faq_q_wholesale: "Чому ціни в клубі значно нижчі, ніж на публічних агрегаторах?",
+        faq_tag: "ВІДПОВІДІ НА ЗАПИТАННЯ",
+        faq_title: "Часті запитання",
+        feedback_title: "Форма зворотного зв'язку",
+        filter_no_1: "Людина шукає кнопку «бабло» і не хоче докладати жодних зусиль",
+        filter_no_2: "Людина чекає гарантованого пасивного прибутку без власної участі",
+        filter_no_3: "Людина налаштована негативно і не вміє працювати в партнерстві",
+        filter_no_4: "Людині абсолютно не цікава тема подорожей та розширення кругозору",
+        filter_no_title: "Нам не по дорозі, якщо:",
+        filter_quote_text: "«Я будую команду позитивних людей, які хочуть не просто подорожувати, а зростати, розвивати свої навички та підвищувати якість життя».",
+        filter_subtitle: "Ми будуємо стосунки та спільноту на довірі, взаємній повазі та здоровому глузді.",
+        filter_tag: "ФОРМАТ ТА ОЧІКУВАННЯ",
+        filter_title: "Кого я радий бачити поруч",
+        filter_yes_1: "Ти любиш подорожувати й хочеш робити це частіше та вигідніше",
+        filter_yes_2: "Тобі цікавий додатковий або основний онлайн-дохід",
+        filter_yes_3: "Ти готовий навчатися, спілкуватися з людьми та розвиватися",
+        filter_yes_4: "Ти цінуєш свободу, якість життя і готовий діяти",
+        filter_yes_title: "Тобі точно до мене, якщо:",
+        floating_call_btn: "Зателефонувати",
+        floating_write_btn: "Написати",
+        footer_btn_contact: "Зв'язатися з Артемом",
+        footer_contact_badge: "ПРЯМИЙ ДІАЛОГ",
+        footer_contact_btn: "Зв'язатися з Артемом",
+        footer_contact_label: "Зв'яжися зі мною напряму:",
+        footer_contact_sub: "Особисто відповім на запитання щодо подорожей, клубних тарифів та бізнесу",
+        footer_contact_title: "Залишилися запитання? Напиши мені напряму",
+        footer_copy: "© 2026 BetterWay • Артем Варганич. Всі права захищені.",
+        footer_copyright: "Всі права захищені.",
+        footer_desc: "Персональний сайт Артема Варганича. Нові можливості починаються зі знайомства.",
+        footer_disclaimer_1: "Цей сайт є персональною інформаційною сторінкою незалежного партнера та не є офіційним представництвом сторонніх компаній.",
+        footer_disclaimer_2: "Усі згадані торгові марки належать їхнім законним власникам.",
+        footer_geo: "Калгарі, Альберта, Канада",
+        footer_made_by: "Розроблено для BetterWay Global",
+        footer_privacy: "Політика конфіденційності",
+        footer_slogan: "Квиток у твоє краще життя.",
+        footer_terms: "Умови використання",
+        footer_title: "BetterWay • Артем Варганич",
+        form_consent: "Надсилаючи форму, ти погоджуєшся, що Артем зв'яжеться з тобою за вказаним номером щодо твого запиту.",
+        form_name_label: "Твоє ім'я",
+        form_name_ph: "Твоє ім'я",
+        form_name_placeholder: "Ваше ім'я",
+        form_phone_label: "Контактний телефон",
+        form_phone_ph: "Телефон / WhatsApp",
+        form_phone_placeholder: "Номер телефону",
+        form_sending: "Надсилання...",
+        form_submit_btn: "Зв'язатися зі мною",
+        form_submit_loading: "Надсилаємо заявку...",
+        form_submit_success: "Дякуємо! Заявку успішно надіслано. Я зв'яжуся з вами найближчим часом.",
+        header_call_btn: "Зателефонувати",
+        hero_badge: "BETTERWAY • TICKET TO YOUR BETTER LIFE",
+        hero_btn_contact: "Зв'язатися зі мною",
+        hero_btn_story: "Дивитися відео 2 хв",
+        hero_eyebrow: "Привіт, я Артем Варганич 👋 | Калгарі, Канада",
+        hero_greeting: "Привіт, ",
+        hero_h1: "Привіт! Мене звати Артем Варганич. І в мене для тебе є насправді класна інформація.",
+        hero_name: "я Артем! 👋",
+        hero_p1: "Я з України. За останні чотири роки багато чого змінилося в моєму житті.",
+        hero_p2: "У мене є свій бізнес в Україні та в Канаді. Сьогодні я живу в Калгарі, розвиваю проєкти, не боюся реальної роботи своїми руками й завжди відкритий до нових сильних напрямків і знайомств.",
+        hero_p3: "Я познайомився з цікавою спільнотою людей, яка відкрила для мене нові можливості.",
+        hero_p4: "Хочу поділитися з тобою тим, що мене зацікавило.",
+        hero_script_sub: "Нові можливості<br>починаються зі знайомства.",
+        hero_script_title: "Квиток у твоє<br>краще життя.",
+        hero_title: "Привіт! Мене звати Артем Варганич. І в мене для тебе є насправді класна інформація.",
+        how_it_works_tag: "ЯК ЦЕ ПРАЦЮЄ",
+        how_it_works_title: "Як влаштована клубна система",
+        how_step1_desc: "Отримуєте персональний доступ до закритої платформи з прямими оптовими тарифами без роздрібної націнки.",
+        how_step1_title: "1. Закритий доступ",
+        how_step2_desc: "Обираєте серед 1 000 000+ перевірених готелів, курортів та круїзів по всьому світу на потрібні дати.",
+        how_step2_title: "2. Бронювання напрямків",
+        how_step3_desc: "Заощаджуєте до 60% на кожній подорожі або використовуєте можливості міжнародного бізнесу.",
+        how_step3_title: "3. Подорожі та бізнес",
+        how_subtitle: "Три зрозумілі кроки до нових подорожей та можливостей",
+        how_tag: "ПРОСТИЙ УСТРІЙ",
+        how_title: "Як працює travel-клуб",
+        lead_form_consent: "Натискаючи кнопку, ви погоджуєтеся на обробку контактних даних для зв'язку.",
+        lead_form_desc: "Залиште свої контакти, і я розповім, як працює клуб, та покажу реальні ціни на ваші напрямки.",
+        lead_form_title: "Хочете дізнатися більше?",
+        lead_name_placeholder: "Наприклад: Олександр",
+        life_badge: "ЖИТТЯ, ПОДОРОЖІ ТА СПІЛЬНОТА",
+        life_f1_desc: "Зустрічі спільноти, міжнародні форуми та підтримка людей, які надихають зростати.",
+        life_f1_title: "Сильне оточення та команда",
+        life_f2_desc: "Амальфітанське узбережжя Італії, європейські міста, курорти 5★ та канадські Скелясті гори.",
+        life_f2_title: "Подорожі та враження",
+        life_f3_desc: "Можливість поєднувати активне життя, онлайн-бізнес та постійне розширення кругозору.",
+        life_f3_title: "Нові горизонти розвитку",
+        life_pause_btn: "Пауза",
+        life_play_btn: "Автопрокрутка",
+        life_quote: "«Мені завжди були цікаві подорожі, підприємництво та люди, в яких можна чомусь навчитися. Я люблю відкривати нові місця, брати участь у цікавих проєктах і знайомитися з тими, хто прагне розвиватися. Тому, навіть коли життя сильно змінювалося, я продовжував шукати нові можливості».",
+        life_slide1_desc: "Зустріч з командою партнерів BetterWay: обмін досвідом, масштабування проєктів та живий нетворкінг.",
+        life_slide1_tag: "Команда та спільнота",
+        life_slide2_desc: "White Party в оточенні однодумців. Святкування результатів та командні ініціативи.",
+        life_slide2_tag: "White Party",
+        life_slide3_desc: "Міжнародна зустріч партнерів: обговорення розвитку тревел-напрямку та стратегії зростання.",
+        life_slide3_tag: "Спільнота підприємців",
+        life_slide4_desc: "Подорож до Парижа: знайомство з новими містами, культурами та натхнення для розвитку бізнесу.",
+        life_slide4_tag: "Подорожі • Париж",
+        life_slide5_desc: "Авіаперельоти та відкриті кордони: керування робочими процесами з будь-якої точки світу.",
+        life_slide5_tag: "Свобода пересування",
+        life_slide6_desc: "Природа Альберти, Скелясті гори та кришталеві озера — перезавантаження та пошук свіжих ідей.",
+        life_slide6_tag: "Природа Канади",
+        life_slide7_desc: "Подорожі наповнюють життя змістом і дають енергію для великих цілей.",
+        life_slide7_tag: "Гірські водоспади",
+        life_slide8_desc: "Круїзні лайнери та морські маршрути: якісний сімейний відпочинок за закритими клубними тарифами.",
+        life_slide8_tag: "Круїзний відпочинок",
+        life_slide9_desc: "Калгарі: життя в центрі динамічного мегаполісу, поєднання бізнесу та активного відпочинку.",
+        life_slide9_tag: "Калгарі • Мій дім",
+        life_tag: "СПІЛЬНОТА • ПОДОРОЖІ • ЕНЕРГІЯ",
+        life_title: "Люди, події та подорожі",
+        link_drugfree: "Сайт DrugFree",
+        membership_badge: "ФОРМАТ УЧАСТІ",
+        membership_biz_desc: "Для тих, хто хоче не тільки вигідно подорожувати, а й створити онлайн-джерело доходу в міжнародній компанії.",
+        membership_biz_feat1: "Всі привілеї клубного мандрівника",
+        membership_biz_feat2: "Повноцінна франшиза онлайн-бізнесу",
+        membership_biz_feat3: "Покрокове навчання та наставництво",
+        membership_biz_feat4: "Міжнародна бізнес-спільнота",
+        membership_biz_title: "Клубний партнер",
+        membership_sub: "Обирайте той формат, який підходить саме вам — від розумної економії на сімейному відпочинку до масштабного бізнесу.",
+        membership_tag: "УЧАСТЬ У КЛУБІ",
+        membership_text: "Участь у travel-клубі платна. Існують різні варіанти членства зі щомісячними та вступними внесками. Я розповім тобі про умови та покажу, як усе влаштовано, під час нашого спілкування.",
+        membership_title: "Два способи участі в BetterWay",
+        membership_travel_desc: "Для тих, хто любить мандрувати зі смаком, обирає найкращі 4★ та 5★ готелі та цінує прямі оптові тарифи.",
+        membership_travel_feat1: "Доступ до 1 000 000+ готелів та курортів",
+        membership_travel_feat2: "Знижки до 60% порівняно з роздрібними сайтами",
+        membership_travel_feat3: "100% накопичувальна програма на подорожі",
+        membership_travel_feat4: "Підтримка та персональні консультації",
+        membership_travel_title: "Клубний мандрівник",
+        modal_booking_tab: "Booking.com ($2,638)",
+        modal_call_btn: "Зателефонувати",
+        modal_club_tab: "Через клуб ($867)",
+        modal_contact_desc: "Залиште свої дані, і я напишу або зателефоную вам особисто найближчим часом.",
+        modal_contact_title: "Зв'язатися з Артемом",
+        modal_lead_name_placeholder: "Як до вас звертатися?",
+        modal_lead_phone_placeholder: "Ваш телефон / WhatsApp / Telegram",
+        modal_lead_submit: "Надіслати заявку",
+        modal_or_form: "або залиш свій номер:",
+        modal_phone_label: "Телефон для зв'язку:",
+        modal_proof_note: "Реальне бронювання в готелі Grand Palladium Select Bávaro 5★ (Домінікана) на 16–20 грудня. Економія склала $1,771 (-67%).",
+        modal_proof_title: "Підтвердження цін: Booking.com vs Клуб",
+        modal_subtitle: "Постав будь-яке запитання про клуб, подорожі чи партнерство особисто мені.",
+        modal_success_btn: "Чудово",
+        modal_success_desc: "Дякую, я отримав твої дані та зв'яжуся з тобою найближчим часом.",
+        modal_success_title: "Ваше повідомлення надіслано!",
+        modal_title: "Напиши мені",
+        modal_zoom_hint: "Натисніть на скриншот для збільшення",
+        nav_case: "Кейс (-67%)",
+        nav_directions: "Можливості",
+        nav_faq: "FAQ",
+        nav_projects: "Проєкти",
+        nav_story: "Про мене",
+        nav_travel: "Подорожі",
+        nav_work: "Робота",
+        proj1_desc: "Створення та розвиток сайтів, цифрові рішення та комплексний вебмаркетинг для бізнесу.",
+        proj2_desc: "Проєкти та прикладні інструменти з використанням штучного інтелекту для автоматизації процесів.",
+        proj3_desc: "Освітні та соціальні ініціативи, спрямовані на гармонійний розвиток дітей та підлітків.",
+        proj4_desc: "Волонтерська діяльність, просвітницька робота та поширення матеріалів про здоровий спосіб життя.",
+        proj4_title: "Правда про наркотики",
+        projects_subtitle: "«Окрім основної роботи, я продовжую розвивати власні проєкти та брати участь в ініціативах, які допомагають людям. Для мене важливо не просто займатися бізнесом, а створювати щось корисне».",
+        projects_tag: "СПРАВА ТА КОРИСТЬ",
+        projects_title: "Мої проєкти та ініціативи",
+        proof_caption_booking: "Booking.com: Grand Palladium Select Bávaro • 16-20 грудня • 4 ночі • 2 дорослих • US$ 1,646",
+        proof_caption_club: "Особистий кабінет клубу: Grand Palladium Select Bavaro • 16-20 грудня • $549 USD All-Inclusive",
+        proof_footer_cta: "Хочу дізнатися докладніше",
+        proof_footer_note: "Артем особисто їде в цей готель. Ти можеш самостійно перевірити ці дати на Booking.com.",
+        proof_metric_booking_base: "базова ціна: $2,532 USD",
+        proof_metric_booking_label: "Booking.com (публічно)",
+        proof_metric_club_label: "Тариф через клуб",
+        proof_metric_club_sub: "закритий клубний тариф",
+        proof_metric_diff_label: "Різниця в ціні",
+        proof_metric_diff_sub: "економія 67% (або $1,983 від базової)",
+        proof_modal_badge: "Реальний приклад поїздки Артема",
+        proof_modal_details: "Дати: <strong class=\"text-amber-300\">16–20 грудня</strong> (4 ночі, 2 дорослих) • Харчування: <strong class=\"text-amber-300\">Все включено (All-Inclusive)</strong> • Номер: <strong class=\"text-amber-300\">Junior Suite (Напівлюкс)</strong>",
+        proof_modal_title: "Grand Palladium Select Bávaro 5★ — Пунта-Кана",
+        proof_tab_booking: "Booking.com ($2,638)",
+        proof_tab_booking_btn: "Публічний тариф Booking ($1,646 USD)",
+        proof_tab_club: "Через клуб ($867)",
+        proof_tab_club_btn: "Тариф через клуб ($549 USD)",
+        proof_zoom_btn: "Збільшити скриншот (лупа)",
+        social_subtitle: "«У соціальних мережах я ділюся подорожами, своїми проєктами, роботою та цікавими подіями з життя. Буду радий бачити тебе там!»",
+        social_tag: "НА ЗВ'ЯЗКУ",
+        social_title: "Давай залишатися на зв'язку!",
+        step1_desc: "Ти знайомишся з клубною моделлю, концепцією оптових цін та реальними прикладами бронювань.",
+        step1_title: "Знайомство з можливостями",
+        step2_desc: "Дізнаєшся формати клубної участі, правила накопичення балів лояльності та можливості партнерства.",
+        step2_title: "Умови членства",
+        step3_desc: "Ти самостійно приймаєш усвідомлене рішення, чи підходить цей клуб тобі та твоїй родині.",
+        step3_title: "Твоє рішення",
+        story_ch1_desc: "В Україні я багато років розвивав власну справу, керував виробничими процесами, відповідав за людей та результат.",
+        story_ch1_title: "Підприємницький досвід в Україні",
+        story_ch2_desc: "Чотири роки тому моє життя кардинально змінилося. Переїзд до нової країни, вивчення мови, інше середовище та повний перезапуск.",
+        story_ch2_title: "Переїзд до Канади та новий старт",
+        story_ch3_desc: "У Канаді я займаюся реальною практичною справою: робота механіком, обслуговування важкої техніки, чесна щоденна праця руками.",
+        story_ch3_title: "Фізична праця та робота механіком",
+        story_ch4_desc: "Моє життя не обмежується лише роботою. Я розвиваю соціальні ініціативи, підтримую дитячі благодійні програми та волонтерські проєкти.",
+        story_ch4_title: "Соціальні проєкти та благодійність",
+        story_ch5_desc: "Знайомство з міжнародною спільнотою підприємців відкрило для мене новий масштаб: поєднання подорожей, нетворкінгу та онлайн-бізнесу.",
+        story_ch5_title: "Нове коло спілкування та BetterWay",
+        story_quote: "«У мене є свій бізнес в Україні та в Канаді. За останні роки я пройшов шлях від керівника до роботи механіком з важкою технікою в іншій країні — і сьогодні відкритий до нових сильних можливостей.»",
+        story_tag: "МІЙ ШЛЯХ • 4 РОКИ ТРАНСФОРМАЦІЇ",
+        story_title: "Моя історія: від України до Канади",
+        trip_badge: "Куплена поїздка",
+        trip_board_room: "Все включено (All-Inclusive) • Номер Напівлюкс (Junior Suite)",
+        trip_city_badge: "Пунта-Кана",
+        trip_club_label: "Тариф через клуб:",
+        trip_country_dates: "Домініканська Республіка • 16–20 грудня • 4 ночі • 2 дорослих",
+        trip_disclaimer: "* Ціни стосуються конкретної пропозиції на вказані дати. Вартість залежить від доступності, умов бронювання та членства.",
+        trip_p1: "Коли я почав розбиратися в пропозиціях клубу, мені стало цікаво.",
+        trip_p2: "Я обрав Grand Palladium у Домініканській Республіці, порівняв пропозицію із сайтом Booking і в підсумку придбав поїздку через клуб.",
+        trip_p3: "Різниця в ціні виявилася настільки відчутною з Букінгом, що я вирішив відкрито поділитися цим реальним досвідом.",
+        trip_p4: "Незабаром я вирушаю в цю поїздку.",
+        trip_public_label: "Публічна ціна (Booking.com):",
+        trip_saving_label: "Різниця у вартості:",
+        trip_sub: "І придбав поїздку в Пунта-Кану",
+        trip_tag: "РЕАЛЬНИЙ КЕЙС",
+        trip_title: "Особистий досвід: як ми перевіряли клубні ціни на готелі",
+        video_badge: "ВІДЕОЗНАЙОМСТВО • 2 ХВ",
+        video_btn_contact: "Написати мені",
+        video_duration: "2 хв",
+        video_poster_sub: "Натисніть для перегляду",
+        video_poster_title: "Дивитися відео (2:01)",
+        video_title: "Хочу поділитися з тобою тим, що мене зацікавило",
+        why_new_p1: "Я завжди вважав, що нові можливості часто приходять через людей.",
+        why_new_p2: "Я познайомився з людьми та спільнотою, яка об'єднує подорожі, спілкування та підприємництво.",
+        why_new_p3: "Мене зацікавила сама ідея. Але я не хотів просто слухати красиві розповіді про можливості.",
+        why_new_p4: "Мені було важливо розібратися, як це працює на практиці.",
+        why_new_p5: "І я вирішив почати з того, що мені дійсно подобається, — з подорожей.",
+        why_new_tag: "НОВИЙ ПОГЛЯД • КРОК УПЕРЕД",
+        why_new_title: "Чому я поєдную традиційний бізнес у Канаді з онлайн-проєктом",
+        why_share_p1: "Мені подобається ділитися цікавими ідеями, корисними знахідками та реальним особистим досвідом.",
+        why_share_p2: "Я не знаю, наскільки цей напрямок буде цікавим саме тобі: кожен має свої цілі, графік і плани.",
+        why_share_p3: "Можливо, тебе приваблюють подорожі. Можливо, тобі цікаво поглянути на онлайн-бізнес. А можливо, тобі просто сподобається ідея.",
+        why_share_p4: "Тому я пропоную просто поспілкуватися. Я розповім, що дізнався сам, а ти вирішиш, чи це для тебе.",
+        why_share_tag: "ВІДКРИТИЙ ДІАЛОГ • БЕЗ НАВ'ЯЗУВАННЯ",
+        why_share_title: "Чому я вирішив розповісти тобі про це?",
+        work_badge: "БУДНІ В КАНАДІ • 6 ФОТО",
+        work_desc_1: "Ремонт вантажних коліс, робота з інструментом, обслуговування важкої техніки в будь-яку погоду.",
+        work_desc_2: "Обслуговування спецтехніки, робота механіком та логістика — чесна щоденна праця своїми руками.",
+        work_quote: "«У мене є свій бізнес в Україні та в Канаді, і при цьому я добре знаю ціну фізичної праці. Я не боюся реальної роботи, але завжди дивлюся ширше — туди, де є розвиток і свобода.»",
+        work_slider_note: "Реальні будні: обслуговування важкої техніки, робота руками та щоденна чесна праця.",
+        work_tag: "РЕАЛЬНА ПРАЦЯ",
+        work_title: "Моя робота та реальне життя",
       }
     };
 
@@ -2556,36 +2895,61 @@
       const path = window.location.pathname.toLowerCase();
       const hash = window.location.hash.toLowerCase();
 
-      // Explicit Russian request via ?lang=ru or /ru/ or #ru
+      // Russian routing
       if (langParam === 'ru' || path.includes('/ru') || hash === '#ru') {
         return 'ru';
       }
-      // Explicit English request
+      // Ukrainian routing (?lang=uk or ?lang=ua)
+      if (langParam === 'uk' || langParam === 'ua' || path.includes('/uk') || path.includes('/ua') || hash === '#uk' || hash === '#ua') {
+        return 'uk';
+      }
+      // English routing
       if (langParam === 'en' || path.includes('/en') || hash === '#en') {
         return 'en';
       }
 
-      // BY REQUIREMENT: Direct domain visits MUST open in English by default!
+      // Default to English on direct visit
       return 'en';
     }
 
+    function updateLangButtons(lang) {
+      const activeLang = (lang === 'ua') ? 'uk' : lang;
+      ['en', 'uk', 'ru'].forEach(l => {
+        const btn = document.getElementById('lang-btn-' + l);
+        const mBtn = document.getElementById('mobile-lang-btn-' + l);
+        const isActive = (l === activeLang);
+        const activeCls = 'px-2 py-0.5 rounded-full transition-all cursor-pointer bg-gradient-to-r from-amber-400 to-amber-500 text-dark-950 font-black shadow-sm';
+        const inactiveCls = 'px-2 py-0.5 rounded-full transition-all cursor-pointer text-slate-400 hover:text-slate-200 font-semibold';
+        const mActiveCls = 'px-2.5 py-0.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-dark-950 font-black shadow-sm';
+        const mInactiveCls = 'px-2.5 py-0.5 rounded-full text-slate-400 hover:text-slate-200 font-semibold';
+        
+        if (btn) btn.className = isActive ? activeCls : inactiveCls;
+        if (mBtn) mBtn.className = isActive ? mActiveCls : mInactiveCls;
+      });
+    }
+
     function setLanguage(lang) {
-      if (lang !== 'ru' && lang !== 'en') lang = 'en';
+      if (lang === 'ua') lang = 'uk';
+      if (lang !== 'ru' && lang !== 'uk' && lang !== 'en') lang = 'en';
       currentLang = lang;
       document.documentElement.lang = lang;
 
-      // Update Meta Tags & Document Title
+      // Update Document Title
       if (lang === 'ru') {
-        document.title = "Артём Варганич | Клубные путешествия и онлайн-бизнес (BetterWay)";
+        document.title = "Артём Варганич | Клубные путешествия до 67% и онлайн-бизнес (BetterWay)";
+      } else if (lang === 'uk') {
+        document.title = "Артем Варганич | Клубні подорожі до 67% та онлайн-бізнес (BetterWay)";
       } else {
         document.title = "Artem Varganych | Club Travel up to 67% off & Online Business (BetterWay)";
       }
 
-      // Update URL in Address Bar without reload so user can copy and share exact version
+      // Update URL in Address Bar without reload
       try {
         const url = new URL(window.location.href);
         if (lang === 'ru') {
           url.searchParams.set('lang', 'ru');
+        } else if (lang === 'uk') {
+          url.searchParams.set('lang', 'uk');
         } else {
           url.searchParams.delete('lang');
         }
@@ -2593,13 +2957,18 @@
         localStorage.setItem('betterway_selected_lang', lang);
       } catch (e) {}
 
-      // Update Header Lang Switcher UI Pill
-      const langBtnText = document.getElementById('current-lang-text');
-      if (langBtnText) {
-        if (lang === 'ru') {
-          langBtnText.innerHTML = '<span class="text-slate-400 font-semibold">EN</span> <span class="text-slate-600">|</span> <span class="text-amber-400 font-black">RU</span>';
+      // Update Header & Mobile Language Switchers
+      updateLangButtons(lang);
+
+      // Update Video Cover Image
+      const videoCover = document.getElementById('video-cover-img');
+      if (videoCover) {
+        if (lang === 'en') {
+          videoCover.src = 'artem_video_cover_en.jpg';
+        } else if (lang === 'uk') {
+          videoCover.src = 'artem_video_cover_uk.jpg';
         } else {
-          langBtnText.innerHTML = '<span class="text-amber-400 font-black">EN</span> <span class="text-slate-600">|</span> <span class="text-slate-400 font-semibold">RU</span>';
+          videoCover.src = 'artem_video_cover.jpg';
         }
       }
 
@@ -2620,34 +2989,6 @@
         }
       });
 
-      // Update Video Cover Image & Video Source for active language
-      const videoCoverImg = document.getElementById('video-cover-img');
-      if (videoCoverImg) {
-        videoCoverImg.src = (lang === 'en') ? 'artem_video_cover_en.jpg' : 'artem_video_cover.jpg';
-      }
-      const activeVideo = document.getElementById('artem-video');
-      if (activeVideo) {
-        const targetSrc = (lang === 'en') ? 'artem_story_en.mp4' : 'artem_story.mp4';
-        if (!activeVideo.currentSrc.includes(targetSrc)) {
-          activeVideo.src = targetSrc;
-          activeVideo.load();
-        }
-      }
-
-      // Update Proof Modal Screenshots for active language
-      const proofClubImg = document.getElementById('proof-img-club-element');
-      if (proofClubImg) {
-        proofClubImg.src = (lang === 'en') ? 'proof_club_bavaro_en.png' : 'proof_club_bavaro.png';
-      }
-      const proofBookImg = document.getElementById('proof-img-booking-element');
-      if (proofBookImg) {
-        proofBookImg.src = (lang === 'en') ? 'proof_booking_bavaro_en.png' : 'proof_booking_bavaro.png';
-      }
-
-      // Update Sliders captions
-      updateWorkSlider();
-      updateLifeSlider();
-
       // Re-create icons if Lucide is loaded
       if (typeof lucide !== 'undefined') lucide.createIcons();
     }
@@ -2661,8 +3002,12 @@
       if (cover) cover.style.display = 'none';
       if (!slot) return;
       
-      const isEn = (currentLang === 'en');
-      const videoSrc = isEn ? 'artem_story_en.mp4' : 'artem_story.mp4';
+      let videoSrc = 'artem_story.mp4';
+      if (currentLang === 'en') {
+        videoSrc = 'artem_story_en.mp4';
+      } else if (currentLang === 'uk') {
+        videoSrc = 'artem_story_uk.mp4';
+      }
       
       slot.innerHTML = `
         <video id="artem-video" class="w-full h-full object-cover" controls playsinline autoplay>
@@ -2740,31 +3085,45 @@
       }
     }
 
-    function toggleProofZoom() {
+    function openProofZoom() {
       const zoomOverlay = document.getElementById('proof-zoom-overlay');
       const zoomImg = document.getElementById('proof-zoom-img');
       const zoomCaption = document.getElementById('proof-zoom-caption');
       if (!zoomOverlay) return;
 
-      isProofZoomed = !isProofZoomed;
-      if (isProofZoomed) {
-        const isEn = (currentLang === 'en');
-        if (currentProofTab === 'club') {
-          zoomImg.src = isEn ? 'proof_club_bavaro_en.png' : 'proof_club_bavaro.png';
-          zoomCaption.textContent = isEn 
-            ? 'Club Portal: Grand Palladium Select Bávaro 5★ • $549 USD All-Inclusive' 
-            : 'Клубный портал: Grand Palladium Select Bávaro 5★ • $549 USD All-Inclusive';
-        } else {
-          zoomImg.src = isEn ? 'proof_booking_bavaro_en.png' : 'proof_booking_bavaro.png';
-          zoomCaption.textContent = isEn 
-            ? 'Booking.com: Grand Palladium Select Bávaro 5★ • US$ 1,646' 
-            : 'Booking.com: Grand Palladium Select Bávaro 5★ • US$ 1,646';
-        }
-        zoomOverlay.classList.remove('hidden');
+      isProofZoomed = true;
+      const isEn = (currentLang === 'en');
+      const isUk = (currentLang === 'uk');
+      if (currentProofTab === 'club') {
+        zoomImg.src = isEn ? 'proof_club_bavaro_en.png' : 'proof_club_bavaro.png';
+        zoomCaption.textContent = isEn 
+          ? 'Club Portal: Grand Palladium Select Bávaro 5★ • $549 USD All-Inclusive' 
+          : (isUk ? 'Клубний кабінет: Grand Palladium Select Bávaro 5★ • $549 USD All-Inclusive' : 'Клубный портал: Grand Palladium Select Bávaro 5★ • $549 USD All-Inclusive');
       } else {
+        zoomImg.src = isEn ? 'proof_booking_bavaro_en.png' : 'proof_booking_bavaro.png';
+        zoomCaption.textContent = 'Booking.com: Grand Palladium Select Bávaro 5★ • US$ 1,646';
+      }
+      zoomOverlay.classList.remove('hidden');
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function closeProofZoom(e) {
+      if (e) {
+        e.stopPropagation();
+      }
+      isProofZoomed = false;
+      const zoomOverlay = document.getElementById('proof-zoom-overlay');
+      if (zoomOverlay) {
         zoomOverlay.classList.add('hidden');
       }
-      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function toggleProofZoom() {
+      if (isProofZoomed) {
+        closeProofZoom();
+      } else {
+        openProofZoom();
+      }
     }
 
     // ==========================================
@@ -2840,10 +3199,12 @@
 
       const nameEl = document.getElementById('lead-name');
       const phoneEl = document.getElementById('lead-phone');
+      const msgEl = document.getElementById('lead-message');
       if (!nameEl || !phoneEl) return;
       
       const name = nameEl.value.trim();
       const phone = phoneEl.value.trim();
+      const message = msgEl ? msgEl.value.trim() : '';
       if (!name || !phone) return;
 
       const submitBtn = document.getElementById('lead-submit-btn');
@@ -2851,7 +3212,7 @@
       if (submitBtn) {
         submitBtn.disabled = true;
         originalBtnHtml = submitBtn.innerHTML;
-        const sendingText = (currentLang === 'en') ? 'Sending...' : 'Отправка...';
+        const sendingText = (currentLang === 'en') ? 'Sending...' : (currentLang === 'uk' ? 'Надсилання...' : 'Отправка...');
         submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin text-dark-950"></i><span>${sendingText}</span>`;
         if (typeof lucide !== 'undefined') lucide.createIcons();
       }
@@ -2864,8 +3225,16 @@
 
       const safeName = escapeHtml(name);
       const safePhone = escapeHtml(phone);
+      const safeMsg = escapeHtml(message);
       const timeStr = new Date().toLocaleString('ru-RU', { timeZone: 'America/Edmonton' });
-      const text = `🔔 <b>Новая заявка с BetterWay!</b>\n\n👤 <b>Имя:</b> ${safeName}\n📞 <b>Телефон:</b> <code>${safePhone}</code>\n🕒 <b>Время:</b> ${timeStr} (Калгари)\n🌐 <b>Источник:</b> Форма на главной странице`;
+      const text = `🔔 <b>Новая заявка с BetterWay!</b>
+
+👤 <b>Имя:</b> ${safeName}
+📞 <b>Телефон:</b> <code>${safePhone}</code>
+💬 <b>Сообщение:</b> ${safeMsg || '—'}
+🕒 <b>Время:</b> ${timeStr} (Калгари)
+🌐 <b>Источник:</b> Форма на главной странице
+🌐 <b>Язык:</b> ${currentLang.toUpperCase()}`;
 
       try {
         await fetch('https://api.telegram.org/bot8865140984:AAGqzyBjytwB8ytuaQLtsmm0fRHWshSgsmk/sendMessage', {
@@ -2890,7 +3259,8 @@
         if (typeof lucide !== 'undefined') lucide.createIcons();
       }
 
-      showToast(currentLang === 'ru' ? 'Ваша заявка отправлена!' : 'Your request has been sent!');
+      const successToast = (currentLang === 'en') ? 'Your request has been sent!' : (currentLang === 'uk' ? 'Вашу заявку надіслано!' : 'Ваша заявка отправлена!');
+      showToast(successToast);
       openSuccessModal();
     }
 
@@ -2974,22 +3344,28 @@
       const input = document.getElementById('hotel-query-input');
       const query = input ? input.value.trim() : '';
       const isEn = (currentLang === 'en');
+      const isUk = (currentLang === 'uk');
       let msg = '';
       if (isEn) {
         msg = query 
           ? `Hi Artem! I'd like to check the club price for: ${query}`
           : `Hi Artem! I want to check the hotel club price through your platform.`;
+      } else if (isUk) {
+        msg = query 
+          ? `Привіт, Артеме! Хочу перевірити клубну ціну на відпочинок: ${query}`
+          : `Привіт, Артеме! Хочу перевірити ціну на готель через твою платформу.`;
       } else {
         msg = query 
           ? `Привет, Артём! Хочу проверить клубную цену на отдых: ${query}`
           : `Привет, Артём! Хочу проверить цену на отель через твою платформу.`;
       }
       const encoded = encodeURIComponent(msg);
-      if (platform === 'telegram') {
-        window.open(`https://t.me/Varganich_Artem?text=${encoded}`, '_blank');
-      } else {
-        window.open(`https://wa.me/14039250568?text=${encoded}`, '_blank');
-      }
+      const url = (platform === 'telegram')
+        ? `https://t.me/Varganich_Artem?text=${encoded}`
+        : `https://wa.me/14039250568?text=${encoded}`;
+      
+      // Use window.location.href directly to prevent orphan blank tabs in mobile Chrome
+      window.location.href = url;
     }
 
     function handleDesktopCall(e) {
