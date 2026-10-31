@@ -628,37 +628,106 @@
           </ul>
         </div>
 
-        <!-- Interactive Lead Magnet (Stage 2.4: Instant Hotel Price Check) -->
-        <div class="mt-8 p-6 sm:p-8 rounded-3xl bg-black/60 border border-amber-500/30 shadow-2xl space-y-4 max-w-xl mx-auto text-left">
-          <label for="hotel-query-input" class="block text-xs sm:text-sm font-bold uppercase tracking-wider text-amber-300" data-i18n="compare_input_label">
-            Where are you planning to travel or hotel name?
-          </label>
-          <div class="relative">
-            <input 
-              type="text" 
-              id="hotel-query-input" 
-              placeholder="E.g.: Turkey, Rixos 5* in July" 
-              data-i18n-placeholder="compare_input_placeholder"
-              class="w-full px-5 py-3.5 rounded-2xl bg-white/[0.06] border border-amber-500/30 text-white placeholder-slate-400 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm sm:text-base transition-all"
+        <!-- Interactive Lead Magnet Form: Hotel Price Calculation & Comparison -->
+        <form id="compare-hotel-form" onsubmit="handleCompareHotelSubmit(event)" class="mt-8 p-6 sm:p-8 rounded-3xl bg-black/75 border border-amber-500/35 shadow-2xl space-y-4 max-w-xl mx-auto text-left glow-gold">
+          <!-- Honeypot -->
+          <input type="text" id="compare-hotel-honey" class="hidden" tabindex="-1" autocomplete="off">
+
+          <div class="flex items-center gap-2 pb-2 border-b border-amber-500/20 text-amber-300 text-xs sm:text-sm font-bold uppercase tracking-wider">
+            <i data-lucide="calculator" class="w-4 h-4 text-amber-400"></i>
+            <span data-i18n="compare_form_heading">Price Check & Calculation Request</span>
+          </div>
+
+          <!-- Field 1: Name -->
+          <div class="space-y-1.5">
+            <label for="compare-lead-name" class="block text-xs font-bold uppercase tracking-wider text-slate-300" data-i18n="compare_name_label">
+              Your name
+            </label>
+            <div class="relative">
+              <input 
+                type="text" 
+                id="compare-lead-name" 
+                required 
+                placeholder="E.g.: Alex" 
+                data-i18n-placeholder="compare_name_placeholder"
+                class="w-full px-4 py-3 rounded-xl bg-white/[0.06] border border-amber-500/30 text-white placeholder-slate-400 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm sm:text-base transition-all"
+              >
+            </div>
+          </div>
+
+          <!-- Field 2: Phone / Messenger -->
+          <div class="space-y-1.5">
+            <label for="compare-lead-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-300" data-i18n="compare_phone_label">
+              Phone number (WhatsApp / Telegram)
+            </label>
+            <div class="relative">
+              <input 
+                type="tel" 
+                id="compare-lead-phone" 
+                required 
+                placeholder="+1 (___) ___-____ or international" 
+                data-i18n-placeholder="compare_phone_placeholder"
+                class="w-full px-4 py-3 rounded-xl bg-white/[0.06] border border-amber-500/30 text-white placeholder-slate-400 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm sm:text-base transition-all"
+              >
+            </div>
+          </div>
+
+          <!-- Field 3: Hotel name / Destination -->
+          <div class="space-y-1.5">
+            <label for="hotel-query-input" class="block text-xs font-bold uppercase tracking-wider text-amber-300" data-i18n="compare_hotel_label">
+              Where are you planning to travel or hotel name?
+            </label>
+            <div class="relative">
+              <textarea 
+                id="hotel-query-input" 
+                rows="2" 
+                required 
+                placeholder="E.g.: Turkey, Rixos 5* in July, 7 nights (or hotel link)" 
+                data-i18n-placeholder="compare_hotel_placeholder"
+                class="w-full px-4 py-3 rounded-xl bg-white/[0.06] border border-amber-500/30 text-white placeholder-slate-400 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm sm:text-base transition-all resize-none"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Main Submit Button -->
+          <div class="pt-2">
+            <button 
+              type="submit" 
+              id="compare-submit-btn" 
+              class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-amber-500/25 flex items-center justify-center gap-2 cursor-pointer transition-all transform hover:-translate-y-0.5"
             >
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-            <button 
-              type="button" 
-              onclick="handleLeadMagnetSend('telegram')"
-              style="background-color: #229ED9;" class="w-full py-3.5 px-4 rounded-xl hover:brightness-110 text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-sky-900/30 transition-all transform hover:-translate-y-0.5 cursor-pointer">
-              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.46c.537-.196 1.006.128.832.92z"/></svg>
-              <span data-i18n="compare_btn_tg">Check price in Telegram</span>
-            </button>
-            <button 
-              type="button" 
-              onclick="handleLeadMagnetSend('whatsapp')"
-              style="background-color: #25D366;" class="w-full py-3.5 px-4 rounded-xl hover:brightness-110 text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30 transition-all transform hover:-translate-y-0.5 cursor-pointer">
-              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-              <span data-i18n="compare_btn_wa">Check price in WhatsApp</span>
+              <i data-lucide="send" class="w-4 h-4 text-dark-950"></i>
+              <span data-i18n="compare_submit_btn">Get Price Calculation</span>
             </button>
           </div>
-        </div>
+
+          <!-- Alternative: Direct Messengers -->
+          <div class="pt-3 border-t border-white/10 space-y-2.5 text-center">
+            <p class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider" data-i18n="compare_or_direct">
+              Or message me directly in one click:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <button 
+                type="button" 
+                onclick="handleLeadMagnetSend('telegram')"
+                style="background-color: #229ED9;" 
+                class="w-full py-2.5 px-3 rounded-xl hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md shadow-sky-900/30 transition-all cursor-pointer"
+              >
+                <svg class="w-3.5 h-3.5 fill-white shrink-0" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.46c.537-.196 1.006.128.832.92z"/></svg>
+                <span data-i18n="compare_btn_tg">Check price in Telegram</span>
+              </button>
+              <button 
+                type="button" 
+                onclick="handleLeadMagnetSend('whatsapp')"
+                style="background-color: #25D366;" 
+                class="w-full py-2.5 px-3 rounded-xl hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md shadow-emerald-900/30 transition-all cursor-pointer"
+              >
+                <svg class="w-3.5 h-3.5 fill-white shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                <span data-i18n="compare_btn_wa">Check price in WhatsApp</span>
+              </button>
+            </div>
+          </div>
+        </form>
 
       </div>
     </div>
@@ -2029,6 +2098,16 @@
         compare_highlight: "Возможно, вместе мы найдём более интересное предложение!",
         compare_input_label: "Куда планируешь поехать или название отеля?",
         compare_input_placeholder: "Например: Турция, Rixos 5* в июле",
+        compare_form_heading: "Заявка на расчёт и проверку цены",
+        compare_name_label: "Твоё имя",
+        compare_name_placeholder: "Например: Артём",
+        compare_phone_label: "Контактный телефон (WhatsApp / Telegram)",
+        compare_phone_placeholder: "+1 (___) ___-____ или +380...",
+        compare_hotel_label: "Куда планируешь поехать или название отеля?",
+        compare_hotel_placeholder: "Например: Турция, Rixos 5* в июле, 7 ночей (или ссылка на отель)",
+        compare_submit_btn: "Получить расчёт цены",
+        compare_or_direct: "или напиши мне напрямую в один клик:",
+        compare_success_toast: "Заявка на расчёт принята! Я свяжусь с тобой в ближайшее время.",
         compare_lead: "Уже выбрал отель или планируешь отпуск?",
         compare_modal_subtitle: "Выбери удобный способ связи со мной:",
         compare_modal_title: "Как тебе удобнее связаться со мной?",
@@ -2258,6 +2337,16 @@
         compare_highlight: "Perhaps together we'll find an even better deal!",
         compare_input_label: "Where are you planning to travel or hotel name?",
         compare_input_placeholder: "E.g.: Turkey, Rixos 5* in July",
+        compare_form_heading: "Price Check & Calculation Request",
+        compare_name_label: "Your name",
+        compare_name_placeholder: "E.g.: Alex",
+        compare_phone_label: "Phone number (WhatsApp / Telegram)",
+        compare_phone_placeholder: "+1 (___) ___-____ or international",
+        compare_hotel_label: "Where are you planning to travel or hotel name?",
+        compare_hotel_placeholder: "E.g.: Turkey, Rixos 5* in July, 7 nights (or hotel link)",
+        compare_submit_btn: "Get Price Calculation",
+        compare_or_direct: "or message me directly in one click:",
+        compare_success_toast: "Price check request received! I will reach out shortly.",
         compare_lead: "Already chosen a hotel or planning a vacation?",
         compare_modal_subtitle: "Choose your preferred contact option:",
         compare_modal_title: "How would you prefer to contact me?",
@@ -2487,6 +2576,16 @@
         compare_highlight: "Можливо, разом ми знайдемо значно вигіднішу пропозицію!",
         compare_input_label: "Куди плануєш поїхати або назва готелю?",
         compare_input_placeholder: "Наприклад: Туреччина, Rixos 5* у липні",
+        compare_form_heading: "Заявка на розрахунок та перевірку ціни",
+        compare_name_label: "Твоє ім'я",
+        compare_name_placeholder: "Наприклад: Артем",
+        compare_phone_label: "Контактний телефон (WhatsApp / Telegram)",
+        compare_phone_placeholder: "+1 (___) ___-____ або +380...",
+        compare_hotel_label: "Куди плануєш поїхати або назва готелю?",
+        compare_hotel_placeholder: "Наприклад: Туреччина, Rixos 5* у липні, 7 ночей (або посилання на готель)",
+        compare_submit_btn: "Отримати розрахунок ціни",
+        compare_or_direct: "або напиши мені напряму в один клік:",
+        compare_success_toast: "Заявку на розрахунок прийнято! Я зв'яжуся з тобою найближчим часом.",
         compare_lead: "Вже обрав готель чи плануєш відпустку?",
         compare_modal_subtitle: "Обери зручний спосіб зв'язку зі мною:",
         compare_modal_title: "Як тобі зручніше зв'язатися зі мною?",
@@ -3369,26 +3468,40 @@
     }
 
     // ==========================================
-    // 9. LEAD MAGNET (INSTANT PRICE CHECK)
+    // 9. LEAD MAGNET & HOTEL PRICE CHECK FORM
     // ==========================================
     function handleLeadMagnetSend(platform) {
-      const input = document.getElementById('hotel-query-input');
-      const query = input ? input.value.trim() : '';
+      const hotelEl = document.getElementById('hotel-query-input');
+      const nameEl = document.getElementById('compare-lead-name');
+      const query = hotelEl ? hotelEl.value.trim() : '';
+      const name = nameEl ? nameEl.value.trim() : '';
       const isEn = (currentLang === 'en');
       const isUk = (currentLang === 'uk');
       let msg = '';
       if (isEn) {
-        msg = query 
-          ? `Hi Artem! I'd like to check the club price for: ${query}`
-          : `Hi Artem! I want to check the hotel club price through your platform.`;
+        if (query && name) {
+          msg = `Hi Artem! My name is ${name}. I'd like to check the club price for: ${query}`;
+        } else if (query) {
+          msg = `Hi Artem! I'd like to check the club price for: ${query}`;
+        } else {
+          msg = `Hi Artem! I want to check the hotel club price through your platform.`;
+        }
       } else if (isUk) {
-        msg = query 
-          ? `Привіт, Артеме! Хочу перевірити клубну ціну на відпочинок: ${query}`
-          : `Привіт, Артеме! Хочу перевірити ціну на готель через твою платформу.`;
+        if (query && name) {
+          msg = `Привіт, Артеме! Мене звати ${name}. Хочу перевірити клубну ціну на відпочинок: ${query}`;
+        } else if (query) {
+          msg = `Привіт, Артеме! Хочу перевірити клубну ціну на відпочинок: ${query}`;
+        } else {
+          msg = `Привіт, Артеме! Хочу перевірити ціну на готель через твою платформу.`;
+        }
       } else {
-        msg = query 
-          ? `Привет, Артём! Хочу проверить клубную цену на отдых: ${query}`
-          : `Привет, Артём! Хочу проверить цену на отель через твою платформу.`;
+        if (query && name) {
+          msg = `Привет, Артём! Меня зовут ${name}. Хочу проверить клубную цену на отдых: ${query}`;
+        } else if (query) {
+          msg = `Привет, Артём! Хочу проверить клубную цену на отдых: ${query}`;
+        } else {
+          msg = `Привет, Артём! Хочу проверить цену на отель через твою платформу.`;
+        }
       }
       const encoded = encodeURIComponent(msg);
       const url = (platform === 'telegram')
@@ -3399,7 +3512,75 @@
       window.location.href = url;
     }
 
-        // ==========================================
+    async function handleCompareHotelSubmit(e) {
+      e.preventDefault();
+
+      const honeypot = document.getElementById('compare-hotel-honey');
+      if (honeypot && honeypot.value) return;
+
+      const nameEl = document.getElementById('compare-lead-name');
+      const phoneEl = document.getElementById('compare-lead-phone');
+      const hotelEl = document.getElementById('hotel-query-input');
+      if (!nameEl || !phoneEl || !hotelEl) return;
+
+      const name = nameEl.value.trim();
+      const phone = phoneEl.value.trim();
+      const hotel = hotelEl.value.trim();
+      if (!name || !phone || !hotel) return;
+
+      const submitBtn = document.getElementById('compare-submit-btn');
+      let originalBtnHtml = '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        originalBtnHtml = submitBtn.innerHTML;
+        const sendingText = (currentLang === 'en') ? 'Sending...' : (currentLang === 'uk' ? 'Надсилання...' : 'Отправка...');
+        submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin text-dark-950"></i><span>${sendingText}</span>`;
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+      }
+
+      function escapeHtml(str) {
+        return str.replace(/[&<>"']/g, function(m) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+        });
+      }
+
+      const safeName = escapeHtml(name);
+      const safePhone = escapeHtml(phone);
+      const safeHotel = escapeHtml(hotel);
+      const timeStr = new Date().toLocaleString('ru-RU', { timeZone: 'America/Edmonton' });
+
+      const text = `🔔 <b>Новая заявка на расчёт цены отеля! (BetterWay)</b>\n\n🏨 <b>Отель / Направление:</b> ${safeHotel}\n👤 <b>Имя:</b> ${safeName}\n📞 <b>Телефон / Мессенджер:</b> <code>${safePhone}</code>\n🕒 <b>Время:</b> ${timeStr} (Калгари)\n🌐 <b>Раздел:</b> Форма подбора отеля (сравнение цены)\n🌐 <b>Язык:</b> ${currentLang.toUpperCase()}`;
+
+      try {
+        await fetch('https://api.telegram.org/bot8865140984:AAGqzyBjytwB8ytuaQLtsmm0fRHWshSgsmk/sendMessage', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: 408397367,
+            text: text,
+            parse_mode: 'HTML'
+          })
+        });
+      } catch (err) {
+        console.error('Telegram notification error:', err);
+      }
+
+      const form = document.getElementById('compare-hotel-form');
+      if (form) form.reset();
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+      }
+
+      const dict = translations[currentLang] || translations.ru;
+      const successToast = dict.compare_success_toast || ((currentLang === 'en') ? 'Price check request received! I will reach out shortly.' : (currentLang === 'uk' ? 'Заявку на розрахунок прийнято! Я зв’яжуся з тобою найближчим часом.' : 'Заявка на расчет принята! Я свяжусь с тобой в ближайшее время.'));
+      showToast(successToast);
+      openSuccessModal();
+    }
+
+    // ==========================================
     // 10. FLOATING ACTION BUTTON (FAB) MENU
     // ==========================================
     let isFabOpen = false;
