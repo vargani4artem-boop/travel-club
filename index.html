@@ -196,17 +196,17 @@
 
   <!-- HEADER -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-[#070709]/95 backdrop-blur-md border-b border-amber-500/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
       
       <!-- Brand Logo: BetterWay -->
-      <a href="#hero" class="flex items-center gap-2.5 sm:gap-3 group cursor-pointer shrink-0">
-        <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-amber-500 via-yellow-400 to-amber-300 p-0.5 flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:scale-105 transition-transform">
-          <div class="w-full h-full rounded-[14px] bg-[#070709] flex items-center justify-center">
-            <span class="font-serif font-black text-amber-400 text-sm sm:text-base tracking-wider">BW</span>
+      <a href="#hero" class="flex items-center gap-2 sm:gap-3 group cursor-pointer shrink-0">
+        <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-amber-500 via-yellow-400 to-amber-300 p-0.5 flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full rounded-[10px] sm:rounded-[14px] bg-[#070709] flex items-center justify-center">
+            <span class="font-serif font-black text-amber-400 text-xs sm:text-base tracking-wider">BW</span>
           </div>
         </div>
         <div>
-          <div class="font-serif font-black tracking-wider text-white text-base sm:text-xl flex items-center gap-1 leading-none">
+          <div class="font-serif font-black tracking-wider text-white text-sm sm:text-xl flex items-center gap-1 leading-none">
             Better<span class="text-amber-400">Way</span>
           </div>
           <div class="hidden sm:block text-[9px] text-amber-300/80 uppercase tracking-widest font-semibold mt-1">
@@ -216,7 +216,7 @@
       </a>
 
       <!-- Desktop Nav & Actions -->
-      <div class="flex items-center gap-4 lg:gap-8">
+      <div class="flex items-center gap-2 sm:gap-4 lg:gap-8">
         
         <!-- Desktop Nav: 4 Main Anchors per CRO Specification -->
         <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-slate-200">
@@ -227,7 +227,7 @@
         </nav>
 
         <!-- Right Action Buttons -->
-        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
           
           <!-- Contact Phone on Desktop -->
           <a href="tel:+14039250568" onclick="handleDesktopCall(event)" class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full bg-dark-800/90 hover:bg-dark-700 text-amber-300 hover:text-white border border-amber-500/30 text-xs font-mono font-bold transition-all shadow-md cursor-pointer" title="Позвонить или скопировать: +1 (403) 925-0568">
@@ -236,23 +236,36 @@
           </a>
 
           <!-- Contact CTA Button -->
-          <button id="header-contact-btn" onclick="openContactModal('general')" class="px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 text-[11px] sm:text-xs font-black uppercase tracking-wider shadow-lg shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center gap-1.5 shrink-0 whitespace-nowrap cursor-pointer">
-            <i data-lucide="message-circle" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-black fill-black shrink-0"></i>
+          <button id="header-contact-btn" onclick="openContactModal('header')" class="px-2.5 py-1.5 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 text-[10px] sm:text-xs font-bold sm:font-black uppercase tracking-wide sm:tracking-wider shadow-md sm:shadow-lg shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center gap-1 sm:gap-1.5 shrink-0 whitespace-nowrap cursor-pointer">
+            <i data-lucide="message-circle" class="w-3 h-3 sm:w-4 sm:h-4 text-black fill-black shrink-0"></i>
             <span class="text-black" data-i18n="btn_contact_artem">Написать мне</span>
           </button>
 
-          <!-- 3-Way Language Switcher Pill -->
-          <div id="lang-switcher-container" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-dark-800/90 border border-amber-500/30 text-[11px] sm:text-xs font-bold shrink-0 whitespace-nowrap select-none shadow-md">
-            <i data-lucide="globe" class="w-3.5 h-3.5 text-amber-400 mr-0.5 shrink-0"></i>
-            <button type="button" onclick="setLanguage('en')" id="lang-btn-en" class="px-2 py-0.5 rounded-full transition-all cursor-pointer">EN</button>
-            <span class="text-slate-600 text-[10px]">·</span>
-            <button type="button" onclick="setLanguage('uk')" id="lang-btn-uk" class="px-2 py-0.5 rounded-full transition-all cursor-pointer">UA</button>
-            <span class="text-slate-600 text-[10px]">·</span>
-            <button type="button" onclick="setLanguage('ru')" id="lang-btn-ru" class="px-2 py-0.5 rounded-full transition-all cursor-pointer">RU</button>
+          <!-- Compact Language Selector Dropdown -->
+          <div class="relative inline-block text-left shrink-0">
+            <button type="button" id="lang-dropdown-btn" onclick="toggleLangDropdown(event)" class="px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-full bg-dark-800/95 hover:bg-dark-700 border border-amber-500/40 text-amber-300 hover:text-white text-[11px] sm:text-xs font-bold flex items-center gap-1 sm:gap-1.5 transition-all shadow-md active:scale-95 cursor-pointer" aria-expanded="false" aria-haspopup="true" aria-label="Выбрать язык / Choose language">
+              <i data-lucide="globe" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-400 shrink-0"></i>
+              <span id="current-lang-code" class="uppercase font-black text-amber-300 tracking-wider">RU</span>
+              <i data-lucide="chevron-down" id="lang-chevron-icon" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-400 transition-transform duration-200"></i>
+            </button>
+            <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 rounded-2xl bg-[#0e111a]/95 backdrop-blur-xl border border-amber-500/40 shadow-2xl shadow-black/80 py-1.5 z-50 select-none">
+              <button type="button" onclick="selectLang('en')" class="w-full px-3.5 py-2 text-left text-xs font-semibold hover:bg-amber-500/10 flex items-center justify-between text-slate-200 hover:text-amber-300 cursor-pointer transition-colors">
+                <span class="flex items-center gap-2"><span>🇬🇧</span><span>English</span></span>
+                <span class="text-[10px] font-mono text-slate-400">EN</span>
+              </button>
+              <button type="button" onclick="selectLang('uk')" class="w-full px-3.5 py-2 text-left text-xs font-semibold hover:bg-amber-500/10 flex items-center justify-between text-slate-200 hover:text-amber-300 cursor-pointer transition-colors">
+                <span class="flex items-center gap-2"><span>🇺🇦</span><span>Українська</span></span>
+                <span class="text-[10px] font-mono text-slate-400">UA</span>
+              </button>
+              <button type="button" onclick="selectLang('ru')" class="w-full px-3.5 py-2 text-left text-xs font-semibold hover:bg-amber-500/10 flex items-center justify-between text-slate-200 hover:text-amber-300 cursor-pointer transition-colors">
+                <span class="flex items-center gap-2"><span>🇷🇺</span><span>Русский</span></span>
+                <span class="text-[10px] font-mono text-slate-400">RU</span>
+              </button>
+            </div>
           </div>
 
           <!-- Mobile & Tablet Menu Toggle Button (☰) -->
-          <button id="mobile-menu-btn" class="lg:hidden p-1.5 sm:p-2 text-amber-400 hover:text-amber-300 focus:outline-none shrink-0" aria-label="Открыть меню">
+          <button id="mobile-menu-btn" class="lg:hidden p-1.5 text-amber-400 hover:text-amber-300 focus:outline-none shrink-0" aria-label="Открыть меню">
             <i data-lucide="menu" class="w-6 h-6"></i>
           </button>
         </div>
@@ -329,23 +342,8 @@
 
           <!-- Conversion-Focused H1 Heading with Direct Benefit -->
           <h1 id="hero-heading" class="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-black tracking-tight text-white leading-tight" data-i18n="hero_h1">
-            Travel 5★ hotels with up to 67% off and build a business from anywhere in the world
+            Hi, I'm Artem. There's an idea that might genuinely interest you. <span class="text-amber-300">Let me show you.</span>
           </h1>
-
-          <div class="space-y-3.5 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg text-slate-200 font-normal leading-relaxed">
-            <p data-i18n="hero_p1">
-              Я из Украины. За последние четыре года многое изменилось в моей жизни.
-            </p>
-            <p data-i18n="hero_p2">
-              У меня есть свой бизнес в Украине и в Канаде. Сегодня я живу в Калгари, развиваю проекты, не боюсь реальной работы своими руками и всегда открыт к новым сильным направлениям и знакомствам.
-            </p>
-            <p data-i18n="hero_p3">
-              Я познакомился с интересным сообществом людей, которое открыло для меня новые возможности.
-            </p>
-            <p class="text-amber-300 font-semibold pt-1" data-i18n="hero_p4">
-              I would love to share what caught my attention with you.
-            </p>
-          </div>
 
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
             <a href="#welcome-video" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-dark-950 font-black text-xs uppercase tracking-wider shadow-xl shadow-amber-500/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer">
@@ -999,7 +997,7 @@
               <div class="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between text-xs text-amber-300 font-mono">
                 <span class="px-3.5 py-1.5 rounded-full bg-black/85 border border-amber-500/30 backdrop-blur-md flex items-center gap-2">
                   <i data-lucide="hammer" class="w-3.5 h-3.5 text-amber-400"></i>
-                  <span id="work-slider-caption">Мобильный сервис и обслуживание грузового флота</span>
+                  <span id="work-slider-caption">Mobile service truck and field repairs in Calgary</span>
                 </span>
               </div>
             </div>
@@ -1109,7 +1107,7 @@
               <div class="absolute bottom-5 left-5 right-5 z-20">
                 <div class="px-4 py-2.5 rounded-2xl bg-black/85 border border-amber-500/40 text-amber-300 font-semibold text-xs sm:text-sm backdrop-blur-md shadow-xl flex items-center gap-2.5">
                   <i data-lucide="camera" class="w-4 h-4 text-amber-400 shrink-0"></i>
-                  <span id="life-slide-desc">Команда и партнёры клуба • Живые встречи сообщества</span>
+                  <span id="life-slide-desc">International convention & meeting with club leaders</span>
                 </div>
               </div>
 
@@ -2118,12 +2116,8 @@
         hero_btn_story: "Смотреть видео 1:26",
         hero_eyebrow: "Привет, я Артём Варганич 👋 | Калгари, Канада",
         hero_greeting: "Привет, ",
-        hero_h1: "Привет! Меня зовут Артем Варганич. И у меня для тебя есть на самом деле классная информация.",
+        hero_h1: "Привет, я Артём. Есть одна идея, которая, вероятно, может быть тебе интересна. <span class='text-amber-300'>Давай покажу.</span>",
         hero_name: "я Артём! 👋",
-        hero_p1: "Я из Украины. За последние четыре года многое изменилось в моей жизни.",
-        hero_p2: "У меня есть свой бизнес в Украине и в Канаде. Сегодня я живу в Калгари, развиваю проекты, не боюсь реальной работы своими руками и всегда открыт к новым сильным направлениям и знакомствам.",
-        hero_p3: "Я познакомился с интересным сообществом людей, которое открыло для меня новые возможности.",
-        hero_p4: "Хочу поделиться с тобой тем, что меня заинтересовало.",
         hero_script_sub: "Новые возможности<br>начинаются со знакомства.",
         hero_script_title: "Билет в твою<br>лучшую жизнь.",
         how_subtitle: "Три понятных шага к новым путешествиям и возможностям",
@@ -2352,12 +2346,8 @@
         hero_btn_story: "Watch Video 1:43",
         hero_eyebrow: "Hi, I'm Artem Varganych 👋 | Calgary, Canada",
         hero_greeting: "Hello, ",
-        hero_h1: "Travel 5★ hotels with up to 67% off and build a business from anywhere in the world",
+        hero_h1: "Hi, I'm Artem. There's an idea that might genuinely interest you. <span class='text-amber-300'>Let me show you.</span>",
         hero_name: "I am Artem! 👋",
-        hero_p1: "I am originally from Ukraine. Over the last four years, a great deal has changed in my life.",
-        hero_p2: "I run my own business in Ukraine and in Canada. Today I live in Calgary, build new ventures, value honest hands-on work, and am always open to new promising directions and meaningful connections.",
-        hero_p3: "I connected with an inspiring community of people that opened brand new doors for me.",
-        hero_p4: "I want to share what caught my attention.",
         hero_script_sub: "New opportunities<br>begin with an introduction.",
         hero_script_title: "Ticket to your<br>better life.",
         how_subtitle: "Three clear steps toward memorable trips and new horizons",
@@ -2601,15 +2591,10 @@
         hero_btn_story: "Дивитися відео 2 хв",
         hero_eyebrow: "Привіт, я Артем Варганич 👋 | Калгарі, Канада",
         hero_greeting: "Привіт, ",
-        hero_h1: "Привіт! Мене звати Артем Варганич. І в мене для тебе є насправді класна інформація.",
+        hero_h1: "Привіт, я Артем. Є одна ідея, яка, ймовірно, може бути тобі цікава. <span class='text-amber-300'>Давай покажу.</span>",
         hero_name: "я Артем! 👋",
-        hero_p1: "Я з України. За останні чотири роки багато чого змінилося в моєму житті.",
-        hero_p2: "У мене є свій бізнес в Україні та в Канаді. Сьогодні я живу в Калгарі, розвиваю проєкти, не боюся реальної роботи своїми руками й завжди відкритий до нових сильних напрямків і знайомств.",
-        hero_p3: "Я познайомився з цікавою спільнотою людей, яка відкрила для мене нові можливості.",
-        hero_p4: "Хочу поділитися з тобою тим, що мене зацікавило.",
         hero_script_sub: "Нові можливості<br>починаються зі знайомства.",
         hero_script_title: "Квиток у твоє<br>краще життя.",
-        hero_title: "Привіт! Мене звати Артем Варганич. І в мене для тебе є насправді класна інформація.",
         how_it_works_tag: "ЯК ЦЕ ПРАЦЮЄ",
         how_it_works_title: "Як влаштована клубна система",
         how_step1_desc: "Отримуєте персональний доступ до закритої платформи з прямими оптовими тарифами без роздрібної націнки.",
@@ -2797,32 +2782,38 @@
       {
         src: 'work_real_1_truck.webp',
         descRu: 'Мобильный сервис и обслуживание техники в Калгари',
-        descEn: 'Mobile service truck and field repairs in Calgary'
+        descEn: 'Mobile service truck and field repairs in Calgary',
+        descUk: 'Мобільний сервіс та обслуговування техніки в Калгарі'
       },
       {
         src: 'work_real_2_amazon.webp',
         descRu: 'Доставка и логистика: ответственность за результат каждый день',
-        descEn: 'Logistics and delivery: day-to-day operational accountability'
+        descEn: 'Logistics and delivery: day-to-day operational accountability',
+        descUk: 'Доставка та логістика: відповідальність за результат щодня'
       },
       {
         src: 'work_real_3_construction.webp',
         descRu: 'Строительные и технические проекты: от идеи до реализации',
-        descEn: 'Construction and engineering projects: from blueprint to completion'
+        descEn: 'Construction and engineering projects: from blueprint to completion',
+        descUk: 'Будівельні та технічні проєкти: від ідеї до реалізації'
       },
       {
         src: 'work_real_4_winter.webp',
         descRu: 'Работа в любых погодных условиях канадской зимы',
-        descEn: 'Operations in harsh Canadian winter weather conditions'
+        descEn: 'Operations in harsh Canadian winter weather conditions',
+        descUk: 'Робота в будь-яких погодних умовах канадської зими'
       },
       {
         src: 'work_real_5_laptop.webp',
         descRu: 'Управление бизнес-процессами и онлайн-направлением',
-        descEn: 'Business operations management and online project scaling'
+        descEn: 'Business operations management and online project scaling',
+        descUk: 'Управління бізнес-процесами та онлайн-напрямком'
       },
       {
         src: 'work_real_6_volunteers.webp',
         descRu: 'Социальные инициативы и поддержка украинского сообщества в Канаде',
-        descEn: 'Community initiatives and Ukrainian community support in Canada'
+        descEn: 'Community initiatives and Ukrainian community support in Canada',
+        descUk: 'Соціальні ініціативи та підтримка української спільноти в Канаді'
       }
     ];
 
@@ -2830,47 +2821,56 @@
       {
         src: 'life_real_1_team.webp',
         descRu: 'Международная конвенция и встреча с лидерами клуба',
-        descEn: 'International convention & meeting with club leaders'
+        descEn: 'International convention & meeting with club leaders',
+        descUk: 'Міжнародна конвенція та зустріч із лідерами клубу'
       },
       {
         src: 'life_real_2_whiteparty.webp',
         descRu: 'Клубный гала-вечер White Party: неформальное общение и новые знакомства',
-        descEn: 'Club White Party Gala: informal networking & new connections'
+        descEn: 'Club White Party Gala: informal networking & new connections',
+        descUk: 'Клубний гала-вечір White Party: неформальне спілкування та нові знайомства'
       },
       {
         src: 'life_real_3_group.webp',
         descRu: 'Сообщество активных предпринимателей и путешественников',
-        descEn: 'Community of active entrepreneurs and travelers'
+        descEn: 'Community of active entrepreneurs and travelers',
+        descUk: 'Спільнота активних підприємців та мандрівників'
       },
       {
         src: 'life_real_4_paris.webp',
         descRu: 'Париж, Франция — путешествия по всему миру становятся стилем жизни',
-        descEn: 'Paris, France — global travel becomes a true lifestyle'
+        descEn: 'Paris, France — global travel becomes a true lifestyle',
+        descUk: 'Париж, Франція — подорожі по всьому світу стають стилем життя'
       },
       {
         src: 'life_real_5_flight.webp',
         descRu: 'В пути к новым странам: свобода перемещений и дистанционная работа',
-        descEn: 'In transit to new countries: freedom of mobility and remote work'
+        descEn: 'In transit to new countries: freedom of mobility and remote work',
+        descUk: 'У дорозі до нових країн: свобода пересувань і дистанційна робота'
       },
       {
         src: 'life_real_6_lake.webp',
         descRu: 'Природа Канады: Скалистые горы и горные озёра Альберты',
-        descEn: 'Canadian nature: Rocky Mountains and alpine lakes in Alberta'
+        descEn: 'Canadian nature: Rocky Mountains and alpine lakes in Alberta',
+        descUk: 'Природа Канади: Скелясті гори та гірські озера Альберти'
       },
       {
         src: 'life_real_7_waterfall.webp',
         descRu: 'Горный водопад в Скалистых горах: перезагрузка и вдохновение',
-        descEn: 'Rocky Mountain waterfall: recharging and inspiration'
+        descEn: 'Rocky Mountain waterfall: recharging and inspiration',
+        descUk: 'Гірський водоспад у Скелястих горах: перезавантаження та натхнення'
       },
       {
         src: 'life_real_8_cruise.webp',
         descRu: 'Океанский круиз: рассвет в открытом море',
-        descEn: 'Ocean cruise: sunrise in the open ocean'
+        descEn: 'Ocean cruise: sunrise in the open ocean',
+        descUk: 'Океанський круїз: світанок у відкритому морі'
       },
       {
         src: 'life_real_9_calgary.webp',
         descRu: 'Калгари, Канада — панорама города и Скалистые горы на горизонте',
-        descEn: 'Calgary, Canada — city skyline and Rockies on the horizon'
+        descEn: 'Calgary, Canada — city skyline and Rockies on the horizon',
+        descUk: 'Калгарі, Канада — панорама міста та Скелясті гори на горизонті'
       }
     ];
 
@@ -2914,18 +2914,49 @@
 
     function updateLangButtons(lang) {
       const activeLang = (lang === 'ua') ? 'uk' : lang;
+      const langLabel = (activeLang === 'uk') ? 'UA' : activeLang.toUpperCase();
+      const codeEl = document.getElementById('current-lang-code');
+      if (codeEl) codeEl.textContent = langLabel;
+
       ['en', 'uk', 'ru'].forEach(l => {
-        const btn = document.getElementById('lang-btn-' + l);
         const mBtn = document.getElementById('mobile-lang-btn-' + l);
         const isActive = (l === activeLang);
-        const activeCls = 'px-2 py-0.5 rounded-full transition-all cursor-pointer bg-gradient-to-r from-amber-400 to-amber-500 text-dark-950 font-black shadow-sm';
-        const inactiveCls = 'px-2 py-0.5 rounded-full transition-all cursor-pointer text-slate-400 hover:text-slate-200 font-semibold';
         const mActiveCls = 'px-2.5 py-0.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-dark-950 font-black shadow-sm';
         const mInactiveCls = 'px-2.5 py-0.5 rounded-full text-slate-400 hover:text-slate-200 font-semibold';
-        
-        if (btn) btn.className = isActive ? activeCls : inactiveCls;
         if (mBtn) mBtn.className = isActive ? mActiveCls : mInactiveCls;
       });
+    }
+
+    function toggleLangDropdown(event) {
+      if (event) {
+        event.stopPropagation();
+      }
+      const menu = document.getElementById('lang-dropdown-menu');
+      const chevron = document.getElementById('lang-chevron-icon');
+      const btn = document.getElementById('lang-dropdown-btn');
+      if (!menu) return;
+      const isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+      } else {
+        closeLangDropdown();
+      }
+    }
+
+    function closeLangDropdown() {
+      const menu = document.getElementById('lang-dropdown-menu');
+      const chevron = document.getElementById('lang-chevron-icon');
+      const btn = document.getElementById('lang-dropdown-btn');
+      if (menu) menu.classList.add('hidden');
+      if (chevron) chevron.style.transform = '';
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+
+    function selectLang(lang) {
+      closeLangDropdown();
+      setLanguage(lang);
     }
 
     function setLanguage(lang) {
@@ -2959,6 +2990,10 @@
 
       // Update Header & Mobile Language Switchers
       updateLangButtons(lang);
+
+      // Re-render Photo Sliders with new language immediately
+      updateWorkSlider();
+      updateLifeSlider();
 
       // Update Video Cover Image
       const videoCover = document.getElementById('video-cover-img');
@@ -3272,10 +3307,12 @@
 
       const nameEl = document.getElementById('modal-lead-name');
       const phoneEl = document.getElementById('modal-lead-phone');
+      const msgEl = document.getElementById('modal-lead-message');
       if (!nameEl || !phoneEl) return;
       
       const name = nameEl.value.trim();
       const phone = phoneEl.value.trim();
+      const message = msgEl ? msgEl.value.trim() : '';
       if (!name || !phone) return;
 
       const submitBtn = document.getElementById('modal-lead-submit-btn');
@@ -3283,7 +3320,7 @@
       if (submitBtn) {
         submitBtn.disabled = true;
         originalBtnHtml = submitBtn.innerHTML;
-        const sendingText = (currentLang === 'en') ? 'Sending...' : 'Отправка...';
+        const sendingText = (currentLang === 'en') ? 'Sending...' : (currentLang === 'uk' ? 'Надсилання...' : 'Отправка...');
         submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin text-dark-950"></i><span>${sendingText}</span>`;
         if (typeof lucide !== 'undefined') lucide.createIcons();
       }
@@ -3296,6 +3333,7 @@
 
       const safeName = escapeHtml(name);
       const safePhone = escapeHtml(phone);
+      const safeMsg = escapeHtml(message);
       const timeStr = new Date().toLocaleString('ru-RU', { timeZone: 'America/Edmonton' });
 
       let topic = 'Общий контакт';
@@ -3306,8 +3344,9 @@
       else if (currentLeadContext === 'header') topic = 'Кнопка в шапке';
       else if (currentLeadContext === 'footer') topic = 'Кнопка в подвале';
       else if (currentLeadContext === 'video') topic = 'Кнопка под видео';
+      else if (currentLeadContext === 'floating_fab') topic = 'Плавающая кнопка (чат)';
 
-      const text = `🔔 <b>Новая заявка с BetterWay (Модальное окно)!</b>\n\n📌 <b>Тема:</b> ${topic}\n👤 <b>Имя:</b> ${safeName}\n📞 <b>Телефон:</b> <code>${safePhone}</code>\n🕒 <b>Время:</b> ${timeStr} (Калгари)\n🌐 <b>Контекст:</b> ${currentLeadContext}`;
+      const text = `🔔 <b>Новая заявка с BetterWay (Модальное окно)!</b>\n\n📌 <b>Тема:</b> ${topic}\n👤 <b>Имя:</b> ${safeName}\n📞 <b>Телефон:</b> <code>${safePhone}</code>\n💬 <b>Сообщение:</b> ${safeMsg || '—'}\n🕒 <b>Время:</b> ${timeStr} (Калгари)\n🌐 <b>Контекст:</b> ${currentLeadContext}\n🌐 <b>Язык:</b> ${currentLang.toUpperCase()}`;
 
       try {
         await fetch('https://api.telegram.org/bot8865140984:AAGqzyBjytwB8ytuaQLtsmm0fRHWshSgsmk/sendMessage', {
@@ -3333,7 +3372,8 @@
       }
 
       closeContactModal();
-      showToast(currentLang === 'ru' ? 'Ваша заявка отправлена!' : 'Your request has been sent!');
+      const successToast = (currentLang === 'en') ? 'Your request has been sent!' : (currentLang === 'uk' ? 'Вашу заявку надіслано!' : 'Ваша заявка отправлена!');
+      showToast(successToast);
       openSuccessModal();
     }
 
@@ -3455,7 +3495,13 @@
       const photo = workPhotos[workIndex];
       img.src = photo.src;
       if (caption) {
-        caption.textContent = (currentLang === 'en') ? photo.descEn : photo.descRu;
+        if (currentLang === 'en') {
+          caption.textContent = photo.descEn;
+        } else if (currentLang === 'uk') {
+          caption.textContent = photo.descUk || photo.descRu;
+        } else {
+          caption.textContent = photo.descRu;
+        }
       }
       if (cur) cur.textContent = (workIndex + 1);
       if (total) total.textContent = workPhotos.length;
@@ -3480,7 +3526,13 @@
       const photo = lifePhotos[lifeIndex];
       img.src = photo.src;
       if (desc) {
-        desc.textContent = (currentLang === 'en') ? photo.descEn : photo.descRu;
+        if (currentLang === 'en') {
+          desc.textContent = photo.descEn;
+        } else if (currentLang === 'uk') {
+          desc.textContent = photo.descUk || photo.descRu;
+        } else {
+          desc.textContent = photo.descRu;
+        }
       }
       if (cur) cur.textContent = (lifeIndex + 1);
       if (total) total.textContent = lifePhotos.length;
