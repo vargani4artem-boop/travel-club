@@ -87,7 +87,7 @@
             "name": "За счёт чего цены на отели ниже, чем на Booking или Expedia?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Крупные публичные сайты (Booking, Expedia) связаны договорами паритета цен и включают в стоимость розничную комиссию и огромные бюджеты на рекламу (до 30–50% от чека). Закрытая клубная платформа работает по модели оптовой подписки (как Costco, только для путешествий): мы получаем доступ к закрытым оптовым тарифам напрямую от глобальных поставщиков без розничной наценки."
+              "text": "Крупные публичные сайты (Booking, Expedia) связаны договорами паритета цен и включают в стоимость розничную комиссию и огромные бюджеты на рекламу (до 30–50% от чека). Закрытая клубная платформа работает по модели оптовой подписки, как спортивный клуб или Spotify или YouTube, только для путешествий: мы получаем доступ к закрытым оптовым тарифам напрямую от глобальных поставщиков без розничной наценки."
             }
           },
           {
@@ -1240,7 +1240,7 @@
           </button>
           <div class="faq-content hidden px-6 pb-5 text-slate-200 text-base sm:text-lg leading-relaxed border-t border-amber-500/10 pt-4">
             <p data-i18n="faq_a_wholesale">
-              Major public websites (Booking, Expedia) are bound by rate parity agreements and include retail markups and massive advertising budgets (up to 30–50% of the price). Our private club platform operates on a wholesale membership model (like Costco, but for travel): we get access to private wholesale rates directly from global suppliers without retail markup.
+              Major public websites (Booking, Expedia) are bound by rate parity agreements and include retail markups and massive advertising budgets (up to 30–50% of the price). Our private club platform operates on a wholesale subscription model, like a sports club, Spotify, or YouTube, but for travel: we get access to private wholesale rates directly from global suppliers without retail markup.
             </p>
           </div>
         </div>
@@ -1266,7 +1266,7 @@
           </button>
           <div class="faq-content hidden px-6 pb-5 text-slate-200 text-base sm:text-lg leading-relaxed border-t border-amber-500/10 pt-4">
             <p data-i18n="faq_a2">
-              Да, участие основано на клубной подписке. При этом каждый взнос конвертируется в баллы программы лояльности, которые ты можешь использовать для снижения стоимости своих поездок.
+              Yes, participation is based on a club subscription, with every payment converted into loyalty reward points that you can use to lower the cost of your trips. The company also offers growth opportunities: by inviting friends to the platform, you can eliminate your monthly payment while maintaining full membership benefits. In the company, this is known as the partner program.
             </p>
           </div>
         </div>
@@ -1536,7 +1536,7 @@
                 Your message
               </label>
               <div class="relative">
-                <textarea id="lead-message" rows="3" placeholder="Write your question or comment here..." data-i18n-placeholder="form_message_placeholder" class="w-full px-4 py-3 rounded-2xl bg-black/60 border border-amber-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm resize-none"></textarea>
+                <textarea id="lead-message" rows="3" placeholder="Write your question or leave empty..." data-i18n-placeholder="form_message_placeholder" class="w-full px-4 py-3 rounded-2xl bg-black/60 border border-amber-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm resize-none"></textarea>
                 <i data-lucide="message-square" class="absolute right-4 top-3.5 w-4 h-4 text-slate-500"></i>
               </div>
             </div>
@@ -1639,10 +1639,10 @@
   </footer>
 
   <!-- MOBILE FLOATING BACKDROP (CLOSES MENU WHEN CLICKED OUTSIDE) -->
-  <div id="fab-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-[2px] z-40 hidden transition-opacity duration-300 md:hidden" onclick="toggleFabMenu(false)"></div>
+  <div id="fab-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-[2px] z-40 hidden transition-opacity duration-300" onclick="toggleFabMenu(false)"></div>
 
   <!-- FLOATING MOBILE QUICK-ACTION EXPANDABLE FAB -->
-  <div id="mobile-floating-dock" class="fixed bottom-6 right-4 z-40 flex flex-col items-end md:hidden select-none">
+  <div id="mobile-floating-dock" class="fixed bottom-6 right-4 sm:right-6 z-40 flex flex-col items-end select-none">
     
     <!-- Expanded Menu Items (4 Contact Options) -->
     <div id="fab-menu" class="hidden flex-col gap-3 items-end mb-3 transition-all duration-300">
@@ -2013,9 +2013,9 @@
     // ==========================================
     const translations = {
       ru: {
-        modal_message_placeholder: "Твоё сообщение (вопрос, пожелание)...",
-        form_message_placeholder: "Напиши свой вопрос или комментарий...",
-        form_message_label: "Твоё сообщение",
+        modal_message_placeholder: "Твоё сообщение или вопрос (необязательно)...",
+        form_message_placeholder: "Напиши свой вопрос или оставь пустым...",
+        form_message_label: "Сообщение (необязательно)",
         artem_role_share: "Партнёр туристического клуба",
         btn_ask_terms: "Задай мне вопрос",
         btn_contact_artem: "Написать мне",
@@ -2066,13 +2066,13 @@
         direct_contact_title: "Прямая связь:",
         directions_tag: "ВЫБОР ЗА ТОБОЙ",
         directions_title: "А что из этого интересно тебе?",
-        faq_a1: "Это международный сервис закрытого членства, открывающий доступ к платформе с отелями 4–5★, курортами All Inclusive, круизами и клубными турами по специальным ценам.",
-        faq_a2: "Да, участие основано на клубной подписке. При этом каждый взнос конвертируется в баллы программы лояльности, которые ты можешь использовать для снижения стоимости своих поездок.",
+        faq_a1: "Это международный сервис закрытого членства, работающий по модели подписки — как спортивный клуб, Spotify или YouTube, только для путешествий. Он открывает прямой доступ к отелям 4–5★, курортам All Inclusive, круизам и клубным турам по специальным ценам без публичных наценок.",
+        faq_a2: "Да, участие основано на клубной подписке, при этом каждый взнос конвертируется в баллы программы лояльности, которые ты можешь использовать для снижения стоимости своих поездок. Также компания предусматривает развитие, и в случае привлечения своих друзей к данной системе, вы можете избавиться от ежемесячного платежа, но при этом сохранить членскую подписку. В компании это называется партнёрская программа.",
         faq_a3: "Да, конечно! Во время личного звонка или видеодемонстрации я с удовольствием покажу тебе платформу, отели, систему поиска и сравнение цен в реальном времени.",
         faq_a4: "Размер выгоды зависит от направления, дат, типа номера и сезонности. На клубных турах и курортах экономия может быть очень существенной, но фиксированных одинаковых скидок для каждого отеля не существует.",
         faq_a5: "Нет, никаких гарантий дохода нет и быть не может. Партнёрство — это реальный бизнес, где финансовый результат зависит исключительно от твоих усилий, настойчивости и работы с людьми.",
         faq_a6: "Вы можете отменить членство через личный кабинет.",
-        faq_a_wholesale: "Крупные публичные сайты (Booking, Expedia) связаны договорами паритета цен и включают в стоимость розничную комиссию и огромные бюджеты на рекламу (до 30–50% от чека). Закрытая клубная платформа работает по модели оптовой подписки (как Costco, только для путешествий): мы получаем доступ к закрытым оптовым тарифам напрямую от глобальных поставщиков без розничной наценки.",
+        faq_a_wholesale: "Крупные публичные сайты (Booking, Expedia) связаны договорами паритета цен и включают в стоимость розничную комиссию и огромные бюджеты на рекламу (до 30–50% от чека). Закрытая клубная платформа работает по модели оптовой подписки, как спортивный клуб или Spotify или YouTube, только для путешествий: мы получаем доступ к закрытым оптовым тарифам напрямую от глобальных поставщиков без розничной наценки.",
         faq_q1: "Что представляет собой travel-клуб?",
         faq_q2: "Платное ли это участие?",
         faq_q3: "Можно ли посмотреть платформу перед вступлением?",
@@ -2247,9 +2247,9 @@
         work_title: "Моя работа и реальная жизнь",
       },
       en: {
-        modal_message_placeholder: "Your message (question or comment)...",
-        form_message_placeholder: "Write your question or comment here...",
-        form_message_label: "Your message",
+        modal_message_placeholder: "Your message or question (optional)...",
+        form_message_placeholder: "Write your question or leave empty...",
+        form_message_label: "Your message (optional)",
         artem_role_share: "Travel Club Partner",
         btn_ask_terms: "Ask Me a Question",
         btn_contact_artem: "Contact Me",
@@ -2300,13 +2300,13 @@
         direct_contact_title: "Direct Channels:",
         directions_tag: "YOUR CHOICE",
         directions_title: "Which Opportunity Resonates with You?",
-        faq_a1: "It is an international private-membership service providing direct access to thousands of 4–5★ hotels, all-inclusive resorts, ocean cruises, and curated trips at wholesale rates.",
-        faq_a2: "Yes, it is subscription-based. Every fee paid accrues loyalty rewards points that buy down future travel costs.",
+        faq_a1: "This is an international private membership service operating on a subscription model — like a sports club, Spotify, or YouTube, but for travel. It provides direct access to 4–5★ hotels, All-Inclusive resorts, and cruises at wholesale rates without retail markups.",
+        faq_a2: "Yes, participation is based on a club subscription, with every payment converted into loyalty reward points that you can use to lower the cost of your trips. The company also offers growth opportunities: by inviting friends to the platform, you can eliminate your monthly payment while maintaining full membership benefits. In the company, this is known as the partner program.",
         faq_a3: "Absolutely! During a personal call or video demo, I'll happily show you the booking engine, live hotel rates, and comparisons in real time.",
         faq_a4: "Savings vary by destination, travel dates, room type, and season. Club tours often feature significant discounts, but identical margins do not apply to every hotel.",
         faq_a5: "No, there are no income guarantees whatsoever. The partner track is a real business where results depend entirely on your work, persistence, and leadership.",
         faq_a6: "You can cancel your membership directly through your personal account dashboard.",
-        faq_a_wholesale: "Major public websites (Booking, Expedia) are bound by rate parity agreements and include retail markups and massive advertising budgets (up to 30–50% of the price). Our private club platform operates on a wholesale membership model (like Costco, but for travel): we get access to private wholesale rates directly from global suppliers without retail markup.",
+        faq_a_wholesale: "Major public websites (Booking, Expedia) are bound by rate parity agreements and include retail markups and massive advertising budgets (up to 30–50% of the price). Our private club platform operates on a wholesale subscription model, like a sports club, Spotify, or YouTube, but for travel: we get access to private wholesale rates directly from global suppliers without retail markup.",
         faq_q1: "What is this travel club?",
         faq_q2: "Is membership paid?",
         faq_q3: "Can I see the platform before joining?",
@@ -2481,9 +2481,9 @@
         work_title: "My Work and Real Life",
       },
       uk: {
-        modal_message_placeholder: "Твоє повідомлення (запитання, побажання)...",
-        form_message_placeholder: "Напиши своє запитання або коментар...",
-        form_message_label: "Твоє повідомлення",
+        modal_message_placeholder: "Твоє повідомлення або запитання (необов'язково)...",
+        form_message_placeholder: "Напиши своє запитання або залиш порожнім...",
+        form_message_label: "Повідомлення (необов'язково)",
         artem_role_share: "Партнер туристичного клубу",
         btn_ask_terms: "Поставити запитання",
         btn_contact_artem: "Написати мені",
@@ -2534,13 +2534,13 @@
         direct_contact_title: "Прямий зв'язок:",
         directions_tag: "ВИБІР ЗА ТОБОЮ",
         directions_title: "А що з цього цікаво тобі?",
-        faq_a1: "Це міжнародний сервіс закритого членства, що відкриває доступ до прямих оптових тарифів на готелі, курорти та круїзи по всьому світу без публічних роздрібних націнок.",
-        faq_a2: "Так, участь базується на клубній передплаті. При цьому кожен внесок на 100% конвертується в бонусні тревел-бали, якими ви оплачуєте свої майбутні поїздки.",
+        faq_a1: "Це міжнародний сервіс закритого членства, який працює за моделлю передплати — як спортивний клуб, Spotify або YouTube, тільки для подорожей. Він відкриває прямий доступ до готелів 4–5★, курортів All Inclusive, круїзів та клубних турів за спеціальними цінами без публічних націнок.",
+        faq_a2: "Так, участь базується на клубній передплаті, при цьому кожен внесок конвертується в бали програми лояльності, які ти можеш використовувати для зниження вартості своїх поїздок. Також компанія передбачає розвиток, і в разі залучення своїх друзів до цієї системи, ви можете звільнитися від щомісячного платежу, але при цьому зберегти членську передплату. У компанії це називається партнерська програма.",
         faq_a3: "Так, звичайно! Під час особистого дзвінка чи відеодемонстрації я відкриваю систему в прямому ефірі, вводжу ваші дати й готель та показую реальне порівняння цін.",
         faq_a4: "Розмір вигоди залежить від напрямку, дат, типу номера та сезону. В середньому клубна різниця становить від 20% до 60% порівняно з відкритими агрегаторами.",
         faq_a5: "Ні, жодних гарантій доходу немає й бути не може. Партнерство — це реальний онлайн-бізнес, результат якого залежить виключно від ваших зусиль, активності та залученості.",
         faq_a6: "Ви можете скасувати членство будь-якої миті через свій особистий кабінет без штрафів чи прихованих платежів.",
-        faq_a_wholesale: "Великі публічні сайти (Booking, Expedia) пов'язані договорами паритету цін і витрачають мільярди на рекламу. Закритий клуб не продає послуги відкритому ринку й передає гуртові ціни безпосередньо своїм членам.",
+        faq_a_wholesale: "Великі публічні сайти (Booking, Expedia) пов'язані договорами паритету цін і закладають у вартість роздрібну комісію та величезні бюджети на рекламу (до 30–50% від чека). Закрита клубна платформа працює за моделлю оптової передплати, як спортивний клуб або Spotify чи YouTube, тільки для подорожей: ми отримуємо прямий доступ до закритих оптових тарифів від глобальних постачальників без роздрібної націнки.",
         faq_q1: "Що являє собою travel-клуб?",
         faq_q2: "Чи платне членство в клубі?",
         faq_q3: "Чи можна перевірити конкретний готель перед вступом?",
@@ -3366,6 +3366,47 @@
       
       // Use window.location.href directly to prevent orphan blank tabs in mobile Chrome
       window.location.href = url;
+    }
+
+        // ==========================================
+    // 10. FLOATING ACTION BUTTON (FAB) MENU
+    // ==========================================
+    let isFabOpen = false;
+
+    function toggleFabMenu(forceState) {
+      const menu = document.getElementById('fab-menu');
+      const backdrop = document.getElementById('fab-backdrop');
+      const iconChat = document.getElementById('fab-icon-chat');
+      const iconClose = document.getElementById('fab-icon-close');
+      if (!menu) return;
+
+      if (typeof forceState === 'boolean') {
+        isFabOpen = forceState;
+      } else {
+        isFabOpen = !isFabOpen;
+      }
+
+      if (isFabOpen) {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        if (backdrop) backdrop.classList.remove('hidden');
+        if (iconChat) iconChat.classList.add('hidden');
+        if (iconClose) iconClose.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        if (backdrop) backdrop.classList.add('hidden');
+        if (iconChat) iconChat.classList.remove('hidden');
+        if (iconClose) iconClose.classList.add('hidden');
+      }
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function handleFabAction(action) {
+      toggleFabMenu(false);
+      if (action === 'modal') {
+        openContactModal('floating_fab');
+      }
     }
 
     function handleDesktopCall(e) {
