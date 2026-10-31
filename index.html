@@ -15,27 +15,24 @@
   <!-- Open Graph / Telegram / WhatsApp / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BetterWay">
-  <meta property="og:title" content="Artem Varganych — How We Saved $1,097 (-67%) on a 5★ Resort">
-  <meta property="og:description" content="Real price comparison (Booking vs private club rate), video introduction, and free club rate check for your hotel.">
+  <meta property="og:title" content="BetterWay — Ticket to your better life">
+  <meta property="og:description" content="Hi, I'm Artem! Real journey, projects, experience in Canada and Ukraine, and new opportunities for travel, growth, and lifestyle.">
   <meta property="og:url" content="https://artem.thebetterway.top/">
-  <meta property="og:image" content="https://artem.thebetterway.top/og_preview_1200x630.jpg">
-  <meta property="og:image:secure_url" content="https://artem.thebetterway.top/og_preview_1200x630.jpg">
+  <meta property="og:image" content="https://artem.thebetterway.top/betterway_og_en.jpg">
+  <meta property="og:image:secure_url" content="https://artem.thebetterway.top/betterway_og_en.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="BetterWay — Ticket to your better life">
   <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="uk_UA">
   <meta property="og:locale:alternate" content="ru_RU">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Artem Varganych — Travel up to 67% off & Online Business">
-  <meta name="twitter:description" content="Send me your hotel, and I'll check its price through our private club database for free.">
-  <meta name="twitter:image" content="https://artem.thebetterway.top/og_preview_1200x630.jpg">
-  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BetterWay — Ticket to your better life">
-  <meta name="twitter:description" content="Привет, я Артём! Мой путь, реальные проекты, опыт в Канаде и Украине, и новые возможности для роста и повышения качества жизни.">
-  <meta name="twitter:image" content="https://artem.thebetterway.top/betterway_og.jpg">
+  <meta name="twitter:description" content="Hi, I'm Artem! Real journey, projects, experience in Canada and Ukraine, and new opportunities for travel, growth, and lifestyle.">
+  <meta name="twitter:image" content="https://artem.thebetterway.top/betterway_og_en.jpg">
 
   <!-- Performance & Preconnect Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2881,6 +2878,9 @@
     // 5. LANGUAGE ROUTING & LOCALIZATION
     // ==========================================
     function detectInitialLanguage() {
+      if (typeof window !== 'undefined' && window.SERVER_LANG) {
+        return window.SERVER_LANG;
+      }
       const urlParams = new URLSearchParams(window.location.search);
       const langParam = (urlParams.get('lang') || '').toLowerCase();
       const path = window.location.pathname.toLowerCase();
